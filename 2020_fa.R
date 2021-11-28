@@ -5,6 +5,7 @@ library(rpart)
 library(caret)
 library(rpart.plot)
 library("class")
+library("e1071")
 
 my_data_2020 = read_excel("C:/Users/kolle/OneDrive/Dokumentumok/GitHub/-nkutfel/Áltkémes zh nélküli 2020.xlsx")
 
@@ -33,6 +34,8 @@ data.test = kemdata[ind==2, ]
 
 altkemtree <- rpart( jegy ~ ., data = data.training, method = "class")
 rpart.plot(altkemtree)
+
+
 
 
 

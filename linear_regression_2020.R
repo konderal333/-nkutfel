@@ -14,7 +14,13 @@ kemdata = my_data_2020[, c(4,5, 10:20, 22:27)]
 #most a redundáns változókat távolítsuk el
 kemdata = kemdata[, c(-4,-11, -17, -18)]
 
+
+
 regression <- lm(jegy ~ ., data = kemdata)
 summary(regression)
+
+plot(regression$resid~kemdata$Érettségi.pont[order(kemdata$Érettségi.pont)])
+
+
 
 
