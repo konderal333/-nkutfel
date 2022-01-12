@@ -1,0 +1,25 @@
+,Accuracy,Algorithm,Model
+6,0.8,Euclidean kNN 3. Model,Simple 3 group model
+7,0.7949999999999999,Euclidean kNN 4. Model,'By department' 3 group model (mean)
+2,0.79,Mahalanobis kNN 3. Model,Simple 3 group model
+19,0.7749999999999999,Naive Bayes 4. Model,'By department' 3 group model (mean)
+11,0.755,SVM 4. Model,'By department' 3 group model (mean)
+15,0.755,Logistic Regression 4. Model,'By department' 3 group model (mean)
+14,0.74,Logistic Regression 3. Model,Simple 3 group model
+3,0.74,Mahalanobis kNN 4. Model,'By department' 3 group model (mean)
+23,0.735,Linear Regression 4. Model,'By department' 3 group model (mean)
+18,0.71,Naive Bayes 3. Model,Simple 3 group model
+22,0.68,Linear Regression 3. Model,Simple 3 group model
+10,0.62,SVM 3. Model,Simple 3 group model
+4,0.59,Euclidean kNN 1. Model,Simple 5 grade model
+0,0.53,Mahalanobis kNN 1. Model,Simple 5 grade model
+12,0.49,Logistic Regression 1. Model,Simple 5 grade model
+17,0.44999999999999996,Naive Bayes 2. Model,'By department' 5 grade model (mean)
+5,0.445,Euclidean kNN 2. Model,'By department' 5 grade model (mean)
+9,0.44000000000000006,SVM 2. Model,'By department' 5 grade model (mean)
+16,0.43,Naive Bayes 1. Model,Simple 5 grade model
+8,0.39,SVM 1. Model,Simple 5 grade model
+1,0.35,Mahalanobis kNN 2. Model,'By department' 5 grade model (mean)
+20,0.33,Linear Regression 1. Model,Simple 5 grade model
+13,0.28,Logistic Regression 2. Model,'By department' 5 grade model (mean)
+21,0.27,Linear Regression 2. Model,'By department' 5 grade model (mean)
