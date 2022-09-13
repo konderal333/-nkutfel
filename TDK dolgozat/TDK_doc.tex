@@ -140,13 +140,34 @@ A 2 csoport modellben az érdemjegyek felosztása az alábbi: 1-es címkéjű cs
 
 \subsection{Főkomponens analízis (PCA)}
 
-Az egyes modellek és almodellek esetén főkomponens analízist is alkalmaztunk, amelynek az a lényege, hogy a rendelkezésre álló változókból kevesebb, új változókat hozunk létre miközben arra törekszünk, hogy a folyamat során elveszített információmennyiség minimális legyen.
+Az egyes modellek és almodellek esetén főkomponens analízist is alkalmaztunk, amelynek az a lényege, hogy a rendelkezésre álló változókból kevesebb, új változókat hozunk létre miközben arra törekszünk, hogy a folyamat során elveszített információmennyiség minimális legyen. Ennek előnye, hogy az algoritmusok gyorsabban tanulnak és sokszor jobb eredményt érnek el.
 
 \subsection{Kumulált átlag prediktálása és modellezése}
 
 A kumulált átlag prediktálásánál csak lineáris regressziót használtuk és annak a vizsgálatára összpontosítottunk, hogy az egyes években a vázolt regressziós modelleknél melyek a legfontosabb változók, és hogy ezek milyen mértékben és irányban változtatják a predikciót.
 
 \subsection{Optimalizálás}
+
+
+
+Fontosabb optimalizációs lépések csak a 2-3 csoport modellek esetén történtek. A Naive Bayes és lineáris regresszió algoritmusoknál jellegük és/vagy implementálásuk végett nem történt optimalizálás. A többi algoritmus esetén az alábbi paraméterek kerültek változtatásra:
+\begin{itemize}
+\item[•] \textbf{kNN}: \\
+- Távolságmérték (euklédeszi, Mahalanobis) \\
+- Szomszédok száma (5 és 15 között változtatva) \\
+- Szomszéd címkeértékének súlyozása (uniform, távolság reciprokra, távolság reciproknégyzete) 
+\item[•] \textbf{Gradient Boosting}: \\
+- Tanulóráta (0.01 és 5 között változtatva 0.1-es lépésközzel)\\
+- Fák száma (5 és 50 között változtatva 5-ös lépésközzel)\\
+- Vágási feltétel (négyzetes hiba, Friedman MSE) \\
+- Maximális famélység (3,4 és 5)
+\item[•] \textbf{Logisztikus regresszió}: \\
+- Regularizációs paraméter (0.05 és 5 között változtatva 0.05-ös lépésközzel) \\
+- Optimalizálási módszer ("SAG", "SAGA") 
+\item[•] \textbf{SVM}: \\
+- Regularizációs paraméter (0.1 és 5 között változtatva 0.1-es lépésközzel)\\
+- Magfüggvény (lineáris, legfeljebb 3-ad fokú polinomiális, RBF)
+\end{itemize}A PCA esetében a főkomponensek számát 1 és 8 között változtattuk, és az algoritmusokat minden főkomponensszám mellett optimalizáltuk, amelyeket aztán kiértékeltünk a teszthalmazon.
 
 \section{Modellek kiértékelése}
 
