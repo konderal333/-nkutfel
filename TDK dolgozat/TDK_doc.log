@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 21.12) (preloaded format=pdflatex 2022.2.14)  13 SEP 2022 21:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 21.12) (preloaded format=pdflatex 2022.2.14)  14 SEP 2022 13:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -566,12 +566,12 @@ LaTeX Info: Redefining \nameref on input line 29.
 LaTeX Info: Redefining \cal on input line 497.
 LaTeX Info: Redefining \mit on input line 498.
 )
-<kepek/bme_logo_kicsi.jpg, id=87, 523.2348pt x 168.1482pt>
+<kepek/bme_logo_kicsi.jpg, id=71, 523.2348pt x 168.1482pt>
 File: kepek/bme_logo_kicsi.jpg Graphic file (type jpg)
 <use kepek/bme_logo_kicsi.jpg>
 Package pdftex.def Info: kepek/bme_logo_kicsi.jpg  used on input line 34.
 (pdftex.def)             Requested size: 273.14923pt x 87.78136pt.
-<kepek/bme_cimer.jpg, id=88, 100.2144pt x 99.7326pt>
+<kepek/bme_cimer.jpg, id=72, 100.2144pt x 99.7326pt>
 File: kepek/bme_cimer.jpg Graphic file (type jpg)
 <use kepek/bme_cimer.jpg>
 Package pdftex.def Info: kepek/bme_cimer.jpg  used on input line 66.
@@ -631,40 +631,60 @@ been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.96 
-      [1] [2] [3] [4]
+      [1] [2] [3]
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 132.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 132.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 132.
+ [4]
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
-55.
+59.
 
 (C:\Users\kolle\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
+) [5]
 
-LaTeX Warning: Empty `thebibliography' environment on input line 178.
+LaTeX Warning: Empty `thebibliography' environment on input line 182.
 
 
 Package caption Warning: Unused \captionsetup[table] on input line 25.
 See the caption package documentation for explanation.
 
-[5] (TDK_doc.aux)
+[6] (TDK_doc.aux)
 Package rerunfilecheck Info: File `TDK_doc.out' has not changed.
-(rerunfilecheck)             Checksum: 2197DCFC5EC44CAFB56784F296DF23A0;3561.
+(rerunfilecheck)             Checksum: 141FBD18A862A49CF265E4C3BBB8FD7F;2871.
  ) 
 Here is how much of TeX's memory you used:
- 14721 strings out of 478659
- 245414 string characters out of 2845920
- 548256 words of memory out of 3000000
- 32573 multiletter control sequences out of 15000+600000
- 438149 words of font info for 53 fonts, out of 8000000 for 9000
+ 14751 strings out of 478659
+ 245688 string characters out of 2845920
+ 547256 words of memory out of 3000000
+ 32591 multiletter control sequences out of 15000+600000
+ 463416 words of font info for 72 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 60i,5n,63p,1710b,363s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,8n,63p,1710b,409s stack positions out of 5000i,500n,10000p,200000b,80000s
 {C:/Users/kolle/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}{
-C:/Users/kolle/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}<C:/U
-sers/kolle/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/U
-sers/kolle/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Us
-ers/kolle/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb>
-Output written on TDK_doc.pdf (6 pages, 287781 bytes).
+C:/Users/kolle/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}{
+C:/Users/kolle/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}{
+C:/Users/kolle/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/U
+sers/kolle/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}<C:/Users
+/kolle/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users
+/kolle/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi10.pfb><C:/Users
+/kolle/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi12.pfb><C:/Users
+/kolle/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi5.pfb><C:/Users/
+kolle/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi7.pfb><C:/Users/k
+olle/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/ko
+lle/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/kol
+le/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:/Users/koll
+e/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr7.pfb><C:/Users/kolle/
+AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/kolle/Ap
+pData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/Users/kolle/Ap
+pData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/kolle/Ap
+pData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy5.pfb>
+Output written on TDK_doc.pdf (7 pages, 401585 bytes).
 PDF statistics:
- 165 PDF objects out of 1000 (max. 8388607)
- 29 named destinations out of 1000 (max. 500000)
- 179 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 215 PDF objects out of 1000 (max. 8388607)
+ 27 named destinations out of 1000 (max. 500000)
+ 147 words of extra memory for PDF output out of 10000 (max. 10000000)
 

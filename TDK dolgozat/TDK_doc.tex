@@ -113,52 +113,56 @@ A legvégén az így kapott adathalmaz 231 rekorddal és 21 oszloppal rendelkeze
 
 \subsubsection{kNN}
 
+A kNN (k-Nearest Neighbour) algoritmus az egyik legegyszerűbb gépi tanulási algoritmusok közé tartozik. Lényege, hogy az adatponthoz legközelebbi k szomszéd címkeértékének valamilyen távolságalapú súlyozása szerint választjuk meg a kérdéses adatpont címkeértékét.
+
 \subsubsection{Lineáris regresszió}
+
+A lineáris regresszió jellegéből adódóan alapvetően folytonos célváltozó prediktálására alkalmas, ugyanakkor kategorikus, ordinális címkéjű adatok osztályozására is fel lehet használni. Az algoritmus lényege, hogy a magyarázóváltozók mindegyikéhez egy-egy súlyt rendelünk, majd az adatpont attribútumértékeinek vesszük a súlyokkal való súlyozott összegét, és esetleg egy bias tagot hozzáadva az így kapott szumma lesz a prediktált címkeérték. A cél a tanítás során a súlyok optimális megtalálása, miközben a tanítóhalmazon minimalizáljuk a predikciós hibát.
 
 \subsubsection{Naive Bayes}
 
-\subsubsection{Gradient Boosting}
+A Naive Bayes algoritmus működése mögött álló alapelv az, hogy feltesszük az attribútumok feltételes függetlenségét, amennyiben a célváltozó értéke ismert. Osztályozás során azt vizsgáljuk, hogy mely címkeérték mellett a legnagyobb a valószínűsége annak, hogy az adott adatrekord attribútumai éppen a felvett értékeket kapták. A megfelelő valószínűségeket a tanítóhalmazbeli adatok attribútumértékeinek különböző címkék melletti relatív gyakoriságai adják.
+
+\subsubsection{Gradient Tree Boosting}
+
+A Gradient Boosting algoritmus egy Ensemble típusú osztályozó, lényege, hogy sok gyenge teljesítményű prediktor (\textit{weak learner}) eredményét felhasználva
 
 \subsubsection{Logisztikus regresszió}
 
+A logisztikus regresszió alapvetően bináris osztályozási problémák megoldására alkalmas, de kiterjeszthető másfajta feladatok megoldására is. Lényege, hogy a lineáris regresszióhoz hasonlóan az adatrekord attribútumértékeinek súlyozott összegét használjuk egy szigmoid\footnote{A szigmoid függvény: $\sigma(z)=\frac{1}{e^{-z}}$, ahol $z=x_1w_1+x_2w_2+ \dots +x_nw_n+b$ a súlyozott összeg.} függvény bemeneteként, amely azt utána leképzi az $\left(0,1\right)$ intervallumra, és amennyiben az output 0.5-nél nagyobb, úgy a pozitív osztályba soroljuk az adott rekordot.
+
 \subsubsection{SVM}
+
+Az SVM (Support-Vector-Machine) egy lineáris szeparálást használó bináris osztályozó algoritmus, amely egyéb problémákra is kiterjeszthető. Lényege, hogy különböző magfüggvénye segítségével az adatrekordokat egy magasabb dimenziós térbe képzi le, ahol olyan szeparáló hipersíkot keres, amely maximalizálja a vele párhuzamos, adatpontot nem tartalmazó térrészt. A cél a megfelelő magfüggvény és a szeparáló hipersík megtalálása, amellyel a különböző címkéjű adatpontok lineárisan szeparálhatóak.
 
 
 \subsection{Modellek és metodológia}
 
-A modellezési fázis megkezdése előtt a folytonos változók kvantilis alapú 0-1 skálázásnak lettek alávetve, hogy a távolság alapú osztályozók jobban teljesítsenek. Összesen kétféle eredmény alaposabb vizsgálatára összpontosítottunk mindkét évben: a "Matematika A1a - Analízis" tárgyból kapott érdemjegyre illetve az első félév végén megállapított kumulált tanulmányi átlagra. A kettőből az előbbi különös fontossággal bír, ugyanis ebből a tantárgyból igen magas a lemorzsolódók aránya minden karon. A matematika érdemjegy prediktálására (pontosabban érdemjegycsoport prediktálására) kétféle modell került felvázolásra: egy 3 csoport modell, illetve egy 2 csoport modell.
+A kutatás során kétféle eredmény alaposabb vizsgálatára összpontosítottunk mindkét évben: a "Matematika A1a - Analízis" tárgyból kapott érdemjegyre illetve az első félév végén megállapított kumulált tanulmányi átlagra. A kettőből az előbbi különös fontossággal bír, ugyanis ebből a tantárgyból igen magas a lemorzsolódók aránya minden karon. 
 
-\subsection{A 3 csoport modell}
+Az előbbi probléma alapvetően egy osztályozási probléma öt osztállyal. Mivel azonban viszonylag kevés adat állt a rendelkezésünkre, ezért az adatrekordok esetén a pontos érdemjegy helyett érdemjegy csoportok prediktálásra koncentráltunk. A matematika érdemjegycsoportok prediktálására így kétféle modell került felvázolásra: egy \textit{3 csoport modell}, illetve egy \textit{2 csoport modell}.
 
-Az 3 csoport modellen belül a jegyek az alábbi 3 csoportba lettek besorolva: 2-es címkéjű csoportba kerültek a Jeles illetve Jó érdemjegyek, 1-es címkéjűbe a Közepes és Elégséges érdemjegyek, míg az Elégtelen érdemjegyek alkotják a 0-ás címkéjű csoportot. A 3 csoportot egyszerűen úgy is megfogalmazhatjuk mint a jól teljesítő, a rosszul teljesítő teljesítő és a nem megfelelt hallgatók csoportja. A prediktálás során ezen 3 kategóriába szeretnénk minél pontosabban besorolni a rekordokat.
+A 2 csoport modell esetén a két csoportot a \{5,4,3\} illetve \{2,1\} osztályok adják, míg a 3 csoportnál az osztályok \{5,4\}, \{3,2\} illetve \{1\} módon alakultak. Az előbbi esetben az osztályok intuitívan a lemorzsolódási veszélyeztetettség szerint formálódtak, míg az utóbbiban egy általánosabb "jól teljesítő", "rosszul teljesítő", "lemorzsolódott" csoporthármast kívántunk elérni. Mindkét modell esetén külön vizsgáltuk a teljesítményt összes hallgatóra vonatkozóan illetve szétbontva vegyészmérnök és biomérnök hallgatókra egyaránt (a környezetmérnökökről nem állt rendelkezésre elég adat, így őket a szakonkénti bontásban kihagytuk).
 
-A modellen belül külön vizsgáltuk a hallgató eredményeket szakokra bontva és együttvéve egyaránt. A szakokra bontás esetén csupán a Vegyészmérnök illetve Biomérnöki szakok eredményeit néztük, ugyanis a Környezetmérnök hallgatókról nem állt rendelkezésre elég adat. 
-
-\subsection{A 2 csoport modell}
-
-A 2 csoport modellben az érdemjegyek felosztása az alábbi: 1-es címkéjű csoportba kerültek a Jeles, Jó, Közepes érdemjegyek, míg a 0-ás csoportba az Elégséges és Elégtelen jegyek. A 3 csoport modellhez hasonlóan itt is további két almodellt vizsgáltunk aszerint, hogy a jegyeket szakokra bontva prediktáljuk-e vagy sem. 
-
-\subsection{Főkomponens analízis (PCA)}
+A két modellnél a célváltozó-értékeket rendre 1, 0-ra illetve 2, 1, 0-ra módosítottuk. Az osztályozó algoritmusok közül a Naive Bayes, kNN és Gradient Tree Boosting alapból jól kezeli a kategorikus változókat, az SVM-nél valamint a regressziós eljárásoknál viszont minimális változtatásra volt szükség. Az SVM és logisztikus regresszió mivel csak bináris osztályozásra alkalmas, így ott \textit{One-Vs-Rest} elvű osztályozást használtunk, lineáris regressziónál pedig az címkeértékek ordinális jellege miatt egyszerűen a prediktált értéket kerekítettük a legközelebbi csoportcímkére.
 
 Az egyes modellek és almodellek esetén főkomponens analízist is alkalmaztunk, amelynek az a lényege, hogy a rendelkezésre álló változókból kevesebb, új változókat hozunk létre miközben arra törekszünk, hogy a folyamat során elveszített információmennyiség minimális legyen. Ennek előnye, hogy az algoritmusok gyorsabban tanulnak és sokszor jobb eredményt érnek el.
 
-\subsection{Kumulált átlag prediktálása és modellezése}
-
 A kumulált átlag prediktálásánál csak lineáris regressziót használtuk és annak a vizsgálatára összpontosítottunk, hogy az egyes években a vázolt regressziós modelleknél melyek a legfontosabb változók, és hogy ezek milyen mértékben és irányban változtatják a predikciót.
 
-\subsection{Optimalizálás}
 
 
+\subsection{Implementálás és optimalizálás}
 
-Fontosabb optimalizációs lépések csak a 2-3 csoport modellek esetén történtek. A Naive Bayes és lineáris regresszió algoritmusoknál jellegük és/vagy implementálásuk végett nem történt optimalizálás. A többi algoritmus esetén az alábbi paraméterek kerültek változtatásra:
+A modellezési fázis megkezdése előtt a folytonos változók kvantilis alapú 0-1 skálázásnak lettek alávetve, hogy a távolság alapú osztályozók jobban teljesítsenek. Fontosabb optimalizációs lépések csak a 2-3 csoport modellek esetén történtek. A Naive Bayes és lineáris regresszió algoritmusoknál jellegük és/vagy implementálásuk végett nem történt optimalizálás. A többi algoritmus esetén az alábbi hiperparaméterek kerültek változtatásra:
 \begin{itemize}
 \item[•] \textbf{kNN}: \\
 - Távolságmérték (euklédeszi, Mahalanobis) \\
 - Szomszédok száma (5 és 15 között változtatva) \\
 - Szomszéd címkeértékének súlyozása (uniform, távolság reciprokra, távolság reciproknégyzete) 
-\item[•] \textbf{Gradient Boosting}: \\
+\item[•] \textbf{Gradient Tree Boosting}: \\
 - Tanulóráta (0.01 és 5 között változtatva 0.1-es lépésközzel)\\
-- Fák száma (5 és 50 között változtatva 5-ös lépésközzel)\\
+- Boosting fázisok száma (5 és 100 között változtatva 5-ös lépésközzel)\\
 - Vágási feltétel (négyzetes hiba, Friedman MSE) \\
 - Maximális famélység (3,4 és 5)
 \item[•] \textbf{Logisztikus regresszió}: \\
@@ -167,7 +171,7 @@ Fontosabb optimalizációs lépések csak a 2-3 csoport modellek esetén törté
 \item[•] \textbf{SVM}: \\
 - Regularizációs paraméter (0.1 és 5 között változtatva 0.1-es lépésközzel)\\
 - Magfüggvény (lineáris, legfeljebb 3-ad fokú polinomiális, RBF)
-\end{itemize}A PCA esetében a főkomponensek számát 1 és 8 között változtattuk, és az algoritmusokat minden főkomponensszám mellett optimalizáltuk, amelyeket aztán kiértékeltünk a teszthalmazon.
+\end{itemize}A PCA esetében a főkomponensek számát 1 és 8 között változtattuk, és az algoritmusokat minden főkomponensszám mellett 5-szörös keresztvalidációval optimalizáltuk, majd a legjobb modelleket kiértékeltük a teszthalmazon.
 
 \section{Modellek kiértékelése}
 
