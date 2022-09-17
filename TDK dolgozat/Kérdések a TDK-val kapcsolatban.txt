@@ -1,0 +1,4 @@
+- Szakkifejezéseket mennyire részletesen (pl keresztvalidáció, One vs Rest, algoritmusok, stb)
+- Cím
+- Bevetés
+- Tesztről mit írni

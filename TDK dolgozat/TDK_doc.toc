@@ -3,15 +3,15 @@
 \select@language {magyar} \contentsline {section}{\numberline {3}Adatprepació}{1}{section.3}%
 \select@language {magyar} \contentsline {subsection}{\numberline {3.1}Az adatok beszerzése, adattáblák jellemzése}{1}{subsection.3.1}%
 \select@language {magyar} \contentsline {subsection}{\numberline {3.2}Adattisztítás}{1}{subsection.3.2}%
-\select@language {magyar} \contentsline {section}{\numberline {4}Felderítő adatelemzés a két évben}{3}{section.4}%
-\select@language {magyar} \contentsline {section}{\numberline {5}Modellépítés az elsőéves teljesítményekre}{3}{section.5}%
-\select@language {magyar} \contentsline {subsection}{\numberline {5.1}Osztályozó algoritmusok}{3}{subsection.5.1}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {5.1.1}kNN}{3}{subsubsection.5.1.1}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {5.1.2}Lineáris regresszió}{3}{subsubsection.5.1.2}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {5.1.3}Naive Bayes}{3}{subsubsection.5.1.3}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {5.1.4}Gradient Tree Boosting}{4}{subsubsection.5.1.4}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {5.1.5}Logisztikus regresszió}{4}{subsubsection.5.1.5}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {5.1.6}SVM}{4}{subsubsection.5.1.6}%
-\select@language {magyar} \contentsline {subsection}{\numberline {5.2}Modellek és metodológia}{4}{subsection.5.2}%
-\select@language {magyar} \contentsline {subsection}{\numberline {5.3}Implementálás és optimalizálás}{5}{subsection.5.3}%
-\select@language {magyar} \contentsline {section}{\numberline {6}Modellek kiértékelése}{6}{section.6}%
+\select@language {magyar} \contentsline {section}{\numberline {4}Felderítő adatelemzés a két évben}{4}{section.4}%
+\select@language {magyar} \contentsline {section}{\numberline {5}Prediktív analitika}{4}{section.5}%
+\select@language {magyar} \contentsline {subsection}{\numberline {5.1}Modellek és metodológia}{4}{subsection.5.1}%
+\select@language {magyar} \contentsline {subsection}{\numberline {5.2}Osztályozó algoritmusok}{5}{subsection.5.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {5.2.1}kNN}{5}{subsubsection.5.2.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {5.2.2}Lineáris regresszió}{5}{subsubsection.5.2.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {5.2.3}Naive Bayes}{5}{subsubsection.5.2.3}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {5.2.4}Gradient Tree Boosting}{5}{subsubsection.5.2.4}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {5.2.5}Logisztikus regresszió}{5}{subsubsection.5.2.5}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {5.2.6}SVM}{6}{subsubsection.5.2.6}%
+\select@language {magyar} \contentsline {subsection}{\numberline {5.3}Implementálás és optimalizálás}{6}{subsection.5.3}%
+\select@language {magyar} \contentsline {section}{\numberline {6}Modellek kiértékelése}{7}{section.6}%
