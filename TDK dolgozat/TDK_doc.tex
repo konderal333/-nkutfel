@@ -6,7 +6,13 @@
 \usepackage{lmodern}
 \usepackage{caption}        
  
-\usepackage{amsmath,amssymb} 
+\usepackage{amsmath,amssymb}
+\usepackage{tikz, pgfplots}
+\usetikzlibrary{positioning}
+\usepackage{arydshln}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{booktabs} 
 \usepackage{amsthm}          
 \usepackage{graphicx}  
 \usepackage{hyperref}  
@@ -18,6 +24,9 @@
 \DeclareMathOperator*{\argmax}{argmax}    
 
 \newtheorem{definition}{Definíció}[section]
+
+\newcommand{\ra}[1]{\renewcommand{\arraystretch}{#1}}
+
 
 \title{Covid-19-cel kapcsolatos tévinformációk azonosítása gépi tanulással}
 \author{Köller Donát, BME TTK BSc. Szakdolgozat}
@@ -126,19 +135,19 @@ A legvégén az így kapott adathalmaz 231 rekorddal és 21 oszloppal rendelkeze
 
 Következő lépésként azt vizsgáltuk, hogy a két évben külön a bemeneti adatok alapján mennyire pontosan lehet előrejelezni egyes teljesítménymutatók értéket, illetve hogy a predikciókra nézve a különböző bemeneti változók milyen és mekkora szereppel bírnak. Ehhez többféle modellen többféle \textit{gépi tanuláson alapuló osztályozó algoritmus} használatára volt szükség. A kutatás során kétféle eredmény alaposabb vizsgálatára összpontosítottunk mindkét évben: a "Matematika A1a - Analízis" tárgyból kapott érdemjegyre illetve az első félév végén megállapított kumulált tanulmányi átlagra. Ezen feladatok a felügyelt gépi tanulási problémák közé esnek, ahol a kitüntetett célváltozót szeretnénk a többi bemeneti változóval előrejelezni. Ekkor a gépi tanulás során a teljes adathalmazt tanító és teszthalmazra bontjuk, a tanító adathalmazon betanítjuk az algoritmusokat úgy, hogy a tanítóhalmazbeli adatok célváltozóját minél pontosabban prediktálják. Ezt követően valamilyen metrika szerint kiválasztjuk a betanított algoritmusok közül a legjobbat, majd az általánosítóképesség ellenőrzése végett a teszthalmazon is visszamérjük a teljesítményét.
 
-
 A két vizsgált probléma közül az előbbi alapvetően egy osztályozási probléma öt osztállyal, míg az utóbbi egy regressziós feladat. Mivel azonban viszonylag kevés adat állt a rendelkezésünkre, ezért az érdemjegyek prediktálásánál az adatrekordok esetén a pontos érdemjegy helyett érdemjegy csoportok előrejelzésére koncentráltunk. A matematika érdemjegycsoportok prediktálására így kétféle modell került felvázolásra: egy \textit{3 csoport modell}, illetve egy \textit{2 csoport modell}.
 
 A 2 csoport modell esetén a két csoportot a \{5,4,3\} illetve \{2,1\} osztályok adják, míg a 3 csoportnál az osztályok \{5,4\}, \{3,2\} illetve \{1\} módon alakultak. Az előbbi esetben az osztályok intuitívan a lemorzsolódási veszélyeztetettség szerint formálódtak, míg az utóbbiban egy általánosabb "jól teljesítő", "rosszul teljesítő", "lemorzsolódott" csoporthármast kívántunk elérni. Mindkét modell esetén külön vizsgáltuk a teljesítményt összes hallgatóra vonatkozóan illetve szétbontva vegyészmérnök és biomérnök hallgatókra egyaránt (a környezetmérnökökről nem állt rendelkezésre elég adat, így őket a szakonkénti bontásban kihagytuk).
 
-Az egyes modellek és almodellek esetén főkomponens analízist is alkalmaztunk, amelynek az a lényege, hogy a rendelkezésre álló változókból kevesebb, új változókat hozunk létre miközben arra törekszünk, hogy a folyamat során elveszített információmennyiség minimális legyen. Ennek előnye, hogy az algoritmusok gyorsabban tanulnak és sokszor jobb eredményt érnek el.
+Az egyes modellek és almodellek esetén a tanítás előtt főkomponens analízist (Principal Component Analysis) is alkalmaztunk. Az eljárás lényege, hogy az attribútumok súlyozott kombinációjával új attribútumokat hozunk létre, kevesebb számút mint az eredeti attribútumok száma, oly módon, hogy az információveszteség minimális legyen. Ennek következtében az adatok egy kisebb dimenziós térbe transzformálódnak át, s az ehhez használt megfelelő súlyozás pedig az attribútumok tapasztalati kovarianca mátrixának segítségével határozható meg. PCA használata során az algoritmusok gyorsabban tanulnak a kisebb dimenziószám miatt, és olykor jobb eredményt is érnek el. Jelen kutatásban másrészt azért is döntöttünk a PCA alkalmazása mellett, mert a korábbi, ugyanezen problémakört vizsgáló, általunk átnézett tanulmányok nem használtak PCA-t még nagyobb attribútum szám esetén sem, ugyanakkor mi a korai tanító-tesztelési fázisnál azt tapasztaltuk, hogy az áttranszformált adaton jobban teljesítenek az osztályozó algoritmusok, így potenciálisan megéri alkalmazni.
+
 
 
 \subsection{Osztályozó algoritmusok}
 
-\subsubsection{kNN}
-
-A kNN (k-Nearest Neighbour) algoritmus az egyik legegyszerűbb gépi tanulási algoritmusok közé tartozik. Lényege, hogy az adatponthoz legközelebbi k szomszéd címkeértékének valamilyen távolságalapú súlyozása szerint választjuk meg a kérdéses adatpont címkeértékét.
+%\subsubsection{kNN}
+%
+%A kNN (k-Nearest Neighbour) algoritmus az egyik legegyszerűbb gépi tanulási algoritmusok közé tartozik. Lényege, hogy az adatponthoz legközelebbi k szomszéd címkeértékének valamilyen távolságalapú súlyozása szerint választjuk meg a kérdéses adatpont címkeértékét.
 
 \subsubsection{Lineáris regresszió}
 
@@ -150,7 +159,7 @@ A Naive Bayes algoritmus működése mögött álló alapelv az, hogy feltesszü
 
 \subsubsection{Gradient Tree Boosting}
 
-A Gradient Boosting algoritmus egy Ensemble típusú osztályozó, lényege, hogy sok gyenge teljesítményű prediktor (\textit{weak learner}) eredményét felhasználva
+A Gradient Boosting algoritmus egy Ensemble típusú osztályozó, amelyek lényege, hogy sok gyenge teljesítményű prediktor (\textit{weak learner}) eredményét felhasználva hoz egy erős predikciót. 
 
 \subsubsection{Logisztikus regresszió}
 
@@ -184,11 +193,84 @@ Valamennyi modellnél a teljes adathalmazt felbontottuk tanító- és teszthalma
 \item[•] \textbf{SVM}: \\
 - Regularizációs paraméter (0.1 és 5 között változtatva 0.1-es lépésközzel)\\
 - Magfüggvény (lineáris, legfeljebb 3-ad fokú polinomiális, RBF)
-\end{itemize}A PCA esetében a főkomponensek számát 1 és 8 között változtattuk, és az algoritmusokat minden főkomponensszám mellett 5-szörös keresztvalidációval optimalizáltuk, majd a legjobb modelleket kiértékeltük a teszthalmazon.
+\end{itemize}A PCA esetében a főkomponensek számát 2 és 8 között változtattuk 2-es lépésközzel, az algoritmusokat minden főkomponensszám mellett 5-szörös keresztvalidációval optimalizáltuk, majd a legjobb modelleket visszamértük a teszthalmazon.
 
 
 
 \section{Modellek kiértékelése}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{ccc|ccccc}
+
+    &&&\multicolumn{5}{c}{Osztályozó algoritmusok} \\
+    &&& Grad. Boost. &  Naive B. & Log. reg.  &  SVM & Lin. reg. \\ 
+        \hline
+    \multirow{8}{*}{3 csoport}& \multirow{4}{*}{Összesített}&2 PC&66.67&62.67&52.00&58.67&61.33 \\
+    												&&4 PC&\textbf{70.67}&60.00&57.33&53.33&65.33\\
+    												&&6 PC&65.33&62.67&54.67&68.00&64.00\\
+    												&&8 PC&64.00&68.00&53.33&62.67&64.00\\\cline{3-8}%\cdashline{4-8}
+    						& \multirow{4}{*}{Szakonként}&2 PC&&&&& \\
+    												&&4 PC&&&&&\\
+    												&&6 PC&&&&&\\
+    												&&8 PC&&&&&\\
+    						 
+    \hline
+    \hline
+    \multirow{8}{*}{2 csoport}& \multirow{4}{*}{Összesített}&2 PC&59.42&69.57&69.57&72.46&69.57\\
+    												&&4 PC&59.42&71.01&\textbf{73.91}&69.57&73.91\\
+    												&&6 PC&63.77&69.57&73.91&71.01&73.91\\
+    												&&8 PC&68.12&69.57&71.01&73.91&72.46\\\cline{3-8}
+    						 & \multirow{4}{*}{Szakonként}&2 PC&&&&&\\
+    												&&4 PC&&&&&\\
+    												&&6 PC&&&&&\\
+    												&&8 PC&&&&&\\
+    												\hline
+\end{tabular}
+\caption{A 2019-es adatsor eredményei}
+\label{tab:multicol}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{ccc|ccccc}
+
+    &&&\multicolumn{5}{c}{Osztályozó algoritmusok} \\
+    &&& Grad. Boos. &  Naive B. & Log. reg.  &  SVM & Lin. reg. \\ 
+        \hline
+    \multirow{8}{*}{3 csoport}& \multirow{4}{*}{Összesített}&2 PC&53.74&72.97&67.75&\textbf{73.30}&56.80 \\
+    												&&4 PC&61.86&70.49&65.82&66.63&51.91\\
+    												&&6 PC&68.27&68.53&67.73&70.80&64.00\\
+    												&&8 PC&66.31&70.20&67.21&67.17&64.00\\\cline{3-8}%\cdashline{4-8}
+    						 & \multirow{4}{*}{Szakonként}&2 PC&&&&&\\
+    												&&4 PC&&&&&\\
+    												&&6 PC&&&&&\\
+    												&&8 PC&&&&&\\
+    \hline
+    \hline
+    \multirow{8}{*}{2 csoport}& \multirow{4}{*}{Összesített}&2 PC&69.45&67.89&69.77&69.77&67.89 \\
+    												&&4 PC&72.74&72.90&78.23&76.51&77.91\\
+    												&&6 PC&67.89&72.90&79.80&79.80&76.19\\
+    												&&8 PC&68.05&74.62&79.96&\textbf{83.24}&79.63\\\cline{3-8}
+    						 & \multirow{4}{*}{Szakonként}&2 PC&&&&&\\
+    												&&4 PC&&&&&\\
+    												&&6 PC&&&&&\\
+    												&&8 PC&&&&&\\
+    												\hline
+\end{tabular}
+\caption{A 2021-es adatsor eredményei}
+\label{tab:multicol}
+\end{table}
+
+
+%\newpage
+%\begin{center}
+%\begin{tikzpicture}
+%	\draw (-10,-10) rectangle (-7,-9);
+%	\draw[->] (-7,-9.5) -- (-5,-9.5);
+%	
+%\end{tikzpicture}
+%\end{center}
 
 
 
