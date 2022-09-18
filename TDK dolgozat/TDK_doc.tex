@@ -178,10 +178,10 @@ A 2 és 3 csoport modellnél a célváltozó-értékeket rendre 1, 0-ra illetve 
 
 Valamennyi modellnél a teljes adathalmazt felbontottuk tanító- és teszthalmazra 70-30 arányban, továbbá a két adathalmazban a folytonos változók kvantilis alapú 0-1 skálázásnak lettek alávetve, hogy a távolság alapú osztályozók jobban teljesítsenek. Az algoritmusok hiperparamétereinek optimális megválasztására 5-szörös kersztvalidációt alkalmaztunk.  Fontosabb optimalizációs lépések csak a 2-3 csoport modellek esetén történtek. A Naive Bayes és lineáris regresszió algoritmusoknál jellegük és/vagy implementálásuk végett nem történt optimalizálás, a többi algoritmus esetén az alábbi hiperparaméterek kerültek változtatásra:
 \begin{itemize}
-\item[•] \textbf{kNN}: \\
-- Távolságmérték (euklédeszi, Mahalanobis) \\
-- Szomszédok száma (5 és 15 között változtatva) \\
-- Szomszéd címkeértékének súlyozása (uniform, távolság reciprokra, távolság reciproknégyzete) 
+%\item[•] \textbf{kNN}: \\
+%- Távolságmérték (euklédeszi, Mahalanobis) \\
+%- Szomszédok száma (5 és 15 között változtatva) \\
+%- Szomszéd címkeértékének súlyozása (uniform, távolság reciprokra, távolság reciproknégyzete) 
 \item[•] \textbf{Gradient Tree Boosting}: \\
 - Tanulóráta (0.01 és 5 között változtatva 0.1-es lépésközzel)\\
 - Boosting fázisok száma (5 és 100 között változtatva 5-ös lépésközzel)\\
@@ -193,7 +193,12 @@ Valamennyi modellnél a teljes adathalmazt felbontottuk tanító- és teszthalma
 \item[•] \textbf{SVM}: \\
 - Regularizációs paraméter (0.1 és 5 között változtatva 0.1-es lépésközzel)\\
 - Magfüggvény (lineáris, legfeljebb 3-ad fokú polinomiális, RBF)
-\end{itemize}A PCA esetében a főkomponensek számát 2 és 8 között változtattuk 2-es lépésközzel, az algoritmusokat minden főkomponensszám mellett 5-szörös keresztvalidációval optimalizáltuk, majd a legjobb modelleket visszamértük a teszthalmazon.
+\end{itemize}A PCA esetében a főkomponensek számát 2 és 8 között változtattuk 2-es lépésközzel, az algoritmusokat minden főkomponensszám mellett 5-szörös keresztvalidációval optimalizáltuk. Az optimalizálásnál használt metrikák: 
+\begin{itemize}
+\item[--]A 2 csoport modell esetén az \textbf{F1-érték}, amely a Precision és a Recall harmonikus közepe, melyek közül a Precision jelöli, hogy az 1-es címkéjűnek osztályozott
+\item[--]A 3 csoport modell esetén a \textbf{Kiegyensúlyozott pontosság} (Balanced Accuracy), amely címkeosztályok kiegyensúlyozatlanságát figyelembe véve az osztályokhoz tartozó Recall értékek számtani közepét adja vissza.
+\end{itemize}
+A megfelelő metrikák mellett kiválasztottuk a legjobb algoritmusokat, amelyeket a teszthalmazon visszamértünk.
 
 
 
@@ -228,7 +233,7 @@ Valamennyi modellnél a teljes adathalmazt felbontottuk tanító- és teszthalma
     												\hline
 \end{tabular}
 \caption{A 2019-es adatsor eredményei}
-\label{tab:multicol}
+\label{tab:multicol1}
 \end{table}
 
 \begin{table}[H]
@@ -259,7 +264,7 @@ Valamennyi modellnél a teljes adathalmazt felbontottuk tanító- és teszthalma
     												\hline
 \end{tabular}
 \caption{A 2021-es adatsor eredményei}
-\label{tab:multicol}
+\label{tab:multicol2}
 \end{table}
 
 
