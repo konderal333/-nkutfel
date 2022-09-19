@@ -126,7 +126,60 @@ Egy külön adattábla tartalmazta még a kognitív eredményeknél a matekos er
 A legvégén az így kapott adathalmaz 231 rekorddal és 21 oszloppal rendelkezett, amelyek között még esetlegesen szűrtünk különböző algoritmusok használata során.
 
 
+
 \section{Felderítő adatelemzés a két évben}
+
+A felderítő elemzés célja az adatok ábrázolása egyszerűen és gyorsan, annak érdekében, hogy az adattípusok egyszerű viszonyai szemléletesen áttekinthetőek legyenek. Erre a célra alkalmasak a oszlopdiagramok, szórásdiagramok, folyamatábrák és más grafikonok.
+
+\subsection{Általános ábrák}
+
+\subsection{Folyamatábrák (Sankey-diagramok)}
+A Sankey-diagramok olyan folyamatábrák, amelyekben az ábrázolt folyamok szélessége arányos a megfelelő folyamértékekkel. Ezáltal könnyen ábrázolhatóak a adott állapotok közötti vándorlások, illetve ezek egymással vett aránya.\\
+Dolgozatunkban négy opciót vizsgáltunk a két évben az elérhető adatoknak megfelelően. Mindkét esetben az állapotok a hallgatók valamely eredményét jelentették, például felvételi pontszámot.
+\begin{enumerate}
+\item 2019. matematikai teszt 1.,2. és 3. részeiben helyesen megoldott feladatok száma.
+\item 2019. kognitív teszt eredmény - \textit{A1} jegy - \textit{A2} jegy.
+\item 2019. és 2021. években: felvételi pontszám - nulladik ZH - kognitív teszt eredmény.
+\item 2019. és 2021. években: felvételi pontszám - kognitív teszt eredmény - első féléves átlag - kumulált átlag.
+\end{enumerate}
+Az első két esetben csak a 2019-es évfolyamról volt adat. Az utolsó esetben 2021-ben megegyezett a kutatás idejében az első féléves és a kumulált átlag, így ennél az utóbbi értelemszerűen nem lett még egyszer beletéve.\\
+
+A matematikai teszt részeinek eredményein és az \textit{A1}, \textit{A2} jegyeken kívül a többi változó folytonos volt, így szükség volt ezek diszkretizálására. Öt-öt osztály lett létrehozva minden esetben, de nem feltétlenül került mindegyikbe hallgató. Az átlagok kerekítve lettek, a felvételi, kognitív teszt és nulladik zh pontszámok másképp lettek osztályozva.
+
+A felvételi pontszámok terjedelmük alapján öt azonos hosszúságú intervallumra lettek osztva. A harmadik változatban a nulladik zh és a teszt eredményei nullától az elérhető pontszámig lettek felosztva 20\%-os lépésközökkel. A negyedik változatban, mivel a kutatás későbbi szakaszában készült, már a teszt eredmény is a terjedelem szerint lett felosztva, nem az elérhető pontszám alapján.
+
+Ezután for ciklus használatával elkészültek a tranzíciós mátrixok. Egy ilyen mátrix \textit{i}-edik sorának \textit{j}-edik eleme azt mutatta, hogy az egyik változó \textit{i}-edik osztályában hány olyan hallgató volt, aki a másik változó \textit{j}-edik osztályába került. Ez a folyamok szélességének megadásához volt szükséges.
+
+A \textit{plotly.graph_objects} könyvtár \textit{go.Sankey} függvényével lettek elkészítve egyenként az ábrák. Minden esetben meg kellett adni számozva a kiinduló és beérkező állapotokat, így a középső csoportok mindkét listában szerepeltek. A program index alapján kapcsolta össze a két listából az állapotokat, így kellett egy harmadik lista, amelynek a megfelelő indexű eleme a két állapot közötti folyam mérete. Ezen kívül a folyamokhoz és magukhoz az állapotokhoz is színeket kellett még rendelni, ismét egy-egy listában, figyelve az indexeket. 
+
+Végül a kirajzolódott ábrát kellett kézileg igazítani, ugyanis az eredmények csoportjai nem feltétlenül álltak megfelelő sorrendben a függőleges tengelyen, illetve azokban az esetekben, amikor nem volt mind az öt osztályban hallgató, egy-egy csoport átcsúszott egy másik eredmény oszlopába. Ezek nem okoztak gondot, ugyanis a csoport mozgatásával a hozzátartozó sávok automatikusan mozogtak együtt.
+
+%IDE BE KELL ILLESZTENI A teszt-a1-a2 ábrát
+
+
+A 2021-es gólyák a kutatás idejében még nem vehették fel az \textit{A2} tárgyat, így értelemszerűen csak a 2019-es évfolyamra készült ez az ábra.
+
+%IDE BE KELL ILLESZTENI A matekrészeksankey ábrát
+
+
+
+%IDE BE KELL ILLESZTENI A sankey2019_old ábrát
+
+
+
+%IDE BE KELL ILLESZTENI A sankey2021_old ábrát
+
+
+
+%IDE BE KELL ILLESZTENI A sankey2019 ábrát
+
+
+
+%IDE BE KELL ILLESZTENI A sankey2021 ábrát
+
+
+
+\subsection{Klaszterezés}
 
 
 \section{Prediktív analitika}
