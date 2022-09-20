@@ -150,7 +150,7 @@ A felvételi pontszámok terjedelmük alapján öt azonos hosszúságú interval
 
 Ezután for ciklus használatával elkészültek a tranzíciós mátrixok. Egy ilyen mátrix \textit{i}-edik sorának \textit{j}-edik eleme azt mutatta, hogy az egyik változó \textit{i}-edik osztályában hány olyan hallgató volt, aki a másik változó \textit{j}-edik osztályába került. Ez a folyamok szélességének megadásához volt szükséges.
 
-A \textit{plotly.graph_objects} könyvtár \textit{go.Sankey} függvényével lettek elkészítve egyenként az ábrák. Minden esetben meg kellett adni számozva a kiinduló és beérkező állapotokat, így a középső csoportok mindkét listában szerepeltek. A program index alapján kapcsolta össze a két listából az állapotokat, így kellett egy harmadik lista, amelynek a megfelelő indexű eleme a két állapot közötti folyam mérete. Ezen kívül a folyamokhoz és magukhoz az állapotokhoz is színeket kellett még rendelni, ismét egy-egy listában, figyelve az indexeket. 
+A \textit{plotly.graph\_objects} könyvtár \textit{go.Sankey} függvényével lettek elkészítve egyenként az ábrák. Minden esetben meg kellett adni számozva a kiinduló és beérkező állapotokat, így a középső csoportok mindkét listában szerepeltek. A program index alapján kapcsolta össze a két listából az állapotokat, így kellett egy harmadik lista, amelynek a megfelelő indexű eleme a két állapot közötti folyam mérete. Ezen kívül a folyamokhoz és magukhoz az állapotokhoz is színeket kellett még rendelni, ismét egy-egy listában, figyelve az indexeket. 
 
 Végül a kirajzolódott ábrát kellett kézileg igazítani, ugyanis az eredmények csoportjai nem feltétlenül álltak megfelelő sorrendben a függőleges tengelyen, illetve azokban az esetekben, amikor nem volt mind az öt osztályban hallgató, egy-egy csoport átcsúszott egy másik eredmény oszlopába. Ezek nem okoztak gondot, ugyanis a csoport mozgatásával a hozzátartozó sávok automatikusan mozogtak együtt.
 
@@ -279,10 +279,10 @@ A megfelelő metrikák mellett kiválasztottuk a legjobb algoritmusokat, amelyek
     												&&4 PC&\textbf{70.67}&60.00&57.33&53.33&65.33\\
     												&&6 PC&65.33&62.67&54.67&68.00&64.00\\
     												&&8 PC&64.00&68.00&53.33&62.67&64.00\\\cline{3-8}%\cdashline{4-8}
-    						& \multirow{4}{*}{Szakonként}&2 PC&&&&& \\
-    												&&4 PC&&&&&\\
-    												&&6 PC&&&&&\\
-    												&&8 PC&&&&&\\
+    						& \multirow{4}{*}{Szakonként}&2 PC&78.71&80.36&73.85&67.24&80.36 \\
+    												&&4 PC&75.41&80.36&47.80&65.59&78.71\\
+    												&&6 PC&\textbf{82.02}&80.36&75.47&67.21&82.02\\
+    												&&8 PC&80.36&78.71&37.42&75.44&78.71\\
     						 
     \hline
     \hline
@@ -290,15 +290,17 @@ A megfelelő metrikák mellett kiválasztottuk a legjobb algoritmusokat, amelyek
     												&&4 PC&59.42&71.01&\textbf{73.91}&69.57&73.91\\
     												&&6 PC&63.77&69.57&73.91&71.01&73.91\\
     												&&8 PC&68.12&69.57&71.01&73.91&72.46\\\cline{3-8}
-    						 & \multirow{4}{*}{Szakonként}&2 PC&&&&&\\
-    												&&4 PC&&&&&\\
-    												&&6 PC&&&&&\\
-    												&&8 PC&&&&&\\
+    						 & \multirow{4}{*}{Szakonként}&2 PC&67.31&67.31&65.69&62.41&64.03\\
+    												&&4 PC&64.00&64.00&67.31&67.31&63.97\\
+    												&&6 PC&64.03&65.69&64.07&65.65&67.27\\
+    												&&8 PC&64.07&62.51&57.49&67.34&\textbf{68.96}\\
     												\hline
 \end{tabular}
 \caption{A 2019-es adatsor eredményei}
 \label{tab:multicol1}
 \end{table}
+
+Az \ref{tab:multicol1} a 2019-es adatokra optimalizált modellek teljesítménye látható.
 
 \begin{table}[H]
 \centering
