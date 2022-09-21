@@ -88,13 +88,21 @@
 
 \section{Bevezetés}
 
+\section{Fogalmak és definíciók}
+
+A dolgozatban tárgyalt módszerek megértéséhez szükséges néhány fogalom és definíció ismerete, amelyeket ezen fejezetben taglalunk. (ergo ezeket innen ki fogom törölni, csak még nem tudom, hova rakjam)
+\begin{itemize}
+\item[•]\textbf{One-vs-Rest elv:} Bináris osztályozó algoritmusok esetén használt eljárás, amely többosztályos osztályozási feladat esetén használatos. Lényege, hogy minden osztály esetén képezünk egy új virtuális osztályt, amely az összes többi osztályt tartalmazza, majd minden ilyen osztálypár esetén a bináris osztályozó meghatározza a kérdéses adatrekord esetén az osztályba tartozási valószínűségeket. Végül azt a címkét prediktáljuk a rekordnak, amely osztály esetén a legnagyobb ez a valószínűség.
+\item[•] \textbf{K-szoros keresztvalidáció:} Az adathalmaz tanító- és teszthalmazra bontása után az tanítóhalmazt felbontjuk K egyenlő részre, az egyiket kinevezzük validációs halmaznak, majd az algoritmusokat betanítjuk a maradék $K-1$ részen amelyeket aztán a validációs halmazon kiértékelünk. Ezt összesen K alkalommal ismételjük, mindig másik részt választva validációs halmaznak, majd azt az algoritmust választjuk teszteléshez, amelynek az aggregált teljesítménye a K iteráció során a legjobb.
+\end{itemize}
+
 \section{A kognitív tesztről}
 
 \section{Adatprepació}
 
 \subsection{Az adatok beszerzése, adattáblák jellemzése}
 
-A kutatáshoz használt adatokat Szilágyi Brigitta tanárnő bocsátotta rendelkezésünkre.
+Az adatokat Szilágyi Brigitta tanárnő bocsátotta rendelkezésünkre. A kutatáshoz összesen 4 fajta bemeneti adatot vizsgáltunk: felvételi pontszám (3 részre bontva: tanulmányi pont, érettségi pont és többletpont), a 0. ZH-n elért pontszám, a kognitív teszten elért teljesítmény valamint bináris változók arra vonatkozóan, hogy emelt érettségit tett-e a hallgató illetve matematika tagozatos volt-e. Ezen adatok különböző adattáblákban voltak tárolva .
 
 
 
@@ -106,26 +114,7 @@ A kezdeti adattáblák közül a matematika és kognitív eredményeket tartalma
 
 A kumulált átlagokat, felvételi pontszámokat illetve 0. ZH eredményeket tartalmazó tábláknál egy-egy sor eltávolításán kívül nem volt szükség adattisztításra, a matematika jegyeket tartalmazó tábla esetén pedig minden hallgató esetén meg kellett határozni azt az érdemjegyet, amellyel a tárgyat elvégezte.
 
-A táblák összetűzése Neptun-kód alapján történt belső illesztés alkalmazásával. Azonban voltak olyan hallgatók, akikről nem minden táblában volt adat (vagy azért, mert nem írtak kognitív tesztet, vagy azért, mert az első félév vége előtt elhagyták a szakot), így az összeillesztés során 10-20 fős sorvesztéssel kellett számolnunk mindkét évben. Az így kapott adattáblák, amelyek a 2019-es és 2021-es évet reprezentálják, rendre 200 és 220 adatrekordot tartalmaztak, valamint mindkét tábla 14 attribútumaml rendelkezett, amelyek rendre a ['Neptun'], ['Hallgató neve'], ['Szak'], ['Matematika 1. blokk'], ['Matematika 2. blokk'], ['Matematika 3. blokk'], ['Matematika eredmény'], ['Kognitív eredmény'], ['0. ZH pontszám'], ['Tanulmányi pont'] ['Érettségi pont'], ['Többletpont'], ['Matematika A1a jegy'] ,['Kumulált átlag'].
-
-
-
-
-
-
-
-A kognitív eredményeket tartalmazó adattábla részletesen tartalmazott információt egyrészt minden hallgatóról (hova valósi, emelt érettségit tett-e matematikából, reál tagozatos volt-e, milyen szakra és tankörbe jár), másrészt a hallgató teszteredményéről is (mennyi idő alatt töltötte ki a tesztet, mely kérdéseket válaszolta meg jól, milyen lett a nyelvi és matekos teljesítménye), illetve tartalmazott néhány, a teszthez kapcsolódó egyéb információt is (például a teszthez használt edubase jelszó, felhasználónév). Természetesen nekünk ennyi adat nem kell, úgyhogy ebből az adattáblából jó pár irreleváns oszlopot ki kellett szűrnünk. Amelyeket meghagytunk, azok az alábbiak: a hallgató neve (ez már elég volt, hogy csak ez alapján fűzzük össze a táblákat) és Neptun kódja; emelt érettségit tett-e matematikából; reál/matematika tagozatos volt-e; szak és tankör; az elért pont és százalékos teljesítmény a nyelvi és matekos részben, valamint összességében. Problémát jelentett még, hogy a ’Szak’ mezőben mindenki másképp írta be azt, hogy melyik szakon tanul, így ezt szabványosítani kellett, ha később szakok szerint akartunk vizsgálódni. Erre a feladatra külön Python kódot írtunk, és ha volt olyan mező, ahol nem tudtuk eldönteni, hogy mi lenne az oda tartozó érték (például mert ’VBK’ volt odaírva), arra bevezettünk egy globális ’UNKNOWN’ változóértéket, azonban szerencsére ilyenből kevés volt. Kicsit még tisztítani kellett a ’Tankör’ értékeken is, de mivel ilyenből kevés volt, ezt manuálisan is meg tudtuk tenni.
-A 0. ZH eredményeket tartalmazó tábla szerencsére ennél jóval kisebb volt, csak a hallgató nevét, Neptun kódját, képzés nevét, illetve kódját, felvétel évét, valamint a ZH eredményt tartalmazta. Ebből értelemszerűen csak a névre és az eredményre volt szükségünk, a többi elhagyható.
-
-A felvételi pontszámokat bontva (hozott pont, érettségi, többletpont) tartalmazó tábla hallgatók nevén és születési dátumán kívül tartalmazott még pár, a felvételi eljáráshoz és felvételi döntéshez kapcsolódó adatot, illetve a ponthatárt. Ebből a táblából csak a név és a pontokat tartalmazó oszlopok kellettek, a többit elvethettük.
-
-A Matematika A1a jegyeket tartalmazó táblával már több dolgunk volt, mint az előző kettő esetben. Először is minden személyhez több rekord tartozhatott, legalább egy az A1a jegyhez, lehetett még egy az A2c jegyhez (nyilván csak azoknak, akik elvégezték az A1a-t, és ott maradtak az egyetemen), illetve, ha egy korábbi, nem a végleges jegyet eredményező vizsgán egy hallgató megbukott, akkor ahhoz is tartozott egy rekord. Az attribútumok között a hallgató nevén, Neptun kódján és az osztályzatán kívül szerepelt még a felvétel éve, képzés neve, kódja, státusz ID (Aktív, elbocsátott stb.), Pénzügyi státusz (állami/önköltséges), a tantárgy neve, kódja, kreditértéke, jegy típusa, bejegyzés dátuma, illetve, hogy elismert és hogy érvényes-e az adott jegy. Ezekből az adatokból nekünk csak a hallgató nevére és jegyértékeire volt szükségünk, ráadásul olyan formában, hogy minden sor egy hallgatóhoz tartozzon, és az oszlopok a tantárgyakból szerzett jegyeket tartalmazzák. Ehhez először Pythonban kiszűrtük az irreleváns oszlopokat, majd ’crosstab’-eléssel a kívánt formára hoztuk az adatokat, ahol még ügyelni kellett arra, hogy a korábbi vizsgajegyek ne kerüljenek bele, tehát minden hallgatóhoz tárgyanként csak egy jegy tartozzon. Ezen kívül még, mivel az érdemjegyek szövegesen voltak megadva’, azokat számszerűvé alakítottuk, hogy majd a későbbiekben könnyebb legyen velük dolgozni.
-
-Egy külön adattábla tartalmazta még a kognitív eredményeknél a matekos eredményt blokkokra lebontva, amely valójában az elsőként tekintett adattáblának volt egy egyszerűsített, kevesebb attribútummal bíró változata. Ebből az adattáblából csak a hallgatók nevére, illetve a blokkonkénti teljesítményre volt szükségünk, a többit elhagytuk.
-
-Így már rendelkezésünkre állt az összes tábla, egyenként tisztítva, és már csak az összefűzés volt hátra, amit R-ben könnyen meg tudtunk tenni, valamint még a végén rendeztük az oszlopok sorrendjét, hogy az adathalmaz logikus szerkezetű legyen. Fontos megjegyezni azonban, hogy nem minden elsőéves írt abban az évben kognitív tesztet, így összefűzés során (ahol valójában ’inner-join’-oltunk) kevesebb sorunk lett, mint ahányan abban az évben a BME VBK karára felvételt nyertek.
-A legvégén az így kapott adathalmaz 231 rekorddal és 21 oszloppal rendelkezett, amelyek között még esetlegesen szűrtünk különböző algoritmusok használata során.
-
+A táblák összetűzése Neptun-kód alapján történt belső illesztés alkalmazásával. Azonban voltak olyan hallgatók, akikről nem minden táblában volt adat (vagy azért, mert nem írtak kognitív tesztet, vagy azért, mert az első félév vége előtt elhagyták a szakot), így az összeillesztés során 10-20 fős sorvesztéssel kellett számolnunk mindkét évben. Az így kapott adattáblák, amelyek a 2019-es és 2021-es évet reprezentálják, rendre 200 és 220 adatrekordot tartalmaztak, valamint mindkét tábla 16 attribútumaml rendelkezett, amelyek rendre a ['Neptun'], ['Hallgató neve'], ['Matematika tagozat'], ['Emelt érettségi'] ['Szak'], ['Matematika 1. blokk'], ['Matematika 2. blokk'], ['Matematika 3. blokk'], ['Matematika eredmény'], ['Kognitív eredmény'], ['0. ZH pontszám'], ['Tanulmányi pont'] ['Érettségi pont'], ['Többletpont'], ['Matematika A1a jegy'] ,['Kumulált átlag'].
 
 
 \section{Felderítő adatelemzés a két évben}
@@ -254,7 +243,7 @@ Valamennyi modellnél a teljes adathalmazt felbontottuk tanító- és teszthalma
 - Maximális famélység (3,4 és 5)
 \item[•] \textbf{Logisztikus regresszió}: \\
 - Regularizációs paraméter (0.05 és 5 között változtatva 0.05-ös lépésközzel) \\
-- Optimalizálási módszer ("SAG", "SAGA") 
+- Önoptimalizálási módszer ("SAG", "SAGA") 
 \item[•] \textbf{SVM}: \\
 - Regularizációs paraméter (0.1 és 5 között változtatva 0.1-es lépésközzel)\\
 - Magfüggvény (lineáris, legfeljebb 3-ad fokú polinomiális, RBF)
@@ -301,7 +290,7 @@ A megfelelő metrikák mellett kiválasztottuk a legjobb algoritmusokat, amelyek
 \label{tab:multicol1}
 \end{table}
 
-Az \ref{tab:multicol1}. táblázatban a 2019-es adatokra optimalizált modellek teljesítménye látható, ahol az első 3 oszlop a modellt és a használt főkomponensek (PC) számát mutatja, míg a jobb oldali 5 oszlop az optimalizált algoritmusok teljesítményét szemlélteti. A szakonkénti bontásban szereplő teljesítménymutatók értékei a vegyész- és biomérnök hallgatók adatain elért pontszámok, az egyes szakokon tanuló hallgatók számával vett súlyozott átlagai. A 3 csoport modellek esetén a Gradient Boosting algoritmus, míg a 2 csoport modellek esetén a regressziós algoritmusok teljesítettek a legjobban, ugyanakkor a 2 csoport modellek teljesítménye többségében alulmúlja a 3 csoport modellekét. Mivel a 2 csoport modellben az osztályok eloszlása kiegyensúlyozottabb, ez arra enged minket következtetni, hogy a 2-es és 3-as érdemjegyet szerzők között a bemeneti adatok tekintetében nincsenek nagy különbségek.
+Az \ref{tab:multicol1}. táblázatban a 2019-es adatokra optimalizált modellek teljesítménye látható, ahol az első három oszlop a modellt és a használt főkomponensek (PC) számát mutatja, míg a jobb oldali öt oszlop az optimalizált algoritmusok teljesítményét szemlélteti. A szakonkénti bontásban szereplő teljesítménymutatók értékei a vegyész- és biomérnök hallgatók adatain elért pontszámok, az egyes szakokon tanuló hallgatók számával vett súlyozott átlagai. A 3 csoport modellek esetén a Gradient Boosting algoritmus, míg a 2 csoport modellek esetén a regressziós algoritmusok teljesítettek a legjobban, ugyanakkor a 2 csoport modellek teljesítménye többségében alulmúlja a 3 csoport modellekét. Mivel a 2 csoport modellben az osztályok eloszlása kiegyensúlyozottabb, ez arra enged minket következtetni, hogy a 2-es és 3-as érdemjegyet szerzők között a bemeneti adatok tekintetében nincsenek nagy különbségek.
 
 \begin{table}[H]
 \centering

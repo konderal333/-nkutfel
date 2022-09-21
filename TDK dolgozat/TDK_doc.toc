@@ -1,19 +1,20 @@
 \select@language {magyar} \contentsline {section}{\numberline {1}Bevezetés}{1}{section.1}%
-\select@language {magyar} \contentsline {section}{\numberline {2}A kognitív tesztről}{1}{section.2}%
-\select@language {magyar} \contentsline {section}{\numberline {3}Adatprepació}{1}{section.3}%
-\select@language {magyar} \contentsline {subsection}{\numberline {3.1}Az adatok beszerzése, adattáblák jellemzése}{1}{subsection.3.1}%
-\select@language {magyar} \contentsline {subsection}{\numberline {3.2}Adattisztítás}{1}{subsection.3.2}%
-\select@language {magyar} \contentsline {section}{\numberline {4}Felderítő adatelemzés a két évben}{4}{section.4}%
-\select@language {magyar} \contentsline {subsection}{\numberline {4.1}Általános ábrák}{4}{subsection.4.1}%
-\select@language {magyar} \contentsline {subsection}{\numberline {4.2}Folyamatábrák (Sankey-diagramok)}{4}{subsection.4.2}%
-\select@language {magyar} \contentsline {subsection}{\numberline {4.3}Klaszterezés}{6}{subsection.4.3}%
-\select@language {magyar} \contentsline {section}{\numberline {5}Prediktív analitika}{6}{section.5}%
-\select@language {magyar} \contentsline {subsection}{\numberline {5.1}Modellek és metodológia}{6}{subsection.5.1}%
-\select@language {magyar} \contentsline {subsection}{\numberline {5.2}Osztályozó algoritmusok}{7}{subsection.5.2}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {5.2.1}Lineáris regresszió}{7}{subsubsection.5.2.1}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {5.2.2}Naive Bayes}{7}{subsubsection.5.2.2}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {5.2.3}Gradient Tree Boosting}{7}{subsubsection.5.2.3}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {5.2.4}Logisztikus regresszió}{7}{subsubsection.5.2.4}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {5.2.5}SVM}{8}{subsubsection.5.2.5}%
-\select@language {magyar} \contentsline {subsection}{\numberline {5.3}Implementálás és optimalizálás}{8}{subsection.5.3}%
-\select@language {magyar} \contentsline {section}{\numberline {6}Modellek kiértékelése}{9}{section.6}%
+\select@language {magyar} \contentsline {section}{\numberline {2}Fogalmak és definíciók}{1}{section.2}%
+\select@language {magyar} \contentsline {section}{\numberline {3}A kognitív tesztről}{2}{section.3}%
+\select@language {magyar} \contentsline {section}{\numberline {4}Adatprepació}{2}{section.4}%
+\select@language {magyar} \contentsline {subsection}{\numberline {4.1}Az adatok beszerzése, adattáblák jellemzése}{2}{subsection.4.1}%
+\select@language {magyar} \contentsline {subsection}{\numberline {4.2}Adattisztítás}{2}{subsection.4.2}%
+\select@language {magyar} \contentsline {section}{\numberline {5}Felderítő adatelemzés a két évben}{3}{section.5}%
+\select@language {magyar} \contentsline {subsection}{\numberline {5.1}Általános ábrák}{3}{subsection.5.1}%
+\select@language {magyar} \contentsline {subsection}{\numberline {5.2}Folyamatábrák (Sankey-diagramok)}{3}{subsection.5.2}%
+\select@language {magyar} \contentsline {subsection}{\numberline {5.3}Klaszterezés}{5}{subsection.5.3}%
+\select@language {magyar} \contentsline {section}{\numberline {6}Prediktív analitika}{5}{section.6}%
+\select@language {magyar} \contentsline {subsection}{\numberline {6.1}Modellek és metodológia}{5}{subsection.6.1}%
+\select@language {magyar} \contentsline {subsection}{\numberline {6.2}Osztályozó algoritmusok}{6}{subsection.6.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {6.2.1}Lineáris regresszió}{6}{subsubsection.6.2.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {6.2.2}Naive Bayes}{6}{subsubsection.6.2.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {6.2.3}Gradient Tree Boosting}{7}{subsubsection.6.2.3}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {6.2.4}Logisztikus regresszió}{7}{subsubsection.6.2.4}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {6.2.5}SVM}{7}{subsubsection.6.2.5}%
+\select@language {magyar} \contentsline {subsection}{\numberline {6.3}Implementálás és optimalizálás}{7}{subsection.6.3}%
+\select@language {magyar} \contentsline {section}{\numberline {7}Modellek kiértékelése}{9}{section.7}%
