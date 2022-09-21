@@ -3,7 +3,7 @@
 \select@language {magyar} \contentsline {section}{\numberline {3}Adatprepació}{1}{section.3}%
 \select@language {magyar} \contentsline {subsection}{\numberline {3.1}Az adatok beszerzése, adattáblák jellemzése}{1}{subsection.3.1}%
 \select@language {magyar} \contentsline {subsection}{\numberline {3.2}Adattisztítás}{1}{subsection.3.2}%
-\select@language {magyar} \contentsline {section}{\numberline {4}Felderítő adatelemzés a két évben}{3}{section.4}%
+\select@language {magyar} \contentsline {section}{\numberline {4}Felderítő adatelemzés a két évben}{4}{section.4}%
 \select@language {magyar} \contentsline {subsection}{\numberline {4.1}Általános ábrák}{4}{subsection.4.1}%
 \select@language {magyar} \contentsline {subsection}{\numberline {4.2}Folyamatábrák (Sankey-diagramok)}{4}{subsection.4.2}%
 \select@language {magyar} \contentsline {subsection}{\numberline {4.3}Klaszterezés}{6}{subsection.4.3}%
