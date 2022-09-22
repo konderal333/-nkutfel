@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 21.12) (preloaded format=pdflatex 2022.2.14)  21 SEP 2022 22:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 21.12) (preloaded format=pdflatex 2022.2.14)  22 SEP 2022 19:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1165,17 +1165,28 @@ Overfull \hbox (1.51726pt too wide) in paragraph at lines 297--322
 
 [9]
 
-LaTeX Warning: Empty `thebibliography' environment on input line 340.
+Package caption Warning: \label without proper reference on input line 332.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `fig:variables' on page 10 undefined on input line 328
+.
+
+
+LaTeX Warning: Empty `thebibliography' environment on input line 348.
 
 [10] (TDK_doc.aux)
+
+LaTeX Warning: There were undefined references.
+
 Package rerunfilecheck Info: File `TDK_doc.out' has not changed.
 (rerunfilecheck)             Checksum: 955411227623149F2B3F59EA0B6F6359;3325.
  ) 
 Here is how much of TeX's memory you used:
- 35530 strings out of 478659
- 819237 string characters out of 2845920
- 1187717 words of memory out of 3000000
- 52995 multiletter control sequences out of 15000+600000
+ 35533 strings out of 478659
+ 819286 string characters out of 2845920
+ 1187807 words of memory out of 3000000
+ 52997 multiletter control sequences out of 15000+600000
  463416 words of font info for 72 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  100i,11n,104p,1301b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1197,9 +1208,9 @@ AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/kolle/Ap
 pData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/Users/kolle/Ap
 pData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/kolle/Ap
 pData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy5.pfb>
-Output written on TDK_doc.pdf (11 pages, 424262 bytes).
+Output written on TDK_doc.pdf (11 pages, 425825 bytes).
 PDF statistics:
- 260 PDF objects out of 1000 (max. 8388607)
- 40 named destinations out of 1000 (max. 500000)
+ 263 PDF objects out of 1000 (max. 8388607)
+ 41 named destinations out of 1000 (max. 500000)
  183 words of extra memory for PDF output out of 10000 (max. 10000000)
 
