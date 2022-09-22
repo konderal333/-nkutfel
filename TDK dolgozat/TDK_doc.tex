@@ -4,7 +4,8 @@
 \usepackage[utf8]{inputenc}  
 \usepackage[magyar]{babel}   
 \usepackage{lmodern}
-\usepackage{caption}        
+\usepackage{caption}       
+\usepackage{makecell} 
  
 \usepackage{amsmath,amssymb}
 \usepackage{tikz, pgfplots}
@@ -87,6 +88,9 @@
 
 
 \section{Bevezetés}
+....
+
+A dolgozat első felében a 2019-es és 2021-es évek adatain végzett adatelemzés kerül bemutatásra, ahol a többféle bemeneti adat és mérőszám egymáshoz való viszonyát és az adatrekordok klaszterezhetőségét vizsgáltuk és hasonlítottuk össze a két évben. A dolgozat második fele prediktív analitikával foglalkozik, ahol gépi tanulás segítségével első félév végi teljesítménymutatók prediktálhatóságát vizsgáltuk, illetve azt, hogy a predikciót végző algoritmusok és modellek esetén mely változók milyen mértékben befolyásolták a jósolt eredményt.
 
 \section{Fogalmak és definíciók}
 
@@ -100,13 +104,44 @@ A dolgozatban tárgyalt módszerek megértéséhez szükséges néhány fogalom 
 
 \section{Adatprepació}
 
-\subsection{Az adatok beszerzése, adattáblák jellemzése}
+\subsection{Adattáblák jellemzése, adattisztítás}
 
-Az adatokat Szilágyi Brigitta tanárnő bocsátotta rendelkezésünkre. A kutatáshoz összesen 4 fajta bemeneti adatot vizsgáltunk: felvételi pontszám (3 részre bontva: tanulmányi pont, érettségi pont és többletpont), a 0. ZH-n elért pontszám, a kognitív teszten elért teljesítmény valamint bináris változók arra vonatkozóan, hogy emelt érettségit tett-e a hallgató illetve matematika tagozatos volt-e. Ezen adatok különböző adattáblákban voltak tárolva .
+Az adatokat az EduBase és Neptun rendszerből lekérve több adattábla Neptun-kód alapú összeillesztésével nyertük. A kutatáshoz használt adatok mind olyanok, amelyek, illetve teljesítménymutatók, amelyekről csak a félév végén lesz információnk (utóbbiak prediktálására építünk modelleket a prediktív analitikai részben). A változók pontos megnevezése és adatstruktúrája:
+\begin{table}
+\centering
+\begin{tabular}{|c|c|}
+\hline
+Emelt érettségi & \makecell{Bináris változó arra vonatkozóan, hogy \\a hallgató matematikából emelt érettségit tett-e.}\\
+\hline
+Matematika tagozat & \makecell{Bináris változó arra vonatkozóan, hogy\\ a hallgató matematika tagozatos volt-e.} \\
+\hline
+Szak & Kategorikus változó, a hallgató szaka a VBK-n. \\
+\hline
+Matematika 1. blokk & \makecell{Diszkrét változó, az elsőéves VBK hallgatók által írt kognitív teszt\\ matematika részének 1-4. kérdésekre adott helyes válaszok száma.} \\
+\hline
+Matematika 2. blokk & \makecell{Diszkrét változó, a kognitív teszt \\5-10. kérdésekre adott helyes válaszok száma.} \\
+\hline
+Matematika 3. blokk & \makecell{Diszkrét változó, a kognitív teszt \\11-14. kérdésekre adott helyes válaszok száma.} \\
+\hline
+Matematika eredmény & \makecell{Folytonos változó, a kognitív teszt matematika részén\\ elért százalékos teljesítmény (0-100-as skálán).} \\
+\hline
+Kognitív eredmény & \makecell{Folytonos változó, a kognitív teszt kognitív készségeket mérő részén\\ elért százalékos teljesítmény (0-100-as skálán).}\\
+\hline
+0. ZH pontszám & Diszkrét változó, a BME központi 0. ZH-n elért pontszám. \\
+\hline
+Tanulmányi pont & Diszkrét változó, a felvételi pontszám tanulmányi pontokból származó része \\
+\hline
+Érettségi pont & Diszkrét változó, a felvételi pontszám érettségi pontokból származó része \\
+\hline
+Többletpont & Diszkrét változó, a felvételi pontszám többletpontokból származó része \\
+\hline
+Matematika A1a
 
 
-
-\subsection{Adattisztítás}
+\end{tabular}
+\caption{A vizsgált változók a két évben}
+\label{tab:valtozok}
+\end{table}
 
 A felderítő és modellezési fázisban használt adattáblát a rendelkezésre álló táblák megfelelő mértékű tisztításából, majd ezt követő összeillesztéséből nyertük. Ezen műveleteket Python-ban valamint R-ben végeztük el.
 
