@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 21.12) (preloaded format=pdflatex 2022.2.14)  22 SEP 2022 22:42
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 21.12) (preloaded format=pdflatex 2022.2.14)  23 SEP 2022 09:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -130,6 +130,9 @@ Package: array 2021/10/04 v2.5f Tabular extension package (FMi)
 \rotheadsize=\dimen150
 \c@nlinenum=\count197
 \TeXr@lab=\toks20
+)
+(C:\Users\kolle\AppData\Local\Programs\MiKTeX\tex/latex/shipunov\boldline.sty
+Package: boldline 2008/02/04 v0.2 Adjust line width in tables
 )
 (C:\Users\kolle\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
 Package: amsmath 2021/10/15 v2.17l AMS math features
@@ -960,7 +963,7 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 
 (C:\Users\kolle\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg))
 \c@definition=\count337
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 39
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 40
 .
 (C:\Users\kolle\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -973,24 +976,24 @@ File: l3backend-pdftex.def 2021-10-18 L3 backend support: PDF output (pdfTeX)
 ) (TDK_doc.aux)
 \openout1 = `TDK_doc.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
@@ -1026,9 +1029,9 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
 ick labels; missing features). Consider writing \pgfplotsset{compat=1.18} into 
 your preamble.
- on input line 39.
+ on input line 40.
 
-Package hyperref Info: Link coloring OFF on input line 39.
+Package hyperref Info: Link coloring OFF on input line 40.
 (C:\Users\kolle\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
 
@@ -1041,9 +1044,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count345
 )
-LaTeX Info: Redefining \ref on input line 39.
-LaTeX Info: Redefining \pageref on input line 39.
-LaTeX Info: Redefining \nameref on input line 39.
+LaTeX Info: Redefining \ref on input line 40.
+LaTeX Info: Redefining \pageref on input line 40.
+LaTeX Info: Redefining \nameref on input line 40.
  (TDK_doc.out) (TDK_doc.out)
 \@outlinefile=\write4
 \openout4 = `TDK_doc.out'.
@@ -1090,12 +1093,12 @@ LaTeX Info: Redefining \mit on input line 498.
 <kepek/bme_logo_kicsi.jpg, id=82, 523.2348pt x 168.1482pt>
 File: kepek/bme_logo_kicsi.jpg Graphic file (type jpg)
 <use kepek/bme_logo_kicsi.jpg>
-Package pdftex.def Info: kepek/bme_logo_kicsi.jpg  used on input line 44.
+Package pdftex.def Info: kepek/bme_logo_kicsi.jpg  used on input line 45.
 (pdftex.def)             Requested size: 273.14923pt x 87.78136pt.
 <kepek/bme_cimer.jpg, id=83, 100.2144pt x 99.7326pt>
 File: kepek/bme_cimer.jpg Graphic file (type jpg)
 <use kepek/bme_cimer.jpg>
-Package pdftex.def Info: kepek/bme_cimer.jpg  used on input line 76.
+Package pdftex.def Info: kepek/bme_cimer.jpg  used on input line 77.
 (pdftex.def)             Requested size: 136.57462pt x 135.9328pt.
 
 [1
@@ -1151,64 +1154,60 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.98 \begin{itemize}
+l.99 \begin{itemize}
                      [1]
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 9
-9.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
+00.
 
 (C:\Users\kolle\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-Overfull \hbox (73.99213pt too wide) in paragraph at lines 112--142
- [][] 
- []
-
-[2] [3] [4]
-Underfull \hbox (badness 10000) in paragraph at lines 170--171
+) [2]
+[3] [4]
+Underfull \hbox (badness 10000) in paragraph at lines 172--173
 
  []
 
 [5] [6] [7]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 255.
+(Font)              <10> on input line 257.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 255.
+(Font)              <7> on input line 257.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 255.
+(Font)              <5> on input line 257.
  [8]
-Overfull \hbox (2.50052pt too wide) in paragraph at lines 298--324
+Overfull \hbox (2.50052pt too wide) in paragraph at lines 300--326
  [][] 
  []
 
 [9]
-Overfull \hbox (1.91725pt too wide) in paragraph at lines 332--357
+Overfull \hbox (1.91725pt too wide) in paragraph at lines 334--359
  [][] 
  []
 
 [10]
 
-Package caption Warning: \label without proper reference on input line 367.
+Package caption Warning: \label without proper reference on input line 369.
 See the caption package documentation for explanation.
 
 
-LaTeX Warning: Reference `fig:variables' on page 11 undefined on input line 363
+LaTeX Warning: Reference `fig:variables' on page 11 undefined on input line 365
 .
 
 
-LaTeX Warning: Empty `thebibliography' environment on input line 383.
+LaTeX Warning: Empty `thebibliography' environment on input line 385.
 
 [11] (TDK_doc.aux)
 
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `TDK_doc.out' has not changed.
-(rerunfilecheck)             Checksum: FE30C3A873BFCBB1A15A8885F904ABF6;3158.
+(rerunfilecheck)             Checksum: F5841D080C6F2AA0D9C37FCEBE59B204;3132.
  ) 
 Here is how much of TeX's memory you used:
- 35768 strings out of 478659
- 822549 string characters out of 2845920
- 1191750 words of memory out of 3000000
- 53225 multiletter control sequences out of 15000+600000
+ 35804 strings out of 478659
+ 823416 string characters out of 2845920
+ 1191923 words of memory out of 3000000
+ 53257 multiletter control sequences out of 15000+600000
  463416 words of font info for 72 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  100i,18n,104p,1301b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1230,9 +1229,9 @@ AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/kolle/Ap
 pData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/Users/kolle/Ap
 pData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/kolle/Ap
 pData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy5.pfb>
-Output written on TDK_doc.pdf (12 pages, 427322 bytes).
+Output written on TDK_doc.pdf (12 pages, 427385 bytes).
 PDF statistics:
- 263 PDF objects out of 1000 (max. 8388607)
+ 264 PDF objects out of 1000 (max. 8388607)
  42 named destinations out of 1000 (max. 500000)
  175 words of extra memory for PDF output out of 10000 (max. 10000000)
 

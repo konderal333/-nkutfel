@@ -5,7 +5,8 @@
 \usepackage[magyar]{babel}   
 \usepackage{lmodern}
 \usepackage{caption}       
-\usepackage{makecell} 
+\usepackage{makecell}
+\usepackage{boldline} 
  
 \usepackage{amsmath,amssymb}
 \usepackage{tikz, pgfplots}
@@ -104,9 +105,9 @@ A dolgozatban tárgyalt módszerek megértéséhez szükséges néhány fogalom 
 
 \section{Adatprepació}
 
-\subsection{Adattáblák jellemzése, adattisztítás}
+\subsection{Adatok jellemzése, adattisztítás}
 
-Az adatokat az EduBase és Neptun rendszerből lekérve több adattábla Neptun-kód alapú összeillesztésével nyertük. A kutatáshoz használt adatok mind olyanok, amelyek, illetve teljesítménymutatók, amelyekről csak a félév végén lesz információnk (utóbbiak prediktálására építünk modelleket a prediktív analitikai részben). A változók pontos megnevezése és adatstruktúrája:
+Az adatokat az EduBase és Neptun rendszerből lekérve nyertük több adattábla formájában. A táblákból a kutatáshoz használt adatok egyrészt olyan bemeneti adatok, amelyeket a szemeszter első hetéig bezárólag érnek el a hallgatók, másrészt olyan teljesítménymutatók, amelyekről csak a félév végén van információnk (utóbbiak prediktálására építünk modelleket a prediktív analitikai részben). Ezek egy része alapvetően rendelkezésünkre állt a táblákból, másokat megfelelő \textit{feature engineering} segítségével hoztunk létre. A változók pontos megnevezése és adatstruktúrája az \ref{tab:valtozok}. táblázatban látható.
 \begin{table}
 \centering
 \begin{tabular}{|c|c|}
@@ -117,25 +118,28 @@ Matematika tagozat & \makecell{Bináris változó arra vonatkozóan, hogy\\ a ha
 \hline
 Szak & Kategorikus változó, a hallgató szaka a VBK-n. \\
 \hline
-Matematika 1. blokk & \makecell{Diszkrét változó, az elsőéves VBK hallgatók által írt kognitív teszt\\ matematika részének 1-4. kérdésekre adott helyes válaszok száma.} \\
+Matematika 1. blokk & \makecell{Az elsőéves VBK hallgatók által írt kognitív teszt\\ matematika részén az 1-4. kérdésekre adott \\helyes válaszok száma.} \\
 \hline
-Matematika 2. blokk & \makecell{Diszkrét változó, a kognitív teszt \\5-10. kérdésekre adott helyes válaszok száma.} \\
+Matematika 2. blokk & \makecell{A kognitív teszt matematika részén az \\5-10. kérdésekre adott helyes válaszok száma.} \\
 \hline
-Matematika 3. blokk & \makecell{Diszkrét változó, a kognitív teszt \\11-14. kérdésekre adott helyes válaszok száma.} \\
+Matematika 3. blokk & \makecell{A kognitív teszt matematika részén a\\11-14. kérdésekre adott helyes válaszok száma.} \\
 \hline
-Matematika eredmény & \makecell{Folytonos változó, a kognitív teszt matematika részén\\ elért százalékos teljesítmény (0-100-as skálán).} \\
+Matematika eredmény & \makecell{A kognitív teszt matematika részén\\ elért százalékos teljesítmény (0-100-as skálán).} \\
 \hline
-Kognitív eredmény & \makecell{Folytonos változó, a kognitív teszt kognitív készségeket mérő részén\\ elért százalékos teljesítmény (0-100-as skálán).}\\
+Kognitív eredmény & \makecell{A kognitív teszt kognitív készségeket mérő részén\\ elért százalékos teljesítmény (0-100-as skálán).}\\
 \hline
-0. ZH pontszám & Diszkrét változó, a BME központi 0. ZH-n elért pontszám. \\
+0. ZH pontszám & A BME központi 0. ZH-n elért pontszám. \\
 \hline
-Tanulmányi pont & Diszkrét változó, a felvételi pontszám tanulmányi pontokból származó része \\
+Tanulmányi pont & A felvételi pontszám tanulmányi pontokból származó része. \\
 \hline
-Érettségi pont & Diszkrét változó, a felvételi pontszám érettségi pontokból származó része \\
+Érettségi pont & A felvételi pontszám érettségi pontokból származó része. \\
 \hline
-Többletpont & Diszkrét változó, a felvételi pontszám többletpontokból származó része \\
+Többletpont & A felvételi pontszám többletpontokból származó része. \\
+\hlineB{5}
+Matematika A1a & A Matematika A1a tárgyból szerzett érdemjegy. \\
 \hline
-Matematika A1a
+Kumulált átlag & Az első félév végén megállapított kumulált átlag. \\
+\hline
 
 
 \end{tabular}
@@ -143,13 +147,11 @@ Matematika A1a
 \label{tab:valtozok}
 \end{table}
 
-A felderítő és modellezési fázisban használt adattáblát a rendelkezésre álló táblák megfelelő mértékű tisztításából, majd ezt követő összeillesztéséből nyertük. Ezen műveleteket Python-ban valamint R-ben végeztük el.
+A felderítő és modellezési fázisban használt adattáblát a rendelkezésre álló táblák megfelelő mértékű tisztításából, majd ezt követő Neptun-kód alapú összeillesztéséből nyertük. Ezen műveleteket Python-ban valamint R-ben végeztük el.
 
-A kezdeti adattáblák közül a matematika és kognitív eredményeket tartalmazó adatsor tisztítása során először egységesítettük a szakmegnevezést ("Vegyészmérnöki", "Biomérnöki", "Környezetmérnöki"), ahol pedig nem volt egyértelmű a szak, azt "UNKNOWN"-ra állítottuk. Ezt követően a teszten elért matematika és kognitív eredményt százalékos formátumról (tizedesjegy?) formátumra változtattuk, valamint létrehoztunk 3 új oszlopot, amely a matematikateszt 3 blokkjában helyesen megválaszolt kérdések számát mutatja. Végül a vizsgálataink szempontjából irreleváns oszlopokat eltávolítottuk, valamint azon oszlopokat is kiszűrtük, amelyek értéke a többiből egyértelműen kikövetkeztethető volt. 
+A kezdeti adattáblák közül a matematika és kognitív eredményeket tartalmazó adatsor tisztítására volt a legnagyobb szükség, ugyanis az EduBase rendszerben az egyes oszlopokra vonatozó mezőket a hallgatók töltötték ki, így a kategorikus változók nem voltak rendszerezve. Először egységesítettük a szakmegnevezést ("Vegyészmérnöki", "Biomérnöki", "Környezetmérnöki"), ahol pedig nem volt egyértelmű a szak, azt "UNKNOWN"-ra állítottuk. Ezt követően a teszten elért matematika és kognitív eredményt százalékos formátumról 0-1 közötti tizedestört formátumra változtattuk, valamint létrehoztunk 3 új oszlopot, amely a matematikateszt 3 blokkjában helyesen megválaszolt kérdések számát mutatja. Végül a vizsgálataink szempontjából irreleváns oszlopokat eltávolítottuk, valamint azon oszlopokat is kiszűrtük, amelyek értéke a többiből egyértelműen kikövetkeztethető volt. 
 
-A kumulált átlagokat, felvételi pontszámokat illetve 0. ZH eredményeket tartalmazó tábláknál egy-egy sor eltávolításán kívül nem volt szükség adattisztításra, a matematika jegyeket tartalmazó tábla esetén pedig minden hallgató esetén meg kellett határozni azt az érdemjegyet, amellyel a tárgyat elvégezte.
-
-A táblák összetűzése Neptun-kód alapján történt belső illesztés alkalmazásával. Azonban voltak olyan hallgatók, akikről nem minden táblában volt adat (vagy azért, mert nem írtak kognitív tesztet, vagy azért, mert az első félév vége előtt elhagyták a szakot), így az összeillesztés során 10-20 fős sorvesztéssel kellett számolnunk mindkét évben. Az így kapott adattáblák, amelyek a 2019-es és 2021-es évet reprezentálják, rendre 200 és 220 adatrekordot tartalmaztak, valamint mindkét tábla 16 attribútumaml rendelkezett, amelyek rendre a ['Neptun'], ['Hallgató neve'], ['Matematika tagozat'], ['Emelt érettségi'] ['Szak'], ['Matematika 1. blokk'], ['Matematika 2. blokk'], ['Matematika 3. blokk'], ['Matematika eredmény'], ['Kognitív eredmény'], ['0. ZH pontszám'], ['Tanulmányi pont'] ['Érettségi pont'], ['Többletpont'], ['Matematika A1a jegy'] ,['Kumulált átlag'].
+A kumulált átlagokat, felvételi pontszámokat illetve 0. ZH eredményeket tartalmazó tábláknál egy-egy hiányos és/vagy anomáliás sor, illetve az irreleváns oszlopok eltávolításán kívül nem volt szükség adattisztításra, a matematika jegyeket tartalmazó tábla pedig minden hallgató minden Matematika A1a tárgyból tett vizsgaalkalmáról és az azon szerzett érdemjegyről tartalmazott adatrekordot, így ezekből meg kellett határozni azt a végső érdemjegyet, amellyel a hallgató a tárgyat elvégezte. A végső összeillesztés során 10-20 fős sorvesztéssel is kellett számolnunk mindkét évben, ugyanis voltak olyan hallgatók, akikről nem minden táblában volt adat (vagy azért, mert nem írtak kognitív tesztet, vagy azért, mert az első félév vége előtt elhagyták a szakot). Az így kapott adattáblák, amelyek a 2019-es és 2021-es évet reprezentálják, rendre 200 és 220 adatrekordot tartalmaztak.
 
 
 \section{Felderítő adatelemzés a két évben}
