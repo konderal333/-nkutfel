@@ -108,7 +108,7 @@ A dolgozatban tárgyalt módszerek megértéséhez szükséges néhány fogalom 
 \subsection{Adatok jellemzése, adattisztítás}
 
 Az adatokat az EduBase és Neptun rendszerből lekérve nyertük több adattábla formájában. A táblákból a kutatáshoz használt adatok egyrészt olyan bemeneti adatok, amelyeket a szemeszter első hetéig bezárólag érnek el a hallgatók, másrészt olyan teljesítménymutatók, amelyekről csak a félév végén van információnk (utóbbiak prediktálására építünk modelleket a prediktív analitikai részben). Ezek egy része alapvetően rendelkezésünkre állt a táblákból, másokat megfelelő \textit{feature engineering} segítségével hoztunk létre. A változók pontos megnevezése és adatstruktúrája az \ref{tab:valtozok}. táblázatban látható.
-\begin{table}
+\begin{table}[H]
 \centering
 \begin{tabular}{|c|c|}
 \hline
@@ -123,8 +123,8 @@ Matematika 1. blokk & \makecell{Az elsőéves VBK hallgatók által írt kognit�
 Matematika 2. blokk & \makecell{A kognitív teszt matematika részén az \\5-10. kérdésekre adott helyes válaszok száma.} \\
 \hline
 Matematika 3. blokk & \makecell{A kognitív teszt matematika részén a\\11-14. kérdésekre adott helyes válaszok száma.} \\
-\hline
-Matematika eredmény & \makecell{A kognitív teszt matematika részén\\ elért százalékos teljesítmény (0-100-as skálán).} \\
+%\hline
+%Matematika eredmény & \makecell{A kognitív teszt matematika részén\\ elért százalékos teljesítmény (0-100-as skálán).} \\
 \hline
 Kognitív eredmény & \makecell{A kognitív teszt kognitív készségeket mérő részén\\ elért százalékos teljesítmény (0-100-as skálán).}\\
 \hline
@@ -284,12 +284,7 @@ Valamennyi modellnél a teljes adathalmazt felbontottuk tanító- és teszthalma
 \item[•] \textbf{SVM}: \\
 - Regularizációs paraméter (0.1 és 5 között változtatva 0.1-es lépésközzel)\\
 - Magfüggvény (lineáris, legfeljebb 3-ad fokú polinomiális, RBF)
-\end{itemize}A PCA esetében a főkomponensek számát 2 és 8 között változtattuk 2-es lépésközzel, az algoritmusokat minden főkomponensszám mellett 5-szörös keresztvalidációval optimalizáltuk. Az optimalizálásnál használt metrikák: 
-\begin{itemize}
-\item[--]A 2 csoport modell esetén az \textbf{F1-érték}, amely a Precision és a Recall harmonikus közepe, melyek közül a Precision jelöli, hogy az 1-es címkéjűnek osztályozott
-\item[--]A 3 csoport modell esetén a \textbf{Kiegyensúlyozott pontosság} (Balanced Accuracy), amely címkeosztályok kiegyensúlyozatlanságát figyelembe véve az osztályokhoz tartozó Recall értékek számtani közepét adja vissza.
-\end{itemize}
-A megfelelő metrikák mellett kiválasztottuk a legjobb algoritmusokat, amelyeket a teszthalmazon visszamértünk.
+\end{itemize}A PCA esetében a főkomponensek számát 2 és 8 között változtattuk 2-es lépésközzel, az algoritmusokat minden főkomponensszám mellett 5-szörös keresztvalidációval optimalizáltuk. Az optimalizálásnál használt metrika a \textit{Kiegyensúlyozott pontosság} (Balanced Accuracy) volt, amely címkeosztályok kiegyensúlyozatlanságát figyelembe véve az osztályokhoz tartozó Recall értékek számtani közepét adja vissza. A választott metrika mellett meghatároztuk a legjobb algoritmusokat, amelyeket a teszthalmazon visszamértünk.
 
 
 

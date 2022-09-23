@@ -11,7 +11,7 @@
 \select@language {magyar} \contentsline {subsection}{\numberline {6.1}Modellek és metodológia}{6}{subsection.6.1}%
 \select@language {magyar} \contentsline {subsection}{\numberline {6.2}Osztályozó algoritmusok}{7}{subsection.6.2}%
 \select@language {magyar} \contentsline {subsubsection}{\numberline {6.2.1}Lineáris regresszió}{7}{subsubsection.6.2.1}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {6.2.2}Naive Bayes}{8}{subsubsection.6.2.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {6.2.2}Naive Bayes}{7}{subsubsection.6.2.2}%
 \select@language {magyar} \contentsline {subsubsection}{\numberline {6.2.3}Gradient Tree Boosting}{8}{subsubsection.6.2.3}%
 \select@language {magyar} \contentsline {subsubsection}{\numberline {6.2.4}Logisztikus regresszió}{8}{subsubsection.6.2.4}%
 \select@language {magyar} \contentsline {subsubsection}{\numberline {6.2.5}SVM}{8}{subsubsection.6.2.5}%
