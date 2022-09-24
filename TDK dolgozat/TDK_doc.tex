@@ -106,7 +106,7 @@ A dolgozatban tárgyalt módszerek megértéséhez szükséges néhány fogalom 
 
 \subsection{Adatok jellemzése, adattisztítás}
 
-Az adatokat az EduBase és Neptun rendszerből lekérve nyertük több adattábla formájában. A táblákból a kutatáshoz használt adatok egyrészt olyan bemeneti adatok, amelyeket a szemeszter első hetéig bezárólag érnek el a hallgatók, másrészt olyan teljesítménymutatók, amelyekről csak a félév végén van információnk (utóbbiak prediktálására építünk modelleket a prediktív analitikai részben). Ezek egy része alapvetően rendelkezésünkre állt a táblákból, másokat megfelelő \textit{feature engineering} segítségével hoztunk létre. A változók pontos megnevezése és adatstruktúrája az \ref{tab:valtozok}. táblázatban látható.
+Az adatokat az EduBase és Neptun rendszerből lekérve nyertük több adattábla formájában. A táblákból a kutatáshoz használt adatok egyrészt olyan bemeneti adatok, amelyeket a szemeszter első hetéig bezárólag érnek el a hallgatók, másrészt olyan teljesítménymutatók, amelyekről csak a félév végén van információnk (utóbbiak prediktálására építünk modelleket a prediktív analitikai részben). Ezek egy része alapvetően rendelkezésünkre állt a táblákból, másokat a meglévő sorokból és oszlopokból megfelelő \textit{feature engineering} segítségével hoztunk létre. A változók pontos megnevezése és jellege az \ref{tab:valtozok}. táblázatban látható.
 \begin{table}[H]
 \centering
 \begin{tabular}{|c|c|}
@@ -232,7 +232,7 @@ A 2 csoport modell esetén a két csoportot a \{5,4,3\} illetve \{2,1\} osztály
 Az egyes modellek és almodellek esetén a tanítás előtt főkomponens analízist (Principal Component Analysis) is alkalmaztunk. Az eljárás lényege, hogy az attribútumok súlyozott kombinációjával új attribútumokat hozunk létre, kevesebb számút mint az eredeti attribútumok száma, oly módon, hogy az információveszteség minimális legyen. Ennek következtében az adatok egy kisebb dimenziós térbe transzformálódnak át, s az ehhez használt megfelelő súlyozás pedig az attribútumok tapasztalati kovarianca mátrixának segítségével határozható meg. PCA használata során az algoritmusok gyorsabban tanulnak a kisebb dimenziószám miatt, és olykor jobb eredményt is érnek el. Jelen kutatásban másrészt azért is döntöttünk a PCA alkalmazása mellett, mert a korábbi, ugyanezen problémakört vizsgáló, általunk átnézett tanulmányok nem használtak PCA-t még nagyobb attribútum szám esetén sem, ugyanakkor mi a korai tanító-tesztelési fázisnál azt tapasztaltuk, hogy az áttranszformált adatokon jobban teljesítenek az osztályozó algoritmusok, így potenciálisan megéri alkalmazni.
 
 \subsubsection*{Implementálás}
-Valamennyi modellnél a teljes adathalmazt felbontottuk tanító- és teszthalmazra 70-30 arányban, majd a tanítóhalmazra illesztett PCA modellt alkalmaztuk a teszthalmazra is. Ezt követően a változókat kvantilis alapú 0-1 skálázásnak vetettük alá, ahol algoritmusok jobb teljesítőképessége és a változók kiértékelés utáni összehasonlíthatósága végett a különböző attribútumok értékeit a kvantilisek mentén a $\left[0, 1\right]$ intervallumba transzformáltuk át, valamint az érdemjegy csoportok prediktálásához a 2 és 3 csoport modelleknél a célváltozó-értékeket rendre 1, 0-ra illetve 2, 1, 0-ra módosítottuk. Az algoritmusok hiperparamétereinek optimális megválasztására \textit{5-szörös kersztvalidációt} alkalmaztunk. Keresztvalidáció során a tanítóhalmazt felbontjuk K egyenlő részre, melyek közül az egyiket kinevezzük validációs halmaznak. Ezt követően az algoritmusokat betanítjuk a maradék $K-1$ részen, amelyeket aztán a validációs halmazon kiértékelünk. Ezt összesen $K$ alkalommal ismételjük, mindig másik részt választva validációs halmaznak, majd azt az algoritmust dedikáljuk a legjobbnak amelynek az aggregált teljesítménye a $K$ darab iteráció során a legjobb. A keresztvalidációnál használt, jóságot mérő metrikának a \textit{kiegyensúlyozott pontosságot} (Balanced Accuracy) választottuk, amely a címkeosztályok kiegyensúlyozatlanságát figyelembe véve az egyes osztályokhoz tartozó Recall értékek számtani közepét adja vissza. A választott metrika mellett meghatároztuk a legjobb algoritmusokat, amelyeket a teszthalmazon visszamértünk, valamint kiértékeltük az ily módon választott modellek esetén az egyes változók fontosságát is. 
+Valamennyi modellnél a teljes adathalmazt felbontottuk tanító- és teszthalmazra 70-30 arányban, majd a tanítóhalmazra illesztett PCA modellt alkalmaztuk a teszthalmazra is. Ezt követően a változókat kvantilis alapú 0-1 skálázásnak vetettük alá, ahol az algoritmusok jobb teljesítőképessége és a változók kiértékelés utáni összehasonlíthatósága végett a különböző attribútumok értékeit a kvantilisek mentén a $[0, 1]$ intervallumba transzformáltuk át, valamint az érdemjegy csoportok prediktálásához a 2 és 3 csoport modelleknél a célváltozó-értékeket rendre 1, 0-ra illetve 2, 1, 0-ra módosítottuk. Az algoritmusok hiperparamétereinek optimális megválasztására \textit{5-szörös kersztvalidációt} alkalmaztunk. Keresztvalidáció során a tanítóhalmazt felbontjuk K egyenlő részre, melyek közül az egyiket kinevezzük validációs halmaznak. Ezt követően az algoritmusokat betanítjuk a maradék $K$-$1$ részen, amelyeket aztán a validációs halmazon kiértékelünk. Ezt összesen $K$ alkalommal ismételjük, mindig másik részt választva validációs halmaznak, majd azt az algoritmust dedikáljuk a legjobbnak amelynek az aggregált teljesítménye a $K$ darab iteráció során a legjobb. A keresztvalidációnál használt, jóságot mérő metrikának a \textit{kiegyensúlyozott pontosságot} (Balanced Accuracy) választottuk, amely a címkeosztályok kiegyensúlyozatlanságát figyelembe véve az egyes osztályokhoz tartozó Recall értékek számtani közepét adja vissza. A választott metrika mellett meghatároztuk a legjobb algoritmusokat, amelyeket a teszthalmazon visszamértünk, valamint kiértékeltük az ily módon választott modellek esetén az egyes változók fontosságát is. 
 
 %TODO: Recall definícióját ismertetni?
 
@@ -264,30 +264,30 @@ Az SVM (Support-Vector-Machine) egy lineáris szeparálást használó bináris 
 
 
 
-%
-%\subsection{Implementálás és optimalizálás}
-%
-%
-%Fontosabb optimalizációs lépések csak a 2-3 csoport modellek esetén történtek. A Naive Bayes és lineáris regresszió algoritmusoknál jellegük és/vagy implementálásuk végett nem történt optimalizálás, a többi algoritmus esetén az alábbi hiperparaméterek kerültek változtatásra:
-%\begin{itemize}
-%%\item[•] \textbf{kNN}: \\
-%%- Távolságmérték (euklédeszi, Mahalanobis) \\
-%%- Szomszédok száma (5 és 15 között változtatva) \\
-%%- Szomszéd címkeértékének súlyozása (uniform, távolság reciprokra, távolság reciproknégyzete) 
-%\item[•] \textbf{Gradient Tree Boosting}: \\
-%- Tanulóráta (0.01 és 5 között változtatva 0.1-es lépésközzel)\\
-%- Boosting fázisok száma (5 és 100 között változtatva 5-ös lépésközzel)\\
-%- Vágási feltétel (négyzetes hiba, Friedman MSE) \\
-%- Maximális famélység (3,4 és 5)
-%\item[•] \textbf{Logisztikus regresszió}: \\
-%- Regularizációs paraméter (0.05 és 5 között változtatva 0.05-ös lépésközzel) \\
-%- Önoptimalizálási módszer ("SAG", "SAGA") 
-%\item[•] \textbf{SVM}: \\
-%- Regularizációs paraméter (0.1 és 5 között változtatva 0.1-es lépésközzel)\\
-%- Magfüggvény (lineáris, legfeljebb 3-ad fokú polinomiális, RBF)
-%\end{itemize}
-%
-%
+
+\subsection{Implementálás és optimalizálás}
+
+
+Fontosabb optimalizációs lépések csak a 2-3 csoport modellek esetén történtek. A Naive Bayes és lineáris regresszió algoritmusoknál jellegük és/vagy implementálásuk végett nem történt optimalizálás, a többi algoritmus esetén az alábbi hiperparaméterek kerültek változtatásra:
+\begin{itemize}
+\item[•] \textbf{kNN}: \\
+- Távolságmérték (euklédeszi, Mahalanobis) \\
+- Szomszédok száma (5 és 15 között változtatva) \\
+- Szomszéd címkeértékének súlyozása (uniform, távolság reciprokra, távolság reciproknégyzete) 
+\item[•] \textbf{Gradient Tree Boosting}: \\
+- Tanulóráta (0.01 és 5 között változtatva 0.1-es lépésközzel)\\
+- Boosting fázisok száma (5 és 100 között változtatva 5-ös lépésközzel)\\
+- Vágási feltétel (négyzetes hiba, Friedman MSE) \\
+- Maximális famélység (3,4 és 5)
+\item[•] \textbf{Logisztikus regresszió}: \\
+- Regularizációs paraméter (0.05 és 5 között változtatva 0.05-ös lépésközzel) \\
+- Önoptimalizálási módszer ("SAG", "SAGA") 
+\item[•] \textbf{SVM}: \\
+- Regularizációs paraméter (0.1 és 5 között változtatva 0.1-es lépésközzel)\\
+- Magfüggvény (lineáris, legfeljebb 3-ad fokú polinomiális, RBF)
+\end{itemize}
+
+
 
 \section{Modellek kiértékelése}
 
@@ -358,7 +358,15 @@ Az \ref{tab:multicol1}. táblázatban a 2019-es adatokra optimalizált modellek 
 
 A \ref{tab:multicol2}. táblázat a 2021-es adatokon optimalizált algoritmusok eredményét szemlélteti az előző ábráéval megegyező metodológia szerint. Ezen adathalmazon összességében jobban teljesítettek az osztályozók, mint a 2019-es adatsoron, átlagosan a legeredményesebb algoritmusnak a Naive Bayes nevezhető, amely a szakonkénti bontású 3 csoport modellen ért el minden főkomponensszám mellett 80\% feletti teljesítményt, ugyanakkor a 2 csoport modell esetén a regressziós és SVM algoritmusok is 80\% közeli vagy afölötti eredményt értek el. 
 
-A két év négy modelljén külön-külön legjobban teljesítő algoritmusok esetén az egyes változók fontosságát a \ref{fig:variables}. ábra mutatja.
+A két év négy modelljén külön-külön legjobban teljesítő algoritmusok esetén az egyes változók fontosságát a \ref{fig:variables}. ábra, míg az évenként összesített és leátlagolt változó fontosságokat pedig a \ref{fig:variables2}. mutatja.
+\newpage
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.57]{kepek/modell_valtozo.png}
+\caption{Az attribútumok prediktív ereje a legjobban teljesítő algoritmusoknál}
+\label{fig:variables}
+\end{figure}
 
 \begin{figure}
 
@@ -374,7 +382,12 @@ A két év négy modelljén külön-külön legjobban teljesítő algoritmusok e
 %\end{tikzpicture}
 %\end{center}
 
-
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.45]{kepek/eves_valtozok.png}
+\caption{Az változók átlagolt fontossága a két évben}
+\label{fig:variables2}
+\end{figure}
 
 
 \begin{thebibliography}{9}

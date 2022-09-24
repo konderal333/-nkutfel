@@ -15,4 +15,5 @@
 \select@language {magyar} \contentsline {subsubsection}{\numberline {6.2.3}Gradient Tree Boosting}{8}{subsubsection.6.2.3}%
 \select@language {magyar} \contentsline {subsubsection}{\numberline {6.2.4}Logisztikus regresszió}{8}{subsubsection.6.2.4}%
 \select@language {magyar} \contentsline {subsubsection}{\numberline {6.2.5}SVM}{9}{subsubsection.6.2.5}%
-\select@language {magyar} \contentsline {section}{\numberline {7}Modellek kiértékelése}{9}{section.7}%
+\select@language {magyar} \contentsline {subsection}{\numberline {6.3}Implementálás és optimalizálás}{9}{subsection.6.3}%
+\select@language {magyar} \contentsline {section}{\numberline {7}Modellek kiértékelése}{10}{section.7}%

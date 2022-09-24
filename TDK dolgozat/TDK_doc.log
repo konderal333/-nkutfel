@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.3.29)  24 SEP 2022 19:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.3.29)  24 SEP 2022 21:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -973,7 +973,11 @@ ftex.def
 File: l3backend-pdftex.def 2022-02-07 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count340
 \l__pdf_internal_box=\box72
-) (TDK_doc.aux)
+) (TDK_doc.aux
+
+LaTeX Warning: Label `fig:variables' multiply defined.
+
+)
 \openout1 = `TDK_doc.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 40.
@@ -1090,12 +1094,12 @@ LaTeX Info: Redefining \nameref on input line 40.
 LaTeX Info: Redefining \cal on input line 497.
 LaTeX Info: Redefining \mit on input line 498.
 )
-<kepek/bme_logo_kicsi.jpg, id=78, 523.2348pt x 168.1482pt>
+<kepek/bme_logo_kicsi.jpg, id=82, 523.2348pt x 168.1482pt>
 File: kepek/bme_logo_kicsi.jpg Graphic file (type jpg)
 <use kepek/bme_logo_kicsi.jpg>
 Package pdftex.def Info: kepek/bme_logo_kicsi.jpg  used on input line 45.
 (pdftex.def)             Requested size: 273.14923pt x 87.78136pt.
-<kepek/bme_cimer.jpg, id=79, 100.2144pt x 99.7326pt>
+<kepek/bme_cimer.jpg, id=83, 100.2144pt x 99.7326pt>
 File: kepek/bme_cimer.jpg Graphic file (type jpg)
 <use kepek/bme_cimer.jpg>
 Package pdftex.def Info: kepek/bme_cimer.jpg  used on input line 77.
@@ -1184,34 +1188,59 @@ Overfull \hbox (1.91725pt too wide) in paragraph at lines 330--355
  [][] 
  []
 
+[10]
 
-Package caption Warning: \label without proper reference on input line 365.
+Package caption Warning: \label without proper reference on input line 373.
 See the caption package documentation for explanation.
 
 
-LaTeX Warning: Reference `fig:variables' on page 10 undefined on input line 361
+LaTeX Warning: Reference `fig:variables' on page 11 undefined on input line 361
 .
 
+[11]
+<kepek/modell_valtozo.png, id=187, 709.14937pt x 1187.18532pt>
+File: kepek/modell_valtozo.png Graphic file (type png)
+<use kepek/modell_valtozo.png>
+Package pdftex.def Info: kepek/modell_valtozo.png  used on input line 366.
+(pdftex.def)             Requested size: 404.21935pt x 676.70267pt.
 
-LaTeX Warning: Empty `thebibliography' environment on input line 381.
+Overfull \vbox (2.04457pt too high) has occurred while \output is active []
 
-[10] (TDK_doc.aux)
+
+[12 <./kepek/modell_valtozo.png>]
+<kepek/eves_valtozok.png, id=196, 1084.05pt x 433.62pt>
+File: kepek/eves_valtozok.png Graphic file (type png)
+<use kepek/eves_valtozok.png>
+Package pdftex.def Info: kepek/eves_valtozok.png  used on input line 387.
+(pdftex.def)             Requested size: 487.818pt x 195.1272pt.
+
+Overfull \hbox (32.57388pt too wide) in paragraph at lines 387--388
+ [][] 
+ []
+
+
+LaTeX Warning: Empty `thebibliography' environment on input line 394.
+
+[13 <./kepek/eves_valtozok.png>] (TDK_doc.aux)
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: There were multiply-defined labels.
+
 Package rerunfilecheck Info: File `TDK_doc.out' has not changed.
-(rerunfilecheck)             Checksum: 2944F126AB6DC592B2246D4A324208B2;3013.
+(rerunfilecheck)             Checksum: 619B5973A8E3F45BC200754AE93A5A6A;3242.
  ) 
 Here is how much of TeX's memory you used:
- 35755 strings out of 478582
- 823025 string characters out of 2843872
- 1179007 words of memory out of 3000000
- 53293 multiletter control sequences out of 15000+600000
+ 35779 strings out of 478582
+ 823532 string characters out of 2843872
+ 1185128 words of memory out of 3000000
+ 53309 multiletter control sequences out of 15000+600000
  529245 words of font info for 73 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 100i,18n,104p,1824b,609s stack positions out of 10000i,1000n,20000p,200000b,80000s
-{C:/Users/Donát/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.e
-nc}{C:/Users/Donát/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.
+ 100i,18n,104p,1818b,609s stack positions out of 10000i,1000n,20000p,200000b,80000s
+{C:/Users/Donát/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.e
+nc}{C:/Users/Donát/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.
 enc}{C:/Users/Donát/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc
 }{C:/Users/Donát/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}{C
 :/Users/Donát/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}<C:/
@@ -1228,9 +1257,9 @@ C:/Users/Donát/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr7.pfb><C
 /Users/Donát/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C
 :/Users/Donát/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><
 C:/Users/Donát/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy5.pfb>
-Output written on TDK_doc.pdf (11 pages, 427399 bytes).
+Output written on TDK_doc.pdf (14 pages, 546953 bytes).
 PDF statistics:
- 256 PDF objects out of 1000 (max. 8388607)
- 41 named destinations out of 1000 (max. 500000)
- 167 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 283 PDF objects out of 1000 (max. 8388607)
+ 47 named destinations out of 1000 (max. 500000)
+ 185 words of extra memory for PDF output out of 10000 (max. 10000000)
 
