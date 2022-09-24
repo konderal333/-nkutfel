@@ -95,12 +95,16 @@ A dolgozat első felében a 2019-es és 2021-es évek adatain végzett adatelemz
 
 \section{Fogalmak és definíciók}
 
-A dolgozatban tárgyalt módszerek megértéséhez szükséges néhány fogalom és definíció ismerete, amelyeket ezen fejezetben taglalunk. (ergo ezeket innen ki fogom törölni, csak még nem tudom, hova rakjam)
+Ez a szekció csak egy placeholder azon definícióknak, amiket még nem tudtam hova beépíteni
 \begin{itemize}
 \item[•]\textbf{One-vs-Rest elv:} Bináris osztályozó algoritmusok esetén használt eljárás, amely többosztályos osztályozási feladat esetén használatos. Lényege, hogy minden osztály esetén képezünk egy új virtuális osztályt, amely az összes többi osztályt tartalmazza, majd minden ilyen osztálypár esetén a bináris osztályozó meghatározza a kérdéses adatrekord esetén az osztályba tartozási valószínűségeket. Végül azt a címkét prediktáljuk a rekordnak, amely osztály esetén a legnagyobb ez a valószínűség.
 \end{itemize}
 
 \section{A kognitív tesztről}
+
+(ez a rész nem tudom, hogy kell-e)
+
+\newpage
 
 \section{Adatprepació}
 
@@ -152,6 +156,7 @@ A kezdeti adattáblák közül a matematika és kognitív eredményeket tartalma
 
 A kumulált átlagokat, felvételi pontszámokat illetve 0. ZH eredményeket tartalmazó tábláknál egy-egy hiányos és/vagy anomáliás sor, illetve az irreleváns oszlopok eltávolításán kívül nem volt szükség adattisztításra, a matematika jegyeket tartalmazó tábla pedig minden hallgató minden Matematika A1a tárgyból tett vizsgaalkalmáról és az azon szerzett érdemjegyről tartalmazott adatrekordot, így ezekből meg kellett határozni azt a végső érdemjegyet, amellyel a hallgató a tárgyat elvégezte. A végső összeillesztés során 10-20 fős sorvesztéssel is kellett számolnunk mindkét évben, ugyanis voltak olyan hallgatók, akikről nem minden táblában volt adat (vagy azért, mert nem írtak kognitív tesztet, vagy azért, mert az első félév vége előtt elhagyták a szakot). Az így kapott adattáblák, amelyek a 2019-es és 2021-es évet reprezentálják, rendre 200 és 220 adatrekordot tartalmaztak.
 
+\newpage
 
 \section{Felderítő adatelemzés a két évben}
 
@@ -218,7 +223,7 @@ Az \textit{A2} tárgy jegyeinek eloszlása ismét más, több ötös és négyes
 
 \subsection{Klaszterezés}
 
-
+\newpage
 \section{Prediktív analitika}
 
 \subsection{Modellek és metodológia}
@@ -287,7 +292,7 @@ Fontosabb optimalizációs lépések csak a 2-3 csoport modellek esetén törté
 - Magfüggvény (lineáris, legfeljebb 3-ad fokú polinomiális, RBF)
 \end{itemize}
 
-
+\newpage
 
 \section{Modellek kiértékelése}
 
@@ -358,20 +363,17 @@ Az \ref{tab:multicol1}. táblázatban a 2019-es adatokra optimalizált modellek 
 
 A \ref{tab:multicol2}. táblázat a 2021-es adatokon optimalizált algoritmusok eredményét szemlélteti az előző ábráéval megegyező metodológia szerint. Ezen adathalmazon összességében jobban teljesítettek az osztályozók, mint a 2019-es adatsoron, átlagosan a legeredményesebb algoritmusnak a Naive Bayes nevezhető, amely a szakonkénti bontású 3 csoport modellen ért el minden főkomponensszám mellett 80\% feletti teljesítményt, ugyanakkor a 2 csoport modell esetén a regressziós és SVM algoritmusok is 80\% közeli vagy afölötti eredményt értek el. 
 
-A két év négy modelljén külön-külön legjobban teljesítő algoritmusok esetén az egyes változók fontosságát a \ref{fig:variables}. ábra, míg az évenként összesített és leátlagolt változó fontosságokat pedig a \ref{fig:variables2}. mutatja.
+A két év négy modelljén külön-külön legjobban teljesítő algoritmusok esetén az egyes változók fontosságát a \ref{fig:variables}. ábra, míg az évenként összesített és leátlagolt változófontosságokat pedig a \ref{fig:variables2}. mutatja.
 \newpage
 
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.57]{kepek/modell_valtozo.png}
+\includegraphics[scale=0.573]{kepek/modell_valtozo.png}
 \caption{Az attribútumok prediktív ereje a legjobban teljesítő algoritmusoknál}
 \label{fig:variables}
 \end{figure}
 
-\begin{figure}
 
-\label{fig:variables}
-\end{figure}
 
 %\newpage
 %\begin{center}
@@ -384,8 +386,8 @@ A két év négy modelljén külön-külön legjobban teljesítő algoritmusok e
 
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.45]{kepek/eves_valtozok.png}
-\caption{Az változók átlagolt fontossága a két évben}
+\includegraphics[scale=0.65]{kepek/eves_valtozok.png}
+\caption{Az változók összesített fontossága a két évben}
 \label{fig:variables2}
 \end{figure}
 
