@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.3.29)  24 SEP 2022 17:51
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.3.29)  24 SEP 2022 19:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1090,12 +1090,12 @@ LaTeX Info: Redefining \nameref on input line 40.
 LaTeX Info: Redefining \cal on input line 497.
 LaTeX Info: Redefining \mit on input line 498.
 )
-<kepek/bme_logo_kicsi.jpg, id=82, 523.2348pt x 168.1482pt>
+<kepek/bme_logo_kicsi.jpg, id=78, 523.2348pt x 168.1482pt>
 File: kepek/bme_logo_kicsi.jpg Graphic file (type jpg)
 <use kepek/bme_logo_kicsi.jpg>
 Package pdftex.def Info: kepek/bme_logo_kicsi.jpg  used on input line 45.
 (pdftex.def)             Requested size: 273.14923pt x 87.78136pt.
-<kepek/bme_cimer.jpg, id=83, 100.2144pt x 99.7326pt>
+<kepek/bme_cimer.jpg, id=79, 100.2144pt x 99.7326pt>
 File: kepek/bme_cimer.jpg Graphic file (type jpg)
 <use kepek/bme_cimer.jpg>
 Package pdftex.def Info: kepek/bme_cimer.jpg  used on input line 77.
@@ -1184,65 +1184,53 @@ Overfull \hbox (1.91725pt too wide) in paragraph at lines 330--355
  [][] 
  []
 
-[10]
 
-Package caption Warning: \label without proper reference on input line 364.
+Package caption Warning: \label without proper reference on input line 365.
 See the caption package documentation for explanation.
 
 
-LaTeX Warning: Reference `fig:variables' on page 11 undefined on input line 361
+LaTeX Warning: Reference `fig:variables' on page 10 undefined on input line 361
 .
 
 
 LaTeX Warning: Empty `thebibliography' environment on input line 381.
 
-[11] (TDK_doc.aux)
+[10] (TDK_doc.aux)
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package rerunfilecheck Info: File `TDK_doc.out' has not changed.
-(rerunfilecheck)             Checksum: 619B5973A8E3F45BC200754AE93A5A6A;3242.
+(rerunfilecheck)             Checksum: 2944F126AB6DC592B2246D4A324208B2;3013.
  ) 
 Here is how much of TeX's memory you used:
- 35760 strings out of 478582
- 823093 string characters out of 2843872
- 1185008 words of memory out of 3000000
- 53294 multiletter control sequences out of 15000+600000
+ 35755 strings out of 478582
+ 823025 string characters out of 2843872
+ 1179007 words of memory out of 3000000
+ 53293 multiletter control sequences out of 15000+600000
  529245 words of font info for 73 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 100i,18n,104p,1830b,609s stack positions out of 10000i,1000n,20000p,200000b,80000s
-
-pdfTeX warning (dest): name{figure.caption.5} has been referenced but does not 
-exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{table.caption.3} has been referenced but does not e
-xist, replaced by a fixed one
-
-{C:/Users/Donát/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc
-}{C:/Users/Donát/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.en
-c}{C:/Users/Donát/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{
-C:/Users/Donát/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}{C:/
-Users/Donát/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}<C:/Us
-ers/Donát/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/U
-sers/Donát/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi10.pfb><C:/
-Users/Donát/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi12.pfb><C:
-/Users/Donát/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi5.pfb><C:
-/Users/Donát/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi7.pfb><C:
-/Users/Donát/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:
-/Users/Donát/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:
-/Users/Donát/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:
-/Users/Donát/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr7.pfb><C:/
-Users/Donát/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/U
-sers/Donát/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/
-Users/Donát/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:
-/Users/Donát/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy5.pfb>
-Output written on TDK_doc.pdf (12 pages, 429505 bytes).
+ 100i,18n,104p,1824b,609s stack positions out of 10000i,1000n,20000p,200000b,80000s
+{C:/Users/Donát/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.e
+nc}{C:/Users/Donát/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.
+enc}{C:/Users/Donát/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc
+}{C:/Users/Donát/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}{C
+:/Users/Donát/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}<C:/
+Users/Donát/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:
+/Users/Donát/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi10.pfb><C
+:/Users/Donát/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi12.pfb><
+C:/Users/Donát/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi5.pfb><
+C:/Users/Donát/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi7.pfb><
+C:/Users/Donát/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><
+C:/Users/Donát/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><
+C:/Users/Donát/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><
+C:/Users/Donát/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr7.pfb><C
+:/Users/Donát/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:
+/Users/Donát/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C
+:/Users/Donát/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><
+C:/Users/Donát/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy5.pfb>
+Output written on TDK_doc.pdf (11 pages, 427399 bytes).
 PDF statistics:
- 268 PDF objects out of 1000 (max. 8388607)
- 45 named destinations out of 1000 (max. 500000)
- 175 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 256 PDF objects out of 1000 (max. 8388607)
+ 41 named destinations out of 1000 (max. 500000)
+ 167 words of extra memory for PDF output out of 10000 (max. 10000000)
 
