@@ -91,8 +91,6 @@
 \section{Bevezetés}
 ....
 
-A dolgozat első felében a 2019-es és 2021-es évek adatain végzett adatelemzés kerül bemutatásra, ahol a többféle bemeneti adat és mérőszám egymáshoz való viszonyát és az adatrekordok klaszterezhetőségét vizsgáltuk és hasonlítottuk össze a két évben. A dolgozat második fele prediktív analitikával foglalkozik, ahol gépi tanulás segítségével első félév végi teljesítménymutatók prediktálhatóságát vizsgáltuk, illetve azt, hogy a predikciót végző algoritmusok és modellek esetén mely változók milyen mértékben befolyásolták a jósolt eredményt.
-
 \section{Fogalmak és definíciók}
 
 Ez a szekció csak egy placeholder azon definícióknak, amiket még nem tudtam hova beépíteni
@@ -154,7 +152,7 @@ A felderítő és modellezési fázisban használt adattáblát a rendelkezésre
 
 A kezdeti adattáblák közül a matematika és kognitív eredményeket tartalmazó adatsor tisztítására volt a legnagyobb szükség, ugyanis az EduBase rendszerben az egyes oszlopokra vonatozó mezőket a hallgatók töltötték ki, így a kategorikus változók nem voltak rendszerezve. Először egységesítettük a szakmegnevezést ("Vegyészmérnöki", "Biomérnöki", "Környezetmérnöki"), ahol pedig nem volt egyértelmű a szak, azt "UNKNOWN"-ra állítottuk. Ezt követően a teszten elért matematika és kognitív eredményt százalékos formátumról 0-1 közötti tizedestört formátumra változtattuk, valamint létrehoztunk 3 új oszlopot, amely a matematikateszt 3 blokkjában helyesen megválaszolt kérdések számát mutatja. Végül a vizsgálataink szempontjából irreleváns oszlopokat eltávolítottuk, valamint azon oszlopokat is kiszűrtük, amelyek értéke a többiből egyértelműen kikövetkeztethető volt. 
 
-A kumulált átlagokat, felvételi pontszámokat illetve 0. ZH eredményeket tartalmazó tábláknál egy-egy hiányos és/vagy anomáliás sor, illetve az irreleváns oszlopok eltávolításán kívül nem volt szükség adattisztításra, a matematika jegyeket tartalmazó tábla pedig minden hallgató minden Matematika A1a tárgyból tett vizsgaalkalmáról és az azon szerzett érdemjegyről tartalmazott adatrekordot, így ezekből meg kellett határozni azt a végső érdemjegyet, amellyel a hallgató a tárgyat elvégezte. A végső összeillesztés során 10-20 fős sorvesztéssel is kellett számolnunk mindkét évben, ugyanis voltak olyan hallgatók, akikről nem minden táblában volt adat (vagy azért, mert nem írtak kognitív tesztet, vagy azért, mert az első félév vége előtt elhagyták a szakot). Az így kapott adattáblák, amelyek a 2019-es és 2021-es évet reprezentálják, rendre 200 és 220 adatrekordot tartalmaztak.
+A kumulált átlagokat, felvételi pontszámokat illetve 0. ZH eredményeket tartalmazó tábláknál egy-egy hiányos és/vagy anomáliás sor, illetve az irreleváns oszlopok eltávolításán kívül nem volt szükség adattisztításra, a matematika jegyeket tartalmazó tábla pedig minden hallgató minden Matematika A1a tárgyból tett vizsgaalkalmáról és az azon szerzett érdemjegyről tartalmazott adatrekordot, így ezekből meg kellett határozni azt a végső érdemjegyet, amellyel a hallgató a tárgyat elvégezte. A végső összeillesztés során 10-20 fős sorvesztéssel is kellett számolnunk mindkét évben, ugyanis voltak olyan hallgatók, akikről nem minden táblában volt adat (vagy azért, mert nem írtak kognitív tesztet, vagy azért, mert az első félév vége előtt elhagyták a szakot). Az így kapott adattáblák, amelyek a 2019-es és 2021-es évet reprezentálják, rendre 200 és 220 adatrekordot tartalmaztak. ...
 
 \newpage
 
@@ -243,9 +241,7 @@ Valamennyi modellnél a teljes adathalmazt felbontottuk tanító- és teszthalma
 
 \subsection{Osztályozó algoritmusok és optimalizálásuk}
 
-%\subsubsection{kNN}
-%
-%A kNN (k-Nearest Neighbour) algoritmus az egyik legegyszerűbb gépi tanulási algoritmusok közé tartozik. Lényege, hogy az adatponthoz legközelebbi k szomszéd címkeértékének valamilyen távolságalapú súlyozása szerint választjuk meg a kérdéses adatpont címkeértékét.
+(ez a szekció még félkész)
 
 \subsubsection{Lineáris regresszió}
 
@@ -257,40 +253,53 @@ A Naive Bayes algoritmus működése mögött álló alapelv az, hogy feltesszü
 
 \subsubsection{Gradient Tree Boosting}
 
-A Gradient Boosting algoritmus egy Ensemble típusú osztályozó, amelyek lényege, hogy sok gyenge teljesítményű prediktor (\textit{weak learner}) eredményét felhasználva hoz egy erős predikciót. 
+A Gradient Boosting algoritmus egy Ensemble típusú osztályozó, amelyek lényege, hogy sok gyenge teljesítményű prediktor (\textit{weak learner}) eredményét felhasználva hoz egy erős predikciót. ... \\
 
-\subsubsection{Logisztikus regresszió}
-
-A logisztikus regresszió alapvetően bináris osztályozási problémák megoldására alkalmas, de kiterjeszthető másfajta feladatok megoldására is. Lényege, hogy a lineáris regresszióhoz hasonlóan az adatrekord attribútumértékeinek súlyozott összegét használjuk egy szigmoid\footnote{A szigmoid függvény: $\sigma(z)=\frac{1}{e^{-z}}$, ahol $z=x_1w_1+x_2w_2+ \dots +x_nw_n+b$ a súlyozott összeg.} függvény bemeneteként, amely azt utána leképzi az $\left(0,1\right)$ intervallumra, és amennyiben az output 0.5-nél nagyobb, úgy a pozitív osztályba soroljuk az adott rekordot.
-
-\subsubsection{SVM}
-
-Az SVM (Support-Vector-Machine) egy lineáris szeparálást használó bináris osztályozó algoritmus, amely egyéb problémákra is kiterjeszthető. Lényege, hogy különböző magfüggvénye segítségével az adatrekordokat egy magasabb dimenziós térbe képzi le, ahol olyan szeparáló hipersíkot keres, amely maximalizálja a vele párhuzamos, adatpontot nem tartalmazó térrészt. A cél a megfelelő magfüggvény és a szeparáló hipersík megtalálása, amellyel a különböző címkéjű adatpontok lineárisan szeparálhatóak.
-
-
-
-
-\subsection{Implementálás és optimalizálás}
-
-
-Fontosabb optimalizációs lépések csak a 2-3 csoport modellek esetén történtek. A Naive Bayes és lineáris regresszió algoritmusoknál jellegük és/vagy implementálásuk végett nem történt optimalizálás, a többi algoritmus esetén az alábbi hiperparaméterek kerültek változtatásra:
-\begin{itemize}
-\item[•] \textbf{kNN}: \\
-- Távolságmérték (euklédeszi, Mahalanobis) \\
-- Szomszédok száma (5 és 15 között változtatva) \\
-- Szomszéd címkeértékének súlyozása (uniform, távolság reciprokra, távolság reciproknégyzete) 
-\item[•] \textbf{Gradient Tree Boosting}: \\
+Optimalizált paraméterek: \\
 - Tanulóráta (0.01 és 5 között változtatva 0.1-es lépésközzel)\\
 - Boosting fázisok száma (5 és 100 között változtatva 5-ös lépésközzel)\\
 - Vágási feltétel (négyzetes hiba, Friedman MSE) \\
-- Maximális famélység (3,4 és 5)
-\item[•] \textbf{Logisztikus regresszió}: \\
+
+\subsubsection{Logisztikus regresszió}
+
+A logisztikus regresszió alapvetően bináris osztályozási problémák megoldására alkalmas, de kiterjeszthető másfajta feladatok megoldására is. Lényege, hogy a lineáris regresszióhoz hasonlóan az adatrekord attribútumértékeinek súlyozott összegét használjuk egy szigmoid\footnote{A szigmoid függvény: $\sigma(z)=\frac{1}{e^{-z}}$, ahol $z=x_1w_1+x_2w_2+ \dots +x_nw_n+b$ a súlyozott összeg.} függvény bemeneteként, amely azt utána leképzi az $\left(0,1\right)$ intervallumra, és amennyiben az output 0.5-nél nagyobb, úgy a pozitív osztályba soroljuk az adott rekordot. ... \\
+
+Optimalizált paraméterek: \\
 - Regularizációs paraméter (0.05 és 5 között változtatva 0.05-ös lépésközzel) \\
 - Önoptimalizálási módszer ("SAG", "SAGA") 
-\item[•] \textbf{SVM}: \\
+
+\subsubsection{SVM}
+
+Az SVM (Support-Vector-Machine) egy lineáris szeparálást használó bináris osztályozó algoritmus, amely egyéb problémákra is kiterjeszthető. Lényege, hogy különböző magfüggvénye segítségével az adatrekordokat egy magasabb dimenziós térbe képzi le, ahol olyan szeparáló hipersíkot keres, amely maximalizálja a vele párhuzamos, adatpontot nem tartalmazó térrészt. A cél a megfelelő magfüggvény és a szeparáló hipersík megtalálása, amellyel a különböző címkéjű adatpontok lineárisan szeparálhatóak. ... \\
+
+Optimalizált paraméterek: \\
 - Regularizációs paraméter (0.1 és 5 között változtatva 0.1-es lépésközzel)\\
 - Magfüggvény (lineáris, legfeljebb 3-ad fokú polinomiális, RBF)
-\end{itemize}
+
+
+
+%
+%\subsection{Implementálás és optimalizálás}
+%
+%
+%%Fontosabb optimalizációs lépések csak a 2-3 csoport modellek esetén történtek. A Naive Bayes és lineáris regresszió algoritmusoknál jellegük és/vagy implementálásuk végett nem történt optimalizálás, a többi algoritmus esetén az alábbi hiperparaméterek kerültek változtatásra:
+%\begin{itemize}
+%\item[•] \textbf{kNN}: \\
+%- Távolságmérték (euklédeszi, Mahalanobis) \\
+%- Szomszédok száma (5 és 15 között változtatva) \\
+%- Szomszéd címkeértékének súlyozása (uniform, távolság reciprokra, távolság reciproknégyzete) 
+%\item[•] \textbf{Gradient Tree Boosting}: \\
+%- Tanulóráta (0.01 és 5 között változtatva 0.1-es lépésközzel)\\
+%- Boosting fázisok száma (5 és 100 között változtatva 5-ös lépésközzel)\\
+%- Vágási feltétel (négyzetes hiba, Friedman MSE) \\
+%- Maximális famélység (3,4 és 5)
+%\item[•] \textbf{Logisztikus regresszió}: \\
+%- Regularizációs paraméter (0.05 és 5 között változtatva 0.05-ös lépésközzel) \\
+%- Önoptimalizálási módszer ("SAG", "SAGA") 
+%\item[•] \textbf{SVM}: \\
+%- Regularizációs paraméter (0.1 és 5 között változtatva 0.1-es lépésközzel)\\
+%- Magfüggvény (lineáris, legfeljebb 3-ad fokú polinomiális, RBF)
+%\end{itemize}
 
 \newpage
 

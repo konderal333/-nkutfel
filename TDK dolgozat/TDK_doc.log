@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.3.29)  24 SEP 2022 21:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.3.29)  25 SEP 2022 23:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1090,12 +1090,12 @@ LaTeX Info: Redefining \nameref on input line 40.
 LaTeX Info: Redefining \cal on input line 497.
 LaTeX Info: Redefining \mit on input line 498.
 )
-<kepek/bme_logo_kicsi.jpg, id=82, 523.2348pt x 168.1482pt>
+<kepek/bme_logo_kicsi.jpg, id=78, 523.2348pt x 168.1482pt>
 File: kepek/bme_logo_kicsi.jpg Graphic file (type jpg)
 <use kepek/bme_logo_kicsi.jpg>
 Package pdftex.def Info: kepek/bme_logo_kicsi.jpg  used on input line 45.
 (pdftex.def)             Requested size: 273.14923pt x 87.78136pt.
-<kepek/bme_cimer.jpg, id=83, 100.2144pt x 99.7326pt>
+<kepek/bme_cimer.jpg, id=79, 100.2144pt x 99.7326pt>
 File: kepek/bme_cimer.jpg Graphic file (type jpg)
 <use kepek/bme_cimer.jpg>
 Package pdftex.def Info: kepek/bme_cimer.jpg  used on input line 77.
@@ -1149,70 +1149,87 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 \tf@toc=\write5
 \openout5 = `TDK_doc.toc'.
 
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 9
+8.
 
+(C:\Users\Donát\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
+File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.100 \item[•]
-                \textbf{One-vs-Rest elv:} Bináris osztályozó algoritmusok...
-[1]
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
-00.
- (C:\Users\Donát\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
-File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-[2] [3] [4]
-Underfull \hbox (badness 10000) in paragraph at lines 176--177
+l.105 \newpage
+               [1] [2] [3] [4]
+Underfull \hbox (badness 10000) in paragraph at lines 174--175
 
  []
 
 [5] [6] [7] [8] [9]
+Underfull \hbox (badness 10000) in paragraph at lines 256--257
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 258--262
+
+ []
+
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 264.
+(Font)              <10> on input line 265.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 264.
+(Font)              <7> on input line 265.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 264.
- [10] [11]
-Overfull \hbox (2.50052pt too wide) in paragraph at lines 301--327
+(Font)              <5> on input line 265.
+
+Underfull \hbox (badness 10000) in paragraph at lines 265--266
+
+ []
+
+[10]
+Underfull \hbox (badness 10000) in paragraph at lines 273--274
+
+ []
+
+[11]
+Overfull \hbox (2.50052pt too wide) in paragraph at lines 310--336
  [][] 
  []
 
 
-Overfull \hbox (1.91725pt too wide) in paragraph at lines 335--360
+Overfull \hbox (1.91725pt too wide) in paragraph at lines 344--369
  [][] 
  []
 
 [12] [13]
-<kepek/modell_valtozo.png, id=196, 709.14937pt x 1187.18532pt>
+<kepek/modell_valtozo.png, id=191, 709.14937pt x 1187.18532pt>
 File: kepek/modell_valtozo.png Graphic file (type png)
 <use kepek/modell_valtozo.png>
-Package pdftex.def Info: kepek/modell_valtozo.png  used on input line 371.
+Package pdftex.def Info: kepek/modell_valtozo.png  used on input line 380.
 (pdftex.def)             Requested size: 406.34021pt x 680.2532pt.
 
 Overfull \vbox (5.59511pt too high) has occurred while \output is active []
 
 
 [14 <./kepek/modell_valtozo.png>]
-<kepek/eves_valtozok.png, id=203, 693.34032pt x 337.26pt>
+<kepek/eves_valtozok.png, id=198, 693.34032pt x 337.26pt>
 File: kepek/eves_valtozok.png Graphic file (type png)
 <use kepek/eves_valtozok.png>
-Package pdftex.def Info: kepek/eves_valtozok.png  used on input line 389.
+Package pdftex.def Info: kepek/eves_valtozok.png  used on input line 398.
 (pdftex.def)             Requested size: 450.66586pt x 219.2164pt.
 
 
-LaTeX Warning: Empty `thebibliography' environment on input line 396.
+LaTeX Warning: Empty `thebibliography' environment on input line 405.
 
 [15 <./kepek/eves_valtozok.png>] (TDK_doc.aux)
 Package rerunfilecheck Info: File `TDK_doc.out' has not changed.
-(rerunfilecheck)             Checksum: 619B5973A8E3F45BC200754AE93A5A6A;3242.
+(rerunfilecheck)             Checksum: 2944F126AB6DC592B2246D4A324208B2;3013.
  ) 
 Here is how much of TeX's memory you used:
- 35780 strings out of 478582
- 823530 string characters out of 2843872
+ 35778 strings out of 478582
+ 823500 string characters out of 2843872
  1185109 words of memory out of 3000000
- 53309 multiletter control sequences out of 15000+600000
+ 53308 multiletter control sequences out of 15000+600000
  529245 words of font info for 73 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  100i,18n,104p,1818b,609s stack positions out of 10000i,1000n,20000p,200000b,80000s
@@ -1234,9 +1251,9 @@ C:/Users/Donát/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr7.pfb><C
 /Users/Donát/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C
 :/Users/Donát/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><
 C:/Users/Donát/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy5.pfb>
-Output written on TDK_doc.pdf (16 pages, 555149 bytes).
+Output written on TDK_doc.pdf (16 pages, 553451 bytes).
 PDF statistics:
- 290 PDF objects out of 1000 (max. 8388607)
- 48 named destinations out of 1000 (max. 500000)
- 185 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 285 PDF objects out of 1000 (max. 8388607)
+ 47 named destinations out of 1000 (max. 500000)
+ 177 words of extra memory for PDF output out of 10000 (max. 10000000)
 
