@@ -163,21 +163,35 @@ A felderítő elemzés célja az adatok ábrázolása egyszerűen és gyorsan, a
 \subsection{Általános ábrák}
 
 \subsection{Folyamatábrák (Sankey-diagramok)}
-A Sankey-diagramok olyan folyamatábrák, amelyekben az ábrázolt folyamok szélessége arányos a megfelelő folyamértékekkel. Ezáltal könnyen ábrázolhatóak adott állapotok közötti vándorlások, illetve ezek egymással vett aránya. Egy hátránya van, hogy egy ábrán csak két osztálycsoport között olvashatjuk le az áramlásokat. Ha egy harmadik osztálycsoportot is belehelyezünk, és csak a másodikkal kötjük össze, akkor az első és a harmadik közötti vándorlások nem jelennek meg az ábrán.\\
-Dolgozatunkban négy opciót vizsgáltunk a két évben az elérhető adatoknak megfelelően. Mindkét esetben az állapotok a hallgatók valamely eredményét jelentették, például felvételi pontszámot.
+A Sankey-diagramok olyan folyamatábrák, amelyekben az ábrázolt folyamok szélessége arányos a megfelelő folyamértékekkel. Ezáltal könnyen ábrázolhatóak adott állapotok közötti vándorlások, illetve ezek egymással vett aránya. Egy hátránya van, hogy egy ábrán csak két osztálycsoport között olvashatjuk le az áramlásokat. Ha egy harmadik osztálycsoportot is belehelyezünk, és csak a másodikkal kötjük össze, akkor az első és a harmadik közötti vándorlások nem jelennek meg az ábrán. Emiatt lesz némi redundancia az alább ismertetett ábrákban.\\
+Dolgozatunkban hat opciót vizsgáltunk a két évben az elérhető adatoknak megfelelően. Mindkét esetben az állapotok a hallgatók valamely eredményét jelentették, például felvételi pontszámot.
+\begin{itemize}
+
+\item 2019:
+
 \begin{enumerate}
-\item 2019. matematikai teszt 1.,2. és 3. részeiben helyesen megoldott feladatok száma.
-\item 2019. kognitív teszt eredmény - \textit{A1} jegy - \textit{A2} jegy.
-\item 2019. és 2021. években: felvételi pontszám - nulladik ZH - kognitív teszt eredmény.
-\item 2019. és 2021. években: felvételi pontszám - kognitív teszt eredmény - első féléves átlag - kumulált átlag.
+\item matematikai teszt 1.,2. és 3. részeiben helyesen megoldott feladatok száma.
+\item kognitív teszt eredmény - \textit{A1} jegy - \textit{A2} jegy.
 \end{enumerate}
+
+\item 2019 és 2021:
+
+\begin{enumerate}
+\item tanulmányi hozott pontszám - érettségi pontszám - \textit{A1} jegy.
+\item felvételi pontszám - nulladik ZH - kognitív teszt eredmény.
+\item felvételi pontszám - kognitív teszt eredmény - \textit{A1} jegy - kumulált átlag.
+\item felvételi pontszám - kognitív teszt eredmény - első féléves átlag - kumulált átlag.
+\end{enumerate}
+
+\end{itemize}
+
 Az első két esetben csak a 2019-es évfolyamról volt adat. Az utolsó esetben 2021-ben megegyezett a kutatás idejében az első féléves és a kumulált átlag, így ennél az utóbbi értelemszerűen nem lett még egyszer beletéve.\\
 
-A matematikai teszt részeinek eredményein és az \textit{A1}, \textit{A2} jegyeken kívül a többi változó folytonos volt, így szükség volt ezek diszkretizálására. Öt-öt osztály lett létrehozva minden esetben, de nem feltétlenül került mindegyikbe hallgató. Az átlagok kerekítve lettek, a felvételi, kognitív teszt és nulladik zh pontszámok másképp lettek osztályozva.
+A matematikai teszt részeinek eredményein és az \textit{A1}, \textit{A2} jegyeken kívül a többi változó folytonos volt, így szükség volt ezek diszkretizálására. Öt-öt osztály lett létrehozva minden esetben, de nem feltétlenül került mindegyikbe hallgató. Az átlagok kerekítve lettek, a felvételi, kognitív teszt és nulladik zh pontszámok ekvidisztáns módon lettek felosztva.
 
-A felvételi pontszámok terjedelmük alapján öt azonos hosszúságú intervallumra lettek osztva. A harmadik változatban a nulladik zh és a teszt eredményei nullától az elérhető pontszámig lettek felosztva 20\%-os lépésközökkel. A negyedik változatban, mivel a kutatás későbbi szakaszában készült, már a teszt eredmény is a terjedelem szerint lett felosztva, nem az elérhető pontszám alapján.
+A \textit{felvételi pontszám - nulladik ZH - kognitív teszt eredmény} változatban a nulladik zh és a teszt eredményei nullától az elérhető pontszámig lettek felosztva 20\%-os lépésközökkel. A többi változat a kutatás későbbi szakaszában készült, így a két mutató a terjedelmük szerint lett felosztva, nem az elérhető pontszám alapján.
 
-Ezután for ciklus használatával elkészültek a tranzíciós mátrixok. Egy ilyen mátrix \textit{i}-edik sorának \textit{j}-edik eleme azt mutatta, hogy az egyik változó \textit{i}-edik osztályában hány olyan hallgató volt, aki a másik változó \textit{j}-edik osztályába került. Ez a folyamok szélességének megadásához volt szükséges.
+Ezután \textit{for ciklus} használatával elkészültek a tranzíciós mátrixok. Egy ilyen mátrix \textit{i}-edik sorának \textit{j}-edik eleme azt mutatta, hogy az egyik változó \textit{i}-edik osztályában hány olyan hallgató volt, aki a másik változó \textit{j}-edik osztályába került. Ez a folyamok szélességének megadásához volt szükséges.
 
 A \textit{plotly.graph\_objects} könyvtár \textit{go.Sankey} függvényével lettek elkészítve egyenként az ábrák. Minden esetben meg kellett adni számozva a kiinduló és beérkező állapotokat, így a középső csoportok mindkét listában szerepeltek. A program index alapján kapcsolta össze a két listából az állapotokat, így kellett egy harmadik lista, amelynek a megfelelő indexű eleme a két állapot közötti folyam mérete. Ezen kívül a folyamokhoz és magukhoz az állapotokhoz is színeket kellett még rendelni, ismét egy-egy listában, figyelve az indexeket. 
 
@@ -215,9 +229,23 @@ Az \textit{A2} tárgy jegyeinek eloszlása ismét más, több ötös és négyes
 
 
 
-%IDE BE KELL ILLESZTENI A sankey2021 ábrát
+%IDE BE KELL ILLESZTENI A 2021_felvi_teszt_atlag ábrát
 
 
+
+%IDE BE KELL ILLESZTENI A 2019_felvi_teszt_a1_kumatl ábrát
+
+
+
+%IDE BE KELL ILLESZTENI A 2021_felvi_teszt_a1_atlag ábrát
+
+
+
+%IDE BE KELL ILLESZTENI A 2019_hozott_erett_A1 ábrát
+
+
+
+%IDE BE KELL ILLESZTENI A 2021_hozott_erett_A1 ábrát
 
 \subsection{Klaszterezés}
 
