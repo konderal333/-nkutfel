@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 21.12) (preloaded format=pdflatex 2022.2.14)  26 SEP 2022 20:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 21.12) (preloaded format=pdflatex 2022.2.14)  29 SEP 2022 12:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1161,84 +1161,97 @@ been already used, duplicate ignored
                    \relax 
 l.105 \newpage
                [1] [2] [3] [4]
-Underfull \hbox (badness 10000) in paragraph at lines 174--175
+Underfull \hbox (badness 10000) in paragraph at lines 188--189
 
  []
 
-[5] [6] [7] [8] [9]
-Underfull \hbox (badness 10000) in paragraph at lines 256--257
+[5] [6] [7] [8]
+
+Package caption Warning: \label without proper reference on input line 274.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `fig:modell' on page 9 undefined on input line 271.
+
+[9]
+Underfull \hbox (badness 10000) in paragraph at lines 293--294
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 258--262
+Underfull \hbox (badness 10000) in paragraph at lines 295--299
 
  []
 
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 265.
+(Font)              <10> on input line 302.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 265.
+(Font)              <7> on input line 302.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 265.
+(Font)              <5> on input line 302.
 
-Underfull \hbox (badness 10000) in paragraph at lines 265--266
+Underfull \hbox (badness 10000) in paragraph at lines 302--303
 
  []
 
 [10]
-Underfull \hbox (badness 10000) in paragraph at lines 273--274
+Underfull \hbox (badness 10000) in paragraph at lines 310--311
 
  []
 
 [11]
-Overfull \hbox (2.50052pt too wide) in paragraph at lines 310--336
+Overfull \hbox (2.50052pt too wide) in paragraph at lines 347--373
  [][] 
  []
 
 [12]
-Overfull \hbox (1.91725pt too wide) in paragraph at lines 347--372
+Overfull \hbox (1.91725pt too wide) in paragraph at lines 384--409
  [][] 
  []
 
 [13]
-<kepek/modell_valtozo.png, id=191, 709.14937pt x 1187.18532pt>
+<kepek/modell_valtozo.png, id=196, 709.14937pt x 1187.18532pt>
 File: kepek/modell_valtozo.png Graphic file (type png)
 <use kepek/modell_valtozo.png>
-Package pdftex.def Info: kepek/modell_valtozo.png  used on input line 384.
+Package pdftex.def Info: kepek/modell_valtozo.png  used on input line 421.
 (pdftex.def)             Requested size: 406.34021pt x 680.2532pt.
 
 Overfull \vbox (5.59511pt too high) has occurred while \output is active []
 
 
 [14 <./kepek/modell_valtozo.png>]
-<kepek/eves_valtozok.png, id=198, 693.34032pt x 337.26pt>
+<kepek/eves_valtozok.png, id=203, 693.34032pt x 337.26pt>
 File: kepek/eves_valtozok.png Graphic file (type png)
 <use kepek/eves_valtozok.png>
-Package pdftex.def Info: kepek/eves_valtozok.png  used on input line 402.
+Package pdftex.def Info: kepek/eves_valtozok.png  used on input line 439.
 (pdftex.def)             Requested size: 450.66586pt x 219.2164pt.
 
 
-LaTeX Warning: Empty `thebibliography' environment on input line 411.
+LaTeX Warning: Empty `thebibliography' environment on input line 448.
 
 [15 <./kepek/eves_valtozok.png>] (TDK_doc.aux)
+
+LaTeX Warning: There were undefined references.
+
 Package rerunfilecheck Info: File `TDK_doc.out' has not changed.
 (rerunfilecheck)             Checksum: 2944F126AB6DC592B2246D4A324208B2;3013.
  ) 
 Here is how much of TeX's memory you used:
- 35825 strings out of 478659
- 823864 string characters out of 2845920
- 1187024 words of memory out of 3000000
- 53271 multiletter control sequences out of 15000+600000
- 463416 words of font info for 72 fonts, out of 8000000 for 9000
+ 35831 strings out of 478659
+ 823923 string characters out of 2845920
+ 1187101 words of memory out of 3000000
+ 53273 multiletter control sequences out of 15000+600000
+ 466404 words of font info for 73 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 100i,18n,104p,1929b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 100i,18n,104p,2169b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
 {C:/Users/kolle/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C
 :/Users/kolle/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}{C
 :/Users/kolle/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}{C
 :/Users/kolle/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}{C:/Us
+ers/kolle/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc}{C:/Us
 ers/kolle/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}<C:/Users
 /kolle/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users
+/kolle/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmex10.pfb><C:/Users
 /kolle/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi10.pfb><C:/Users
 /kolle/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi12.pfb><C:/Users
 /kolle/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi5.pfb><C:/Users/
@@ -1251,9 +1264,9 @@ AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/kolle/Ap
 pData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/Users/kolle/Ap
 pData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/kolle/Ap
 pData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy5.pfb>
-Output written on TDK_doc.pdf (16 pages, 562851 bytes).
+Output written on TDK_doc.pdf (16 pages, 569930 bytes).
 PDF statistics:
- 288 PDF objects out of 1000 (max. 8388607)
- 47 named destinations out of 1000 (max. 500000)
+ 299 PDF objects out of 1000 (max. 8388607)
+ 50 named destinations out of 1000 (max. 500000)
  177 words of extra memory for PDF output out of 10000 (max. 10000000)
 
