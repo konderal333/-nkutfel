@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 21.12) (preloaded format=pdflatex 2022.2.14)  29 SEP 2022 12:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 21.12) (preloaded format=pdflatex 2022.2.14)  29 SEP 2022 13:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1165,71 +1165,80 @@ Underfull \hbox (badness 10000) in paragraph at lines 188--189
 
  []
 
-[5] [6] [7] [8]
+[5] [6] [7] [8] [9]
+Underfull \hbox (badness 10000) in paragraph at lines 271--276
 
-Package caption Warning: \label without proper reference on input line 274.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 271--276
+
+ []
+
+
+Package caption Warning: \label without proper reference on input line 280.
 See the caption package documentation for explanation.
 
 
-LaTeX Warning: Reference `fig:modell' on page 9 undefined on input line 271.
-
-[9]
-Underfull \hbox (badness 10000) in paragraph at lines 293--294
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 295--299
-
- []
-
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 302.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 302.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 302.
-
-Underfull \hbox (badness 10000) in paragraph at lines 302--303
-
- []
+LaTeX Warning: Reference `fig:modell' on page 10 undefined on input line 277.
 
 [10]
-Underfull \hbox (badness 10000) in paragraph at lines 310--311
+Underfull \hbox (badness 10000) in paragraph at lines 299--300
 
  []
 
-[11]
-Overfull \hbox (2.50052pt too wide) in paragraph at lines 347--373
- [][] 
+
+Underfull \hbox (badness 10000) in paragraph at lines 301--305
+
  []
 
-[12]
-Overfull \hbox (1.91725pt too wide) in paragraph at lines 384--409
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 308.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 308.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 308.
+
+Underfull \hbox (badness 10000) in paragraph at lines 308--309
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 316--317
+
+ []
+
+[11] [12]
+Overfull \hbox (2.50052pt too wide) in paragraph at lines 353--379
  [][] 
  []
 
 [13]
-<kepek/modell_valtozo.png, id=196, 709.14937pt x 1187.18532pt>
+Overfull \hbox (1.91725pt too wide) in paragraph at lines 390--415
+ [][] 
+ []
+
+[14]
+<kepek/modell_valtozo.png, id=200, 709.14937pt x 1187.18532pt>
 File: kepek/modell_valtozo.png Graphic file (type png)
 <use kepek/modell_valtozo.png>
-Package pdftex.def Info: kepek/modell_valtozo.png  used on input line 421.
+Package pdftex.def Info: kepek/modell_valtozo.png  used on input line 427.
 (pdftex.def)             Requested size: 406.34021pt x 680.2532pt.
 
 Overfull \vbox (5.59511pt too high) has occurred while \output is active []
 
 
-[14 <./kepek/modell_valtozo.png>]
-<kepek/eves_valtozok.png, id=203, 693.34032pt x 337.26pt>
+[15 <./kepek/modell_valtozo.png>]
+<kepek/eves_valtozok.png, id=207, 693.34032pt x 337.26pt>
 File: kepek/eves_valtozok.png Graphic file (type png)
 <use kepek/eves_valtozok.png>
-Package pdftex.def Info: kepek/eves_valtozok.png  used on input line 439.
+Package pdftex.def Info: kepek/eves_valtozok.png  used on input line 445.
 (pdftex.def)             Requested size: 450.66586pt x 219.2164pt.
 
 
-LaTeX Warning: Empty `thebibliography' environment on input line 448.
+LaTeX Warning: Empty `thebibliography' environment on input line 454.
 
-[15 <./kepek/eves_valtozok.png>] (TDK_doc.aux)
+[16 <./kepek/eves_valtozok.png>] (TDK_doc.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -1237,13 +1246,13 @@ Package rerunfilecheck Info: File `TDK_doc.out' has not changed.
 (rerunfilecheck)             Checksum: 2944F126AB6DC592B2246D4A324208B2;3013.
  ) 
 Here is how much of TeX's memory you used:
- 35831 strings out of 478659
- 823923 string characters out of 2845920
- 1187101 words of memory out of 3000000
+ 35832 strings out of 478659
+ 823930 string characters out of 2845920
+ 1187102 words of memory out of 3000000
  53273 multiletter control sequences out of 15000+600000
  466404 words of font info for 73 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 100i,18n,104p,2169b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 100i,18n,104p,2170b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
 {C:/Users/kolle/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C
 :/Users/kolle/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}{C
 :/Users/kolle/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}{C
@@ -1264,9 +1273,9 @@ AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/kolle/Ap
 pData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/Users/kolle/Ap
 pData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/kolle/Ap
 pData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy5.pfb>
-Output written on TDK_doc.pdf (16 pages, 569930 bytes).
+Output written on TDK_doc.pdf (17 pages, 573186 bytes).
 PDF statistics:
- 299 PDF objects out of 1000 (max. 8388607)
- 50 named destinations out of 1000 (max. 500000)
+ 303 PDF objects out of 1000 (max. 8388607)
+ 51 named destinations out of 1000 (max. 500000)
  177 words of extra memory for PDF output out of 10000 (max. 10000000)
 
