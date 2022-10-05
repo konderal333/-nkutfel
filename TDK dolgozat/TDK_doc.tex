@@ -30,7 +30,8 @@
 \renewcommand\vec[1]{\boldsymbol{#1}}
 
 
-\DeclareMathOperator*{\argmax}{argmax}    
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}   
 
 \newtheorem{definition}{Definíció}[section]
 
@@ -42,7 +43,7 @@
 \date{\today}           
 \captionsetup[table]{position=bottom}            
  
-\linespread{1.25}
+\linespread{1.2}
 
 \begin{document}
 
@@ -165,9 +166,11 @@ A kumulált átlagokat, felvételi pontszámokat illetve 0. ZH eredményeket tar
 
 \section{Felderítő adatelemzés a két évben}
 
-A felderítő elemzés célja az adatok ábrázolása egyszerűen és gyorsan, annak érdekében, hogy az adattípusok egyszerű viszonyai szemléletesen áttekinthetőek legyenek. Erre a célra alkalmasak a oszlopdiagramok, szórásdiagramok, folyamatábrák és más grafikonok.
+A felderítő elemzés célja az adatok ábrázolása egyszerűen és gyorsan, annak érdekében, hogy az adattípusok egyszerű viszonyai szemléletesen áttekinthetőek legyenek. Erre a célra alkalmasak a oszlopdiagramok, szórásdiagramok, folyamatábrák és más grafikonok, továbbá klaszterezéssel még mélyebb összefüggések is kinyerhetők az adatból.
 
 \subsection{Általános ábrák}
+
+
 
 \subsection{Folyamatábrák (Sankey-diagramok)}
 A Sankey-diagramok olyan folyamatábrák, amelyekben az ábrázolt folyamok szélessége arányos a megfelelő folyamértékekkel. Ezáltal könnyen ábrázolhatóak adott állapotok közötti folyamok, illetve ezek egymással vett aránya. Egy hátránya van, hogy egy ábrán csak két osztálycsoport között olvashatjuk le az áramlásokat. Ha egy harmadik osztálycsoportot is belehelyezünk, és csak a másodikkal kötjük össze, akkor az első és a harmadik közötti vándorlások nem jelennek meg rajta. Emiatt lesz némi redundancia a lentebb ismertetett ábrákban.\\
@@ -348,23 +351,32 @@ A használandó osztályozó algoritmusok közül a Naive Bayes és Gradient Tre
 Az egyes modellek és almodellek esetén a tanítás előtt főkomponens analízist (Principal Component Analysis) is alkalmaztunk. Az eljárás lényege, hogy az adatpontokat egy kisebb dimenziós térre vetítjük le oly módon, hogy a változók közötti varianca minél nagyobb részét tartsák meg, így minimalizálva az információveszteséget. Az új változók, amelyeket főkomponensnek nevezünk, a kisebb dimenziós térben az eredeti változók kovarianciamátrixának sajátvektorai lesznek. PCA használata során az algoritmusok gyorsabban tanulnak a kisebb dimenziószám miatt, és olykor jobb eredményt is érnek el. Jelen kutatásban másrészt azért is döntöttünk a PCA alkalmazása mellett, mert a korábbi, ugyanezen problémakört vizsgáló, általunk átnézett tanulmányok nem használtak PCA-t még nagyobb attribútum szám esetén sem, ugyanakkor mi a korai tanító-tesztelési fázisnál azt tapasztaltuk, hogy az áttranszformált adatokon jobban teljesítenek az osztályozó algoritmusok, így potenciálisan megéri alkalmazni.
 
 \subsubsection*{Implementálás}
-Valamennyi modellnél a teljes adathalmazt felbontottuk tanító- és teszthalmazra 70-30 arányban, majd a tanítóhalmazra illesztett PCA modellt alkalmaztuk a teszthalmazra is, ahol a főkomponensek számát minden modellnél 2 és 8 között iterálva változtattuk 2-es lépésközzel. Ezt követően a változókat kvantilis alapú 0-1 skálázásnak vetettük alá, ahol az algoritmusok jobb teljesítőképessége és a változók kiértékelés utáni összehasonlíthatósága végett a különböző attribútumok értékeit a kvantilisek mentén a $[0, 1]$ intervallumba transzformáltuk át, valamint az érdemjegy csoportok prediktálásához a 2 és 3 csoport modelleknél a célváltozó-értékeket rendre 1, 0-ra illetve 3, 2, 1-re módosítottuk. Az algoritmusok hiperparamétereinek optimális megválasztására 5-szörös keresztvalidációt alkalmaztunk, ahol törekedtünk arra, hogy az adatrekordok címkéjének eloszlása egyenletes legyen a felosztott részek között. A keresztvalidációnál használt, jóságot mérő metrikának a \textit{kiegyensúlyozott pontosságot} (Balanced Accuracy) választottuk, amelynek képlete az alábbi:
+
+A \textit{jegycsoportok} prediktálására épített modellezési struktúrát \ref{fig:modell}. ábra mutatja. Valamennyi csoportmodellnél a teljes adathalmazt felbontottuk tanító- és teszthalmazra 70-30 arányban, majd a tanítóhalmazra illesztett PCA modellt alkalmaztuk a teszthalmazra is, ahol a főkomponensek számát minden modellnél 2 és 8 között iterálva változtattuk 2-es lépésközzel. Ezt követően a változókat kvantilis alapú 0-1 skálázásnak vetettük alá, ahol az algoritmusok jobb teljesítőképessége és a változók kiértékelés utáni összehasonlíthatósága végett a különböző attribútumok értékeit a kvantilisek mentén a $[0, 1]$ intervallumba transzformáltuk át, valamint az érdemjegy csoportok prediktálásához a 2 és 3 csoport modelleknél a célváltozó-értékeket rendre 1, 0-ra illetve 3, 2, 1-re módosítottuk. 
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.6]{kepek/flowchart.png}
+\caption{A modellezési struktúra sematikus ábrája}
+\label{fig:modell}
+\end{figure}
+
+Az algoritmusok hiperparamétereinek optimális megválasztására 5-szörös keresztvalidációt alkalmaztunk, ahol törekedtünk arra, hogy az adatrekordok címkéjének eloszlása egyenletes legyen a felosztott részek között. A keresztvalidációnál használt, jóságot mérő metrikának a kiegyensúlyozott pontosságot ('\textit{balanced accuracy}') választottuk, amelynek képlete az alábbi:
 \begin{align*}
 \text{balanced-accuracy} = \frac{1}{2}\left(\frac{TP}{TP+FN} + \frac{TN}{TN+FP} \right) 
 \end{align*}Ezen metrika alapvetően bináris, pozitív-negatív osztályú osztályozási problémákhoz alkalmas, de többosztályos osztályozás esetén is használható, ahol az egyes osztályokhoz tartozó \textit{TP, FP, FN, TN} értékek által kiszámított kiegyensúlyozott pontosságok számtani közepét nézzük. A képlet egyes jelölései 2 valamint több osztály esetén:  \\ \\
 - \textbf{TP} a pozitívnak (osztálybelinek) osztályozott, valóban pozitív (osztálybeli) adatrekordok száma \\
 - \textbf{FP} a pozitívnak (osztálybelinek) osztályozott de valójában negatív (nem osztálybeli) adatrekordok száma \\
 - \textbf{FN} a negatívnak (nem osztálybelinek) osztályozott de valójában pozitív (osztálybeli) adatrekordok száma \\
-- \textbf{TN} a negatív (nem osztálybelinek) osztályozott, valóban negatív (nem osztálybeli) adatrekordok száma \\
+- \textbf{TN} a negatív (nem osztálybelinek) osztályozott, valóban negatív (nem osztálybeli) adatrekordok száma \\ 
+\\
+A választott metrika mellett meghatároztuk a legjobb algoritmusokat, amelyeket a teszthalmazon visszamértünk, valamint kiértékeltük az ily módon választott modellek esetén az egyes változók fontosságát is.
 
-A választott metrika mellett meghatároztuk a legjobb algoritmusokat, amelyeket a teszthalmazon visszamértünk, valamint kiértékeltük az ily módon választott modellek esetén az egyes változók fontosságát is. A pontos modellezési struktúrát a \ref{fig:modell}. ábra mutatja.
+A \textit{kumulált átlag} predikciójánál csak skálázást alkalmaztunk, PCA-t nem. A lineáris regresszió hiperparamétereinek optimalizálása hasonlóan 5-szörös keresztvalidációval történt. A legjobb modellnél mindkét évben feljegyeztük az $RMSE$ és $R^2$ statisztikákat, a reziduális tagok szórásdriagramját, illetve az egyes változók prediktív erejét.
 
 
 
 
-\begin{figure}
-\label{fig:modell}
-\end{figure}
 
 %TODO: Recall definícióját ismertetni?
 
@@ -407,10 +419,15 @@ Az algoritmus jellegéből adódóan keresztvalidáció során nem történt hip
 
 \subsubsection{Gradient Tree Boosting}
 
-A Gradient Boosting algoritmus egy Ensemble típusú osztályozó, amelyek lényege, hogy sok gyenge teljesítményű prediktor (\textit{"weak learner"}) eredményét felhasználva hoz egy erős predikciót. Gradient Tree Boosting esetén a gyenge prediktorok \textit{döntési fák}, amelyek lefelé irányított, legtöbbször bináris fák, amelyeknek minden belső csúcsában egy attribútumra vonatkozó feltétel szerepel, a levelei pedig valamilyen célváltozóértékkel címkézettek. Az egyes 'boosting' fázisokban  A keresztvalidálás során optimalizált paraméterek: \\
+A Gradient Boosting algoritmus egy Ensemble típusú osztályozó, amelyek lényege, hogy sok gyenge teljesítményű prediktor (\textit{"weak learner"}) eredményét felhasználva hoz egy erős predikciót. Gradient Tree Boosting esetén a gyenge prediktorok \textit{döntési fák}, amelyek lefelé irányított, legtöbbször bináris fák, amelyeknek minden belső csúcsában egy attribútumra vonatkozó feltétel szerepel, a levelei pedig valamilyen célváltozóértékkel címkézettek. A boosting eljárás során minden fázisban egy új döntési fát építünk, amely megpróbálja az előző fázisban épített fa hibáit csökkenteni az úgynevezett reziduálisokra építve. A cél egy erős prediktorként funkcionáló döntési fa létrehozása ráerősítések sorozata révén. (REFERÁLNI FRIEDMAN CIKKÉT)
+
+Legyen $F_{m-1}$ az $m$-$1$-edik fázisban kapott modell, majd jelölje $h_m(x)$ az $m$-edik fázisban épített döntési fát. Jelölje $J_m$ ennek a fának levélszámát illetve jelölje $R_{1m},\cdots,R_{J_mm}$ a bementi adatok terének egy felosztását a levelek alapján. 
+
+
+A keresztvalidálás során optimalizált paraméterek: \\
 - Tanulóráta (0.01 és 5 között változtatva 0.1-es lépésközzel)\\
 - Boosting fázisok száma (5 és 100 között változtatva 5-ös lépésközzel)\\
-- Vágási feltétel (négyzetes hiba, Friedman MSE) \\
+- Facsúcsokban használt vágási feltétel (négyzetes hiba, Friedman MSE) \\
 
 \subsubsection{Logisztikus regresszió}
 
@@ -559,7 +576,7 @@ A \ref{tab:multicol2}. táblázat a 2021-es adatokon optimalizált algoritmusok 
 \end{table}
 
 
-A két év négy modelljén külön-külön legjobban teljesítő algoritmusok esetén az egyes változók fontosságának egymáshoz viszonyított arányait a \ref{fig:variables}. ábra, míg az évenként összesített és leátlagolt változófontosságokat a \ref{fig:variables2}. ábra mutatja. A diagramokon szereplő értékek az egyes algoritmusoknál megállapított változófontosságok \textit{min-max} skálázott értékei, amelyeket regressziós algoritmusoknál az attribútumokhoz rendelt súlyokból, a többi osztályozónál pedig az Sklearn \textit{'inspection'} csomagjának segítségével nyertünk ki. Mindkét évben többnyire ugyanazok a változók a legdominánsabbak: 0.ZH pontszám, érettségi pont és a matematika tagozat, ugyanakkor szignifikanciájuk a két évben merőben eltérő. A másik fontos észrevétel a többi változó fontossága a dominánsokhoz képest. Míg 2019-ben a többi változó közepes mértékű fontossággal bír, addig 2021-ben ezek a változók igencsak csekély szignifikanciával rendelkeznek.
+A két év négy modelljén külön-külön legjobban teljesítő algoritmusok esetén az egyes változók fontosságának egymáshoz viszonyított arányait a \ref{fig:variables}. ábra, míg az évenként összesített és leátlagolt változófontosságokat a \ref{fig:variables2}. ábra mutatja. A diagramokon szereplő értékek az egyes algoritmusoknál megállapított változófontosságok \textit{min-max} skálázott értékei, amelyeket regressziós algoritmusoknál az attribútumokhoz rendelt súlyokból, a többi osztályozónál pedig az Sklearn \textit{'inspection'} csomagjának segítségével nyertünk ki. Az összesített ábrán az egyes évek legfontosabb attribútumai a megfelelő évek különböző modelljein is többnyire jelentős szignifikanciával bírnak, a többi változó fontossága viszont modellenként eltérő. A 0.ZH pontszám illetve az érettségi pont prediktív ereje mindkét évben kiemelkedő. A 2019-es évben a matematika tagozaton való jelenlét és a kognitív teszten elért eredmény is nem elhanyagolható szignifikanciával bírt, viszont 2021-ben ezen tényezők prediktáló ereje csökkent, ugyanakkor az elért tanulmányi- és többletpontok jelentősége a matematika jegyre nézve több mint kétszeresére nőtt. Összevetve a felderítő adatelemzéssel, ezen eredmények arra engednek minket következtetni, hogy  ...
 
 
 \newpage
@@ -589,8 +606,31 @@ A két év négy modelljén külön-külön legjobban teljesítő algoritmusok e
 \label{fig:variables2}
 \end{figure}
 
-A kumulált átlag prediktálására vonatkozó $R^2$ statisztikát, reziduális szórásképet és változófontosságot rendre a ...táblázat, ...ábra és ...ábra szemlélteti. 
+A kumulált átlag prediktálásának eredményei (statisztikák, reziduális szórásdiagramok és az egyes változók prediktív ereje egymáshoz viszonyítva) a \ref{fig:kumulalt}. ábrán láthatóak. 
+\vspace{0.5cm}
 
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}[b]{0.4\textwidth}
+    \raggedright
+    - $R^2$: \\
+    - $RMSE$: \\
+    	\centering
+        \includegraphics[width=1\textwidth, left]{kepek/residual2019.png} % first figure itself
+        \includegraphics[width=1\textwidth, left]{kepek/kumulalt2019.png} % first figure itself
+    \end{minipage}
+    \begin{minipage}[b]{0.4\textwidth}
+    \raggedright
+    - $R^2$: \\
+    - $RMSE$: \\
+        \centering
+        \includegraphics[width=1\textwidth, left]{kepek/residual2021.png} % first figure itself
+        \includegraphics[width=1\textwidth, left]{kepek/kumulalt2021.png} % first figure itself
+    \end{minipage}
+   \caption{Modellmutatók a két évben}
+   \label{fig:kumulalt}
+\end{figure}
 
 \begin{thebibliography}{9}
 \end{thebibliography}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 21.12) (preloaded format=pdflatex 2022.2.14)  3 OCT 2022 23:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 21.12) (preloaded format=pdflatex 2022.2.14)  5 OCT 2022 17:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1007,7 +1007,7 @@ z/libraries\tikzlibraryfit.code.tex
 File: tikzlibraryfit.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 )
 \c@definition=\count341
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 47
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 48
 .
 
 (C:\Users\kolle\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmr.fd
@@ -1021,24 +1021,24 @@ File: l3backend-pdftex.def 2021-10-18 L3 backend support: PDF output (pdfTeX)
 ) (TDK_doc.aux)
 \openout1 = `TDK_doc.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
@@ -1074,9 +1074,9 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
 ick labels; missing features). Consider writing \pgfplotsset{compat=1.18} into 
 your preamble.
- on input line 47.
+ on input line 48.
 
-Package hyperref Info: Link coloring OFF on input line 47.
+Package hyperref Info: Link coloring OFF on input line 48.
 (C:\Users\kolle\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
 
@@ -1089,9 +1089,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count349
 )
-LaTeX Info: Redefining \ref on input line 47.
-LaTeX Info: Redefining \pageref on input line 47.
-LaTeX Info: Redefining \nameref on input line 47.
+LaTeX Info: Redefining \ref on input line 48.
+LaTeX Info: Redefining \pageref on input line 48.
+LaTeX Info: Redefining \nameref on input line 48.
  (TDK_doc.out) (TDK_doc.out)
 \@outlinefile=\write4
 \openout4 = `TDK_doc.out'.
@@ -1138,12 +1138,12 @@ LaTeX Info: Redefining \mit on input line 498.
 <kepek/bme_logo_kicsi.jpg, id=78, 523.2348pt x 168.1482pt>
 File: kepek/bme_logo_kicsi.jpg Graphic file (type jpg)
 <use kepek/bme_logo_kicsi.jpg>
-Package pdftex.def Info: kepek/bme_logo_kicsi.jpg  used on input line 52.
+Package pdftex.def Info: kepek/bme_logo_kicsi.jpg  used on input line 53.
 (pdftex.def)             Requested size: 273.14923pt x 87.78136pt.
 <kepek/bme_cimer.jpg, id=79, 100.2144pt x 99.7326pt>
 File: kepek/bme_cimer.jpg Graphic file (type jpg)
 <use kepek/bme_cimer.jpg>
-Package pdftex.def Info: kepek/bme_cimer.jpg  used on input line 84.
+Package pdftex.def Info: kepek/bme_cimer.jpg  used on input line 85.
 (pdftex.def)             Requested size: 136.57462pt x 135.9328pt.
 
 [1
@@ -1195,7 +1195,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 \openout5 = `TDK_doc.toc'.
 
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
-05.
+06.
 
 (C:\Users\kolle\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -1204,9 +1204,9 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.112 \newpage
+l.113 \newpage
                [1] [2] [3] [4]
-Underfull \hbox (badness 10000) in paragraph at lines 195--196
+Underfull \hbox (badness 10000) in paragraph at lines 198--199
 
  []
 
@@ -1214,140 +1214,155 @@ Underfull \hbox (badness 10000) in paragraph at lines 195--196
 <kepek/teszt-a1-a2.png, id=136, 629.9535pt x 250.536pt>
 File: kepek/teszt-a1-a2.png Graphic file (type png)
 <use kepek/teszt-a1-a2.png>
-Package pdftex.def Info: kepek/teszt-a1-a2.png  used on input line 210.
+Package pdftex.def Info: kepek/teszt-a1-a2.png  used on input line 213.
 (pdftex.def)             Requested size: 360.96124pt x 143.55627pt.
  [6 <./kepek/teszt-a1-a2.png>]
 <kepek/matekrészeksankey.png, id=145, 632.3625pt x 273.4215pt>
 File: kepek/matekrészeksankey.png Graphic file (type png)
 <use kepek/matekrészeksankey.png>
-Package pdftex.def Info: kepek/matekrészeksankey.png  used on input line 226.
+Package pdftex.def Info: kepek/matekrészeksankey.png  used on input line 229.
 (pdftex.def)             Requested size: 362.34158pt x 156.66959pt.
 <kepek/2019_old_felvi_0zh_teszt.png, id=146, 630.55576pt x 270.41025pt>
 File: kepek/2019_old_felvi_0zh_teszt.png Graphic file (type png)
 <use kepek/2019_old_felvi_0zh_teszt.png>
 Package pdftex.def Info: kepek/2019_old_felvi_0zh_teszt.png  used on input line
- 240.
+ 243.
 (pdftex.def)             Requested size: 361.30632pt x 154.94415pt.
- [7 <./kepek/matekrészeksankey.png>]
-<kepek/2021_old_felvi_0zh_teszt.png, id=153, 628.14674pt x 271.61475pt>
+ [7 <./kepek/matekrészeksankey.png> <./kepek/2019_old_felvi_0zh_teszt.png>]
+<kepek/2021_old_felvi_0zh_teszt.png, id=155, 628.14674pt x 271.61475pt>
 File: kepek/2021_old_felvi_0zh_teszt.png Graphic file (type png)
 <use kepek/2021_old_felvi_0zh_teszt.png>
 Package pdftex.def Info: kepek/2021_old_felvi_0zh_teszt.png  used on input line
- 252.
+ 255.
 (pdftex.def)             Requested size: 359.92598pt x 155.63432pt.
-<kepek/2019_felvi_teszt_atlag_kumatlag.png, id=154, 681.04437pt x 183.18437pt>
+<kepek/2019_felvi_teszt_atlag_kumatlag.png, id=156, 681.04437pt x 183.18437pt>
 File: kepek/2019_felvi_teszt_atlag_kumatlag.png Graphic file (type png)
 <use kepek/2019_felvi_teszt_atlag_kumatlag.png>
 Package pdftex.def Info: kepek/2019_felvi_teszt_atlag_kumatlag.png  used on inp
-ut line 265.
+ut line 268.
 (pdftex.def)             Requested size: 408.62978pt x 109.91145pt.
- [8 <./kepek/2019_old_felvi_0zh_teszt.png> <./kepek/2021_old_felvi_0zh_teszt.pn
-g>]
-<kepek/2021_felvi_teszt_atlag.png, id=163, 620.81938pt x 208.78pt>
+ [8 <./kepek/2021_old_felvi_0zh_teszt.png> <./kepek/2019_felvi_teszt_atlag_kuma
+tlag.png>]
+<kepek/2021_felvi_teszt_atlag.png, id=165, 620.81938pt x 208.78pt>
 File: kepek/2021_felvi_teszt_atlag.png Graphic file (type png)
 <use kepek/2021_felvi_teszt_atlag.png>
 Package pdftex.def Info: kepek/2021_felvi_teszt_atlag.png  used on input line 2
-80.
+83.
 (pdftex.def)             Requested size: 372.4945pt x 125.26895pt.
-
-[9 <./kepek/2019_felvi_teszt_atlag_kumatlag.png> <./kepek/2021_felvi_teszt_atla
-g.png>]
-<kepek/2019_felvi_teszt_a1_kumatl.png, id=172, 802.49812pt x 218.31563pt>
+<kepek/2019_felvi_teszt_a1_kumatl.png, id=166, 802.49812pt x 218.31563pt>
 File: kepek/2019_felvi_teszt_a1_kumatl.png Graphic file (type png)
 <use kepek/2019_felvi_teszt_a1_kumatl.png>
 Package pdftex.def Info: kepek/2019_felvi_teszt_a1_kumatl.png  used on input li
-ne 290.
+ne 293.
 (pdftex.def)             Requested size: 401.24808pt x 109.15753pt.
-<kepek/2021_felvi_teszt_a1_atlag.png, id=173, 803.0pt x 218.31563pt>
+ [9 <./kepek/2021_felvi_teszt_atlag.png> <./kepek/2019_felvi_teszt_a1_kumatl.pn
+g>]
+<kepek/2021_felvi_teszt_a1_atlag.png, id=175, 803.0pt x 218.31563pt>
 File: kepek/2021_felvi_teszt_a1_atlag.png Graphic file (type png)
 <use kepek/2021_felvi_teszt_a1_atlag.png>
 Package pdftex.def Info: kepek/2021_felvi_teszt_a1_atlag.png  used on input lin
-e 300.
+e 303.
 (pdftex.def)             Requested size: 401.49902pt x 109.15753pt.
-<kepek/2019_hozott_erett_A1.png, id=174, 618.81187pt x 214.8025pt>
+<kepek/2019_hozott_erett_A1.png, id=176, 618.81187pt x 214.8025pt>
 File: kepek/2019_hozott_erett_A1.png Graphic file (type png)
 <use kepek/2019_hozott_erett_A1.png>
-Package pdftex.def Info: kepek/2019_hozott_erett_A1.png  used on input line 310
+Package pdftex.def Info: kepek/2019_hozott_erett_A1.png  used on input line 313
 .
 (pdftex.def)             Requested size: 371.29pt x 128.88249pt.
- [10 <./kepek/2019_felvi_teszt_a1_kumatl.png> <./kepek/2021_felvi_teszt_a1_atla
-g.png>]
-<kepek/2021_hozott_erett_A1.png, id=183, 620.3175pt x 217.81375pt>
+<kepek/2021_hozott_erett_A1.png, id=177, 620.3175pt x 217.81375pt>
 File: kepek/2021_hozott_erett_A1.png Graphic file (type png)
 <use kepek/2021_hozott_erett_A1.png>
-Package pdftex.def Info: kepek/2021_hozott_erett_A1.png  used on input line 323
+Package pdftex.def Info: kepek/2021_hozott_erett_A1.png  used on input line 326
 .
 (pdftex.def)             Requested size: 372.19337pt x 130.68924pt.
- [11 <./kepek/2019_hozott_erett_A1.png> <./kepek/2021_hozott_erett_A1.png>] [12
-] [13]
-Underfull \hbox (badness 10000) in paragraph at lines 354--359
+ [10 <./kepek/2021_felvi_teszt_a1_atlag.png> <./kepek/2019_hozott_erett_A1.png>
+] [11 <./kepek/2021_hozott_erett_A1.png>] [12]
+<kepek/flowchart.png, id=199, 628.59843pt x 584.1825pt>
+File: kepek/flowchart.png Graphic file (type png)
+<use kepek/flowchart.png>
+Package pdftex.def Info: kepek/flowchart.png  used on input line 359.
+(pdftex.def)             Requested size: 377.16197pt x 350.51219pt.
+ [13] [14 <./kepek/flowchart.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 367--374
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 354--359
+Underfull \hbox (badness 10000) in paragraph at lines 367--374
 
  []
 
-
-Package caption Warning: \label without proper reference on input line 366.
-See the caption package documentation for explanation.
-
-
-LaTeX Warning: Reference `fig:modell' on page 14 undefined on input line 360.
-
-[14]
-Underfull \hbox (badness 10000) in paragraph at lines 410--414
+[15]
+Underfull \hbox (badness 10000) in paragraph at lines 427--431
 
  []
 
-[15] [16] [17]
-Overfull \hbox (2.50052pt too wide) in paragraph at lines 495--521
+[16] [17] [18]
+Overfull \hbox (2.50052pt too wide) in paragraph at lines 512--538
  [][] 
  []
 
-[18]
-Overfull \hbox (1.91725pt too wide) in paragraph at lines 532--557
+
+Overfull \hbox (1.91725pt too wide) in paragraph at lines 549--574
  [][] 
  []
 
-[19]
-<kepek/modell_valtozo.png, id=250, 709.14937pt x 1192.455pt>
+[19] [20]
+<kepek/modell_valtozo.png, id=257, 709.14937pt x 1192.455pt>
 File: kepek/modell_valtozo.png Graphic file (type png)
 <use kepek/modell_valtozo.png>
-Package pdftex.def Info: kepek/modell_valtozo.png  used on input line 569.
+Package pdftex.def Info: kepek/modell_valtozo.png  used on input line 586.
 (pdftex.def)             Requested size: 404.21935pt x 679.70642pt.
 
-Overfull \vbox (5.04832pt too high) has occurred while \output is active []
+Overfull \vbox (4.32327pt too high) has occurred while \output is active []
 
 
-[20 <./kepek/modell_valtozo.png>]
-<kepek/eves_valtozok.png, id=256, 687.31781pt x 333.49594pt>
+[21 <./kepek/modell_valtozo.png>]
+<kepek/eves_valtozok.png, id=263, 687.31781pt x 333.49594pt>
 File: kepek/eves_valtozok.png Graphic file (type png)
 <use kepek/eves_valtozok.png>
-Package pdftex.def Info: kepek/eves_valtozok.png  used on input line 587.
+Package pdftex.def Info: kepek/eves_valtozok.png  used on input line 604.
 (pdftex.def)             Requested size: 446.75128pt x 216.76979pt.
+<kepek/residual2019.png, id=265, 267.24844pt x 209.28188pt>
+File: kepek/residual2019.png Graphic file (type png)
+<use kepek/residual2019.png>
+Package pdftex.def Info: kepek/residual2019.png  used on input line 620.
+(pdftex.def)             Requested size: 182.09486pt x 142.60356pt.
+<kepek/kumulalt2019.png, id=266, 286.82156pt x 247.67531pt>
+File: kepek/kumulalt2019.png Graphic file (type png)
+<use kepek/kumulalt2019.png>
+Package pdftex.def Info: kepek/kumulalt2019.png  used on input line 621.
+(pdftex.def)             Requested size: 182.09486pt x 157.2456pt.
+<kepek/residual2021.png, id=267, 268.00125pt x 210.03468pt>
+File: kepek/residual2021.png Graphic file (type png)
+<use kepek/residual2021.png>
+Package pdftex.def Info: kepek/residual2021.png  used on input line 628.
+(pdftex.def)             Requested size: 182.09486pt x 142.70631pt.
+<kepek/kumulalt2021.png, id=268, 280.79906pt x 248.42813pt>
+File: kepek/kumulalt2021.png Graphic file (type png)
+<use kepek/kumulalt2021.png>
+Package pdftex.def Info: kepek/kumulalt2021.png  used on input line 629.
+(pdftex.def)             Requested size: 182.09486pt x 161.10109pt.
 
 
-LaTeX Warning: Empty `thebibliography' environment on input line 596.
+LaTeX Warning: Empty `thebibliography' environment on input line 636.
 
-[21 <./kepek/eves_valtozok.png>] (TDK_doc.aux)
-
-LaTeX Warning: There were undefined references.
-
+[22 <./kepek/eves_valtozok.png> <./kepek/residual2019.png> <./kepek/kumulalt201
+9.png> <./kepek/residual2021.png> <./kepek/kumulalt2021.png>] [23] (TDK_doc.aux
+)
 Package rerunfilecheck Info: File `TDK_doc.out' has not changed.
 (rerunfilecheck)             Checksum: 2944F126AB6DC592B2246D4A324208B2;3013.
  ) 
 Here is how much of TeX's memory you used:
- 37050 strings out of 478659
- 853243 string characters out of 2845920
- 1210753 words of memory out of 3000000
- 54454 multiletter control sequences out of 15000+600000
+ 37091 strings out of 478659
+ 854175 string characters out of 2845920
+ 1218831 words of memory out of 3000000
+ 54487 multiletter control sequences out of 15000+600000
  448391 words of font info for 56 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  100i,18n,104p,2170b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
-{C:/Users/kolle/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.en
-c}{C:/Users/kolle/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.en
+{C:/Users/kolle/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.en
+c}{C:/Users/kolle/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.en
 c}{C:/Users/kolle/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C
 :/Users/kolle/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc}{C
 :/Users/kolle/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}{C:/Us
@@ -1355,17 +1370,18 @@ ers/kolle/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}<C:/Users
 /kolle/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users
 /kolle/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmex10.pfb><C:/Users
 /kolle/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi12.pfb><C:/Users
-/kolle/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/Users/
-kolle/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/k
-olle/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:/Users/ko
-lle/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/koll
-e/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/Users/koll
-e/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/koll
-e/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Users/kolle
-/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on TDK_doc.pdf (22 pages, 1596883 bytes).
+/kolle/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi6.pfb><C:/Users/
+kolle/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/Users/k
+olle/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/ko
+lle/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:/Users/kol
+le/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/kolle
+/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/Users/kolle
+/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/kolle
+/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Users/kolle/
+AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on TDK_doc.pdf (24 pages, 1675502 bytes).
 PDF statistics:
- 336 PDF objects out of 1000 (max. 8388607)
- 71 named destinations out of 1000 (max. 500000)
- 227 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 362 PDF objects out of 1000 (max. 8388607)
+ 74 named destinations out of 1000 (max. 500000)
+ 252 words of extra memory for PDF output out of 10000 (max. 10000000)
 
