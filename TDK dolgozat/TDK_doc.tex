@@ -166,9 +166,29 @@ A kumulált átlagokat, felvételi pontszámokat illetve 0. ZH eredményeket tar
 
 \section{Felderítő adatelemzés a két évben}
 
-A felderítő elemzés célja az adatok ábrázolása egyszerűen és gyorsan, annak érdekében, hogy az adattípusok egyszerű viszonyai szemléletesen áttekinthetőek legyenek. Erre a célra alkalmasak a oszlopdiagramok, szórásdiagramok, folyamatábrák és más grafikonok, továbbá klaszterezéssel még mélyebb összefüggések is kinyerhetők az adatból.
+Egy részben feltáró adatelemzés fontos szakasza a felderítő elemzés. Célja az adatok ábrázolása egyszerűen és gyorsan, annak érdekében, hogy az adattípusok egyszerű viszonyai szemléletesen áttekinthetőek legyenek. Erre a célra alkalmasak a oszlopdiagramok, szórásdiagramok, folyamatábrák és más grafikonok, továbbá klaszterezéssel kevésbé triviális összefüggések is kinyerhetők az adatból.
 
 \subsection{Általános ábrák}
+
+Ebben az alfejezetben tekintjük át a számos készült ábrából a legérdekesebbeket. Viszonylag sok változóval kellett dolgozni, így célszerű volt több részábrás egységekbe gyűjteni a hasonló felépítésű grafikonokat. Ehhez megfelelő eszköz volt a \textit{matplotlib figure}, illetve egy ennél még gyorsabb függvény a \textit{seaborn pairplot} volt.
+
+A változók értékeinek eloszlását oszlopdiagramokkal, a változópárok egymás közötti viszonyait szórásdiagramokkal szemléltettük. A \textit{seaborn pairplot} függvény előnye, hogy csak az általunk vizsgált változók oszlopait kell megadni, és az összes kombinációt egyszerre számítja ki és ábrázolja egy megfelelő méretű mátrixban.
+
+Első sorban tekintsük a \textit{matplotlib figure} alakzatokba összesített ábrákat. Ezeknek az az előnye a \textit{seaborn pairplot}-tal szemben, hogy tetszőleges ábrákat lehet belehelyezni, így például színezéssel bevihető egy harmadik dimenzió a szórásdiagramba. Sőt negyedik dimenziót is lehetne ábrázolni a pontok kinézetének módosításával, de az már nehezen értelmezhető.
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.573]{kepek/2019scatter.png}
+\caption{2019. Szórásdiagramok}
+\label{fig:2019scatter}
+\end{figure}
+
+Ezen az ábrán egyrészt a 0. ZH, a teszt összpontszáma és a két külön rész pontszámai vannak ábrázolva pontfelhőként a felvételi összpontszám függvényében, de minden eset kétszer. A felső sorban a pontok az alapján vannak színezve, hogy járt-e természettudományi tagozatra a hallgató (1 igen, 0 nem), az alsóban pedig, hogy emelt szinten érettségizett-e (1 igen, 0 nem).
+
+Egyrészt rögtön látszik, hogy minden ábrán a bal felső és a jobb alsó sarkokban többnyire nincs pont, ez a pozitív korreláció, azaz összefüggés jele. Másrészt a színezésből arra következtethetünk, hogy az emelt érettségi megléte erősen fölfele húzza a többi eredményt, míg a természettudományi tagozatosok esetében nem egyértelmű a helyzet, drasztikus elkülönülés nincs.
+
+
+
 
 
 
@@ -195,7 +215,7 @@ Dolgozatunkban hat opciót vizsgáltunk a két évben az elérhető adatoknak me
 
 \end{itemize}
 
-Az első két esetben csak a 2019-es évfolyamról volt adat. Az utolsó esetben 2021-ben megegyezett a kutatás idejében az első féléves és a kumulált átlag, így ennél az utóbbi értelemszerűen nem lett még egyszer beletéve.\\
+Az első két esetben csak a 2019-es évfolyamról volt adat. Az utolsó esetben 2021-ben megegyezett a kutatás idejében az első féléves és a kumulált átlag, így ennél az utóbbi értelemszerűen nem lett még egyszer beletéve.
 
 A matematikai teszt részeinek eredményein és az \textit{A1}, \textit{A2} jegyeken kívül a többi változó folytonos volt, így szükség volt ezek diszkretizálására. Öt-öt osztály lett létrehozva minden esetben, de nem feltétlenül került mindegyikbe hallgató. Az átlagok kerekítve lettek, a felvételi, kognitív teszt és nulladik zh pontszámok ekvidisztáns módon lettek felosztva.
 
@@ -334,6 +354,19 @@ Ehhez, és a 2019-es ábrához képest az érettségi pontszám viszont egészen
 
 
 \subsection{Klaszterezés}
+
+EZ MÉG CSAK RÁVEZETÉS
+
+-----------
+
+Cél: gép által csoportosítani a hallgatókat több változó alapján, keresni jó magyarázó változókat, hogy egyszerűsíthető legyen a csoportosítás.
+
+Változók: összesített teszteredmény, külön matek/kognitív eredmény, első félév átlaga, kumulált átlag, felvételi pontszám összesítve és részekre bontva. Ezen attribútumok nem redundáns részhalmazai.
+	Az algoritmusok hatékonyabb és gyorsabb működése érdekében a változók értékei normalizálva és skálázva lettek. Három-három táblázat készült a 2019, 2020, 2021 évekre: min-max, illetve kvantilis szerint skálázott, továbbá standardizált értékekkel.
+	Három klaszterező algoritmus lett alkalmazva a legjobb eredmény elérése érdekében: K-közép, DBSCAN és Ward féle hierarchikus klaszterező algoritmus.
+	Ezek futtatása előtt el lett végezve egy felderítő ábrázolás, amely nehézségekre hívta fel a figyelmet. Az adatok kétdimenziós vetületeit ábrázoltuk szórásdiagramokon. A pontfelhők között nem volt olyan, amelyen látványosan el lehetett volna különíteni egyes csoportokat, ami a klaszterezést nehezítette.
+
+------------
 
 \newpage
 \section{Prediktív analitika}
