@@ -99,12 +99,6 @@
 \section{Bevezetés}
 ....
 
-\section{Fogalmak és definíciók}
-
-Ez a szekció csak egy placeholder azon definícióknak, amiket még nem tudtam hova beépíteni
-\begin{itemize}
-\item[•]\textbf{One-vs-Rest elv:} Bináris osztályozó algoritmusok esetén használt eljárás, amely többosztályos osztályozási feladat esetén használatos. Lényege, hogy minden osztály esetén képezünk egy új virtuális osztályt, amely az összes többi osztályt tartalmazza, majd minden ilyen osztálypár esetén a bináris osztályozó meghatározza a kérdéses adatrekord esetén az osztályba tartozási valószínűségeket. Végül azt a címkét prediktáljuk a rekordnak, amely osztály esetén a legnagyobb ez a valószínűség.
-\end{itemize}
 
 \section{A kognitív tesztről}
 
@@ -172,13 +166,20 @@ Egy részben feltáró adatelemzés fontos szakasza a felderítő elemzés. Cél
 
 Ebben az alfejezetben tekintjük át a számos készült ábrából a legérdekesebbeket. Viszonylag sok változóval kellett dolgozni, így célszerű volt több részábrás egységekbe gyűjteni a hasonló felépítésű grafikonokat. Ehhez megfelelő eszköz volt a \textit{matplotlib figure}, illetve egy ennél még gyorsabb függvény a \textit{seaborn pairplot} volt.
 
+(EHHEZ MÉG ÍROK)
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{kepek/jegyek_eloszlas.png}
+\caption{Az elsőéves matematikajegyek eloszlása az egyes években}
+\end{figure}
+
 A változók értékeinek eloszlását oszlopdiagramokkal, a változópárok egymás közötti viszonyait szórásdiagramokkal szemléltettük. A \textit{seaborn pairplot} függvény előnye, hogy csak az általunk vizsgált változók oszlopait kell megadni, és az összes kombinációt egyszerre számítja ki és ábrázolja egy megfelelő méretű mátrixban.
 
 Első sorban tekintsük a \textit{matplotlib figure} alakzatokba összesített ábrákat. Ezeknek az az előnye a \textit{seaborn pairplot}-tal szemben, hogy tetszőleges ábrákat lehet belehelyezni, így például színezéssel bevihető egy harmadik dimenzió a szórásdiagramba. Sőt negyedik dimenziót is lehetne ábrázolni a pontok kinézetének módosításával, de az már nehezen értelmezhető.
 
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.573]{kepek/2019scatter.png}
+\includegraphics[width=\textwidth]{kepek/2019scatter.png}
 \caption{2019. Szórásdiagramok}
 \label{fig:2019scatter}
 \end{figure}
@@ -373,7 +374,7 @@ Változók: összesített teszteredmény, külön matek/kognitív eredmény, els
 
 \subsection{Modellek és metodológia}
 
-Következő lépésként azt vizsgáltuk, hogy a két évben külön a bemeneti adatok alapján mennyire pontosan lehet előrejelezni egyes teljesítménymutatók értéket, illetve hogy a predikciókra nézve a különböző bemeneti változók, más néven \textit{attribútumok} milyen és mekkora szereppel bírnak. Ehhez többféle modellen többféle \textit{gépi tanuláson alapuló osztályozó algoritmus} használatára volt szükség. A kutatás során kétféle eredmény alaposabb vizsgálatára összpontosítottunk mindkét évben: a "Matematika A1a - Analízis" tárgyból kapott érdemjegyre illetve az első félév végén megállapított kumulált tanulmányi átlagra. Ezen feladatok a felügyelt gépi tanulási problémák közé esnek, ahol a kitüntetett célváltozót szeretnénk a többi bemeneti változóval előrejelezni. Ekkor a gépi tanulás során a teljes adathalmazt tanító és teszthalmazra bontjuk, a tanító adathalmazon betanítjuk az algoritmusokat úgy, hogy a tanítóhalmazbeli adatok célváltozóját minél pontosabban prediktálják, majd valamilyen metrika szerint kiválasztjuk a betanított algoritmusok közül a legjobbat. A legoptimálisabb osztályozó kiválasztásához többnyire \textit{keresztvalidációt} alkalmazunk. Keresztvalidáció során a tanítóhalmazt felbontjuk K egyenlő részre, melyek közül az egyiket kinevezzük validációs halmaznak. Ezt követően az algoritmusokat betanítjuk a maradék $K$-$1$ részen, amelyeket aztán a validációs halmazon kiértékelünk. Ezt összesen $K$ alkalommal ismételjük, mindig másik részt választva validációs halmaznak, majd azt az algoritmust dedikáljuk a legjobbnak, amelynek az aggregált teljesítménye a $K$ darab iteráció során a legjobb. Az így kapott osztályozót még visszamérjük a teszthalmazon is az általánosítóképesség ellenőrzése végett. A kutatás során a cél a teszthalmazon való minél hatásosabb előrejelzés mellett az egyes éveknél használt és optimalizált algoritmusok esetén a különböző attribútumok prediktív erejének összehasonlítása volt.
+Következő lépésként azt vizsgáltuk, hogy a két évben külön a bemeneti adatok alapján mennyire pontosan lehet előrejelezni egyes teljesítménymutatók értéket, illetve hogy a predikciókra nézve a különböző bemeneti változók, más néven attribútumok milyen és mekkora szereppel bírnak. Ehhez többféle modellen többféle \textit{gépi tanuláson alapuló osztályozó algoritmus} használatára volt szükség. A kutatás során kétféle eredmény alaposabb vizsgálatára összpontosítottunk mindkét évben: a "Matematika A1a - Analízis" tárgyból kapott érdemjegyre illetve az első félév végén megállapított kumulált tanulmányi átlagra. Ezen feladatok a felügyelt gépi tanulási problémák közé esnek, ahol a kitüntetett célváltozót szeretnénk a többi bemeneti változóval előrejelezni. Ekkor a gépi tanulás során a teljes adathalmazt tanító és teszthalmazra bontjuk, a tanító adathalmazon betanítjuk az algoritmusokat úgy, hogy a tanítóhalmazbeli adatok célváltozóját minél pontosabban prediktálják, majd valamilyen metrika szerint kiválasztjuk a betanított algoritmusok közül a legjobbat. A legoptimálisabb osztályozó kiválasztásához többnyire \textit{keresztvalidációt} alkalmazunk. Keresztvalidáció során a tanítóhalmazt felbontjuk K egyenlő részre, melyek közül az egyiket kinevezzük validációs halmaznak. Ezt követően az algoritmusokat betanítjuk a maradék $K$-$1$ részen, amelyeket aztán a validációs halmazon kiértékelünk. Ezt összesen $K$ alkalommal ismételjük, mindig másik részt választva validációs halmaznak, majd azt az algoritmust dedikáljuk a legjobbnak, amelynek az aggregált teljesítménye a $K$ darab iteráció során a legjobb. Az így kapott osztályozót még visszamérjük a teszthalmazon is az általánosítóképesség ellenőrzése végett. A kutatás során a cél a teszthalmazon való minél hatásosabb előrejelzés mellett az egyes éveknél használt és optimalizált algoritmusok esetén a különböző attribútumok prediktív erejének összehasonlítása volt.
 
 A két vizsgált probléma közül az előbbi alapvetően egy osztályozási probléma öt osztállyal, míg az utóbbi egy regressziós feladat. Az előbbi feladathoz ötféle algoritmust, \textit{Gradient Tree Boosting-ot, Naive Bayes-t, logisztikus regressziót, SVM-et} és \textit{lineáris regressziót} használtunk, az utóbbihoz csupán lineáris regressziót (ezen algoritmusok működése és optimalizálása a következő fejezetben lesz ismertetve). Azért esett a választás ezen algoritmusokra, ugyanis számos egyetemi teljesítményt és lemorzsolódást vizsgáló tanulmány során teljesítettek kiváló eredménnyel. (IDE REFERENCIÁK) Mivel azonban viszonylag kevés adat állt a rendelkezésünkre, ezért az érdemjegyek prediktálásánál az adatrekordok esetén a pontos érdemjegy helyett érdemjegy csoportok előrejelzésére koncentráltunk. A matematika érdemjegycsoportok prediktálására így kétféle modell került felvázolásra: egy \textit{3 csoport modell}, illetve egy \textit{2 csoport modell}.
 
@@ -394,7 +395,7 @@ A \textit{jegycsoportok} prediktálására épített modellezési struktúrát \
 \label{fig:modell}
 \end{figure}
 
-Az algoritmusok hiperparamétereinek optimális megválasztására 5-szörös keresztvalidációt alkalmaztunk, ahol törekedtünk arra, hogy az adatrekordok címkéjének eloszlása egyenletes legyen a felosztott részek között. A keresztvalidációnál használt, jóságot mérő metrikának a kiegyensúlyozott pontosságot ('\textit{balanced accuracy}') választottuk, amelynek képlete az alábbi:
+Valamennyi algoritmus hiperparamétereinek optimális megválasztására 5-szörös keresztvalidációt alkalmaztunk, ahol törekedtünk arra, hogy az adatrekordok címkéjének eloszlása egyenletes legyen a felosztott részek között. A keresztvalidációnál használt, jóságot mérő metrikának a kiegyensúlyozott pontosságot ('\textit{balanced accuracy}') választottuk, amelynek képlete az alábbi:
 \begin{align*}
 \text{balanced-accuracy} = \frac{1}{2}\left(\frac{TP}{TP+FN} + \frac{TN}{TN+FP} \right) 
 \end{align*}Ezen metrika alapvetően bináris, pozitív-negatív osztályú osztályozási problémákhoz alkalmas, de többosztályos osztályozás esetén is használható, ahol az egyes osztályokhoz tartozó \textit{TP, FP, FN, TN} értékek által kiszámított kiegyensúlyozott pontosságok számtani közepét nézzük. A képlet egyes jelölései 2 valamint több osztály esetén:  \\ \\
@@ -405,7 +406,7 @@ Az algoritmusok hiperparamétereinek optimális megválasztására 5-szörös ke
 \\
 A választott metrika mellett meghatároztuk a legjobb algoritmusokat, amelyeket a teszthalmazon visszamértünk, valamint kiértékeltük az ily módon választott modellek esetén az egyes változók fontosságát is.
 
-A \textit{kumulált átlag} predikciójánál csak skálázást alkalmaztunk, PCA-t nem. A lineáris regresszió hiperparamétereinek optimalizálása hasonlóan 5-szörös keresztvalidációval történt. A legjobb modellnél mindkét évben feljegyeztük az $RMSE$ és $R^2$ statisztikákat, a reziduális tagok szórásdriagramját, illetve az egyes változók prediktív erejét.
+A \textit{kumulált átlag} predikciójánál a tisztított adathalmazt ugyanúgy 70-30 arányban osztottuk fel. Adattranszformálásra csak skálázást alkalmaztunk, PCA-t nem, majd a lineáris regresszió hiperparamétereinek optimalizálása hasonlóan 5-szörös keresztvalidációval történt. A legjobb modellnél mindkét évben feljegyeztük az $RMSE$ és $R^2$ statisztikákat, a reziduális tagok szórásdriagramját, illetve az egyes változók prediktív erejét.
 
 
 
@@ -423,38 +424,40 @@ A lineáris regresszió jellegéből adódóan alapvetően folytonos célváltoz
 
 \subsubsection{Naive Bayes}
 
-A Naive Bayes azon tényből indul ki, hogy a minimális osztályozási hibát akkor kapjuk, ha minden adatrekordhoz azt a $c$ címkét rendeljük, amelyre a $\mathbb{P}(C=c|\underline{X} = \underline{x})$ feltételes valószínűség maximális, ahol $\underline{X}=(X_1,X_2, \dots ,X_k)$ jelöli az attribútumokat, $\underline{x} = (x_1, x_2, \dots , x_k)$ az adatrekordhoz tartozó attribútumvektort, $C$ pedig a célváltozót. Vagyis a keresett optimális $c^*$ címkére az alábbi teljesül:
-\[
-c^* = \argmax_c \mathbb{P}(C=c|\underline{X} = \underline{x})
-\]
+%A Naive Bayes azon tényből indul ki, hogy a minimális osztályozási hibát akkor kapjuk, ha minden adatrekordhoz azt a $c$ címkét rendeljük, amelyre a $\mathbb{P}(C=c|\underline{X} = \underline{x})$ feltételes valószínűség maximális, ahol $\underline{X}=(X_1,X_2, \dots ,X_k)$ jelöli az attribútumokat, $\underline{x} = (x_1, x_2, \dots , x_k)$ az adatrekordhoz tartozó attribútumvektort, $C$ pedig a célváltozót. Vagyis a keresett optimális $c^*$ címkére az alábbi teljesül:
+%\[
+%c^* = \argmax_c \mathbb{P}(C=c|\underline{X} = \underline{x})
+%\]
+%
+%Ez a Bayes-tétel és a teljes valószínűség tétele segítségével az alábbi formára hozható:
+%\[
+%c^* = \argmax_c \mathbb{P}(\underline{X} = \underline{x}|C=c) \cdot \mathbb{P}(C=c)
+%\] 
+%A Naive Bayes algoritmus naívan azzal a feltételezéssel él, hogy az attribútumok a célváltozó ismeretében feltételesen függetlenek, így ekkor a feltételes valószínűség felbontható szorzatra:
+%\[
+%\mathbb{P}(\underline{X}|C) = \mathbb{P}(X_1|C) \cdot \mathbb{P}(X_2|C) \cdot \dots \cdot \mathbb{P}(X_k|C)
+%\]
+%
+%Ekkor a $\mathbb{P}(X_i=x_i|C=c_j)$ és $\mathbb{P}(C=c_j)$ valószínűségeket a tanító adatokból már meg tudjuk becsülni:
+%\begin{align*}
+%\mathbb{P}(X_i=x_i|C=c_j) &= \frac{n_{ij}}{n_j} \\
+%\mathbb{P}(C=c_j) &= \frac{n_j}{n}
+%\end{align*}
+%ahol: \\
+%- $j$ a lehetséges címkék száma, $n$ az összes tanító adatrekord száma.  \\
+%- $n_{ij}$ azon tanító adatrekordok száma, amelynek $i$-edik attribútuma $x_i$ és a címkéje $c_j$. \\
+%- $n_j$ pedig a $c_j$ címkéjű tanító adatrekordok száma. \\
 
-Ez a Bayes-tétel és a teljes valószínűség tétele segítségével az alábbi formára hozható:
-\[
-c^* = \argmax_c \mathbb{P}(\underline{X} = \underline{x}|C=c) \cdot \mathbb{P}(C=c)
-\] 
-A Naive Bayes algoritmus naívan azzal a feltételezéssel él, hogy az attribútumok a célváltozó ismeretében feltételesen függetlenek, így ekkor a feltételes valószínűség felbontható szorzatra:
-\[
-\mathbb{P}(\underline{X}|C) = \mathbb{P}(X_1|C) \cdot \mathbb{P}(X_2|C) \cdot \dots \cdot \mathbb{P}(X_k|C)
-\]
 
-Ekkor a $\mathbb{P}(X_i=x_i|C=c_j)$ és $\mathbb{P}(C=c_j)$ valószínűségeket a tanító adatokból már meg tudjuk becsülni:
-\begin{align*}
-\mathbb{P}(X_i=x_i|C=c_j) &= \frac{n_{ij}}{n_j} \\
-\mathbb{P}(C=c_j) &= \frac{n_j}{n}
-\end{align*}
-ahol: \\
-- $j$ a lehetséges címkék száma, $n$ az összes tanító adatrekord száma.  \\
-- $n_{ij}$ azon tanító adatrekordok száma, amelynek $i$-edik attribútuma $x_i$ és a címkéje $c_j$. \\
-- $n_j$ pedig a $c_j$ címkéjű tanító adatrekordok száma. \\
-Az algoritmus jellegéből adódóan keresztvalidáció során nem történt hiperparaméter-optimalizálás.
+A Naive Bayes algoritmus működése mögött álló alapelv az, hogy feltesszük az attribútumok feltételes függetlenségét, amennyiben a célváltozó értéke ismert. Osztályozás során azt vizsgáljuk, hogy mely címkeérték mellett a legnagyobb a valószínűsége annak, hogy az adott adatrekord attribútumai éppen a felvett értékeket kapták. A megfelelő valószínűségeket a tanítóhalmazbeli adatok attribútumértékeinek különböző címkék melletti relatív gyakoriságai adják. 
 
-%A Naive Bayes algoritmus működése mögött álló alapelv az, hogy feltesszük az attribútumok feltételes függetlenségét, amennyiben a célváltozó értéke ismert. Osztályozás során azt vizsgáljuk, hogy mely címkeérték mellett a legnagyobb a valószínűsége annak, hogy az adott adatrekord attribútumai éppen a felvett értékeket kapták. A megfelelő valószínűségeket a tanítóhalmazbeli adatok attribútumértékeinek különböző címkék melletti relatív gyakoriságai adják. 
+Az algoritmus a jellegéből adódóan nem igazán optimalizálható, így a Naive Bayes esetén nem történt keresztvalidáció.
 
 \subsubsection{Gradient Tree Boosting}
 
 A Gradient Boosting algoritmus egy Ensemble típusú osztályozó, amelyek lényege, hogy sok gyenge teljesítményű prediktor (\textit{"weak learner"}) eredményét felhasználva hoz egy erős predikciót. Gradient Tree Boosting esetén a gyenge prediktorok \textit{döntési fák}, amelyek lefelé irányított, legtöbbször bináris fák, amelyeknek minden belső csúcsában egy attribútumra vonatkozó feltétel szerepel, a levelei pedig valamilyen célváltozóértékkel címkézettek. A boosting eljárás során minden fázisban egy új döntési fát építünk, amely megpróbálja az előző fázisban épített fa hibáit csökkenteni az úgynevezett reziduálisokra építve. A cél egy erős prediktorként funkcionáló döntési fa létrehozása ráerősítések sorozata révén. (REFERÁLNI FRIEDMAN CIKKÉT)
 
-Legyen $F_{m-1}$ az $m$-$1$-edik fázisban kapott modell, majd jelölje $h_m(x)$ az $m$-edik fázisban épített döntési fát. Jelölje $J_m$ ennek a fának levélszámát illetve jelölje $R_{1m},\cdots,R_{J_mm}$ a bementi adatok terének egy felosztását a levelek alapján. 
+%Legyen $F_{m-1}$ az $m$-$1$-edik fázisban kapott modell, majd jelölje $h_m(x)$ az $m$-edik fázisban épített döntési fát. Jelölje $J_m$ ennek a fának levélszámát illetve jelölje $R_{1m},\cdots,R_{J_mm}$ a bementi adatok terének egy felosztását a levelek alapján. 
 
 
 A keresztvalidálás során optimalizált paraméterek: \\
@@ -464,52 +467,58 @@ A keresztvalidálás során optimalizált paraméterek: \\
 
 \subsubsection{Logisztikus regresszió}
 
-A logisztikus regresszió nevéből adódóan egy regressziós algoritmus, tehát folytonos célváltozóértéket prediktál, azonban bináris osztályozásra használják. Alapja a \textit{szigmoid} függvény, amelynek értelmezési tartománya a valós számok halmaza, értékkészlete pedig a $(0,1)$ intervallum.
-%\begin{minipage}{•}
-\begin{align}
-\sigma(z) = \frac{1}{1+e^{-z}}
-\end{align}
-%\end{minipage}
-Legyen az $n$ darab tanító adatunk $(\underline{x}_1,y_1),(\underline{x}_2,y_2), \dots , (\underline{x}_n,y_n)$, ahol \\ $\underline{x}_i=(x_{i1},x_{i2}, \dots , x_{ik})$ az $i$-edik tanítóadat $k$ hosszú attribútumvektora, $y_i$ pedig az ehhez tartozó célváltozóérték. A cél az, hogy olyan $\underline{w} = (w_1,w_2, \dots , w_k) \text{ és } b$ súlyokat találjunk, amelyek esetén az összesített hiba értéke minimális. Egy adatrekord esetén a logaritmikus hiba adott súlyokkal:
-\begin{align}
-cost_{w,b}(\underline{x}_i) =  -y_i\log \left( \sigma(\underline{w}^T\underline{x}_i+b) \right) -(1-y_i)\log(1-\sigma(\underline{w}^T\underline{x}_i+b))
-\end{align}
-Az összes adatrekordra vonatkozó, végcélként minimalizálandó hibafüggvény pedig az alábbi:
-
-\begin{align}
-C(\underline{w},b) = -\frac{1}{n}\sum_{i = 1}^n \left( y_i\log \left( \sigma(\underline{w}^T\underline{x}_i+b) \right) +(1-y_i)log(1-\sigma(\underline{w}^T\underline{x}_i+b))\right)
-\end{align}
-
+%A logisztikus regresszió nevéből adódóan egy regressziós algoritmus, tehát folytonos célváltozóértéket prediktál, azonban bináris osztályozásra használják. Alapja a \textit{szigmoid} függvény, amelynek értelmezési tartománya a valós számok halmaza, értékkészlete pedig a $(0,1)$ intervallum.
+%%\begin{minipage}{•}
+%\begin{align}
+%\sigma(z) = \frac{1}{1+e^{-z}}
+%\end{align}
+%%\end{minipage}
+%Legyen az $n$ darab tanító adatunk $(\underline{x}_1,y_1),(\underline{x}_2,y_2), \dots , (\underline{x}_n,y_n)$, ahol \\ $\underline{x}_i=(x_{i1},x_{i2}, \dots , x_{ik})$ az $i$-edik tanítóadat $k$ hosszú attribútumvektora, $y_i$ pedig az ehhez tartozó célváltozóérték. A cél az, hogy olyan $\underline{w} = (w_1,w_2, \dots , w_k) \text{ és } b$ súlyokat találjunk, amelyek esetén az összesített hiba értéke minimális. Egy adatrekord esetén a logaritmikus hiba adott súlyokkal:
+%\begin{align}
+%cost_{w,b}(\underline{x}_i) =  -y_i\log \left( \sigma(\underline{w}^T\underline{x}_i+b) \right) -(1-y_i)\log(1-\sigma(\underline{w}^T\underline{x}_i+b))
+%\end{align}
+%Az összes adatrekordra vonatkozó, végcélként minimalizálandó hibafüggvény pedig az alábbi:
+%
+%\begin{align}
+%C(\underline{w},b) = -\frac{1}{n}\sum_{i = 1}^n \left( y_i\log \left( \sigma(\underline{w}^T\underline{x}_i+b) \right) +(1-y_i)log(1-\sigma(\underline{w}^T\underline{x}_i+b))\right)
+%\end{align}
+%
 %Sok esetben ez a hibafüggvény még kiegészül egy $\lambda||(\underline{w},b)||^2$ ( ahol$||(\underline{w},b)||$ a \\ $(w_1,w_2, \dots , w_k, b)$ súlyvektor hossza) \textit{regularizációs taggal}, amely segít megakadályozni azt, hogy egyes súlyok túl nagy értéket vegyenek fel, így megelőzve a túltanulást. Itt $\lambda$ az állítható, valós \textit{regularizációs hiperparaméter}, amelyet minél nagyobbra állítunk, annál jobban bünteti a túltanulást.
+%
+%Ha a $k$ hosszú attribútumvektorainkat egy $k$-dimenziós tér pontjaiként fogjuk fel, a logisztikus regresszió ezekkel a súlyokkal lényegében egy optimális, lineárisan szeparáló $\underline{w}^T\underline{x}+b=0$ hipersíkot keres. Ha az $i$-edik adatrekordra $\underline{w}^T\underline{x}_i+b>0$, akkor azt pozitív 1-es  osztályba sorolja, ha pedig $\underline{w}^T\underline{x}_i+b<0$ akkor pedig a negatív 0-ás osztályba sorolja az osztályozó. A keresztvalidálás során optimalizált paraméterek: \\
+%- Regularizációs paraméter (0.05 és 5 között változtatva 0.05-ös lépésközzel) \\
+%- Önoptimalizálási módszer ("SAG", "SAGA") 
 
-Ha a $k$ hosszú attribútumvektorainkat egy $k$-dimenziós tér pontjaiként fogjuk fel, a logisztikus regresszió ezekkel a súlyokkal lényegében egy optimális, lineárisan szeparáló $\underline{w}^T\underline{x}+b=0$ hipersíkot keres. Ha az $i$-edik adatrekordra $\underline{w}^T\underline{x}_i+b>0$, akkor azt pozitív 1-es  osztályba sorolja, ha pedig $\underline{w}^T\underline{x}_i+b<0$ akkor pedig a negatív 0-ás osztályba sorolja az osztályozó. A keresztvalidálás során optimalizált paraméterek: \\
+
+A logisztikus regresszió alapvetően bináris osztályozási problémák megoldására alkalmas, de kiterjeszthető többosztályos feladatok megoldására is. Lényege, hogy a lineáris regresszióhoz hasonlóan az adatrekord attribútumértékeinek súlyozott összegét használjuk egy szigmoid\footnote{A szigmoid függvény: $\sigma(z)=\frac{1}{e^{-z}}$, ahol $z=x_1w_1+x_2w_2+ \dots +x_nw_n+b$ a súlyozott összeg.} függvény bemeneteként, amelyet leképez az $\left(0,1\right)$ intervallumra, és amennyiben az output 0.5-nél nagyobb, úgy a pozitív osztályba soroljuk az adott rekordot. 
+
+A keresztvalidálás során optimalizált paraméterek: \\
 - Regularizációs paraméter (0.05 és 5 között változtatva 0.05-ös lépésközzel) \\
 - Önoptimalizálási módszer ("SAG", "SAGA") 
 
-
-%A logisztikus regresszió alapvetően bináris osztályozási problémák megoldására alkalmas, de kiterjeszthető többosztályos feladatok megoldására is. Lényege, hogy a lineáris regresszióhoz hasonlóan az adatrekord attribútumértékeinek súlyozott összegét használjuk egy szigmoid\footnote{A szigmoid függvény: $\sigma(z)=\frac{1}{e^{-z}}$, ahol $z=x_1w_1+x_2w_2+ \dots +x_nw_n+b$ a súlyozott összeg.} függvény bemeneteként, amelyet leképez az $\left(0,1\right)$ intervallumra, és amennyiben az output 0.5-nél nagyobb, úgy a pozitív osztályba soroljuk az adott rekordot. 
-
 \subsubsection{SVM}
 
-Az SVM ('Support Vector Machine', magyarul 'Tartó Vektor Gép') algoritmus a logisztikus regresszióhoz hasonlóan egy lineárisan szeparáló hipersíkot akar meghatározni. Működési elve, hogy az alacsonyabb dimenziós adatpontokat különböző \textit{magfüggvények} segítéségével magasabb dimenzióba transzformálja át, és ebben a magasabb dimenziós térben keresi a szeparáló hipersíkot. Továbbá a hipersík keresése közben arra törekszik az algoritmus, hogy maximalizálja a \textit{margót}, azaz az elválasztó hipersíkkal párhuzamos hipersíkok által meghatározott maximális olyan térrészt, amely nem tartalmaz adatpontot. 
+%Az SVM ('Support Vector Machine', magyarul 'Tartó Vektor Gép') algoritmus a logisztikus regresszióhoz hasonlóan egy lineárisan szeparáló hipersíkot akar meghatározni. Működési elve, hogy az alacsonyabb dimenziós adatpontokat különböző \textit{magfüggvények} segítéségével magasabb dimenzióba transzformálja át, és ebben a magasabb dimenziós térben keresi a szeparáló hipersíkot. Továbbá a hipersík keresése közben arra törekszik az algoritmus, hogy maximalizálja a \textit{margót}, azaz az elválasztó hipersíkkal párhuzamos hipersíkok által meghatározott maximális olyan térrészt, amely nem tartalmaz adatpontot. 
+%
+%A korábbi jelöléseket használva legyenek a már áttranszformált adatpontjaink $(\underline{x}_1,y_1),$ $(\underline{x}_2,y_2), \dots , (\underline{x}_n,y_n)$, amelyek egy $k$ dimenziós térben vannak, illetve legyenek a hipersíkhoz keresendő paraméterek $\underline{\theta}=(\theta_1, \theta_2, \dots , \theta_k)$ és $b$. Ekkor a hibafüggvény így írható fel:
+%\begin{align}
+%Err(\underline{\theta},b) = C \sum_{i=1}^n (y_icost_1(\underline{\theta}^T\underline{x}_i+b)+(1-y_i)cost_0(\underline{\theta}^T\underline{x}_i+b)) + \frac{1}{2}||(\underline{\theta} ,b)||^2
+%\end{align}
+%ahol a $C$ egy regularizációs paraméter, illetve a szummában szereplő költségfüggvények (amelyet \textit{zsanérhibának} nevezünk) az alábbiak:
+%\begin{align}
+%cost_j(\underline{\theta}^T\underline{x}+b) = \begin{cases} max\{0, 1-(\underline{\theta}^T\underline{x}+b)\} & \text{ha }j=1 \\
+%                                                           max\{0, 1+(\underline{\theta}^T\underline{x}+b)\} & \text{ha }j=0 \end{cases} \\
+%\end{align}
 
-A korábbi jelöléseket használva legyenek a már áttranszformált adatpontjaink $(\underline{x}_1,y_1),$ $(\underline{x}_2,y_2), \dots , (\underline{x}_n,y_n)$, amelyek egy $k$ dimenziós térben vannak, illetve legyenek a hipersíkhoz keresendő paraméterek $\underline{\theta}=(\theta_1, \theta_2, \dots , \theta_k)$ és $b$. Ekkor a hibafüggvény így írható fel:
-\begin{align}
-Err(\underline{\theta},b) = C \sum_{i=1}^n (y_icost_1(\underline{\theta}^T\underline{x}_i+b)+(1-y_i)cost_0(\underline{\theta}^T\underline{x}_i+b)) + \frac{1}{2}||(\underline{\theta} ,b)||^2
-\end{align}
-ahol a $C$ egy regularizációs paraméter, illetve a szummában szereplő költségfüggvények (amelyet \textit{zsanérhibának} nevezünk) az alábbiak:
-\begin{align}
-cost_j(\underline{\theta}^T\underline{x}+b) = \begin{cases} max\{0, 1-(\underline{\theta}^T\underline{x}+b)\} & \text{ha }j=1 \\
-                                                           max\{0, 1+(\underline{\theta}^T\underline{x}+b)\} & \text{ha }j=0 \end{cases} \\
-\end{align}A keresztvalidálás során optimalizált paraméterek: \\
+
+
+
+
+Az SVM ('Support Vector Machine', magyarul 'Tartó Vektor Gép') algoritmus a logisztikus regresszióhoz hasonlóan egy lineárisan szeparáló hipersíkot akar meghatározni. Lényege, hogy különböző magfüggvénye segítségével az adatrekordokat egy magasabb dimenziós térbe képzi le, ahol olyan szeparáló hipersíkot keres, amely maximalizálja a vele párhuzamos hipersíkok által meghatározot olyan térrészt, amely adatpontot nem tartalmaz. A cél a megfelelő magfüggvény és a legoptimálisabb hipersík megtalálása, amellyel a különböző címkéjű adatpontok lineárisan szeparálhatóak. 
+
+A keresztvalidálás során optimalizált paraméterek: \\
 - Regularizációs paraméter (0.1 és 5 között változtatva 0.1-es lépésközzel)\\
 - Magfüggvény (lineáris, legfeljebb 3-ad fokú polinomiális, RBF)
-
-
-
-
-
-%Az SVM (Support-Vector-Machine) egy lineáris szeparálást használó bináris osztályozó algoritmus, amely egyéb problémákra is kiterjeszthető. Lényege, hogy különböző magfüggvénye segítségével az adatrekordokat egy magasabb dimenziós térbe képzi le, ahol olyan szeparáló hipersíkot keres, amely maximalizálja a vele párhuzamos, adatpontot nem tartalmazó térrészt. A cél a megfelelő magfüggvény és a szeparáló hipersík megtalálása, amellyel a különböző címkéjű adatpontok lineárisan szeparálhatóak. 
 
 
 
