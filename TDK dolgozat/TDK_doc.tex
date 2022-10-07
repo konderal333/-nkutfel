@@ -169,7 +169,7 @@ Ebben az alfejezetben tekintjük át a számos készült ábrából a legérdeke
 (EHHEZ MÉG ÍROK)
 \begin{figure}[H]
 \centering
-\includegraphics[width=\textwidth]{kepek/jegyek_eloszlas.png}
+\includegraphics[width=\textwidth]{kepek/jegyek_eloszlas2.png}
 \caption{Az elsőéves matematikajegyek eloszlása az egyes években}
 \end{figure}
 
@@ -388,7 +388,7 @@ Az egyes modellek és almodellek esetén a tanítás előtt főkomponens analíz
 
 A \textit{jegycsoportok} prediktálására épített modellezési struktúrát \ref{fig:modell}. ábra mutatja. Valamennyi csoportmodellnél a teljes adathalmazt felbontottuk tanító- és teszthalmazra 70-30 arányban, majd a tanítóhalmazra illesztett PCA modellt alkalmaztuk a teszthalmazra is, ahol a főkomponensek számát minden modellnél 2 és 8 között iterálva változtattuk 2-es lépésközzel. Ezt követően a változókat kvantilis alapú 0-1 skálázásnak vetettük alá, ahol az algoritmusok jobb teljesítőképessége és a változók kiértékelés utáni összehasonlíthatósága végett a különböző attribútumok értékeit a kvantilisek mentén a $[0, 1]$ intervallumba transzformáltuk át, valamint az érdemjegy csoportok prediktálásához a 2 és 3 csoport modelleknél a célváltozó-értékeket rendre 1, 0-ra illetve 3, 2, 1-re módosítottuk. 
 
-\begin{figure}
+\begin{figure}[h]
 \centering
 \includegraphics[scale=0.6]{kepek/flowchart.png}
 \caption{A modellezési struktúra sematikus ábrája}
@@ -422,7 +422,7 @@ A \textit{kumulált átlag} predikciójánál a tisztított adathalmazt ugyanúg
 
 A lineáris regresszió jellegéből adódóan alapvetően folytonos célváltozó prediktálására alkalmas, ugyanakkor kategorikus, ordinális címkéjű adatok osztályozására is fel lehet használni. Az algoritmus lényege, hogy a magyarázóváltozók mindegyikéhez egy-egy súlyt rendelünk, majd az adatpont attribútumértékeinek vesszük a súlyokkal való súlyozott összegét, és esetleg egy bias tagot hozzáadva az így kapott szumma lesz a prediktált címkeérték. A cél a tanítás során a súlyok optimális megtalálása, miközben a tanítóhalmazon minimalizáljuk a célváltozóérték és a prediktált érték közötti négyzetes hibát.
 
-Mivel az algoritmus implementálása során a legkisebb négyzetek elvét alkalmazza, amellyel az optimális megoldás érhető el, ezért nem történt hiperparaméter-optimalizáció.
+Mivel az algoritmus implementálása során a legkisebb négyzetek elvét alkalmazza, amellyel az optimális megoldás analitikusan elérhető, ezért nem történt hiperparaméter-optimalizáció.
 
 \subsubsection{Naive Bayes}
 

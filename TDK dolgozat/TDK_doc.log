@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 21.12) (preloaded format=pdflatex 2022.2.14)  6 OCT 2022 22:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 21.12) (preloaded format=pdflatex 2022.2.14)  7 OCT 2022 09:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1201,17 +1201,17 @@ been already used, duplicate ignored
                    \relax 
 l.107 \newpage
                [1] [2] [3]
-<kepek/jegyek_eloszlas.png, id=116, 1981.4025pt x 602.25pt>
-File: kepek/jegyek_eloszlas.png Graphic file (type png)
-<use kepek/jegyek_eloszlas.png>
-Package pdftex.def Info: kepek/jegyek_eloszlas.png  used on input line 172.
-(pdftex.def)             Requested size: 455.24411pt x 138.36754pt.
+<kepek/jegyek_eloszlas2.png, id=116, 774.64406pt x 231.11343pt>
+File: kepek/jegyek_eloszlas2.png Graphic file (type png)
+<use kepek/jegyek_eloszlas2.png>
+Package pdftex.def Info: kepek/jegyek_eloszlas2.png  used on input line 172.
+(pdftex.def)             Requested size: 455.24411pt x 135.82324pt.
 <kepek/2019scatter.png, id=118, 633.86812pt x 309.65688pt>
 File: kepek/2019scatter.png Graphic file (type png)
 <use kepek/2019scatter.png>
 Package pdftex.def Info: kepek/2019scatter.png  used on input line 182.
 (pdftex.def)             Requested size: 455.24411pt x 222.39995pt.
- [4 <./kepek/jegyek_eloszlas.png>]
+ [4 <./kepek/jegyek_eloszlas2.png>]
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 2
 01.
 
@@ -1290,7 +1290,11 @@ File: kepek/flowchart.png Graphic file (type png)
 <use kepek/flowchart.png>
 Package pdftex.def Info: kepek/flowchart.png  used on input line 393.
 (pdftex.def)             Requested size: 366.3214pt x 350.51219pt.
- [14] [15 <./kepek/flowchart.png>]
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[14]
 Underfull \hbox (badness 10000) in paragraph at lines 401--408
 
  []
@@ -1300,7 +1304,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 401--408
 
  []
 
-[16]
+[15 <./kepek/flowchart.png>] [16]
 Underfull \hbox (badness 10000) in paragraph at lines 465--469
 
  []
@@ -1311,18 +1315,18 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <7> on input line 495.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <5> on input line 495.
-[17] [18]
+[17]
 Overfull \hbox (2.50052pt too wide) in paragraph at lines 554--580
  [][] 
  []
 
-[19]
+[18]
 Overfull \hbox (1.91725pt too wide) in paragraph at lines 591--616
  [][] 
  []
 
-[20]
-<kepek/modell_valtozo.png, id=259, 709.14937pt x 1192.455pt>
+[19]
+<kepek/modell_valtozo.png, id=255, 709.14937pt x 1192.455pt>
 File: kepek/modell_valtozo.png Graphic file (type png)
 <use kepek/modell_valtozo.png>
 Package pdftex.def Info: kepek/modell_valtozo.png  used on input line 628.
@@ -1331,28 +1335,28 @@ Package pdftex.def Info: kepek/modell_valtozo.png  used on input line 628.
 Overfull \vbox (4.32327pt too high) has occurred while \output is active []
 
 
-[21 <./kepek/modell_valtozo.png>]
-<kepek/eves_valtozok.png, id=265, 687.31781pt x 333.49594pt>
+[20 <./kepek/modell_valtozo.png>]
+<kepek/eves_valtozok.png, id=261, 687.31781pt x 333.49594pt>
 File: kepek/eves_valtozok.png Graphic file (type png)
 <use kepek/eves_valtozok.png>
 Package pdftex.def Info: kepek/eves_valtozok.png  used on input line 646.
 (pdftex.def)             Requested size: 446.75128pt x 216.76979pt.
-<kepek/residual2019.png, id=267, 267.24844pt x 209.28188pt>
+<kepek/residual2019.png, id=263, 267.24844pt x 209.28188pt>
 File: kepek/residual2019.png Graphic file (type png)
 <use kepek/residual2019.png>
 Package pdftex.def Info: kepek/residual2019.png  used on input line 662.
 (pdftex.def)             Requested size: 182.09486pt x 142.60356pt.
-<kepek/kumulalt2019.png, id=268, 286.82156pt x 247.67531pt>
+<kepek/kumulalt2019.png, id=264, 286.82156pt x 247.67531pt>
 File: kepek/kumulalt2019.png Graphic file (type png)
 <use kepek/kumulalt2019.png>
 Package pdftex.def Info: kepek/kumulalt2019.png  used on input line 663.
 (pdftex.def)             Requested size: 182.09486pt x 157.2456pt.
-<kepek/residual2021.png, id=269, 268.00125pt x 210.03468pt>
+<kepek/residual2021.png, id=265, 268.00125pt x 210.03468pt>
 File: kepek/residual2021.png Graphic file (type png)
 <use kepek/residual2021.png>
 Package pdftex.def Info: kepek/residual2021.png  used on input line 670.
 (pdftex.def)             Requested size: 182.09486pt x 142.70631pt.
-<kepek/kumulalt2021.png, id=270, 280.79906pt x 248.42813pt>
+<kepek/kumulalt2021.png, id=266, 280.79906pt x 248.42813pt>
 File: kepek/kumulalt2021.png Graphic file (type png)
 <use kepek/kumulalt2021.png>
 Package pdftex.def Info: kepek/kumulalt2021.png  used on input line 671.
@@ -1361,14 +1365,14 @@ Package pdftex.def Info: kepek/kumulalt2021.png  used on input line 671.
 
 LaTeX Warning: Empty `thebibliography' environment on input line 678.
 
-[22 <./kepek/eves_valtozok.png> <./kepek/residual2019.png> <./kepek/kumulalt201
-9.png> <./kepek/residual2021.png> <./kepek/kumulalt2021.png>] [23] (TDK_doc.aux
+[21 <./kepek/eves_valtozok.png> <./kepek/residual2019.png> <./kepek/kumulalt201
+9.png> <./kepek/residual2021.png> <./kepek/kumulalt2021.png>] [22] (TDK_doc.aux
 )
 Package rerunfilecheck Info: File `TDK_doc.out' has not changed.
 (rerunfilecheck)             Checksum: 2EF753E0349AEC8E9A9AE27AA861356A;2844.
  ) 
 Here is how much of TeX's memory you used:
- 37133 strings out of 478659
+ 37132 strings out of 478659
  854852 string characters out of 2845920
  1210911 words of memory out of 3000000
  54519 multiletter control sequences out of 15000+600000
@@ -1395,9 +1399,9 @@ AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/kolle/Ap
 pData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/Users/kolle/Ap
 pData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/kolle/Ap
 pData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy5.pfb>
-Output written on TDK_doc.pdf (24 pages, 2041066 bytes).
+Output written on TDK_doc.pdf (23 pages, 2001308 bytes).
 PDF statistics:
- 376 PDF objects out of 1000 (max. 8388607)
- 70 named destinations out of 1000 (max. 500000)
+ 372 PDF objects out of 1000 (max. 8388607)
+ 69 named destinations out of 1000 (max. 500000)
  254 words of extra memory for PDF output out of 10000 (max. 10000000)
 
