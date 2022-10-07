@@ -164,18 +164,22 @@ Egy részben feltáró adatelemzés fontos szakasza a felderítő elemzés. Cél
 
 \subsection{Általános ábrák}
 
-Ebben az alfejezetben tekintjük át a számos készült ábrából a legérdekesebbeket. Viszonylag sok változóval kellett dolgozni, így célszerű volt több részábrás egységekbe gyűjteni a hasonló felépítésű grafikonokat. Ehhez megfelelő eszköz volt a \textit{matplotlib figure}, illetve egy ennél még gyorsabb függvény a \textit{seaborn pairplot} volt.
+Ebben az alfejezetben tekintjük át a számos készült ábrából a legérdekesebbeket. Viszonylag sok változóval kellett dolgozni, így célszerű volt több részábrás egységekbe gyűjteni a hasonló felépítésű grafikonokat. A megfelelő ábrák elkészítéséhez a Python \emph{matplotlib} és \emph{seaborn} csomagjait használtuk.
 
-(EHHEZ MÉG ÍROK)
+A változók értékeinek eloszlását oszlopdiagramokkal, a változópárok egymás közötti viszonyait szórásdiagramokkal szemléltettük. Az \ref{fig:jegyeloszlas}. ábrán az két évben szerzett Matematika A1a -Analízis jegyek eloszlása látható összesítve és szakokra lebontva.
+
+
+
 \begin{figure}[H]
 \centering
 \includegraphics[width=\textwidth]{kepek/jegyek_eloszlas2.png}
 \caption{Az elsőéves matematikajegyek eloszlása az egyes években}
+\label{fig:jegyeloszlas}
 \end{figure}
 
-A változók értékeinek eloszlását oszlopdiagramokkal, a változópárok egymás közötti viszonyait szórásdiagramokkal szemléltettük. A \textit{seaborn pairplot} függvény előnye, hogy csak az általunk vizsgált változók oszlopait kell megadni, és az összes kombinációt egyszerre számítja ki és ábrázolja egy megfelelő méretű mátrixban.
+A legszembetűnőbb különbség a két év között az elégtelen, elégséges és közepes érdemjegyek eloszlásának tekintetében van. Az összesített ábrán jól látható módon míg 2019-ben a 2-es és 3-as érdmejegyek vannak túlsúlyban, addig 2021-ben az 1-es és 2-es érdemjegyek kerültek többségbe. Ugyanez a jelenség figyelhető meg a biomérnök és környezetmérnök hallgatók esetén is.
 
-Első sorban tekintsük a \textit{matplotlib figure} alakzatokba összesített ábrákat. Ezeknek az az előnye a \textit{seaborn pairplot}-tal szemben, hogy tetszőleges ábrákat lehet belehelyezni, így például színezéssel bevihető egy harmadik dimenzió a szórásdiagramba. Sőt negyedik dimenziót is lehetne ábrázolni a pontok kinézetének módosításával, de az már nehezen értelmezhető.
+A \textit{seaborn pairplot} függvény előnye, hogy csak az általunk vizsgált változók oszlopait kell megadni, és az összes kombinációt egyszerre számítja ki és ábrázolja egy megfelelő méretű mátrixban. Először tekintsük a \textit{matplotlib figure} alakzatokba összesített ábrákat. Ezeknek az az előnye a \textit{seaborn pairplot}-tal szemben, hogy tetszőleges ábrákat lehet belehelyezni, így például színezéssel bevihető egy harmadik dimenzió a szórásdiagramba. Sőt negyedik dimenziót is lehetne ábrázolni a pontok kinézetének módosításával, de az már nehezen értelmezhető.
 
 \begin{figure}[H]
 \centering
@@ -184,7 +188,7 @@ Első sorban tekintsük a \textit{matplotlib figure} alakzatokba összesített �
 \label{fig:2019scatter}
 \end{figure}
 
-Ezen az ábrán egyrészt a 0. ZH, a teszt összpontszáma és a két külön rész pontszámai vannak ábrázolva pontfelhőként a felvételi összpontszám függvényében, de minden eset kétszer. A felső sorban a pontok az alapján vannak színezve, hogy járt-e természettudományi tagozatra a hallgató (1 igen, 0 nem), az alsóban pedig, hogy emelt szinten érettségizett-e (1 igen, 0 nem).
+A \ref{fig:2019scatter}. ábrán egyrészt a 0. ZH, a teszt összpontszáma és a két külön rész pontszámai vannak ábrázolva pontfelhőként a felvételi összpontszám függvényében, de minden eset kétszer. A felső sorban a pontok az alapján vannak színezve, hogy járt-e természettudományi tagozatra a hallgató (1 igen, 0 nem), az alsóban pedig, hogy emelt szinten érettségizett-e (1 igen, 0 nem).
 
 Egyrészt rögtön látszik, hogy minden ábrán a bal felső és a jobb alsó sarkokban többnyire nincs pont, ez a pozitív korreláció, azaz összefüggés jele. Másrészt a színezésből arra következtethetünk, hogy az emelt érettségi megléte erősen fölfele húzza a többi eredményt, míg a természettudományi tagozatosok esetében nem egyértelmű a helyzet, drasztikus elkülönülés nincs.
 
@@ -376,7 +380,7 @@ Változók: összesített teszteredmény, külön matek/kognitív eredmény, els
 
 Következő lépésként azt vizsgáltuk, hogy a két évben külön a bemeneti adatok alapján mennyire pontosan lehet előrejelezni egyes teljesítménymutatók értéket, illetve hogy a predikciókra nézve a különböző bemeneti változók, más néven attribútumok milyen és mekkora szereppel bírnak. Ehhez többféle modellen többféle \textit{gépi tanuláson alapuló osztályozó algoritmus} használatára volt szükség. A kutatás során kétféle eredmény alaposabb vizsgálatára összpontosítottunk mindkét évben: a "Matematika A1a - Analízis" tárgyból kapott érdemjegyre illetve az első félév végén megállapított kumulált tanulmányi átlagra. Ezen feladatok a felügyelt gépi tanulási problémák közé esnek, ahol a kitüntetett célváltozót szeretnénk a többi bemeneti változóval előrejelezni. Ekkor a gépi tanulás során a teljes adathalmazt tanító és teszthalmazra bontjuk, a tanító adathalmazon betanítjuk az algoritmusokat úgy, hogy a tanítóhalmazbeli adatok célváltozóját minél pontosabban prediktálják, majd valamilyen metrika szerint kiválasztjuk a betanított algoritmusok közül a legjobbat. A legoptimálisabb osztályozó kiválasztásához többnyire \textit{keresztvalidációt} alkalmazunk. Keresztvalidáció során a tanítóhalmazt felbontjuk K egyenlő részre, melyek közül az egyiket kinevezzük validációs halmaznak. Ezt követően az algoritmusokat betanítjuk a maradék $K$-$1$ részen, amelyeket aztán a validációs halmazon kiértékelünk. Ezt összesen $K$ alkalommal ismételjük, mindig másik részt választva validációs halmaznak, majd azt az algoritmust dedikáljuk a legjobbnak, amelynek az aggregált teljesítménye a $K$ darab iteráció során a legjobb. Az így kapott osztályozót még visszamérjük a teszthalmazon is az általánosítóképesség ellenőrzése végett. A kutatás során a cél a teszthalmazon való minél hatásosabb előrejelzés mellett az egyes éveknél használt és optimalizált algoritmusok esetén a különböző attribútumok prediktív erejének összehasonlítása volt.
 
-A két vizsgált probléma közül az előbbi alapvetően egy osztályozási probléma öt osztállyal, míg az utóbbi egy regressziós feladat. Az előbbi feladathoz ötféle algoritmust, \textit{Gradient Tree Boosting-ot, Naive Bayes-t, logisztikus regressziót, SVM-et} és \textit{lineáris regressziót} használtunk, az utóbbihoz csupán lineáris regressziót (ezen algoritmusok működése és optimalizálása a következő fejezetben lesz ismertetve). Azért esett a választás ezen algoritmusokra, ugyanis számos egyetemi teljesítményt és lemorzsolódást vizsgáló tanulmány során teljesítettek kiváló eredménnyel. (IDE REFERENCIÁK) Mivel azonban viszonylag kevés adat állt a rendelkezésünkre, ezért az érdemjegyek prediktálásánál az adatrekordok esetén a pontos érdemjegy helyett érdemjegy csoportok előrejelzésére koncentráltunk. A matematika érdemjegycsoportok prediktálására így kétféle modell került felvázolásra: egy \textit{3 csoport modell}, illetve egy \textit{2 csoport modell}.
+A két vizsgált probléma közül az előbbi alapvetően egy osztályozási probléma öt osztállyal, míg az utóbbi egy regressziós feladat. Az előbbi feladathoz ötféle algoritmust, \textit{Gradient Tree Boosting-ot, Naive Bayes-t, logisztikus regressziót, SVM-et} és \textit{lineáris regressziót} használtunk, az utóbbihoz lineáris regressziót és Gradient Tree Boosting-ot (ezen algoritmusok működése és optimalizálása a következő fejezetben lesz ismertetve). Azért esett a választás ezen algoritmusokra, ugyanis számos egyetemi teljesítményt és lemorzsolódást vizsgáló tanulmány során teljesítettek kiváló eredménnyel. (IDE REFERENCIÁK) Mivel azonban viszonylag kevés adat állt a rendelkezésünkre, ezért az érdemjegyek prediktálásánál az adatrekordok esetén a pontos érdemjegy helyett érdemjegy csoportok előrejelzésére koncentráltunk. A matematika érdemjegycsoportok prediktálására így kétféle modell került felvázolásra: egy \textit{3 csoport modell}, illetve egy \textit{2 csoport modell}.
 
 A 2 csoport modell esetén a két csoportot a \{5,4,3\} illetve \{2,1\} osztályok adják, míg a 3 csoport modellnél az osztályok \{5,4\}, \{3,2\} illetve \{1\} módon alakultak. Az előbbi esetben az osztályok intuitívan a lemorzsolódási veszélyeztetettség szerint formálódtak, míg az utóbbiban egy általánosabb "jól teljesítő", "rosszul teljesítő", "lemorzsolódott" csoporthármast kívántunk elérni. Mindkét modell esetén külön vizsgáltuk a teljesítményt összes hallgatóra vonatkozóan illetve szétbontva vegyészmérnök és biomérnök hallgatókra egyaránt (a környezetmérnökökről nem állt rendelkezésre elég adat, így őket a szakonkénti bontásban kihagytuk).
 
@@ -406,7 +410,7 @@ Valamennyi algoritmus hiperparamétereinek optimális megválasztására 5-ször
 \\
 A választott metrika mellett meghatároztuk a legjobb algoritmusokat, amelyeket a teszthalmazon visszamértünk, valamint kiértékeltük az ily módon választott modellek esetén az egyes változók fontosságát is.
 
-A \textit{kumulált átlag} predikciójánál a tisztított adathalmazt ugyanúgy 70-30 arányban osztottuk fel. Adattranszformálásra csak skálázást alkalmaztunk, PCA-t nem, majd a lineáris regresszió hiperparamétereinek optimalizálása hasonlóan 5-szörös keresztvalidációval történt. Az illesztett modellekkel mindkét évben feljegyeztük az $RMSE$ és $R^2$ statisztikákat, a reziduális tagok szórásdriagramját, illetve az egyes változók prediktív erejét.
+A \textit{kumulált átlag} predikciójánál a tisztított adathalmazt ugyanúgy 70-30 arányban osztottuk fel. Adattranszformálásra csak skálázást alkalmaztunk, PCA-t nem, majd valamennyi osztályozó hiperparamétereinek optimalizálása hasonlóan 5-szörös keresztvalidációval történt. Az illesztett modellekkel mindkét évben feljegyeztük az $R^2$, $MAE$ (átlagos abszolút eltérés) és $RMSE$ (gyököt vont átlagos négyzetes eltérés) statisztikákat, a reziduális tagok szórásdriagramját, illetve az egyes változók prediktív erejét.
 
 
 
@@ -581,7 +585,7 @@ A keresztvalidálás során optimalizált paraméterek: \\
 \label{tab:multicol1}
 \end{table}
 
-A \ref{tab:multicol1}. táblázatban a 2019-es adatokra optimalizált modellek teljesítménye látható, ahol az első három oszlop a modellt és a használt főkomponensek (PC) számát mutatja, míg a jobb oldali öt oszlop az optimalizált algoritmusok teljesítményét szemlélteti. A szakonkénti bontásban szereplő értékek a biomérnöki és vegyészmérnöki adatokon kapott értékek átlagai súlyozva az egyes szakokon tanuló hallgatók számával. Az algoritmusok többségének hatásfoka 60-80\% közé tehető, amely azt jelenti, hogy csupán ezen bemeneti adatok segítségével nehéz pontosan előrejelezni a hallgatók teljesítményét. A 3 csoport modellek esetén a Gradient Boosting algoritmus, míg a 2 csoport modellek esetén a regressziós algoritmusok teljesítettek a legjobban, ugyanakkor a 2 csoport modellek teljesítménye többségében alulmúlja a 3 csoport modellekét. Mivel a 2 csoport modellben az osztályok eloszlása kiegyensúlyozottabb, ez arra enged minket következtetni, hogy a 2-es és 3-as érdemjegyet szerzők között a bemeneti adatok tekintetében nincsenek nagy különbségek.
+Először a jegycsoportok prediktálásának eredményeit ábrázoljuk. A \ref{tab:multicol1}. táblázatban a 2019-es adatokra optimalizált modellek teljesítménye látható, ahol az első három oszlop a modellt és a használt főkomponensek (PC) számát mutatja, míg a jobb oldali öt oszlop az optimalizált algoritmusok teljesítményét szemlélteti. A szakonkénti bontásban szereplő értékek a biomérnöki és vegyészmérnöki adatokon kapott értékek átlagai súlyozva az egyes szakokon tanuló hallgatók számával. Az algoritmusok többségének hatásfoka 60-80\% közé tehető. A 3 csoport modellek esetén a Gradient Boosting algoritmus, míg a 2 csoport modellek esetén a regressziós algoritmusok teljesítettek a legjobban, ugyanakkor a 2 csoport modellek teljesítménye többségében alulmúlja a 3 csoport modellekét. Mivel a 2 csoport modellben az osztályok eloszlása kiegyensúlyozottabb, ez arra enged minket következtetni, hogy a 2-es és 3-as érdemjegyet szerzők között a bemeneti adatok tekintetében nincsenek nagy különbségek.
 
 A \ref{tab:multicol2}. táblázat a 2021-es adatokon optimalizált algoritmusok eredményét szemlélteti az előző ábráéval megegyező metodológia szerint. Ezen adathalmazon az osztályozók teljesítménye jobbnak nevezhető, mint a 2019-es adatsoron, átlagosan a legeredményesebb algoritmusnak a Naive Bayes nevezhető, amely a szakonkénti bontású 3 csoport modellen ért el minden főkomponensszám mellett 80\% feletti teljesítményt, ugyanakkor a 2 csoport modell esetén a regressziós és SVM algoritmusok is 80\% közeli vagy afölötti eredményt értek el. A 2019-es eredményekkel ellentétben a 2021-es adatokon a 2 csoport modellek értékei jobbak, mint a 3 csoport modelleké, ugyanakkor nem szignifikánsan.
 
@@ -618,8 +622,14 @@ A \ref{tab:multicol2}. táblázat a 2021-es adatokon optimalizált algoritmusok 
 \end{table}
 
 
-A két év négy modelljén külön-külön legjobban teljesítő algoritmusok esetén az egyes változók fontosságának egymáshoz viszonyított arányait a \ref{fig:variables}. ábra, míg az évenként összesített és leátlagolt változófontosságokat a \ref{fig:variables2}. ábra mutatja. A diagramokon szereplő értékek az egyes algoritmusoknál megállapított változófontosságok \textit{min-max} skálázott értékei, amelyeket regressziós algoritmusoknál az attribútumokhoz rendelt súlyokból, a többi osztályozónál pedig az Sklearn \textit{'inspection'} csomagjának segítségével nyertünk ki. Az összesített ábrán az egyes évek legfontosabb attribútumai a megfelelő évek különböző modelljein is többnyire jelentős szignifikanciával bírnak, a többi változó fontossága viszont modellenként eltérő. A 0.ZH pontszám illetve az érettségi pont prediktív ereje mindkét évben kiemelkedő. A 2019-es évben a matematika tagozaton való jelenlét és a kognitív teszten elért eredmény is nem elhanyagolható szignifikanciával bírt, viszont 2021-ben ezen tényezők prediktáló ereje csökkent, ugyanakkor az elért tanulmányi- és többletpontok jelentősége a matematika jegyre nézve több mint kétszeresére nőtt. Összevetve a felderítő adatelemzéssel, ezen eredmények arra engednek minket következtetni, hogy  ...
+A két év modelljeinek összesített változófontosságait a \ref{fig:variables2}. ábra, míg az egyes modellekhez tartozó attribútumszignifikanciákat a \ref{fig:variables}. ábra szemlélteti.
 
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.6]{kepek/eves_valtozok.png}
+\caption{Az változók összesített fontossága a két évben}
+\label{fig:variables2}
+\end{figure}
 
 \newpage
 
@@ -641,38 +651,78 @@ A két év négy modelljén külön-külön legjobban teljesítő algoritmusok e
 %\end{tikzpicture}
 %\end{center}
 
-\begin{figure}[H]
-\centering
-\includegraphics[scale=0.65]{kepek/eves_valtozok.png}
-\caption{Az változók összesített fontossága a két évben}
-\label{fig:variables2}
-\end{figure}
+
+
+A diagramokon szereplő értékek az egyes algoritmusoknál megállapított változófontosságok \textit{min-max} skálázott értékei, amelyeket regressziós algoritmusoknál az attribútumokhoz rendelt súlyokból, a többi osztályozónál pedig az Sklearn \textit{'inspection'} csomagjának segítségével nyertünk ki. Az összesített ábrán az egyes évek legfontosabb attribútumai a megfelelő évek különböző modelljein is többnyire jelentős szignifikanciával bírnak, a többi változó fontossága viszont modellenként eltérő. A 0.ZH pontszám illetve az érettségi pont prediktív ereje mindkét évben kiemelkedő. A 2019-es évben a matematika tagozaton való jelenlét és a kognitív teszten elért eredmény is nem elhanyagolható szignifikanciával bírt, viszont 2021-ben ezen tényezők prediktáló ereje csökkent, ugyanakkor az elért tanulmányi- és többletpontok jelentősége a matematika jegyre nézve több mint kétszeresére nőtt. Összevetve a felderítő adatelemzéssel, ezen eredmények arra engednek minket következtetni, hogy  ...
 
 A kumulált átlag prediktálásának eredményei (statisztikák, reziduális szórásdiagramok és az egyes változók prediktív ereje egymáshoz viszonyítva) a \ref{fig:kumulalt}. ábrán láthatóak. 
+
 \vspace{0.5cm}
+
 
 
 \begin{figure}[H]
     \centering
     \begin{minipage}[b]{0.4\textwidth}
+    \begin{center}
+    \textbf{2019}
+    \end{center}
     \raggedright
-    - $R^2$: \\
-    - $RMSE$: \\
+    - $R^2$: 0.5462 \\
+    - $MAE$: 0.3455 \\
+    - $RMSE$: 0.4165 \\
     	\centering
         \includegraphics[width=1\textwidth, left]{kepek/residual2019.png} % first figure itself
         \includegraphics[width=1\textwidth, left]{kepek/kumulalt2019.png} % first figure itself
     \end{minipage}
     \begin{minipage}[b]{0.4\textwidth}
+    \begin{center}
+    \textbf{2021}
+    \end{center}
     \raggedright
-    - $R^2$: \\
-    - $RMSE$: \\
+    - $R^2$: 0.5646 \\
+    - $MAE$: 0.3710 \\
+    - $RMSE$: 0.4415 \\
         \centering
         \includegraphics[width=1\textwidth, left]{kepek/residual2021.png} % first figure itself
         \includegraphics[width=1\textwidth, left]{kepek/kumulalt2021.png} % first figure itself
     \end{minipage}
-   \caption{eredménymutatók a 2019-es és 2021-es modellen}
+   \caption{Lineáris regresszió eredménymutatói a két évben}
    \label{fig:kumulalt}
 \end{figure}
+
+Statisztikák tekintetében mindkét évben hasonló eredményeket kaptunk. Az értékekből arra lehet következtetni, hogy a modell
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}[b]{0.4\textwidth}
+    \begin{center}
+    \textbf{2019}
+    \end{center}
+    \raggedright
+    - $R^2$: 0.7485 \\
+    - $MAE$: 0.3059 \\
+    - $RMSE$: 0.4253 \\
+    	\centering
+        \includegraphics[width=1\textwidth, left]{kepek/residual2019_2.png} % first figure itself
+        \includegraphics[width=1\textwidth, left]{kepek/kumulalt2019_2.png} % first figure itself
+    \end{minipage}
+    \begin{minipage}[b]{0.4\textwidth}
+    \begin{center}
+    \textbf{2021}
+    \end{center}
+    \raggedright
+    - $R^2$: 0.4696 \\
+    - $MAE$: 0.3770 \\
+    - $RMSE$: 0.4407 \\
+        \centering
+        \includegraphics[width=1\textwidth, left]{kepek/residual2021_2.png} % first figure itself
+        \includegraphics[width=1\textwidth, left]{kepek/kumulalt2021_2.png} % first figure itself
+    \end{minipage}
+   \caption{Gradient Tree Boosting eredménymutatói a két évben}
+   \label{fig:kumulalt}
+\end{figure}
+
 
 \begin{thebibliography}{9}
 \end{thebibliography}
