@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.3.29)  7 OCT 2022 19:01
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.3.29)  7 OCT 2022 20:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1364,27 +1364,27 @@ Package pdftex.def Info: kepek/kumulalt2021.png  used on input line 689.
 <kepek/residual2019_2.png, id=279, 316.93407pt x 209.28188pt>
 File: kepek/residual2019_2.png Graphic file (type png)
 <use kepek/residual2019_2.png>
-Package pdftex.def Info: kepek/residual2019_2.png  used on input line 708.
+Package pdftex.def Info: kepek/residual2019_2.png  used on input line 710.
 (pdftex.def)             Requested size: 182.09486pt x 120.2467pt.
 <kepek/kumulalt2019_2.png, id=280, 328.22626pt x 276.28218pt>
 File: kepek/kumulalt2019_2.png Graphic file (type png)
 <use kepek/kumulalt2019_2.png>
-Package pdftex.def Info: kepek/kumulalt2019_2.png  used on input line 709.
+Package pdftex.def Info: kepek/kumulalt2019_2.png  used on input line 711.
 (pdftex.def)             Requested size: 182.09486pt x 153.27939pt.
 <kepek/residual2021_2.png, id=281, 312.41719pt x 212.29312pt>
 File: kepek/residual2021_2.png Graphic file (type png)
 <use kepek/residual2021_2.png>
-Package pdftex.def Info: kepek/residual2021_2.png  used on input line 720.
+Package pdftex.def Info: kepek/residual2021_2.png  used on input line 722.
 (pdftex.def)             Requested size: 182.09486pt x 123.73909pt.
 <kepek/kumulalt2021_2.png, id=282, 330.48468pt x 277.035pt>
 File: kepek/kumulalt2021_2.png Graphic file (type png)
 <use kepek/kumulalt2021_2.png>
-Package pdftex.def Info: kepek/kumulalt2021_2.png  used on input line 721.
+Package pdftex.def Info: kepek/kumulalt2021_2.png  used on input line 723.
 (pdftex.def)             Requested size: 182.09486pt x 152.64871pt.
  [21 <./kepek/residual2019.png> <./kepek/kumulalt2019.png> <./kepek/residual202
 1.png> <./kepek/kumulalt2021.png>]
 
-LaTeX Warning: Empty `thebibliography' environment on input line 732.
+LaTeX Warning: Empty `thebibliography' environment on input line 736.
 
 [22 <./kepek/residual2019_2.png> <./kepek/kumulalt2019_2.png> <./kepek/residual
 2021_2.png> <./kepek/kumulalt2021_2.png>] (TDK_doc.aux)
@@ -1423,7 +1423,7 @@ C:/Users/Donát/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb>
 <C:/Users/Donát/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb
 ><C:/Users/Donát/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy5.pfb
 >
-Output written on TDK_doc.pdf (23 pages, 2050126 bytes).
+Output written on TDK_doc.pdf (23 pages, 2050165 bytes).
 PDF statistics:
  389 PDF objects out of 1000 (max. 8388607)
  72 named destinations out of 1000 (max. 500000)
