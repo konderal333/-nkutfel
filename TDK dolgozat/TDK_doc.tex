@@ -117,7 +117,7 @@ Az adatokat az EduBase és Neptun rendszerből lekérve nyertük több adattábl
 \hline
 Emelt érettségi & \makecell{Bináris változó arra vonatkozóan, hogy \\a hallgató matematikából emelt érettségit tett-e.}\\
 \hline
-Matematika tagozat & \makecell{Bináris változó arra vonatkozóan, hogy\\ a hallgató matematika tagozatos volt-e.} \\
+Matematika tagozat & \makecell{Bináris változó arra vonatkozóan, hogy\\ a hallgató matematika és/vagy \\ természettudomány tagozatos volt-e.} \\
 \hline
 Szak & Kategorikus változó, a hallgató szaka a VBK-n. \\
 \hline
@@ -131,7 +131,7 @@ Matematika 3. blokk & \makecell{A kognitív teszt matematika részén a\\11-14. 
 \hline
 Kognitív eredmény & \makecell{A kognitív teszt kognitív készségeket mérő részén\\ elért százalékos teljesítmény (0-100-as skálán).}\\
 \hline
-0. ZH pontszám & A BME központi 0. ZH-n elért pontszám. \\
+0. ZH pontszám & A BME központi 0. ZH-ján elért pontszám. \\
 \hline
 Tanulmányi pont & A felvételi pontszám tanulmányi pontokból származó része. \\
 \hline
@@ -654,7 +654,7 @@ A két év modelljeinek összesített változófontosságait a \ref{fig:variable
 
 
 
-A diagramokon szereplő értékek az egyes algoritmusoknál megállapított változófontosságok \textit{min-max} skálázott értékei, amelyeket regressziós algoritmusoknál az attribútumokhoz rendelt súlyokból, a többi osztályozónál pedig az Sklearn \textit{'inspection'} csomagjának segítségével nyertünk ki. Az összesített ábrán az egyes évek legfontosabb attribútumai a megfelelő évek különböző modelljein is többnyire jelentős szignifikanciával bírnak, a többi változó fontossága viszont modellenként eltérő. A 0.ZH pontszám illetve az érettségi pont prediktív ereje mindkét évben kiemelkedő. A 2019-es évben a matematika tagozaton való jelenlét és a kognitív teszten elért eredmény is nem elhanyagolható szignifikanciával bírt, viszont 2021-ben ezen tényezők prediktáló ereje csökkent, ugyanakkor az elért tanulmányi- és többletpontok jelentősége a matematika jegyre nézve több mint kétszeresére nőtt. Összevetve a felderítő adatelemzéssel, ezen eredmények arra engednek minket következtetni, hogy  ...
+A diagramokon szereplő értékek az egyes algoritmusoknál megállapított változófontosságok \textit{min-max} skálázott értékei, amelyeket regressziós algoritmusoknál az attribútumokhoz rendelt súlyokból, a többi osztályozónál pedig az Sklearn \textit{'inspection'} csomagjának segítségével nyertünk ki. Az összesített ábrán az egyes évek legfontosabb attribútumai a megfelelő évek különböző modelljein is többnyire jelentős szignifikanciával bírnak, a többi változó fontossága viszont modellenként eltérő. A 0.ZH pontszám illetve az érettségi pont prediktív ereje mindkét évben kiemelkedő. A 2019-es évben az emelt matematika érettségi megléte és a kognitív teszten elért eredmény is nem elhanyagolható szignifikanciával bírt, viszont 2021-ben ezen tényezők prediktáló ereje csökkent, ugyanakkor az elért tanulmányi- és többletpontok jelentősége a matematika jegyre nézve több mint kétszeresére nőtt. Összevetve a felderítő adatelemzéssel, ezen eredmények arra engednek minket következtetni, hogy  ...
 
 A \textbf{kumulált átlag} lineáris regresszióval való prediktálásának eredményei (statisztikák, reziduális szórásdiagramok és az egyes változók prediktív ereje egymáshoz viszonyítva) a \ref{fig:kumulalt}. ábrán láthatóak. 
 
