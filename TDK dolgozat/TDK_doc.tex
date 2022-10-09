@@ -410,7 +410,22 @@ Valamennyi algoritmus hiperparamétereinek optimális megválasztására 5-ször
 \\
 A választott metrika mellett meghatároztuk a legjobb algoritmusokat, amelyeket a teszthalmazon visszamértünk, valamint kiértékeltük az ily módon választott modellek esetén az egyes változók fontosságát is.
 
-A \textit{kumulált átlag} predikciójánál a tisztított adathalmazt ugyanúgy 70-30 arányban osztottuk fel. Adattranszformálásra csak skálázást alkalmaztunk, PCA-t nem, majd valamennyi osztályozó hiperparamétereinek optimalizálása hasonlóan 5-szörös keresztvalidációval történt. Az illesztett modellekkel mindkét évben feljegyeztük az $R^2$, $MAE$ (átlagos abszolút eltérés) és $RMSE$ (gyököt vont átlagos négyzetes eltérés) statisztikákat, a reziduális tagok szórásdriagramját, illetve az egyes változók prediktív erejét.
+A \textit{kumulált átlag} predikciójánál a tisztított adathalmazt ugyanúgy 70-30 arányban osztottuk fel. Adattranszformálásra csak skálázást alkalmaztunk, PCA-t nem, majd valamennyi osztályozó hiperparamétereinek optimalizálása hasonlóan 5-szörös keresztvalidációval történt. Az illesztett modellekkel mindkét évben feljegyeztük a reziduális tagok szórásdriagramját, az egyes változók prediktív erejét, valamint az alábbi statisztikák értékét:
+\begin{itemize}
+\item[•] $R^2$: A modell hatásfokát mérő mutató, értéke [$-\infty,1$] közötti:
+\begin{align*}
+R^2 = 1 - \frac{\sum_i (y_i - \hat{y}_i)^2}{\sum_i y_i - \overline{y})^2}
+\end{align*} 
+ahol $y_i$ és $\hat{y}_i$ rendre az i-edik adatrekord valódi és prediktált célváltozóértéke, $\overline{y}$ pedig a célváltozóértékek átlaga.
+\item[•] $MAE$: Átlagos abszolút eltérés (A keresztvalidáció során ez volt a használt mérőszám is):
+\begin{align*}
+MAE = \frac{1}{n}\sum_i^n |y_i -\hat{y}_i| 
+\end{align*}
+\item[•] $RMSE$: Gyököt vont átlagos négyzetes eltérés:
+\begin{align*}
+RMSE = \sqrt{\frac{1}{n}\sum_i^n (y_i - \hat{y}_i)^2}
+\end{align*}
+\end{itemize}
 
 
 
@@ -466,7 +481,7 @@ A Gradient Boosting algoritmus egy Ensemble típusú osztályozó, amelyek lény
 %Legyen $F_{m-1}$ az $m$-$1$-edik fázisban kapott modell, majd jelölje $h_m(x)$ az $m$-edik fázisban épített döntési fát. Jelölje $J_m$ ennek a fának levélszámát illetve jelölje $R_{1m},\cdots,R_{J_mm}$ a bementi adatok terének egy felosztását a levelek alapján. 
 
 
-A keresztvalidálás során optimalizált paraméterek: \\
+\noindent A keresztvalidálás során optimalizált paraméterek: \\
 - Tanulóráta (0.01 és 5 között változtatva 0.1-es lépésközzel)\\
 - Boosting fázisok száma (5 és 100 között változtatva 5-ös lépésközzel)\\
 - Facsúcsokban használt vágási feltétel (négyzetes hiba, Friedman MSE) \\
@@ -499,7 +514,7 @@ A keresztvalidálás során optimalizált paraméterek: \\
 
 A logisztikus regresszió alapvetően bináris osztályozási problémák megoldására alkalmas, de kiterjeszthető többosztályos feladatok megoldására is. Lényege, hogy a lineáris regresszióhoz hasonlóan az adatrekord attribútumértékeinek súlyozott összegét használjuk egy szigmoid\footnote{A szigmoid függvény: $\sigma(z)=\frac{1}{e^{-z}}$, ahol $z=x_1w_1+x_2w_2+ \dots +x_nw_n+b$ a súlyozott összeg.} függvény bemeneteként, amelyet leképez az $\left(0,1\right)$ intervallumra, és amennyiben az output 0.5-nél nagyobb, úgy a pozitív osztályba soroljuk az adott rekordot. 
 
-A keresztvalidálás során optimalizált paraméterek: \\
+\noindent A keresztvalidálás során optimalizált paraméterek: \\
 - Regularizációs paraméter (0.05 és 5 között változtatva 0.05-ös lépésközzel) \\
 - Önoptimalizálási módszer ("SAG", "SAGA") 
 
@@ -521,7 +536,7 @@ A keresztvalidálás során optimalizált paraméterek: \\
 
 Az SVM (Support Vector Machine) algoritmus a logisztikus regresszióhoz hasonlóan egy lineárisan szeparáló hipersíkot akar meghatározni. Lényege, hogy különböző magfüggvénye segítségével az adatrekordokat egy magasabb dimenziós térbe képzi le, ahol olyan szeparáló hipersíkot keres, amely maximalizálja a vele párhuzamos hipersíkok által meghatározot olyan térrészt, amely adatpontot nem tartalmaz. A cél a megfelelő magfüggvény és a legoptimálisabb hipersík megtalálása, amellyel a különböző címkéjű adatpontok lineárisan szeparálhatóak. 
 
-A keresztvalidálás során optimalizált paraméterek: \\
+\noindent A keresztvalidálás során optimalizált paraméterek: \\
 - Regularizációs paraméter (0.1 és 5 között változtatva 0.1-es lépésközzel)\\
 - Magfüggvény (lineáris, legfeljebb 3-ad fokú polinomiális, RBF)
 
@@ -654,7 +669,7 @@ A két év modelljeinek összesített változófontosságait a \ref{fig:variable
 
 
 
-A diagramokon szereplő értékek az egyes algoritmusoknál megállapított változófontosságok \textit{min-max} skálázott értékei, amelyeket regressziós algoritmusoknál az attribútumokhoz rendelt súlyokból, a többi osztályozónál pedig az Sklearn \textit{'inspection'} csomagjának segítségével nyertünk ki. Az összesített ábrán az egyes évek legfontosabb attribútumai a megfelelő évek különböző modelljein is többnyire jelentős szignifikanciával bírnak, a többi változó fontossága viszont modellenként eltérő. A 0.ZH pontszám illetve az érettségi pont prediktív ereje mindkét évben kiemelkedő. A 2019-es évben az emelt matematika érettségi megléte és a kognitív teszten elért eredmény is nem elhanyagolható szignifikanciával bírt, viszont 2021-ben ezen tényezők prediktáló ereje csökkent, ugyanakkor az elért tanulmányi- és többletpontok jelentősége a matematika jegyre nézve több mint kétszeresére nőtt. Összevetve a felderítő adatelemzéssel, ezen eredmények arra engednek minket következtetni, hogy  ...
+\noindent A diagramokon szereplő értékek az egyes algoritmusoknál megállapított változófontosságok \textit{min-max} skálázott értékei, amelyeket regressziós algoritmusoknál az attribútumokhoz rendelt súlyokból, a többi osztályozónál pedig az Sklearn \textit{'inspection'} csomagjának segítségével nyertünk ki. Az összesített ábrán az egyes évek legfontosabb attribútumai a megfelelő évek különböző modelljein is többnyire jelentős szignifikanciával bírnak, a többi változó fontossága viszont modellenként eltérő. A 0.ZH pontszám illetve az érettségi pont prediktív ereje mindkét évben kiemelkedő. A 2019-es évben az emelt matematika érettségi megléte és a kognitív teszten elért eredmény is nem elhanyagolható szignifikanciával bírt, viszont 2021-ben ezen tényezők prediktáló ereje csökkent, ugyanakkor az elért tanulmányi- és többletpontok jelentősége a matematika jegyre nézve több mint kétszeresére nőtt. Összevetve a felderítő adatelemzéssel, ezen eredmények arra engednek minket következtetni, hogy  ...
 
 A \textbf{kumulált átlag} lineáris regresszióval való prediktálásának eredményei (statisztikák, reziduális szórásdiagramok és az egyes változók prediktív ereje egymáshoz viszonyítva) a \ref{fig:kumulalt}. ábrán láthatóak. 
 
@@ -692,9 +707,9 @@ A \textbf{kumulált átlag} lineáris regresszióval való prediktálásának er
    \label{fig:kumulalt}
 \end{figure}
 
-TODO: Magyarázószöveg
+\noindent Statisztikák tekintetében mindkét évben hasonló eredményeket kaptunk, amely azt mutatja, hogy a két évben hasonló hatékonysággal lehet a kumulált átlag eloszlását modellezni lineáris modellekkel, ugyanakkor csak közepes hatékonysággal. Ami kiemelendő, az a reziduális tagok eloszlása, amelyek mindkét évben hasonló alakzatot vesz fel, bár 2019-ben kicsivel nagyobb szórással. A változók prediktív erejét tekintve itt is fennáll az az érdemjegycsoportok prediktálásánál megállapított jelenség, miszerint a kognitív teszt matematika részén elért eredmény 2019-ben magas szignifikanciával bírt, azonban 2021-ben ez a szignifikancia drasztikusan csökkent. Az érettségi pont mindkét évben igen fontos determináló tényező, ugyanakkor 2019-ben a hozott tanulmányi pontok is nagy szerepet játszanak az első féléves kumulált átlag meghatározásában.
 
-%Statisztikák tekintetében mindkét évben hasonló eredményeket kaptunk. Az értékekből arra lehet következtetni, hogy a modell
+A Gradeint Tree Boosting-gal való előrejelzés eredményei a lineáris regressziónál használt struktúra szerint a \ref{fig:kumulalt}. ábrán láthatóak. 
 
 \begin{figure}[H]
     \centering
@@ -726,7 +741,9 @@ TODO: Magyarázószöveg
    \label{fig:kumulalt}
 \end{figure}
 
-TODO: Magyarázószöveg
+\noindent GBT-t alkalmazva a 2019-es modell statisztikái drasztikusan jobbak, mint a lineáris regressziónál számított értékek, ugyanakkor a 2021-es modell hatásfoka valamelyest csökkent. A reziduális tagok szórásképe a két évben igencsak eltérő. Ami megjegyzendő, hogy az egyes attribútumok egymáshoz viszonyított prediktív ereje a két évben közel azonos, a két legfontosabb változó a tanulmányi és érettségi pont. 
+
+\newpage 
 
 \section{Diszkusszió, következtetések}
 
