@@ -414,9 +414,9 @@ A \textit{kumulált átlag} predikciójánál a tisztított adathalmazt ugyanúg
 \begin{itemize}
 \item[•] $R^2$: A modell hatásfokát mérő mutató, értéke [$-\infty,1$] közötti:
 \begin{align*}
-R^2 = 1 - \frac{\sum_i (y_i - \hat{y}_i)^2}{\sum_i y_i - \overline{y})^2}
+R^2 = 1 - \frac{\sum_i^n (y_i - \hat{y}_i)^2}{\sum_i^n (y_i - \overline{y})^2}
 \end{align*} 
-ahol $y_i$ és $\hat{y}_i$ rendre az i-edik adatrekord valódi és prediktált célváltozóértéke, $\overline{y}$ pedig a célváltozóértékek átlaga.
+ahol $y_i$ és $\hat{y}_i$ rendre az i-edik adatrekord valódi és prediktált célváltozóértéke, $\overline{y}$ pedig a valódi célváltozóértékek átlaga.
 \item[•] $MAE$: Átlagos abszolút eltérés (A keresztvalidáció során ez volt a használt mérőszám is):
 \begin{align*}
 MAE = \frac{1}{n}\sum_i^n |y_i -\hat{y}_i| 
@@ -434,8 +434,6 @@ RMSE = \sqrt{\frac{1}{n}\sum_i^n (y_i - \hat{y}_i)^2}
 %TODO: Recall definícióját ismertetni?
 
 \subsection{Osztályozó algoritmusok és optimalizálásuk}
-
-(ez a szekció még félkész)
 
 \subsubsection{Lineáris regresszió}
 
@@ -476,7 +474,9 @@ Az algoritmus a jellegéből adódóan nem igazán optimalizálható, így a Nai
 
 \subsubsection{Gradient Tree Boosting}
 
-A Gradient Boosting algoritmus egy Ensemble típusú osztályozó, amelyek lényege, hogy sok gyenge teljesítményű prediktor (\textit{"weak learner"}) eredményét felhasználva hoz egy erős predikciót. Gradient Tree Boosting esetén a gyenge prediktorok \textit{döntési fák}, amelyek lefelé irányított, legtöbbször bináris fák, amelyeknek minden belső csúcsában egy attribútumra vonatkozó feltétel szerepel, a levelei pedig valamilyen célváltozóértékkel címkézettek. A boosting eljárás során minden fázisban egy új döntési fát építünk, amely megpróbálja az előző fázisban épített fa hibáit csökkenteni az úgynevezett reziduálisokra építve. A cél egy erős prediktorként funkcionáló döntési fa létrehozása ráerősítések sorozata révén. (REFERÁLNI FRIEDMAN CIKKÉT)
+A Gradient Boosting algoritmus egy Ensemble típusú osztályozó, amelyek lényege, hogy sok gyenge teljesítményű prediktor (\textit{"weak learner"}) eredményét felhasználva hoz egy erős predikciót. Gradient Tree Boosting esetén a gyenge prediktorok \textit{döntési fák}, amelyek lefelé irányított, legtöbbször bináris fák, továbbá minden belső csúcsában egy attribútumra vonatkozó feltétel szerepel, a levelei pedig valamilyen célváltozóértékkel címkézettek. Az adatrekordok osztályozása intuitívan a fán való végigvezetéssel történik, végül azt a címkét prediktálva nekik, amilyen címkéjű levélbe jutottak.
+
+A boosting eljárás során minden fázisban egy új döntési fát építünk, amely megpróbálja az előző fázisban épített fa hibáit csökkenteni az úgynevezett reziduálisokra építve. A cél egy erős prediktorként funkcionáló döntési fa létrehozása ráerősítések sorozata révén. Az algoritmus alkalmas osztályozási és regressziós problémák megoldására is, előbbi esetben a cél a levelekben az adatrekordok címke szerinti homogenitásának maximalizálása, utóbbinál pedig a szórás minimalizálása az egy levélbe kerülő rekordok célváltozójára nézve. \\
 
 %Legyen $F_{m-1}$ az $m$-$1$-edik fázisban kapott modell, majd jelölje $h_m(x)$ az $m$-edik fázisban épített döntési fát. Jelölje $J_m$ ennek a fának levélszámát illetve jelölje $R_{1m},\cdots,R_{J_mm}$ a bementi adatok terének egy felosztását a levelek alapján. 
 
@@ -512,7 +512,7 @@ A Gradient Boosting algoritmus egy Ensemble típusú osztályozó, amelyek lény
 %- Önoptimalizálási módszer ("SAG", "SAGA") 
 
 
-A logisztikus regresszió alapvetően bináris osztályozási problémák megoldására alkalmas, de kiterjeszthető többosztályos feladatok megoldására is. Lényege, hogy a lineáris regresszióhoz hasonlóan az adatrekord attribútumértékeinek súlyozott összegét használjuk egy szigmoid\footnote{A szigmoid függvény: $\sigma(z)=\frac{1}{e^{-z}}$, ahol $z=x_1w_1+x_2w_2+ \dots +x_nw_n+b$ a súlyozott összeg.} függvény bemeneteként, amelyet leképez az $\left(0,1\right)$ intervallumra, és amennyiben az output 0.5-nél nagyobb, úgy a pozitív osztályba soroljuk az adott rekordot. 
+A logisztikus regresszió alapvetően bináris osztályozási problémák megoldására alkalmas, de kiterjeszthető többosztályos feladatok megoldására is. Lényege, hogy a lineáris regresszióhoz hasonlóan az adatrekord attribútumértékeinek súlyozott összegét használjuk egy szigmoid\footnote{A szigmoid függvény: $\sigma(z)=\frac{1}{e^{-z}}$, ahol $z=x_1w_1+x_2w_2+ \dots +x_nw_n+b$ a súlyozott összeg.} függvény bemeneteként, amelyet a függvény leképez a $\left(0,1\right)$ intervallumra, és amennyiben az output 0.5-nél nagyobb, úgy a pozitív osztályba soroljuk az adott rekordot, különben a negatívba. \\
 
 \noindent A keresztvalidálás során optimalizált paraméterek: \\
 - Regularizációs paraméter (0.05 és 5 között változtatva 0.05-ös lépésközzel) \\
@@ -534,7 +534,7 @@ A logisztikus regresszió alapvetően bináris osztályozási problémák megold
 
 
 
-Az SVM (Support Vector Machine) algoritmus a logisztikus regresszióhoz hasonlóan egy lineárisan szeparáló hipersíkot akar meghatározni. Lényege, hogy különböző magfüggvénye segítségével az adatrekordokat egy magasabb dimenziós térbe képzi le, ahol olyan szeparáló hipersíkot keres, amely maximalizálja a vele párhuzamos hipersíkok által meghatározot olyan térrészt, amely adatpontot nem tartalmaz. A cél a megfelelő magfüggvény és a legoptimálisabb hipersík megtalálása, amellyel a különböző címkéjű adatpontok lineárisan szeparálhatóak. 
+Az SVM (Support Vector Machine) algoritmus a logisztikus regresszióhoz hasonlóan egy lineárisan szeparáló hipersíkot akar meghatározni. Lényege, hogy különböző magfüggvénye segítségével az adatrekordokat egy magasabb dimenziós térbe képzi le, ahol olyan szeparáló hipersíkot keres, amely maximalizálja a vele párhuzamos hipersíkok által meghatározot olyan térrészt, amely adatpontot nem tartalmaz. A cél a megfelelő magfüggvény és a legoptimálisabb hipersík megtalálása, amellyel a különböző címkéjű adatpontok lineárisan szeparálhatóak. \\
 
 \noindent A keresztvalidálás során optimalizált paraméterek: \\
 - Regularizációs paraméter (0.1 és 5 között változtatva 0.1-es lépésközzel)\\

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.3.29)  9 OCT 2022 11:17
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.3.29)  9 OCT 2022 19:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1309,6 +1309,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 405--412
  []
 
 [15 <./kepek/flowchart.png>] [16]
+Underfull \hbox (badness 10000) in paragraph at lines 479--480
+
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 484--489
 
  []
@@ -1319,7 +1324,17 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <7> on input line 515.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <5> on input line 515.
-[17] [18]
+
+Underfull \hbox (badness 10000) in paragraph at lines 515--516
+
+ []
+
+[17]
+Underfull \hbox (badness 10000) in paragraph at lines 537--538
+
+ []
+
+[18]
 Overfull \hbox (2.50052pt too wide) in paragraph at lines 574--600
  [][] 
  []
@@ -1425,7 +1440,7 @@ C:/Users/Donát/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb>
 <C:/Users/Donát/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb
 ><C:/Users/Donát/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy5.pfb
 >
-Output written on TDK_doc.pdf (25 pages, 2063093 bytes).
+Output written on TDK_doc.pdf (25 pages, 2063422 bytes).
 PDF statistics:
  407 PDF objects out of 1000 (max. 8388607)
  74 named destinations out of 1000 (max. 500000)
