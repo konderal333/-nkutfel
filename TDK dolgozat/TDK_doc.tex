@@ -166,6 +166,9 @@ Egy részben feltáró adatelemzés fontos szakasza a felderítő elemzés. Cél
 
 Ebben az alfejezetben tekintjük át a számos készült ábrából a legérdekesebbeket. Viszonylag sok változóval kellett dolgozni, így célszerű volt több részábrás egységekbe gyűjteni a hasonló felépítésű grafikonokat. A megfelelő ábrák elkészítéséhez a Python \emph{matplotlib} és \emph{seaborn} csomagjait használtuk. A változók értékeinek eloszlását oszlopdiagramokkal, a változópárok egymás közötti viszonyait szórásdiagramokkal szemléltettük.
 
+A \textit{seaborn pairplot} függvény előnye, hogy csak az általunk vizsgált változók oszlopait kell megadni, és az összes kombinációt egyszerre számítja ki és ábrázolja egy megfelelő méretű mátrixban. Először tekintsük a \textit{matplotlib figure} alakzatokba összesített ábrákat. Ezeknek az az előnye a \textit{seaborn pairplot}-tal szemben, hogy tetszőleges ábrákat lehet belehelyezni, így például színezéssel bevihető egy harmadik dimenzió a szórásdiagramba. Sőt negyedik dimenziót is lehetne ábrázolni a pontok kinézetének módosításával, de az már nehezen értelmezhető.
+
+
 Az \ref{fig:jegyeloszlas}. ábrán az két évben szerzett Matematika A1a -Analízis jegyek eloszlása látható összesítve és szakokra lebontva. 
 
 
@@ -179,7 +182,6 @@ Az \ref{fig:jegyeloszlas}. ábrán az két évben szerzett Matematika A1a -Anal�
 
 \noindent A legszembetűnőbb különbség a két év között az elégtelen, elégséges és közepes érdemjegyek eloszlásának tekintetében van. Az összesített ábrán jól látható, hogy míg 2019-ben a 2-es és 3-as érdmejegyek vannak túlsúlyban, addig 2021-ben az 1-es és 2-es érdemjegyek kerültek többségbe. Ugyanez a jelenség figyelhető meg a biomérnök és környezetmérnök hallgatók esetén is.
 
-A \textit{seaborn pairplot} függvény előnye, hogy csak az általunk vizsgált változók oszlopait kell megadni, és az összes kombinációt egyszerre számítja ki és ábrázolja egy megfelelő méretű mátrixban. Először tekintsük a \textit{matplotlib figure} alakzatokba összesített ábrákat. Ezeknek az az előnye a \textit{seaborn pairplot}-tal szemben, hogy tetszőleges ábrákat lehet belehelyezni, így például színezéssel bevihető egy harmadik dimenzió a szórásdiagramba. Sőt negyedik dimenziót is lehetne ábrázolni a pontok kinézetének módosításával, de az már nehezen értelmezhető.
 
 \begin{figure}[H]
 \centering
@@ -190,9 +192,28 @@ A \textit{seaborn pairplot} függvény előnye, hogy csak az általunk vizsgált
 
 A \ref{fig:2019scatter}. ábrán egyrészt a 0. ZH, a teszt összpontszáma és a két külön rész pontszámai vannak ábrázolva pontfelhőként a felvételi összpontszám függvényében, de minden eset kétszer. A felső sorban a pontok az alapján vannak színezve, hogy járt-e természettudományi tagozatra a hallgató (1 igen, 0 nem), az alsóban pedig, hogy emelt szinten érettségizett-e (1 igen, 0 nem).
 
-Egyrészt rögtön látszik, hogy minden ábrán a bal felső és a jobb alsó sarkokban többnyire nincs pont, ez a pozitív korreláció, azaz összefüggés jele. Másrészt a színezésből arra következtethetünk, hogy az emelt érettségi megléte erősen fölfele húzza a többi eredményt, míg a természettudományi tagozatosok esetében nem egyértelmű a helyzet, drasztikus elkülönülés nincs.
+Egyrészt rögtön látszik, hogy minden ábrán a bal felső és a jobb alsó sarkokban többnyire nincs pont, ez a pozitív korreláció, azaz összefüggés jele. Másrészt a színezésből arra következtethetünk, hogy az emelt érettségi megléte erősen fölfele húzza a többi eredményt, míg a természettudományi tagozatosok esetében nem egyértelmű a helyzet, észrevehető elkülönülés nincs.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{kepek/2021scatter.png}
+\caption{2021. Szórásdiagramok}
+\label{fig:2021scatter}
+\end{figure}
+
+A 2019-es ábrához képest az mondható, hogy nőtt a változók szórása, ugyanis a pontfelhők jobban szétterülnek. A természettudományi tagozaton való tanulás továbbra sem fejtett ki hatást a többi eredményre. Az emelt szintű érettségi meglétének hatása viszont 2019-hez képest csökkent, ez a teljes teszteredménynél a legszemléletesebb.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{kepek/2019minmax3.png}
+\caption{2021. Szórásdiagramok}
+\label{fig:2021minmax}
+\end{figure}
+
+Ezen az ábrán látható a \textit{seaborn pairplot} függvény egyik eredménye. Ebben az esetben volt két hallgató, aki pont duplázással számította a teljes felvételi pontszámát, így a hozott pontszámánál 0 állt értékként. Ez természetesen torzítást okozott a megfelelő részábrákon, így ki lettek véve. A tengelyekről leolvasható, hogy minden változó $[0,1]$ intervallumban van, ugyanis min-max skálázva lettek.
 
 
+ 
 
 
 
