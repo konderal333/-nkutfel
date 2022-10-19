@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 21.12) (preloaded format=pdflatex 2022.2.14)  10 OCT 2022 21:42
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 21.12) (preloaded format=pdflatex 2022.2.14)  19 OCT 2022 17:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1401,7 +1401,7 @@ Package pdftex.def Info: kepek/kumulalt2021_2.png  used on input line 738.
  [23 <./kepek/residual2019_2.png> <./kepek/kumulalt2019_2.png> <./kepek/residua
 l2021_2.png> <./kepek/kumulalt2021_2.png>]
 
-LaTeX Warning: Empty `thebibliography' environment on input line 753.
+LaTeX Warning: Empty `thebibliography' environment on input line 757.
 
 [24] (TDK_doc.aux)
 
@@ -1439,7 +1439,7 @@ ppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/kolle/App
 Data/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/Users/kolle/App
 Data/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/kolle/App
 Data/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy5.pfb>
-Output written on TDK_doc.pdf (25 pages, 2063452 bytes).
+Output written on TDK_doc.pdf (25 pages, 2064309 bytes).
 PDF statistics:
  407 PDF objects out of 1000 (max. 8388607)
  74 named destinations out of 1000 (max. 500000)
