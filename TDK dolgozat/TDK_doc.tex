@@ -206,14 +206,35 @@ A 2019-es ábrához képest az mondható, hogy nőtt a változók szórása, ugy
 \begin{figure}[H]
 \centering
 \includegraphics[width=\textwidth]{kepek/2019minmax3.png}
-\caption{2021. Szórásdiagramok}
-\label{fig:2021minmax}
+\caption{2019. Teszt és felvételi pontszám részei}
+\label{fig:2019minmax3}
 \end{figure}
 
-Ezen az ábrán látható a \textit{seaborn pairplot} függvény egyik eredménye. Ebben az esetben volt két hallgató, aki pont duplázással számította a teljes felvételi pontszámát, így a hozott pontszámánál 0 állt értékként. Ez természetesen torzítást okozott a megfelelő részábrákon, így ki lettek véve. A tengelyekről leolvasható, hogy minden változó $[0,1]$ intervallumban van, ugyanis min-max skálázva lettek.
+Ezen az ábrán látható a \textit{seaborn pairplot} függvény egyik eredménye. Ebben az esetben volt két hallgató, aki pont duplázással számította a teljes felvételi pontszámát, így a hozott pontszámánál 0 állt értékként. Ez természetesen torzítást okozott a megfelelő részábrákon, így ki lettek véve. A változók itt min-max skálázva vannak, így minden tengelyen 0-tól 1-ig vannak értékek.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{kepek/2021minmax3.png}
+\caption{2021. Teszt és felvételi pontszám részei}
+\label{fig:2021minmax3}
+\end{figure}
+
+Egészen hasonló képet látunk, mint a 2019 esetében, de itt is érvényesül az erősebb szórás. Továbbá szembetűnő az érettségi pontszámok eloszlásának megváltozása. Míg 2019-ben a skálázott adatok nagy része 0.5-1 között van, 2021-ben már az egész intervallumra széthúzódnak.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{kepek/2019minmax4.png}
+\caption{2019. Teszt részek, átlagok és felvételi összpontszám}
+\label{fig:2019minmax4}
+\end{figure}
 
 
- 
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{kepek/2021minmax.png}
+\caption{2021. Teszt részek, átlag és felvételi összpontszám}
+\label{fig:2021minmax}
+\end{figure}
 
 
 
