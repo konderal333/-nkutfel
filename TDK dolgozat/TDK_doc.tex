@@ -408,19 +408,6 @@ Ehhez, és a 2019-es ábrához képest az érettségi pontszám viszont egészen
 
 \subsection{Klaszterezés}
 
-EZ MÉG CSAK RÁVEZETÉS
-
------------
-
-Cél: gép által csoportosítani a hallgatókat több változó alapján, keresni jó magyarázó változókat, hogy egyszerűsíthető legyen a csoportosítás.
-
-Változók: összesített teszteredmény, külön matek/kognitív eredmény, első félév átlaga, kumulált átlag, felvételi pontszám összesítve és részekre bontva. Ezen attribútumok nem redundáns részhalmazai.
-	Az algoritmusok hatékonyabb és gyorsabb működése érdekében a változók értékei normalizálva és skálázva lettek. Három-három táblázat készült a 2019, 2020, 2021 évekre: min-max, illetve kvantilis szerint skálázott, továbbá standardizált értékekkel.
-	Három klaszterező algoritmus lett alkalmazva a legjobb eredmény elérése érdekében: K-közép, DBSCAN és Ward féle hierarchikus klaszterező algoritmus.
-	Ezek futtatása előtt el lett végezve egy felderítő ábrázolás, amely nehézségekre hívta fel a figyelmet. Az adatok kétdimenziós vetületeit ábrázoltuk szórásdiagramokon. A pontfelhők között nem volt olyan, amelyen látványosan el lehetett volna különíteni egyes csoportokat, ami a klaszterezést nehezítette.
-
-------------
-
 A klaszterezés célja általában esetleges nem triviális összefüggések feltárása, illetve az adatok csoportokba való sorolása gépi tanulási módszerekkel úgy, hogy az azonos csoportban lévő adatók "hasonlóbbak" legyenek egymás közt, mint a különböző csoportokból vett adatok.
 
 Egyes esetekben a klaszterezés eredménye rámutathat néhány változóra, amelyeknek erős a magyarázóereje, így a további vizsgálatokból el lehet hagyni a többi változót. Ennek ellenére gyakoriak azok az esetek, amikor nehéz vagy nem lehet megállapítani ezeket a változókat, mert minden változó fontos. Ilyenkor az adatok két-három dimenziós vetületeinek szórásdiagramjai többnyire homogének és nem csoportosíthatóak szemre.
@@ -432,15 +419,35 @@ A \ref{ssec:altalanos} alfejezetben szereplő ábrákat áttekintve, első rán�
 \item Ward féle hierarchikus klaszterező algoritmus.
 \end{enumerate}
 
-\subsubsection{K-közép algoritmus}
+\subsubsection{K-közép algoritmus működése}
 Az algoritmus működési elve nagyon egyszerű. Az alapvető paraméter, amelyet meg kell adni, a létrehozandó osztályok kívánt száma, legyen ez \textit{k}. Első lépésben választ a térben véletlenszerűen \textit{k} pontot, ezek a klaszter középpontok, majd az összes pontot ahhoz a a középponthoz rendeli, amelyhez a legközelebb van. A második lépésben a kialakult osztályok középpontjait újraszámolja és azokkal a középpontokkal megismétli az első lépést. Ezt a két lépést iterálja addig, amíg két egymást követő osztályozás között már nem lesz jelentős változás.
 
 Így alapvetően a legfontosabb feladat a megfelelő klaszterszám meghatározása. Ehhez létezik egy könyökszabály, melynek a lényege a következő: lefuttatjuk a klaszterezési algoritmust 1-től $l$-ig megadva a klaszterszámokat, majd ábrázoljuk ezek esetében a pontoknak az átlagos négyzetes eltérését a saját klaszter-középpontjuktól. Természetesen ahogy több csoportra bontjuk a pontokat, úgy csökken ez az eltérés, így az a klaszterszám lesz optimális, ahol jelentős a javulás, de utána már nem. Ez megfelelő esetben vizuálisan egy behajlított karra emlékeztet, innen ered a neve. Nehezen klaszterezhető adatok esetén ez a görbe "simább", nehezen állapítható meg a "könyök".
 
-\subsubsection{DBSCAN algoritmus}
+\subsubsection{DBSCAN algoritmus működése}
 
+A DBSCAN (Density-based spatial clustering of applications with noise) sűrűség alapú klaszterező algoritmus
+ %\cite{bevadat}
+. Ebben az esetben a sűrűség egy bizonyos $\epsilon$ sugáron belüli pontok száma. Ez alapján az algoritmus három kategóriára osztja az adatpontokat:
+\begin{itemize}
+\item Magpont: olyan adatpont, melynek egy meghatározott számúnál ($\mu$) több pont van az $\epsilon$ sugarú környezetében.
+\item Határpont: olyan adatpont, amelynek $\mu$ -nél kevesebb pont van az $\epsilon$ sugarú környezetében, de ő maga egy magpont $\epsilon$ sugarú környezetébe esik.
+\item Zaj (outlier): olyan adatpont, amely egyike sem az előzőknek.
+\end{itemize}
 
-\subsubsection{Ward féle hierarchikus klaszterező algoritmus}
+Működése során először felosztja az adatpontokat a három leírt típus szerint, majd a zajos pontokat figyelmen kívül hagyja. A többi pont esetén a sűrűn összefüggő részek határozzák meg a klasztereket. Előnye, hogy kiszűri a zajos pontokat és érzéketlen rájuk, illetve jól kezeli a különböző méretű osztályokat. Változó sűrűségű csoportok esetén gyengébben teljesít.
+
+A felhasználó feladata meghatározni a $\mu$ és $\epsilon$ értékeket, illetve a megfelelő távolságfogalmat. Ehhez szintén létezik egy könyökszabály. Ennél az algoritmusnál növekvő sorrendben kell ábrázolni az egyes adatpontoknak a legközelebbi szomszédjuktól vett távolságot. Mivel sok adatpont van, a könyök simább, így az $\epsilon$-t csak becsülni tudjuk. 
+
+Ezután a $\mu$ paramétert kell hozzáigazítani oly módon, hogy a kialakuló klaszterszám megfelelő legyen. Ez úgy történik, hogy az adott paraméterárral lefuttatjuk az algoritmust és megnézzük a keletkezett klaszterek számát. Azt a párt választjuk, aminél megfelelő a klaszterszám.
+
+\subsubsection{Ward féle hierarchikus klaszterező algoritmus működése}
+
+Az általunk használt hierarchikus klaszterező algoritmus agglomeratív módon hozza létre a klasztereket. Azaz először minden pontot külön klaszternek tekint, majd ezeket egyesíti egy kiválasztott módszer alapján addig, amíg az összes pont egy klaszterbe nem kerül. Az iterációkat dendrogrammal lehet ábrázolni, és az alapján lehet dönteni, hány klasztert akarunk létrehozni.
+
+Az alapvető egyesítő módszerek a single, average, complete linkage nevet hordozzák, de mi a Ward féle linkage módszert alkalmaztuk. Ez a módszer az összes klaszteren belüli szórásnégyzet minimalizálására törekszik, így valamelyest hasonlít a k-özép algoritmusra. A többi módszerrel szemben az az előnye, hogy nem jönnek létre nagyon eltérő méretű csoportok.
+
+\subsubsection{K-közép algoritmus eredménye}
 
 
 
