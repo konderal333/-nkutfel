@@ -674,7 +674,7 @@ Az SVM (Support Vector Machine) algoritmus a logisztikus regresszióhoz hasonló
 
 Először a \textbf{jegycsoportok} prediktálásának eredményeit ábrázoljuk. A \ref{tab:multicol1}. táblázatban a 2019-es adatokra optimalizált modellek teljesítménye látható, ahol az első három oszlop a modellt és a használt főkomponensek (PC) számát mutatja, míg a jobb oldali öt oszlop az optimalizált algoritmusok teljesítményét szemlélteti. A szakonkénti bontásban szereplő értékek a biomérnöki és vegyészmérnöki adatokon kapott értékek átlagai súlyozva az egyes szakokon tanuló hallgatók számával. Az algoritmusok többségének hatásfoka 60-80\% közé tehető. A 3 csoport modellek esetén a Gradient Boosting algoritmus, míg a 2 csoport modellek esetén a regressziós algoritmusok teljesítettek a legjobban, ugyanakkor a 2 csoport modellek teljesítménye többségében alulmúlja a 3 csoport modellekét. Mivel a 2 csoport modellben az osztályok eloszlása kiegyensúlyozottabb, ez arra enged minket következtetni, hogy a 2-es és 3-as érdemjegyet szerzők között a bemeneti adatok tekintetében nincsenek nagy különbségek.
 
-A \ref{tab:multicol2}. táblázat a 2021-es adatokon optimalizált algoritmusok eredményét szemlélteti az előző ábráéval megegyező metodológia szerint. Ezen adathalmazon az osztályozók teljesítménye jobbnak nevezhető, mint a 2019-es adatsoron, átlagosan a legeredményesebb algoritmusnak a Naive Bayes nevezhető, amely a szakonkénti bontású 3 csoport modellen ért el minden főkomponensszám mellett 80\% feletti teljesítményt, ugyanakkor a 2 csoport modell esetén a regressziós és SVM algoritmusok is 80\% közeli vagy afölötti eredményt értek el. A 2019-es eredményekkel ellentétben a 2021-es adatokon a 2 csoport modellek értékei jobbak, mint a 3 csoport modelleké, ugyanakkor nem szignifikánsan.
+A \ref{tab:multicol2}. táblázat a 2021-es adatokon optimalizált algoritmusok eredményét szemlélteti az előző ábráéval megegyező metodológia szerint. Ezen adathalmazon az osztályozók teljesítménye jobbnak mondható, mint a 2019-es adatsoron, átlagosan a legeredményesebb algoritmusnak a Naive Bayes nevezhető, amely a szakonkénti bontású 3 csoport modellen ért el minden főkomponensszám mellett 80\% feletti teljesítményt, ugyanakkor a 2 csoport modell esetén a regressziós és SVM algoritmusok is 80\% közeli vagy afölötti eredményt értek el. A 2019-es eredményekkel ellentétben a 2021-es adatokon a 2 csoport modellek értékei jobbak, mint a 3 csoport modelleké, ugyanakkor nem szignifikánsan.
 
 
 \begin{table}[H]
@@ -740,7 +740,18 @@ A két év modelljeinek összesített változófontosságait a \ref{fig:variable
 
 
 
-\noindent A diagramokon szereplő értékek az egyes algoritmusoknál megállapított változófontosságok \textit{min-max} skálázott értékei, amelyeket regressziós algoritmusoknál az attribútumokhoz rendelt súlyokból, a többi osztályozónál pedig az Sklearn \textit{'inspection'} csomagjának segítségével nyertünk ki. Az összesített ábrán az egyes évek legfontosabb attribútumai a megfelelő évek különböző modelljein is többnyire jelentős szignifikanciával bírnak, a többi változó fontossága viszont modellenként eltérő. A 0.ZH pontszám illetve az érettségi pont prediktív ereje mindkét évben kiemelkedő. A 2019-es évben az emelt matematika érettségi megléte és a kognitív teszten elért eredmény is nem elhanyagolható szignifikanciával bírt, viszont 2021-ben ezen tényezők prediktáló ereje csökkent, ugyanakkor az elért tanulmányi- és többletpontok jelentősége a matematika jegyre nézve közel kétszeresére nőtt. Összevetve a felderítő adatelemzéssel, ezen eredmények arra engednek minket következtetni, hogy  ...
+\noindent A diagramokon szereplő értékek az egyes algoritmusoknál megállapított változófontosságok \textit{min-max} skálázott értékei, amelyeket regressziós algoritmusoknál az attribútumokhoz rendelt súlyokból, a többi osztályozónál pedig az Sklearn \textit{'inspection'} csomagjának segítségével nyertünk ki. Az összesített ábrán az egyes évek legfontosabb attribútumai a megfelelő évek különböző modelljein is többnyire jelentős szignifikanciával bírnak, a többi változó fontossága viszont modellenként eltérő. A 0.ZH pontszám illetve az érettségi pont prediktív ereje mindkét évben kiemelkedő. A 2019-es évben az emelt matematika érettségi megléte és a kognitív teszten elért eredmény is nem elhanyagolható szignifikanciával bírt, viszont 2021-ben ezen tényezők prediktáló ereje csökkent, ugyanakkor az elért tanulmányi- és többletpontok jelentősége a matematika jegyre nézve közel kétszeresére nőtt.
+
+A félreosztályozások jellegéről több információval bírnak a \emph{tévesztési mátrixok}, amelyek a prediktált és valódi címke vonatkozásábán ábrázolják az egyes adatrekordok számát. A \ref{fig:confusion}. ábrán az összesített modelleknél legjobban teljesítő algoritmusok tévesztési mátrixai láthatóak, ahol a 3 csoport modellnél a 3, 2, 1 címkék rendre az \{5,4\}, \{3,2\}, \{1\} osztályokat, míg a 2 csoport modellnél az 1 és 0 címkék pedig az \{5,4,3\} és \{2,1\} osztályokat reprezentálják. Az ábrán jól látható módon míg 2021-ben a félreosztályozás mértékében az egyes osztályok között nincsenek számottevő különbségek, addig 2019-ben a 3 csoport modellnél a 4-5-ös osztály nagyobb része 2-3-as osztályba lett besorolva, valamint a 2 csoport modell esetén magas a hamisan lemorzsolódásnak osztályzott rekordok aránya. Ez azt mutatja, hogy az illesztett modellek sok esetben alulbecsülik a hallgatók teljesítményét, amelynek az egyik oka az lehet, hogy az osztályok között vékonyak a határok a bemeneti adatok tekintetében.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=.8\textwidth]{kepek/confusion_matrices.png}
+\caption{Tévesztési mátrixok az összesített modellek esetén}
+\label{fig:confusion}
+\end{figure}
+
+\newpage
 
 A \textbf{kumulált átlag} lineáris regresszióval való prediktálásának eredményei (statisztikák, reziduális szórásdiagramok és az egyes változók prediktív ereje egymáshoz viszonyítva) a \ref{fig:kumulalt}. ábrán láthatóak. 
 
@@ -818,11 +829,19 @@ A Gradeint Tree Boosting-gal való előrejelzés eredményei a lineáris regress
 
 \section{Diszkusszió, következtetések}
 
-A matematika érdemjegyek predktálásánál látható, hogy legjobb esetben is csak 80-85\% közötti eredmény érhető el, amely már jelentősen jobb, mint egy véletlen osztályzó által adott 33\%-os illetve 50\%-os teljesítmény, de még nem elegendően pontos. Ezen eredmények több adatponttal és több, új bemeneti változó (középiskola földrajzi lokációja; nem; életvitellel kapcsolatos adatok stb.) vizsgálatával mindenképpen javítható lenne, ugyanakkor az új érettségi rendszer 2024-re esedékes bevezetésével érdemes ezek mellett új modellezési struktúrákat is kialakítani.
+A matematika érdemjegyek predktálásánál látható, hogy a legjobb modellekkel is csak 80-85\% közötti hatásfok érhető el, amely már jelentősen jobb, mint egy véletlen osztályzó által adott 33\%-os illetve 50\%-os eredmény, de még bizonyosan tovább növelhető. A teljesítmény több adatponttal és több, új bemeneti változó (középiskola földrajzi lokációja; nem; életvitellel kapcsolatos adatok stb.) vizsgálatával mindenképpen javítható lenne, ugyanakkor az új érettségi rendszer 2024-re esedékes bevezetésével érdemes ezek mellett új modellezési struktúrákat is kialakítani. Egy másik megoldás a teljesítmény növelésére egy Ensemble modell lenne, amely az egyes kategóriákban legjobb teljesítő, előre meghatározott számú algoritmus eredményét vetné össze és súlyozná az algoritmusok hatásfokával, majd ezek alapján adna egy végső predikciót, ugyanakkor ez több időt és magasabb szintű optimalizációt venne igénybe. 
+
+A bemeneti változók tekintetében a legfontosabb észrevétel, hogy 2021-ben drasztikusan megnőtt a felvételi pontszám jelentősége a matematika érdemjegyre nézve.
+
+A kumulált átlag predikcióinál látható, hogy egy "black box" modell, mint a Gradient Tree Boosting algoritmus, sokkal több információt tud kinyerni az érettségi és tanulmányi pontokból, mint a lineáris regresszió. Ugyanakkor az utóbbi algoritmust érdemes lehet kibővíteni harmad- vagy negyedfokú polinomiális regresszióvá, vagy kombinálni az osztályozófüggvényt valamilyen trigonometrikus függvénnyel, hisz a lineáris regressziónál kapott két szóráskép hasonló görbét ír le, s így pontosabb eredményekhez juthatunk.
+
+
 
 \section{Összefoglalás}
 
-Ebben a dolgozatban adattudományi módszerekkel vizsgáltuk az elsőéves BME VBK hallgatók teljesítményét bemeneti adatok tekintetében. 
+%TODO
+
+%Ebben a dolgozatban adattudományi módszerekkel vizsgáltuk az elsőéves BME VBK hallgatók teljesítményét bemeneti adatok tekintetében. 
 
 \begin{thebibliography}{9}
 \end{thebibliography}
