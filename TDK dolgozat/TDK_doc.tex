@@ -419,6 +419,8 @@ A \ref{ssec:altalanos} alfejezetben szereplő ábrákat áttekintve, első rán�
 \item Ward féle hierarchikus klaszterező algoritmus.
 \end{enumerate}
 
+Számos optimalizációs kísérlet volt: hiperparaméterek beállítása, változók válogatása, illetve többféle skálázás. Volt egy kísérlet PCA alkalmazására, azonban minden esetben csak az összes megadott változó reprezentálta eléggé jól az adatot, így ez el lett vetve. Sok modell és klaszterkép készült, a legérdekesebbek lentebb lesznek bemutatva. A szemléltetéshez a bevett változók közötti páros szórásdiagramok lettek legenerálva és a pontok az alapján lettek színezve, amely klaszterbe kerültek.
+
 \subsubsection{K-közép algoritmus működése}
 Az algoritmus működési elve nagyon egyszerű. Az alapvető paraméter, amelyet meg kell adni, a létrehozandó osztályok kívánt száma, legyen ez \textit{k}. Első lépésben választ a térben véletlenszerűen \textit{k} pontot, ezek a klaszter középpontok, majd az összes pontot ahhoz a a középponthoz rendeli, amelyhez a legközelebb van. A második lépésben a kialakult osztályok középpontjait újraszámolja és azokkal a középpontokkal megismétli az első lépést. Ezt a két lépést iterálja addig, amíg két egymást követő osztályozás között már nem lesz jelentős változás.
 
@@ -448,6 +450,29 @@ Az általunk használt hierarchikus klaszterező algoritmus agglomeratív módon
 Az alapvető egyesítő módszerek a single, average, complete linkage nevet hordozzák, de mi a Ward féle linkage módszert alkalmaztuk. Ez a módszer az összes klaszteren belüli szórásnégyzet minimalizálására törekszik, így valamelyest hasonlít a k-özép algoritmusra. A többi módszerrel szemben az az előnye, hogy nem jönnek létre nagyon eltérő méretű csoportok.
 
 \subsubsection{K-közép algoritmus eredménye}
+Ami a szórásdiagramokból sejthető volt, a könyökszabály alkalmazása során igazolódott be. Szinte minden próbálkozás esetén sima volt a görbe, és nem volt egyértelműen jó klaszterezés. Ezekben az esetekben a klaszterkép is elmosott volt.
+
+A k-közép algoritmus eredményei közül kettőt emelhetünk ki. Az egyikben a 2019-es adatokból négy változó szerepelt, min-max skálázva: egyesített teszteredmény, első féléves átlag, kumulált átlag és a felvételi összpontszám. Ennek a változatnak a könyökszabály ábrája tekinthető meg alább:
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale = 0.6]{kepek/2019_kmeans_best_konyok.png}
+\caption{2019. K-közép, 4 változós könyökszabály}
+\label{fig:2019_kmeans_best_konyok}
+\end{figure}
+
+Természetesen ezen az ábrán sincs teljesen egyértelmű törés, de 5 klaszter esetén mondható közel optimálisnak. Ezzel az alábbi klaszterképet generálta az algoritmus:
+
+\begin{figure}[H]
+\centering
+\includegraphics[width = \textwidth]{kepek/2019_kmeans_5.png}
+\caption{2019. K-közép, 4 változós klaszterkép}
+\label{fig:2019_kmeans_5}
+\end{figure}
+
+\subsubsection{DBSCAN eredménye}
+
+\subsubsection{Ward féle algoritmus eredménye}
 
 
 
