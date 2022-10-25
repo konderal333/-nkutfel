@@ -445,9 +445,9 @@ Ezután a $\mu$ paramétert kell hozzáigazítani oly módon, hogy a kialakuló 
 
 \subsubsection{Ward féle hierarchikus klaszterező algoritmus működése}
 
-Az általunk használt hierarchikus klaszterező algoritmus agglomeratív módon hozza létre a klasztereket. Azaz először minden pontot külön klaszternek tekint, majd ezeket egyesíti egy kiválasztott módszer alapján addig, amíg az összes pont egy klaszterbe nem kerül. Az iterációkat dendrogrammal lehet ábrázolni, és az alapján lehet dönteni, hány klasztert akarunk létrehozni.
+Az általunk használt hierarchikus klaszterező algoritmus agglomeratív módon hozza létre a klasztereket. Azaz először minden pontot külön klaszternek tekint, majd ezeket egyesíti egy kiválasztott módszer alapján addig, amíg az összes pont egy klaszterbe nem kerül. Az iterációkat dendrogrammal lehet ábrázolni, és az alapján lehet dönteni, hány klasztert akarunk létrehozni. Gyakorlatban a dendrogramon meg kell keresni a legszélesebb vízszintes sávot, amelyben csak függőleges szakaszok vannak, és venni azok számát.
 
-Az alapvető egyesítő módszerek a single, average, complete linkage nevet hordozzák, de mi a Ward féle linkage módszert alkalmaztuk. Ez a módszer az összes klaszteren belüli szórásnégyzet minimalizálására törekszik, így valamelyest hasonlít a k-özép algoritmusra. A többi módszerrel szemben az az előnye, hogy nem jönnek létre nagyon eltérő méretű csoportok.
+Az alapvető egyesítő módszerek a single, average, complete linkage nevet hordozzák, de mi a Ward féle módszert alkalmaztuk. Ez a módszer az összes klaszteren belüli szórásnégyzet minimalizálására törekszik, így valamelyest hasonlít a k-közép algoritmusra.
 
 \subsubsection{K-közép algoritmus eredménye}
 Ami a szórásdiagramokból sejthető volt, a könyökszabály alkalmazása során igazolódott be. Szinte minden próbálkozás esetén sima volt a görbe, és nem volt egyértelműen jó klaszterezés. Ezekben az esetekben a klaszterkép is elmosott volt.
@@ -490,19 +490,44 @@ Ez az ábra jobb az előzőnél, ugyanis 3-nál még érzékeny a törés, de ut
 \label{fig:2021klacter}
 \end{figure}
 
-Ebben az esetben még tisztább az elkülönülés az első féléves átlag és a felvételi összpontszám esetén. Itt is gömbszerű klaszterek lettek, ugyanis a pontfelhő egészen homogén.
-
-
-
-
-
-
-
-
+Ebben az esetben még tisztább az elkülönülés az első féléves átlag és a felvételi összpontszám esetén, tehát feltehetőleg ezek jobban befolyásolták a döntést. Itt is gömbszerű klaszterek lettek, ugyanis a pontfelhő egészen homogén.
 
 \subsubsection{DBSCAN eredménye}
 
+A DBSCAN algoritmus akkor működik igazán jól, ha az adatok pontfelhője közel azonos sűrűségű részekből áll, amelyek között nagyobb távolság van. Az elkészített, és fentebb bemutatott ábrákon nem volt jellemző az előbb említett tulajdonság. Ennek következményeként az algoritmussal nem sikerült jó klaszterezést megvalósítani.
+
+A futtatások során az eredmények két csoportba voltak kategorizálhatóak. Az egyikben létrejött egy nagy klaszter és elenyésző volt a többi, a másikban a pontok nagy része "outlier" volt és néhány nagyobb, de továbbra is kis méretű klaszter jelent meg. Egy ilyet tekinthetünk meg alább.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width = \textwidth]{kepek/dbscan2.png}
+\caption{2019. DBSCAN, 4 változós klaszterkép}
+\label{fig:dbscan2}
+\end{figure}
+
+A klaszterezés 2019-es adatokon készült, Mahalanobis távolságot használva és kvantilisek mentén skálázva. Ismét ugyanaz a négy változó került be: egyesített teszteredmény, első féléves átlag, kumulált átlag és a felvételi összpontszám. Látszik, hogy piros pontokból van a legtöbb, amelyekhez a -1-edik klasztert rendelte az algoritmus, ezek az outlierek. A zöld és a kék klaszter még viszonylag nagy, de a többi csak pár pontot tartalmaz.
+
 \subsubsection{Ward féle algoritmus eredménye}
+
+Mint ahogy a másik két módszernél a könyökszabályokban, itt a dendrogramokban volt nehéz eldönteni az optimális paraméter értéket, jelen esetben a klaszterszámot. Ha egy szám optimális, akkor az a síkrész, amelyben annyi függőleges vonal megy, kiemelkedően széles. Ha nehezen klaszterezhető az adat, akkor kisebbek a sávok, és azok közül a legnagyobbak közel azonos méretűek. Ezt lehet látni az alábbi ábrán:
+
+\begin{figure}[H]
+\centering
+\includegraphics[width = \textwidth]{kepek/dendrogram.png}
+\caption{Dendrogram}
+\label{fig:dendrogram}
+\end{figure}
+
+Itt a kettő és a három függőleges szálat tartalmazó sávok szélessége közel azonos. A választás három klaszterre esett. Kevesebb változó választásánál a klaszterek száma minden esetben legfeljebb kettő esetén lett volna optimális, így egészen sokat kellett használni: matematikai rész pontszáma, kognitív rész pontszáma, kumulált átlag, hozott pontszám, szerzett érettségi pontszám, többlet pontszám.
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale = 0.65]{kepek/klacterward.png}
+\caption{Ward féle algoritmus eredménye}
+\label{fig:klacterward}
+\end{figure}
+
+A változók nagy száma miatt lett ilyen nagy a párosításos ábra. Mindez a 2019-es adatokból van, kvantilisek mentén skálázva. Minden erőfeszítés ellenére nem alakult ki tisztább klaszterkép. Itt is a k-középhez hasonlóan a három klaszter a "jók", "közepesek" és a "gyengébbek" osztályait jelenti, de nincs vetület, amin olyan sima lenne a klaszterhatár.
 
 
 
