@@ -452,7 +452,7 @@ Az alapvető egyesítő módszerek a single, average, complete linkage nevet hor
 \subsubsection{K-közép algoritmus eredménye}
 Ami a szórásdiagramokból sejthető volt, a könyökszabály alkalmazása során igazolódott be. Szinte minden próbálkozás esetén sima volt a görbe, és nem volt egyértelműen jó klaszterezés. Ezekben az esetekben a klaszterkép is elmosott volt.
 
-A k-közép algoritmus eredményei közül kettőt emelhetünk ki. Az egyikben a 2019-es adatokból négy változó szerepelt, min-max skálázva: egyesített teszteredmény, első féléves átlag, kumulált átlag és a felvételi összpontszám. Ennek a változatnak a könyökszabály ábrája tekinthető meg alább:
+A k-közép algoritmus eredményei közül kettőt emelhetünk ki. Az egyikben a 2019-es adatokból négy változó szerepelt, min-max skálázva: egyesített teszteredmény, első féléves átlag, kumulált átlag és a felvételi összpontszám. A másikban ugyanez a felállás 2021-re, kivéve a kumulált átlagot, mert az megyegyezett az első félévessel. Az első változatnak a könyökszabály ábrája tekinthető meg alább:
 
 \begin{figure}[H]
 \centering
@@ -469,6 +469,36 @@ Természetesen ezen az ábrán sincs teljesen egyértelmű törés, de 5 klaszte
 \caption{2019. K-közép, 4 változós klaszterkép}
 \label{fig:2019_kmeans_5}
 \end{figure}
+
+Az ábrák közül a legtisztábban a felvételi összpontszám és az első féléves átlag szórásdiagramján látszanak az osztályhatárok. Megfigyelhető az algoritmus jellegzetessége, a hasonló méretű, "gömbszerű" klaszterek kialakítása. A kékes zöld klaszter a legstabilabb, annak az adatpontjai mindig a jobb felső sarokban vannak, azaz minden változóban magas értékeik vannak. A lila hasonlóan viselkedik, csak mérsékeltebb, minden változóban átlag felettiek, de nem a legjobbak. Ellenben a zöld klaszter azokból a hallgatókból áll, akik átlagosan teljesítettek a felvételi és a teszt során, de más mutatókban lecsúsztak. A kék a legbizonytalanabb, ugyanis többnyire középütt van mindig, de mélyen belemetsz más klaszterokba. A sárga klaszter pontjai minden változó esetén a skála alsó felén vannak, kivéve a kumulált átlagot, ahol középtájt összpontosulnak.
+
+Most tekintsük a 2021-es eredményt:
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale = 0.6]{kepek/2021_kmeans_konyok.png}
+\caption{2021. K-közép, 3 változós könyökszabály}
+\label{fig:2021_kmeans_konyok}
+\end{figure}
+
+Ez az ábra jobb az előzőnél, ugyanis 3-nál még érzékeny a törés, de utána szinte kisimul.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width = \textwidth]{kepek/2021klacter.png}
+\caption{2021. K-közép, 3 változós klaszterkép}
+\label{fig:2021klacter}
+\end{figure}
+
+Ebben az esetben még tisztább az elkülönülés az első féléves átlag és a felvételi összpontszám esetén. Itt is gömbszerű klaszterek lettek, ugyanis a pontfelhő egészen homogén.
+
+
+
+
+
+
+
+
 
 \subsubsection{DBSCAN eredménye}
 
