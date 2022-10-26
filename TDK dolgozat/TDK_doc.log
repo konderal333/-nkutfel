@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 21.12) (preloaded format=pdflatex 2022.2.14)  26 OCT 2022 18:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 21.12) (preloaded format=pdflatex 2022.2.14)  26 OCT 2022 19:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1477,7 +1477,7 @@ Package pdftex.def Info: kepek/kumulalt2021_2.png  used on input line 907.
 1.png> <./kepek/kumulalt2021.png>] [36 <./kepek/residual2019_2.png> <./kepek/ku
 mulalt2019_2.png> <./kepek/residual2021_2.png> <./kepek/kumulalt2021_2.png>] [3
 7]
-Underfull \hbox (badness 7522) in paragraph at lines 956--957
+Underfull \hbox (badness 7522) in paragraph at lines 957--958
 []\T1/lmr/m/n/12 Jonathon Sh-lens. A Tuto-ri-al on Prin-ci-pal Com-po-nent Anal
 y-sis. \T1/lmr/m/it/12 CoRR\T1/lmr/m/n/12 ,
  []
@@ -1490,10 +1490,10 @@ Package rerunfilecheck Info: File `TDK_doc.out' has not changed.
 (rerunfilecheck)             Checksum: FFD840EA45EF977E9D40F6DE7338E45B;4570.
  ) 
 Here is how much of TeX's memory you used:
- 37335 strings out of 478659
- 859148 string characters out of 2845920
- 1212402 words of memory out of 3000000
- 54654 multiletter control sequences out of 15000+600000
+ 37339 strings out of 478659
+ 859198 string characters out of 2845920
+ 1212466 words of memory out of 3000000
+ 54656 multiletter control sequences out of 15000+600000
  466404 words of font info for 73 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  100i,18n,104p,2181b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1518,9 +1518,9 @@ ppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/kolle/App
 Data/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/Users/kolle/App
 Data/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/kolle/App
 Data/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy5.pfb>
-Output written on TDK_doc.pdf (39 pages, 3613090 bytes).
+Output written on TDK_doc.pdf (39 pages, 3614453 bytes).
 PDF statistics:
- 567 PDF objects out of 1000 (max. 8388607)
- 120 named destinations out of 1000 (max. 500000)
+ 572 PDF objects out of 1000 (max. 8388607)
+ 122 named destinations out of 1000 (max. 500000)
  403 words of extra memory for PDF output out of 10000 (max. 10000000)
 
