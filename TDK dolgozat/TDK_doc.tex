@@ -167,10 +167,10 @@ Egy részben feltáró adatelemzés fontos szakasza a felderítő elemzés. Cél
 
 Ebben az alfejezetben tekintjük át a számos készült ábrából a leginformatívabbakat. Viszonylag sok változóval kellett dolgozni, így célszerű volt több részábrás egységekbe gyűjteni a hasonló felépítésű grafikonokat. A megfelelő ábrák elkészítéséhez a Python \emph{matplotlib} és \emph{seaborn} csomagjait használtuk. A változók értékeinek eloszlását oszlopdiagramokkal, a változópárok egymás közötti viszonyait szórásdiagramokkal szemléltettük.
 
-A \textit{seaborn pairplot} függvény előnye, hogy csak az általunk vizsgált változók oszlopait kell megadni, és az összes kombinációt egyszerre számítja ki és ábrázolja egy megfelelő méretű mátrixban. Először tekintsük a \textit{matplotlib figure} alakzatokba összesített ábrákat. Ezeknek az az előnye a \textit{seaborn pairplot}-tal szemben, hogy tetszőleges ábrákat lehet belehelyezni, így például színezéssel bevihető egy harmadik dimenzió a szórásdiagramba. Sőt negyedik dimenziót is lehetne ábrázolni a pontok kinézetének módosításával, de az már nehezen értelmezhető.
+A \textit{seaborn pairplot} függvény előnye, hogy csak az általunk vizsgált változók oszlopait kell megadni, és az összes kombinációt egyszerre számítja ki és ábrázolja egy megfelelő méretű mátrixban. Először tekintsük a \textit{matplotlib figure} alakzatokba összesített ábrákat. Ezeknek az az előnye a \textit{seaborn pairplot}-tal szemben, hogy tetszőleges ábrákat lehet belehelyezni, így például színezéssel bevihető egy harmadik dimenzió a szórásdiagramba.
 
 
-Az \ref{fig:jegyeloszlas}. ábrán az két évben szerzett Matematika A1a -Analízis jegyek eloszlása látható összesítve és szakokra lebontva. 
+Az \ref{fig:jegyeloszlas}. ábrán a két évben szerzett Matematika A1a -Analízis jegyek eloszlása látható összesítve és szakokra lebontva. 
 
 
 
@@ -191,9 +191,9 @@ Az \ref{fig:jegyeloszlas}. ábrán az két évben szerzett Matematika A1a -Anal�
 \label{fig:2019scatter}
 \end{figure}
 
-A \ref{fig:2019scatter}. ábrán egyrészt a 0. ZH, a teszt összpontszáma és a két külön rész pontszámai vannak ábrázolva pontfelhőként a felvételi összpontszám függvényében, de minden esetben kétszer. A felső sorban a pontok az alapján vannak színezve, hogy járt-e természettudományi tagozatra a hallgató (1 igen, 0 nem), az alsóban pedig, hogy emelt szinten érettségizett-e (1 igen, 0 nem).
+A \ref{fig:2019scatter}. ábrán a 0. ZH, a teszt összpontszáma és a két külön rész pontszámai vannak ábrázolva pontfelhőként a felvételi összpontszám függvényében, minden esetben kétszer. A felső sorban a pontok az alapján vannak színezve, hogy járt-e természettudományi tagozatra a hallgató (1 igen, 0 nem), az alsóban pedig, hogy emelt szinten érettségizett-e (1 igen, 0 nem).
 
-Egyrészt rögtön látszik, hogy minden ábrán a bal felső és a jobb alsó sarkokban többnyire nincs pont, ez a pozitív korreláció, azaz összefüggés jele. Másrészt a színezésből arra következtethetünk, hogy az emelt érettségi megléte erősen fölfele húzza a többi eredményt, míg a természettudományi tagozatosok esetében nem egyértelmű a helyzet, észrevehető elkülönülés nincs.
+Egyrészt rögtön látszik, hogy minden ábrán a bal felső és a jobb alsó sarkokban többnyire nincs pont, ez a pozitív korreláció jele. Másrészt a színezésből arra következtethetünk, hogy az emelt érettségi megléte erősen fölfele húzza a többi eredményt, míg a természettudományi tagozatosok esetében nem egyértelmű a helyzet, észrevehető elkülönülés nincs.
 
 \begin{figure}[H]
 \centering
@@ -222,7 +222,7 @@ A \ref{fig:2019minmax3} ábrán látható a \textit{seaborn pairplot} függvény
 
 Egészen hasonló képet látunk, mint a 2019 esetében, de itt is érvényesül az erősebb szórás. Továbbá szembetűnő az érettségi pontszámok eloszlásának megváltozása. Míg 2019-ben a skálázott adatok nagy része 0.5-1 között van, 2021-ben már az egész intervallumra széthúzódnak. 
 
-Eddig a pontfelhők nem mutatnak jelentős korrelációt, illetve a kétdimenziós vetületekben nem emelkednek ki csoportok. Mivel más változókat is szerepeltek a vizsgálatban, azokról is készültek ábrák, amelyek alább tekinthetők meg.
+Eddig a pontfelhők nem mutatnak jelentős korrelációt, illetve a kétdimenziós vetületekben nem emelkednek ki csoportok. Más változókat is vizsgáltunk, a róluk készült ábrák alább tekinthetők meg.
 
 \begin{figure}[H]
 \centering
