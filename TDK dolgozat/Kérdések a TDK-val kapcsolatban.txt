@@ -9,3 +9,5 @@ Elsőéves hallgatók pandémia előtti és alatti bemeneti adatainak elemzése 
 
 Javaslatok Artúrhoz:
 - a 4-ből az utóbbi 2 scatter plotot ki kéne venni, és inkbb beszélni az első 2-ről többet
+
+Matematikai nyelvi teszt a kognitív helyett
