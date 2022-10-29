@@ -168,7 +168,7 @@ Ebben az alfejezetben tekintjük át a számos készült ábrából a leginforma
 %A \textit{seaborn pairplot} függvény előnye, hogy csak az általunk vizsgált változók oszlopait kell megadni, és az összes kombinációt egyszerre számítja ki és ábrázolja egy megfelelő méretű mátrixban. Először tekintsük a \textit{matplotlib figure} alakzatokba összesített ábrákat. Ezeknek az az előnye a \textit{seaborn pairplot}-tal szemben, hogy tetszőleges ábrákat lehet belehelyezni, így például színezéssel bevihető egy harmadik dimenzió a szórásdiagramba.
 
 
-Az \ref{fig:jegyeloszlas}. ábrán a két évben szerzett Matematika A1a -Analízis jegyek eloszlása látható összesítve és szakokra lebontva. 
+Az \ref{fig:jegyeloszlas}. ábrán a két évben szerzett Matematika A1a -Analízis jegyek eloszlása látható összesítve és szakokra lebontva a két évben. 
 
 
 
@@ -181,6 +181,7 @@ Az \ref{fig:jegyeloszlas}. ábrán a két évben szerzett Matematika A1a -Analí
 
 \noindent A legszembetűnőbb különbség a két év között az elégtelen, elégséges és közepes érdemjegyek eloszlásának tekintetében van. Az összesített ábrán jól látható, hogy míg 2019-ben a 2-es és 3-as érdmejegyek vannak túlsúlyban, addig 2021-ben az 1-es és 2-es érdemjegyek kerültek többségbe. Ugyanez a jelenség figyelhető meg a biomérnök és környezetmérnök hallgatók esetén is.
 
+A \ref{fig:2019scatter}. ábrán a 0. ZH, a teszt összpontszáma és a két külön rész pontszámai vannak ábrázolva pontfelhőként a felvételi összpontszám függvényében, minden esetben kétszer. A felső sorban a pontok az alapján vannak színezve, hogy járt-e természettudományi tagozatra a hallgató (1 igen, 0 nem), az alsóban pedig, hogy emelt szinten érettségizett-e (1 igen, 0 nem).
 
 \begin{figure}[H]
 \centering
@@ -189,7 +190,6 @@ Az \ref{fig:jegyeloszlas}. ábrán a két évben szerzett Matematika A1a -Analí
 \label{fig:2019scatter}
 \end{figure}
 
-A \ref{fig:2019scatter}. ábrán a 0. ZH, a teszt összpontszáma és a két külön rész pontszámai vannak ábrázolva pontfelhőként a felvételi összpontszám függvényében, minden esetben kétszer. A felső sorban a pontok az alapján vannak színezve, hogy járt-e természettudományi tagozatra a hallgató (1 igen, 0 nem), az alsóban pedig, hogy emelt szinten érettségizett-e (1 igen, 0 nem).
 
 Egyrészt rögtön látszik, hogy minden ábrán a bal felső és a jobb alsó sarkokban többnyire nincs pont, ez a pozitív korreláció jele. Másrészt a színezésből arra következtethetünk, hogy az emelt érettségi megléte erősen fölfele húzza a többi eredményt, míg a természettudományi tagozatosok esetében nem egyértelmű a helyzet, észrevehető elkülönülés nincs.
 
@@ -246,6 +246,7 @@ Ebben az esetben nem volt értelme a kumulált átlagot bevenni, ugyanis a kutat
 \subsection{Folyamatábrák (Sankey-diagramok)}
 A Sankey-diagramok olyan folyamatábrák, amelyekben az ábrázolt folyamok szélessége arányos a megfelelő folyamértékekkel. Ezáltal könnyen ábrázolhatóak adott állapotok közötti folyamok, illetve ezek egymással vett aránya. Egy hátránya van, hogy egy ábrán csak két osztálycsoport között olvashatjuk le az áramlásokat. Ha egy harmadik osztálycsoportot is belehelyezünk, és csak a másodikkal kötjük össze, akkor az első és a harmadik közötti vándorlások nem jelennek meg rajta. Emiatt lesz némi redundancia a lentebb ismertetett ábrákban.\\
 Dolgozatunkban hat opciót vizsgáltunk a két évben az elérhető adatoknak megfelelően. Mindkét esetben az állapotok a hallgatók valamely eredményét jelentették, például felvételi pontszámot.
+
 \begin{itemize}
 
 \item 2019:
@@ -522,13 +523,17 @@ Itt a kettő és a három függőleges szálat tartalmazó sávok szélessége k
 
 \begin{figure}[H]
 \centering
-\includegraphics[scale = 0.65]{kepek/klacterward.png}
+\includegraphics[scale = 0.57]{kepek/klacterward.png}
 \caption{Ward féle algoritmus eredménye}
 \label{fig:klacterward}
 \end{figure}
 
 A változók nagy száma miatt lett ilyen nagy a párosításos ábra. Mindez a 2019-es adatokból van, kvantilisek mentén skálázva. Minden erőfeszítés ellenére nem alakult ki tisztább klaszterkép. Itt is a k-középhez hasonlóan a három klaszter a "jók", "közepesek" és a "gyengébbek" osztályait jelenti, de nincs vetület, amin olyan sima lenne a klaszterhatár.
 
+
+\section{Konklúziók az adatelemzésből}
+
+TODO
 
 
 \newpage
