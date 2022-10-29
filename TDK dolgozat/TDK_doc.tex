@@ -100,7 +100,7 @@
 \section{Bevezetés}
 Az elsőévesek képességének és készségeinek mérése nemcsak a felsőoktatásban bevett gyakorlat, hasonlóval találkozhatunk akkor is, amikor például a diákok a gimnáziumi tanulmányaikat kezdik meg, de bevett gyakorlat a szintfelmérő a nyelviskolákban is a nyelvi szintek megállapításánál. A felsőoktatásban leginkább arra használják a bemeneti méréseket, hogy feltérképezzék, a hallgató birtokában van-e az adott tárgy teljesítéséhez szükséges előismereteknek. Amennyiben nincs, felzárkóztató kurzusokat biztosítanak. Előfordulhat az is, hogy valamely egyetemi tárgy teljesítése szempontjából szükséges kritériumként fogalmazzák meg a bemeneti tesztek adott szint fölötti teljesítését. Előfordul, hogy ezekhez a tesztekhez mindenki által hozzáférhető gyakorló feladatokat is rendelkezésre bocsátanak vagy elérhetővé teszik a korábbi évek feladatsorait. Tekintettel arra, hogy a hazánkban tematikus és szintek szerinti bontásban az érettségizők rendelkezésére állnak a korábbi évek feladatsorai (\url{https://www.studiumgenerale.hu/matek-erettsegik/}), a tanulók rutinosak az ún. rátanulásban, amikor adott feladattípusok megoldásmenetét sajátítják el, nem egyszer mélyebb megértés nélkül. Több helyen bevett gyakorlat a mintadolgozat intézménye, ami esetleg azt is jelentheti, hogy a számonkérés alkalmával a diáknak egy a kiadotthoz teljesen hasonló feladatsorral kell megküzdenie. Ilyen mérések alkalmával azonban nem kapunk képet arról, miként fog teljesíteni a diák akkor, ha nemcsak begyakorolt rutinokból kell számot adnia a tudásáról. Éppen ezért ezek a mérések nem jelzik előre, hogy a hallgató meg tud-e birkózni a kalkulus tárgy nehézségeivel, sikeresen fogja-e venni azokat az akadályokat, amelyeket a matematikaigényes szaktárgyak jelentenek.
 
-A Budapesti Műszaki és Gazdaságtudományi Egyetemen több éve foglalkozunk azzal, hogy az ütemterv szerinti haladást minél inkább előre jelző feladatsort készítsünk és ezzel mérjük az elsőéveseket. Az elmúlt években a mérőtesztek struktúrája is változott: az első idők matematika tesztjei nyelvi feladatokkal is kiegészültek. A pandémia okán nem minden esetben került sor jelenléti tesztelésre. Mostanra kellően nagy adatbázis áll rendelkezésünkre, amelyen a modern adatelemzési eljárások segítségével nemcsak azt vizsgálhatjuk, milyen mértékben állnak készen a hallgatók arra, hogy sikerrel teljesítsék a kalkulus tárgyakat, hanem vizsgálhatjuk azt is, mennyire megbízható az online tesztelés, illetve milyen hatással volt a COVID-19 járvány az elsőévesek felkészültségére.
+A Budapesti Műszaki és Gazdaságtudományi Egyetemen több éve foglalkozunk azzal, hogy az ütemterv szerinti haladást minél inkább előre jelző feladatsort készítsünk és ezzel mérjük az elsőéveseket. Az elmúlt években a mérőtesztek struktúrája is változott: az első idők matematika tesztjei nyelvi feladatokkal is kiegészültek. A pandémia okán nem minden esetben került sor jelenléti tesztelésre. Mostanra kellően nagy adatbázis áll rendelkezésünkre, amelyen nemcsak azt vizsgálhatjuk, milyen mértékben állnak készen a hallgatók arra, hogy sikerrel teljesítsék a kalkulus tárgyakat, hanem azt is, mennyire megbízható az online tesztelés, illetve milyen hatással volt a COVID-19 járvány az elsőévesek felkészültségére. A hallgatók lelki állapotára és teljesítményére gyakorolt hatásának vizsgálatára több kutatás is készült az utóbbi években \cite{student_perf1, student_perf2, student_perf3}, ahol a mélyebb vizsgálatoknál is többnyire regressziós modelleket alkalmaztak \cite{student_perf4, student_perf5}. Ugyanezen problémakört vizsgálva dolgozatunk célja az, hogy modern adattudományi eszközök felhasználásával megvizsgáljuk a COVID járvány előtt és után kezdett hallgatók bemeneti adataiban fellelhető változásokat, és ezen különbségek hatásait az első félév végi teljesítményükre.
 
 \newpage
 
@@ -913,7 +913,7 @@ A Gradeint Tree Boosting-gal való előrejelzés eredményei a lineáris regress
    \label{fig:kumulalt}
 \end{figure}
 
-\noindent GBT-t alkalmazva a 2019-es modell statisztikái drasztikusan jobbak, mint a lineáris regressziónál számított értékek, ugyanakkor a 2021-es modell hatásfoka valamelyest csökkent. A reziduális tagok szórásképe a két évben igencsak eltérő. Ami megjegyzendő, hogy az egyes attribútumok egymáshoz viszonyított prediktív ereje a két évben közel azonos, a két legfontosabb változó a tanulmányi és érettségi pont. 
+\noindent Gradient Tree Boosting-ot használva a 2019-es modell statisztikái drasztikusan jobbak, mint a lineáris regressziónál számított értékek, ugyanakkor a 2021-es modell hatásfoka valamelyest csökkent. A reziduális tagok szórásképe a két évben igencsak eltérő. Ami megjegyzendő, hogy az egyes attribútumok egymáshoz viszonyított prediktív ereje a két évben közel azonos, a két legfontosabb változó a tanulmányi és érettségi pont. 
 
 \newpage 
 
@@ -946,12 +946,11 @@ Predicting student's dropout in university classes using two-layer ensemble mach
 
 \bibitem{modeling3}Ahajjam Tarik, Haidar Aissa, Farhaoui Yousef. Artificial Intelligence and Machine Learning to Predict Student Performance during the COVID-19. \textit{Procedia Computer Science}, 184:835-840, 2021.
 
-\bibitem{modeling4}D. K. Dake, D. D. Essel, J. E. Agbodaze. Using Machine Learning to Predict Students' Academic Performance During Covid-19. \textit{2021 International Conference on Computing, Computational Modelling and Applications (ICCMA)}, pages 9-15, 2021.
+\bibitem{modeling4}D. K. Dake, D. D. Essel, J. E. Agbodaze. Using Machine Learning to Predict Students' Academic Performance During Covid-19. \textit{2021 International Conference on Computing, Computational Modelling and Applications}, pages 9-15, 2021.
 
-\bibitem{sklearn} F. Pedregosa, G. Varoquaux, A. Gramfort, V. Michel, B. Thirion, O. Grisel, M. Blondel, P. Prettenhofer, R. Weiss, V. Dubourg, J. Vanderplas, A. Passos, D. Cournapeau, M. Brucher, M. Perrot, E. Duchesnay. Scikit-learn: Machine Learning in Python. \textit{Journal of Machine Learning Research}, 12:2825-2830, 2011.
+\bibitem{sklearn} F. Pedregosa, G. Varoquaux, A. Gramfort, V. Michel, B. Thirion, O. Grisel, M. Blondel, P. Prettenhofer, R. Weiss, V. Dubourg, J. Vanderplas, A. Passos, D. Cournapeau, M. Brucher, M. Perrot, E. Duchesnay. Scikit-learn: Machine Learning in Python. \textit{Journal of Machine Learning Research}, Volume 12, pages 2825-2830, 2011.
 
-\bibitem{svm} C. Cortes, V. Vapnik. Support-vector network. \textit{Machine Learning}, 20:273–297,
-1995.
+\bibitem{svm} C. Cortes, V. Vapnik. Support-vector network. \textit{Machine Learning}, Volume 20, pages 273–297, 1995.
 
 \bibitem{bevadat} Roland Molontay. \textit{Lecture notes in Intorduction to Data Science.} Budapest University of Technology and Economics, 2021.
 
@@ -962,6 +961,17 @@ Predicting student's dropout in university classes using two-layer ensemble mach
 \bibitem{molontay1}Máté Baranyi, Marcell Nagy, Roland Molontay. Interpretable Deep Learning for University Dropout Prediction. \textit{Proceedings of the 21st Annual Conference on Information Technology Education}, pages 13-19, 2020.
 
 \bibitem{molontay2}Marcell Nagy, Roland Molontay. Comprehensive analysis of the predictive validity of the university entrance score in Hungary. \textit{Assessment \& Evaluation in Higher Education}, 46:8, 1235-1253, 2021.
+
+\bibitem{student_perf1}J. Cavanaugh, S. Jacquemin, C. Junker. A look at student performance during the COVID-19 pandemic. \textit{Quality Assurance in Education}, Vol. ahead-of-print,  No. ahead-of-print, 2022. \url{https://doi.org/10.1108/QAE-01-2022-0008}
+
+\bibitem{student_perf2}E. Grewenig, P. Lergetporer, K. Werner, L. Woessmann, L. Zierow. COVID-19 and Educational Inequality: How School Closures Affect Low-and High-Achieving Students. \textit{EconStor}, 2020.
+
+\bibitem{student_perf3}El-Sayed Atlam, Ashraf Ewis, M.M. Abd El-Raouf, Osama Ghoneim, Ibrahim Gad. A new approach in identifying the psychological impact of COVID-19 on university student’s academic performance. \textit{Alexandria Engineering Journal}, Volume 61, Issue 7, pages 5223-5233, 2022.
+
+\bibitem{student_perf4}Z. Malki, E.S. Atlam, A. Ewis, G. Dagnew, A.R. Alzighaibi, G. ELmarhomy, M.A. Elhosseini, A.E. Hassanien, I. Gad.
+ARIMA models for predicting the end of COVID-19 pandemic and the risk of second rebound. \textit{Neural Comput \& Applic}, Volume 33, pages 2929–2948, 2021.
+
+\bibitem{student_perf5}E.M. Onyema, N.C. Eucheria, F.A. Obafemi, S. Sen, F.G. Atonye, A. Sharma, A.O. Alsayed. Impact of coronavirus pandemic on education. \textit{Journal of Education and Practice}, 2020.
 
 \end{thebibliography}
 
