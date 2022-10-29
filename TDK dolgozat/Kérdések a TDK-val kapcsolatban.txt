@@ -10,4 +10,11 @@ Elsőéves hallgatók pandémia előtti és alatti bemeneti adatainak elemzése 
 Javaslatok Artúrhoz:
 - a 4-ből az utóbbi 2 scatter plotot ki kéne venni, és inkbb beszélni az első 2-ről többet
 
-Matematikai nyelvi teszt a kognitív helyett
+- Matematikai nyelvi teszt a kognitív helyett
+- Ábrák értelmezhetőségének kifejtése
+- 0.ZH legyen mindenhol egységesen (mert valahol zh, valahol zárthelyi dolgozat)
+- 5-6. ábráról többet írni
+- A2-s ábráról írni (azt hogy miért válnak sok felé a kettesek)
+- Tévesztési mátrixok értelemzését jobban kifejteni
+- miért hagytuk ki a 2020-as adatokat
+- FONTOS: Összefoglalás azokról a dolgokról, amiket mit csináltunk
