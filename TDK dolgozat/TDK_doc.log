@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.4.7)  30 OCT 2022 15:00
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.4.7)  30 OCT 2022 16:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1203,72 +1203,72 @@ LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ) [2]
 [3] [4] [5] [6]
-<kepek/jegyek_eloszlas2.png, id=183, 774.64406pt x 231.11343pt>
+<kepek/jegyek_eloszlas2.png, id=184, 774.64406pt x 231.11343pt>
 File: kepek/jegyek_eloszlas2.png Graphic file (type png)
 <use kepek/jegyek_eloszlas2.png>
-Package pdftex.def Info: kepek/jegyek_eloszlas2.png  used on input line 194.
+Package pdftex.def Info: kepek/jegyek_eloszlas2.png  used on input line 196.
 (pdftex.def)             Requested size: 455.24411pt x 135.82324pt.
-<kepek/2019scatter.png, id=187, 633.86812pt x 309.65688pt>
+ [7 <./kepek/jegyek_eloszlas2.png>]
+<kepek/2019scatter.png, id=196, 633.86812pt x 309.65688pt>
 File: kepek/2019scatter.png Graphic file (type png)
 <use kepek/2019scatter.png>
-Package pdftex.def Info: kepek/2019scatter.png  used on input line 205.
+Package pdftex.def Info: kepek/2019scatter.png  used on input line 207.
 (pdftex.def)             Requested size: 455.24411pt x 222.39995pt.
- [7 <./kepek/jegyek_eloszlas2.png>]
-<kepek/2021scatter.png, id=196, 628.3475pt x 314.17375pt>
+<kepek/2021scatter.png, id=197, 628.3475pt x 314.17375pt>
 File: kepek/2021scatter.png Graphic file (type png)
 <use kepek/2021scatter.png>
-Package pdftex.def Info: kepek/2021scatter.png  used on input line 212.
+Package pdftex.def Info: kepek/2021scatter.png  used on input line 214.
 (pdftex.def)             Requested size: 455.24411pt x 227.61911pt.
  [8 <./kepek/2019scatter.png> <./kepek/2021scatter.png>]
-<kepek/2019minmax3.png, id=203, 446.66875pt x 443.6575pt>
+<kepek/2019minmax3.png, id=204, 446.66875pt x 443.6575pt>
 File: kepek/2019minmax3.png Graphic file (type png)
 <use kepek/2019minmax3.png>
-Package pdftex.def Info: kepek/2019minmax3.png  used on input line 223.
+Package pdftex.def Info: kepek/2019minmax3.png  used on input line 225.
 (pdftex.def)             Requested size: 455.24411pt x 452.18617pt.
  [9 <./kepek/2019minmax3.png>]
-<kepek/2021minmax3.png, id=211, 443.15562pt x 443.6575pt>
+<kepek/2021minmax3.png, id=212, 443.15562pt x 443.6575pt>
 File: kepek/2021minmax3.png Graphic file (type png)
 <use kepek/2021minmax3.png>
-Package pdftex.def Info: kepek/2021minmax3.png  used on input line 234.
-(pdftex.def)             Requested size: 455.24411pt x 455.78763pt.
-<kepek/2019minmax4.png, id=214, 443.15562pt x 443.6575pt>
-File: kepek/2019minmax4.png Graphic file (type png)
-<use kepek/2019minmax4.png>
-Package pdftex.def Info: kepek/2019minmax4.png  used on input line 245.
+Package pdftex.def Info: kepek/2021minmax3.png  used on input line 236.
 (pdftex.def)             Requested size: 455.24411pt x 455.78763pt.
  [10 <./kepek/2021minmax3.png>]
-<kepek/2021minmax.png, id=222, 358.84062pt x 358.33875pt>
+<kepek/2019minmax4.png, id=221, 443.15562pt x 443.6575pt>
+File: kepek/2019minmax4.png Graphic file (type png)
+<use kepek/2019minmax4.png>
+Package pdftex.def Info: kepek/2019minmax4.png  used on input line 247.
+(pdftex.def)             Requested size: 455.24411pt x 455.78763pt.
+<kepek/2021minmax.png, id=223, 358.84062pt x 358.33875pt>
 File: kepek/2021minmax.png Graphic file (type png)
 <use kepek/2021minmax.png>
-Package pdftex.def Info: kepek/2021minmax.png  used on input line 255.
+Package pdftex.def Info: kepek/2021minmax.png  used on input line 257.
 (pdftex.def)             Requested size: 455.24411pt x 454.6368pt.
  [11 <./kepek/2019minmax4.png>] [12 <./kepek/2021minmax.png>]
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 2
-70.
+72.
 
 (C:\Users\Admin\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-<kepek/teszt-a1-a2.png, id=237, 629.9535pt x 250.536pt>
+<kepek/teszt-a1-a2.png, id=238, 629.9535pt x 250.536pt>
 File: kepek/teszt-a1-a2.png Graphic file (type png)
 <use kepek/teszt-a1-a2.png>
-Package pdftex.def Info: kepek/teszt-a1-a2.png  used on input line 305.
-(pdftex.def)             Requested size: 360.96124pt x 143.55627pt.
+Package pdftex.def Info: kepek/teszt-a1-a2.png  used on input line 307.
+(pdftex.def)             Requested size: 455.24411pt x 181.05476pt.
  [13]
-<kepek/matekrészeksankey.png, id=249, 632.3625pt x 273.4215pt>
+<kepek/matekrészeksankey.png, id=251, 632.3625pt x 273.4215pt>
 File: kepek/matekrészeksankey.png Graphic file (type png)
 <use kepek/matekrészeksankey.png>
-Package pdftex.def Info: kepek/matekrészeksankey.png  used on input line 321.
+Package pdftex.def Info: kepek/matekrészeksankey.png  used on input line 322.
 (pdftex.def)             Requested size: 362.34158pt x 156.66959pt.
 
 [14 <./kepek/teszt-a1-a2.png> <./kepek/matekrészeksankey.png>]
-<kepek/2019_old_felvi_0zh_teszt.png, id=258, 630.55576pt x 270.41025pt>
+<kepek/2019_old_felvi_0zh_teszt.png, id=261, 630.55576pt x 270.41025pt>
 File: kepek/2019_old_felvi_0zh_teszt.png Graphic file (type png)
 <use kepek/2019_old_felvi_0zh_teszt.png>
 Package pdftex.def Info: kepek/2019_old_felvi_0zh_teszt.png  used on input line
- 335.
+ 336.
 (pdftex.def)             Requested size: 361.30632pt x 154.94415pt.
-<kepek/2021_old_felvi_0zh_teszt.png, id=259, 628.14674pt x 271.61475pt>
+<kepek/2021_old_felvi_0zh_teszt.png, id=263, 628.14674pt x 271.61475pt>
 File: kepek/2021_old_felvi_0zh_teszt.png Graphic file (type png)
 <use kepek/2021_old_felvi_0zh_teszt.png>
 Package pdftex.def Info: kepek/2021_old_felvi_0zh_teszt.png  used on input line
@@ -1276,219 +1276,222 @@ Package pdftex.def Info: kepek/2021_old_felvi_0zh_teszt.png  used on input line
 (pdftex.def)             Requested size: 359.92598pt x 155.63432pt.
  [15 <./kepek/2019_old_felvi_0zh_teszt.png> <./kepek/2021_old_felvi_0zh_teszt.p
 ng>]
-<kepek/2019_felvi_teszt_atlag_kumatlag.png, id=268, 681.04437pt x 183.18437pt>
+<kepek/2019_felvi_teszt_atlag_kumatlag.png, id=272, 681.04437pt x 183.18437pt>
 File: kepek/2019_felvi_teszt_atlag_kumatlag.png Graphic file (type png)
 <use kepek/2019_felvi_teszt_atlag_kumatlag.png>
 Package pdftex.def Info: kepek/2019_felvi_teszt_atlag_kumatlag.png  used on inp
-ut line 360.
+ut line 359.
 (pdftex.def)             Requested size: 408.62978pt x 109.91145pt.
-<kepek/2021_felvi_teszt_atlag.png, id=269, 620.81938pt x 208.78pt>
+<kepek/2021_felvi_teszt_atlag.png, id=275, 620.81938pt x 208.78pt>
 File: kepek/2021_felvi_teszt_atlag.png Graphic file (type png)
 <use kepek/2021_felvi_teszt_atlag.png>
 Package pdftex.def Info: kepek/2021_felvi_teszt_atlag.png  used on input line 3
-75.
+74.
 (pdftex.def)             Requested size: 372.4945pt x 125.26895pt.
  [16 <./kepek/2019_felvi_teszt_atlag_kumatlag.png>]
-<kepek/2019_felvi_teszt_a1_kumatl.png, id=276, 802.49812pt x 218.31563pt>
+<kepek/2019_felvi_teszt_a1_kumatl.png, id=283, 802.49812pt x 218.31563pt>
 File: kepek/2019_felvi_teszt_a1_kumatl.png Graphic file (type png)
 <use kepek/2019_felvi_teszt_a1_kumatl.png>
 Package pdftex.def Info: kepek/2019_felvi_teszt_a1_kumatl.png  used on input li
-ne 385.
+ne 384.
 (pdftex.def)             Requested size: 401.24808pt x 109.15753pt.
-<kepek/2021_felvi_teszt_a1_atlag.png, id=277, 803.0pt x 218.31563pt>
+<kepek/2021_felvi_teszt_a1_atlag.png, id=285, 803.0pt x 218.31563pt>
 File: kepek/2021_felvi_teszt_a1_atlag.png Graphic file (type png)
 <use kepek/2021_felvi_teszt_a1_atlag.png>
 Package pdftex.def Info: kepek/2021_felvi_teszt_a1_atlag.png  used on input lin
-e 395.
+e 393.
 (pdftex.def)             Requested size: 401.49902pt x 109.15753pt.
  [17 <./kepek/2021_felvi_teszt_atlag.png> <./kepek/2019_felvi_teszt_a1_kumatl.p
 ng> <./kepek/2021_felvi_teszt_a1_atlag.png>]
-<kepek/2019_hozott_erett_A1.png, id=288, 618.81187pt x 214.8025pt>
+<kepek/2019_hozott_erett_A1.png, id=297, 618.81187pt x 214.8025pt>
 File: kepek/2019_hozott_erett_A1.png Graphic file (type png)
 <use kepek/2019_hozott_erett_A1.png>
-Package pdftex.def Info: kepek/2019_hozott_erett_A1.png  used on input line 405
+Package pdftex.def Info: kepek/2019_hozott_erett_A1.png  used on input line 403
 .
 (pdftex.def)             Requested size: 371.29pt x 128.88249pt.
-<kepek/2021_hozott_erett_A1.png, id=289, 620.3175pt x 217.81375pt>
+<kepek/2021_hozott_erett_A1.png, id=300, 621.32124pt x 215.80624pt>
 File: kepek/2021_hozott_erett_A1.png Graphic file (type png)
 <use kepek/2021_hozott_erett_A1.png>
-Package pdftex.def Info: kepek/2021_hozott_erett_A1.png  used on input line 418
+Package pdftex.def Info: kepek/2021_hozott_erett_A1.png  used on input line 416
 .
-(pdftex.def)             Requested size: 372.19337pt x 130.68924pt.
+(pdftex.def)             Requested size: 372.79562pt x 129.48474pt.
  [18 <./kepek/2019_hozott_erett_A1.png> <./kepek/2021_hozott_erett_A1.png>] [19
 ] [20]
-<kepek/2019_kmeans_best_konyok.png, id=311, 380.42125pt x 365.365pt>
+<kepek/2019_kmeans_best_konyok.png, id=324, 380.42125pt x 365.365pt>
 File: kepek/2019_kmeans_best_konyok.png Graphic file (type png)
 <use kepek/2019_kmeans_best_konyok.png>
 Package pdftex.def Info: kepek/2019_kmeans_best_konyok.png  used on input line 
-478.
+476.
 (pdftex.def)             Requested size: 228.2545pt x 219.22069pt.
-<kepek/2019_kmeans_5.png, id=312, 702.625pt x 470.75874pt>
+<kepek/2019_kmeans_5.png, id=325, 702.625pt x 470.75874pt>
 File: kepek/2019_kmeans_5.png Graphic file (type png)
 <use kepek/2019_kmeans_5.png>
-Package pdftex.def Info: kepek/2019_kmeans_5.png  used on input line 487.
+Package pdftex.def Info: kepek/2019_kmeans_5.png  used on input line 485.
 (pdftex.def)             Requested size: 455.24411pt x 305.01982pt.
  [21 <./kepek/2019_kmeans_best_konyok.png>]
-<kepek/2021_kmeans_konyok.png, id=318, 547.54562pt x 367.3725pt>
+<kepek/2021_kmeans_konyok.png, id=331, 547.54562pt x 367.3725pt>
 File: kepek/2021_kmeans_konyok.png Graphic file (type png)
 <use kepek/2021_kmeans_konyok.png>
-Package pdftex.def Info: kepek/2021_kmeans_konyok.png  used on input line 498.
+Package pdftex.def Info: kepek/2021_kmeans_konyok.png  used on input line 496.
 (pdftex.def)             Requested size: 328.5299pt x 220.42519pt.
  [22 <./kepek/2019_kmeans_5.png>]
-<kepek/2021klacter.png, id=325, 853.68938pt x 272.01625pt>
+<kepek/2021klacter.png, id=338, 853.68938pt x 272.01625pt>
 File: kepek/2021klacter.png Graphic file (type png)
 <use kepek/2021klacter.png>
-Package pdftex.def Info: kepek/2021klacter.png  used on input line 507.
+Package pdftex.def Info: kepek/2021klacter.png  used on input line 505.
 (pdftex.def)             Requested size: 455.24411pt x 145.0603pt.
-<kepek/dbscan2.png, id=326, 712.6625pt x 475.7775pt>
+<kepek/dbscan2.png, id=339, 712.6625pt x 475.7775pt>
 File: kepek/dbscan2.png Graphic file (type png)
 <use kepek/dbscan2.png>
-Package pdftex.def Info: kepek/dbscan2.png  used on input line 522.
+Package pdftex.def Info: kepek/dbscan2.png  used on input line 520.
 (pdftex.def)             Requested size: 455.24411pt x 303.92302pt.
  [23 <./kepek/2021_kmeans_konyok.png> <./kepek/2021klacter.png>]
-<kepek/dendrogram.png, id=334, 591.20876pt x 431.6125pt>
+<kepek/dendrogram.png, id=347, 591.20876pt x 431.6125pt>
 File: kepek/dendrogram.png Graphic file (type png)
 <use kepek/dendrogram.png>
-Package pdftex.def Info: kepek/dendrogram.png  used on input line 535.
+Package pdftex.def Info: kepek/dendrogram.png  used on input line 533.
 (pdftex.def)             Requested size: 455.24411pt x 332.3624pt.
 
 [24 <./kepek/dbscan2.png>]
-<kepek/klacterward.png, id=342, 626.34pt x 993.7125pt>
+<kepek/klacterward.png, id=355, 626.34pt x 993.7125pt>
 File: kepek/klacterward.png Graphic file (type png)
 <use kepek/klacterward.png>
-Package pdftex.def Info: kepek/klacterward.png  used on input line 544.
+Package pdftex.def Info: kepek/klacterward.png  used on input line 542.
 (pdftex.def)             Requested size: 357.0175pt x 566.42201pt.
  [25 <./kepek/dendrogram.png>] [26 <./kepek/klacterward.png>] [27] [28]
-<kepek/flowchart.png, id=374, 610.53094pt x 584.1825pt>
+<kepek/flowchart.png, id=387, 610.53094pt x 584.1825pt>
 File: kepek/flowchart.png Graphic file (type png)
 <use kepek/flowchart.png>
-Package pdftex.def Info: kepek/flowchart.png  used on input line 578.
+Package pdftex.def Info: kepek/flowchart.png  used on input line 576.
 (pdftex.def)             Requested size: 366.3214pt x 350.51219pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [29]
-Underfull \hbox (badness 10000) in paragraph at lines 587--594
+Underfull \hbox (badness 10000) in paragraph at lines 585--592
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 587--594
+Underfull \hbox (badness 10000) in paragraph at lines 585--592
 
  []
 
 [30 <./kepek/flowchart.png>] [31]
-Underfull \hbox (badness 10000) in paragraph at lines 661--662
+Underfull \hbox (badness 10000) in paragraph at lines 659--660
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 666--671
+Underfull \hbox (badness 10000) in paragraph at lines 664--669
 
  []
 
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 697.
+(Font)              <10> on input line 695.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 697.
+(Font)              <7> on input line 695.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 697.
+(Font)              <5> on input line 695.
 
-Underfull \hbox (badness 10000) in paragraph at lines 697--698
+Underfull \hbox (badness 10000) in paragraph at lines 695--696
 
  []
 
 [32]
-Underfull \hbox (badness 10000) in paragraph at lines 719--720
+Underfull \hbox (badness 10000) in paragraph at lines 717--718
 
  []
 
 [33]
-Overfull \hbox (2.50052pt too wide) in paragraph at lines 756--782
+Overfull \hbox (2.50052pt too wide) in paragraph at lines 754--780
  [][] 
  []
 
 [34]
-Overfull \hbox (1.91725pt too wide) in paragraph at lines 793--818
+Overfull \hbox (1.91725pt too wide) in paragraph at lines 791--816
  [][] 
  []
 
-<kepek/eves_valtozok.png, id=432, 682.80093pt x 316.18124pt>
+<kepek/eves_valtozok.png, id=445, 682.80093pt x 316.18124pt>
 File: kepek/eves_valtozok.png Graphic file (type png)
 <use kepek/eves_valtozok.png>
-Package pdftex.def Info: kepek/eves_valtozok.png  used on input line 827.
+Package pdftex.def Info: kepek/eves_valtozok.png  used on input line 825.
 (pdftex.def)             Requested size: 409.68372pt x 189.7102pt.
 [35 <./kepek/eves_valtozok.png>]
-<kepek/modell_valtozo.png, id=439, 712.91344pt x 907.13907pt>
+<kepek/modell_valtozo.png, id=452, 712.91344pt x 907.13907pt>
 File: kepek/modell_valtozo.png Graphic file (type png)
 <use kepek/modell_valtozo.png>
-Package pdftex.def Info: kepek/modell_valtozo.png  used on input line 836.
+Package pdftex.def Info: kepek/modell_valtozo.png  used on input line 834.
 (pdftex.def)             Requested size: 406.36488pt x 517.07465pt.
  [36 <./kepek/modell_valtozo.png>]
-<kepek/confusion_matrices.png, id=447, 456.95718pt x 445.665pt>
+<kepek/confusion_matrices.png, id=460, 456.95718pt x 445.665pt>
 File: kepek/confusion_matrices.png Graphic file (type png)
 <use kepek/confusion_matrices.png>
-Package pdftex.def Info: kepek/confusion_matrices.png  used on input line 860.
+Package pdftex.def Info: kepek/confusion_matrices.png  used on input line 858.
 (pdftex.def)             Requested size: 364.19667pt x 355.20642pt.
  [37 <./kepek/confusion_matrices.png>]
-<kepek/residual2019.png, id=455, 267.24844pt x 209.28188pt>
+<kepek/residual2019.png, id=468, 267.24844pt x 209.28188pt>
 File: kepek/residual2019.png Graphic file (type png)
 <use kepek/residual2019.png>
-Package pdftex.def Info: kepek/residual2019.png  used on input line 884.
+Package pdftex.def Info: kepek/residual2019.png  used on input line 882.
 (pdftex.def)             Requested size: 182.09486pt x 142.60356pt.
-<kepek/kumulalt2019.png, id=456, 332.74312pt x 280.04625pt>
+<kepek/kumulalt2019.png, id=469, 332.74312pt x 280.04625pt>
 File: kepek/kumulalt2019.png Graphic file (type png)
 <use kepek/kumulalt2019.png>
-Package pdftex.def Info: kepek/kumulalt2019.png  used on input line 885.
+Package pdftex.def Info: kepek/kumulalt2019.png  used on input line 883.
 (pdftex.def)             Requested size: 182.09486pt x 153.25673pt.
-<kepek/residual2021.png, id=457, 268.00125pt x 215.30438pt>
+<kepek/residual2021.png, id=470, 268.00125pt x 215.30438pt>
 File: kepek/residual2021.png Graphic file (type png)
 <use kepek/residual2021.png>
-Package pdftex.def Info: kepek/residual2021.png  used on input line 896.
+Package pdftex.def Info: kepek/residual2021.png  used on input line 894.
 (pdftex.def)             Requested size: 182.09486pt x 146.28676pt.
-<kepek/kumulalt2021.png, id=458, 325.96782pt x 282.30469pt>
+<kepek/kumulalt2021.png, id=471, 325.96782pt x 282.30469pt>
 File: kepek/kumulalt2021.png Graphic file (type png)
 <use kepek/kumulalt2021.png>
-Package pdftex.def Info: kepek/kumulalt2021.png  used on input line 897.
+Package pdftex.def Info: kepek/kumulalt2021.png  used on input line 895.
 (pdftex.def)             Requested size: 182.09486pt x 157.70616pt.
-<kepek/residual2019_2.png, id=460, 316.93407pt x 209.28188pt>
+<kepek/residual2019_2.png, id=473, 316.93407pt x 209.28188pt>
 File: kepek/residual2019_2.png Graphic file (type png)
 <use kepek/residual2019_2.png>
-Package pdftex.def Info: kepek/residual2019_2.png  used on input line 918.
+Package pdftex.def Info: kepek/residual2019_2.png  used on input line 916.
 (pdftex.def)             Requested size: 182.09486pt x 120.2467pt.
-<kepek/kumulalt2019_2.png, id=461, 328.22626pt x 276.28218pt>
+<kepek/kumulalt2019_2.png, id=474, 328.22626pt x 276.28218pt>
 File: kepek/kumulalt2019_2.png Graphic file (type png)
 <use kepek/kumulalt2019_2.png>
-Package pdftex.def Info: kepek/kumulalt2019_2.png  used on input line 919.
+Package pdftex.def Info: kepek/kumulalt2019_2.png  used on input line 917.
 (pdftex.def)             Requested size: 182.09486pt x 153.27939pt.
-<kepek/residual2021_2.png, id=462, 312.41719pt x 212.29312pt>
+<kepek/residual2021_2.png, id=475, 312.41719pt x 212.29312pt>
 File: kepek/residual2021_2.png Graphic file (type png)
 <use kepek/residual2021_2.png>
-Package pdftex.def Info: kepek/residual2021_2.png  used on input line 930.
+Package pdftex.def Info: kepek/residual2021_2.png  used on input line 928.
 (pdftex.def)             Requested size: 182.09486pt x 123.73909pt.
-<kepek/kumulalt2021_2.png, id=463, 330.48468pt x 277.035pt>
+<kepek/kumulalt2021_2.png, id=476, 330.48468pt x 277.035pt>
 File: kepek/kumulalt2021_2.png Graphic file (type png)
 <use kepek/kumulalt2021_2.png>
-Package pdftex.def Info: kepek/kumulalt2021_2.png  used on input line 931.
+Package pdftex.def Info: kepek/kumulalt2021_2.png  used on input line 929.
 (pdftex.def)             Requested size: 182.09486pt x 152.64871pt.
  [38 <./kepek/residual2019.png> <./kepek/kumulalt2019.png> <./kepek/residual202
 1.png> <./kepek/kumulalt2021.png>] [39 <./kepek/residual2019_2.png> <./kepek/ku
 mulalt2019_2.png> <./kepek/residual2021_2.png> <./kepek/kumulalt2021_2.png>] [4
 0]
-Underfull \hbox (badness 7522) in paragraph at lines 980--981
+Underfull \hbox (badness 7522) in paragraph at lines 978--979
 []\T1/lmr/m/n/12 Jonathon Sh-lens. A Tuto-ri-al on Prin-ci-pal Com-po-nent Anal
 y-sis. \T1/lmr/m/it/12 CoRR\T1/lmr/m/n/12 ,
  []
 
 [41] [42] [43] (TDK_doc.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package rerunfilecheck Info: File `TDK_doc.out' has not changed.
 (rerunfilecheck)             Checksum: C9D1AD6B0934D369FA8721965655B5F2;4768.
  ) 
 Here is how much of TeX's memory you used:
  37369 strings out of 478582
  859529 string characters out of 2844345
- 1206073 words of memory out of 3000000
+ 1206134 words of memory out of 3000000
  54747 multiletter control sequences out of 15000+600000
  532551 words of font info for 75 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1515,9 +1518,9 @@ Data/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/Users/Admin/App
 Data/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/Admin/App
 Data/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy5.pfb><C:/Users/Admin/AppD
 ata/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt12.pfb>
-Output written on TDK_doc.pdf (44 pages, 3653883 bytes).
+Output written on TDK_doc.pdf (44 pages, 3659740 bytes).
 PDF statistics:
- 632 PDF objects out of 1000 (max. 8388607)
+ 645 PDF objects out of 1000 (max. 8388607)
  141 named destinations out of 1000 (max. 500000)
  411 words of extra memory for PDF output out of 10000 (max. 10000000)
 

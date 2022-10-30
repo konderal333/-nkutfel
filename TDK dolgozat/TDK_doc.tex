@@ -182,6 +182,8 @@ Egy részben feltáró adatelemzés fontos szakasza a felderítő elemzés. Cél
 
 Ebben az alfejezetben tekintjük át a számos készült ábrából a leginformatívabbakat. Viszonylag sok változóval kellett dolgozni, így célszerű volt több részábrás egységekbe gyűjteni a hasonló felépítésű grafikonokat. A megfelelő ábrák elkészítéséhez a Python \emph{matplotlib} és \emph{seaborn} csomagjait használtuk. A változók értékeinek eloszlását oszlopdiagramokkal, a változópárok egymás közötti viszonyait szórásdiagramokkal szemléltettük.
 
+A \ref{tab:valtozok}. táblázatban felsorolt változók közül egyesekből aggregáltunk további két változót. A \emph{Tanulmányi-} és \emph{Érettségi pontot}, illetve a \emph{Többletpontot} összeadva határoztuk meg a \emph{felvételi összpontszámot}. Továbbá a \emph{Matematika 1., 2.} és \emph{3. blokk} értékeit összeadva kaptuk a \emph{matematika összpontot}. Végül használtuk a \emph{teljes teszteredményt}, ami rendelkezésre állt az eredeti adattáblákban, de a \emph{kognitív eredmény} és a \emph{Matematika 1., 2.} és \emph{3. blokk} lineáris kombinációjaként is számolható lett volna.
+
 %A \textit{seaborn pairplot} függvény előnye, hogy csak az általunk vizsgált változók oszlopait kell megadni, és az összes kombinációt egyszerre számítja ki és ábrázolja egy megfelelő méretű mátrixban. Először tekintsük a \textit{matplotlib figure} alakzatokba összesített ábrákat. Ezeknek az az előnye a \textit{seaborn pairplot}-tal szemben, hogy tetszőleges ábrákat lehet belehelyezni, így például színezéssel bevihető egy harmadik dimenzió a szórásdiagramba.
 
 
@@ -270,26 +272,26 @@ Dolgozatunkban hat opciót vizsgáltunk a két évben az elérhető adatoknak me
 \item 2019:
 
 \begin{enumerate}
-\item matematikai teszt 1.,2. és 3. részeiben helyesen megoldott feladatok száma.
-\item kognitív eredmény - \textit{A1} jegy - \textit{A2} jegy.
+\item matematikai teszt 1.,2. és 3. blokkjaiban helyesen megoldott feladatok száma.
+\item teljes teszteredmény - \textit{A1} jegy - \textit{A2} jegy.
 \end{enumerate}
 
 \item 2019 és 2021:
 
 \begin{enumerate}
 \item tanulmányi pont - érettségi pont - \textit{A1} jegy.
-\item felvételi összpontszám - 0. ZH - kognitív eredmény.
-\item felvételi összpontszám - kognitív eredmény - \textit{A1} jegy - kumulált átlag.
-\item felvételi összpontszám - kognitív eredmény - első féléves átlag - kumulált átlag.
+\item felvételi összpontszám - 0. ZH - teljes teszteredmény.
+\item felvételi összpontszám - teljes teszteredmény - \textit{A1} jegy - kumulált átlag.
+\item felvételi összpontszám - teljes teszteredmény - első féléves átlag - kumulált átlag.
 \end{enumerate}
 
 \end{itemize}
 
 Az első két esetben csak a 2019-es évfolyamról volt adat. Az utolsó esetben 2021-ben megegyezett a kutatás idejében az első féléves és a kumulált átlag, így ennél az utóbbi értelemszerűen nem lett még egyszer beletéve.
 
-A matematikai teszt részeinek eredményein és az \textit{A1}, \textit{A2} jegyeken kívül a többi változó folytonos volt, így szükség volt ezek diszkretizálására. Öt-öt osztály lett létrehozva minden esetben, de nem feltétlenül került mindegyikbe hallgató. Az átlagok kerekítve lettek, a felvételi, kognitív teszt és nulladik zh pontszámok ekvidisztáns módon lettek felosztva.
+A matematikai teszt részeinek eredményein és az \textit{A1}, \textit{A2} jegyeken kívül a többi változó folytonos volt, így szükség volt ezek diszkretizálására. Öt-öt osztály lett létrehozva minden esetben, de nem feltétlenül került mindegyikbe hallgató. Az átlagok kerekítve lettek, a felvételi összpontszám, teljes teszteredmény és a 0. ZH pontszámok ekvidisztáns módon lettek felosztva.
 
-A \textit{felvételi összpontszám - 0. ZH - kognitív eredmény} változatban a 0. ZH és a teszt eredményei nullától az elérhető pontszámig lettek felosztva 20\%-os lépésközökkel. A felvételi összpontszám a legalacsonyabb értéktől 500 pontig. A többi változat a kutatás későbbi szakaszában készült, így a folytonos mutatók az értékkészletük terjedelme szerint lettek felosztva, nem az elérhető pontszámok alapján. Végül a kirajzolódott ábrákat kézileg még igazítani kellett, ugyanis az eredmények csoportjai nem feltétlenül álltak megfelelő sorrendben a függőleges tengelyen, illetve azokban az esetekben, amikor nem volt mind az öt osztályban hallgató, egy-egy csoport átcsúszott egy másik eredmény oszlopába. Ezek azonban nem okoztak gondot, ugyanis a csoport mozgatásával a hozzátartozó sávok is automatikusan együtt mozogtak.
+A \textit{felvételi összpontszám - 0. ZH - teljes teszteredmény} változatban a 0. ZH és a teszt eredményei nullától az elérhető pontszámig lettek felosztva 20\%-os lépésközökkel. A felvételi összpontszám a legalacsonyabb értéktől 500 pontig. A többi változat a kutatás későbbi szakaszában készült, így a folytonos mutatók az értékkészletük terjedelme szerint lettek felosztva, nem az elérhető pontszámok alapján. Végül a kirajzolódott ábrákat kézileg még igazítani kellett, ugyanis az eredmények csoportjai nem feltétlenül álltak megfelelő sorrendben a függőleges tengelyen, illetve azokban az esetekben, amikor nem volt mind az öt osztályban hallgató, egy-egy csoport átcsúszott egy másik eredmény oszlopába. Ezek azonban nem okoztak gondot, ugyanis a csoport mozgatásával a hozzátartozó sávok is automatikusan együtt mozogtak.
 
 %EZEK SZERINTEM NEM KELLENEK
 
@@ -302,30 +304,29 @@ A \textit{felvételi összpontszám - 0. ZH - kognitív eredmény} változatban 
 %IDE BE KELL ILLESZTENI A teszt-a1-a2 ábrát
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.573]{kepek/teszt-a1-a2.png}
-\caption{2019. Kognitív teszt eredmény - \textit{A1} jegy - \textit{A2} jegy}
+\includegraphics[width = \textwidth]{kepek/teszt-a1-a2.png}
+\caption{2019. teljes teszteredmény - \textit{A1} jegy - \textit{A2} jegy}
 \label{fig:teszt-a1-a2}
 \end{figure}
 
-A 2021-es gólyák a kutatás idejében még nem vehették fel az \textit{A2} tárgyat, így értelemszerűen csak a 2019-es évfolyamra készült ez az ábra.
-
-Az ábrán rögtön látható, hogy a kognitív tesztben mindenki 20\% felett teljesített, de nagyon kevés hallgatónak sikerült 80\%-nál magasabb eredményt elérni. Ehhez képest az tantárgyakon elért jegyek eloszlása egyenletesebb. 
+A \ref{fig:teszt-a1-a2}. ábrán rögtön látható, hogy a kognitív tesztben mindenki 20\% felett teljesített, de nagyon kevés hallgatónak sikerült 80\%-nál magasabb eredményt elérni. Ehhez képest az tantárgyakon elért jegyek eloszlása egyenletesebb. 
 
 Látható, hogy akik a teszten gyengébben teljesítettek, azok a későbbiekben többnyire rosszabb jegyeket szereztek, de nem kevesen javítottak is. A jobban teljesítők szintén tartották általában a szintet, de itt sem elhanyagolható azok száma, aki rontott. Meglepő a kettesről négyes-ötösre javítók és az ötösről rosszabb jegyekre rontó hallgatók aránya a teljes viszonylatban.
 
-Összességében sejthető, hogy egy hallgató teljesítménye a teszt során összefügg a további teljesítményével, de viszonylag sok esetben van jelentős romlás, illetve javulás.
+Összességében az figyelhető meg, hogy míg az első két változó közötti átmenet viszonylag egységes, a két tárgy közötti átmenetek nagyon változatosak. Ez azt jelenti, hogy a bemeneti teljesítmény részben befolyásolja az első néhány eredményt, de a későbbiekbe már kevesebb beleszólása van.
 
-%IDE BE KELL ILLESZTENI A matekrészeksankey ábrát
+A 2021-es gólyák a kutatás idejében még nem vehették fel az \textit{A2} tárgyat, így értelemszerűen csak a 2019-es évfolyamra készült ilyen ábra.
+
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.573]{kepek/matekrészeksankey.png}
-\caption{2019. Matematikai teszt 1. blokk - 2. blokk - 3. blokk helyes válaszok száma}
+\caption{2019. Matematikai teszt 1. blokk - 2. blokk - 3. blokk helyes válaszainak száma}
 \label{fig:matekrészeksankey}
 \end{figure}
 
 A teszt matematikai részének a komplexitása a blokkonként nőtt, így érdekes volt megvizsgálni, hogyan teljesítettek a hallgatók, és hogyan viszonyul egymáshoz a helyes válaszaik száma a különböző blokkokban.
 
-Rögtön látszik, hogy az első blokkban a hibátlan (négyes) osztály a legnagyobb, és a rosszabb eredmények száma csökken. Ez várható, hiszen itt alapismeretek voltak felmérve. A második és harmadik blokknál teljesen más a kép, a közepes osztályok körülbelül azonosak, a szélsők pedig kicsik, jobban hasonlít a normális eloszlásra.
+A \ref{fig:matekrészeksankey}. ábrán rögtön látszik, hogy az első blokkban a hibátlan (négyes) osztály a legnagyobb, és a rosszabb eredmények száma csökken. Ez várható, hiszen itt alapismeretek voltak felmérve. A második és harmadik blokknál teljesen más a kép, a közepes osztályok körülbelül azonosak, a szélsők pedig kicsik, jobban hasonlít a normális eloszlásra.
 
 A folyamok egészen változatosak. Az ábra közepén erősen szétoszlanak, de a széleihez közelítve kisebb trendek megfigyelhetők. Például a második blokkban minden kérdésre helyesen válaszolt hallgatók az első blokkban is többnyire szinte csak helyesen válaszoltak.
 
@@ -333,82 +334,79 @@ A folyamok egészen változatosak. Az ábra közepén erősen szétoszlanak, de 
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.573]{kepek/2019_old_felvi_0zh_teszt.png}
-\caption{2019. Felvételi - 0. zh - kognitív teszt pontszámok}
+\caption{2019. Felvételi összpontszám - 0. ZH - teljes teszteredmény}
 \label{fig:2019_old_felvi_0zh_teszt}
 \end{figure}
 
-Az ábrán főleg a 0. zh-ból a tesztbe menő folyamokon látszik egy erős tendencia. Igaz itt még a régebbi, teljes szerezhető pontszám szerinti felosztás van, így csak négy osztály jött létre, de nagyon kevés többosztálynyi ugrás van, tehát feltehető, hogy erősen összefügg a 0. zh és a kognitív teszt eredménye.
+A \ref{fig:2019_old_felvi_0zh_teszt}. ábrán főleg a 0. ZH-ból a tesztbe menő folyamokon látszik egy erős tendencia. Igaz itt még a régebbi, teljes szerezhető pontszám szerinti felosztás van, így csak négy osztály jött létre, de nagyon kevés többosztálynyi ugrás van, tehát feltehető, hogy erősen összefügg a 0. ZH és a teljes teszteredmény.
 
-Ami a felvételi és 0. zh pontszámok kapcsolatait illeti, a folyamok egészen szerteágazóak, de itt is fennáll, hogy a közel hasonló teljesítmények között szélesebbek, mint a nagyobb különbségek esetén.
+Ami a felvételi és 0. ZH pontszámok kapcsolatait illeti, a folyamok egészen szerteágazóak, de itt is fennáll, hogy a közel hasonló teljesítmények között szélesebbek, mint a nagyobb különbségek esetén.
 
-%IDE BE KELL ILLESZTENI A 2021_old_felvi_0zh_teszt ábrát
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.573]{kepek/2021_old_felvi_0zh_teszt.png}
-\caption{2021. Felvételi - 0. zh - kognitív teszt pontszámok}
+\caption{2021. Felvételi összpontszám - 0. ZH - teljes teszteredmény}
 \label{fig:2021_old_felvi_0zh_teszt}
 \end{figure}
 
-Annak ellenére, hogy a tesztes oszlop a 2019-es tesztes oszlopra hasonlít, csak fejjel lefelé, ez a valós eloszlás. Valóban, míg 2019-ben nem volt 20\% alatti eredmény, itt fordítva, nem volt 80\% fölötti. A felvételi pontszámok arányai romlottak, arányosan nagyobbak lettek az alsó osztályok. Ellenkezőleg a 0. zh eredményei javultak, nagyobbak a magasabb pontszámhoz tartozó osztályok arányai. 
+Annak ellenére, hogy a tesztes oszlop a 2019-es tesztes oszlopra hasonlít, csak fejjel lefelé, ez a valós eloszlás. Valóban, míg 2019-ben nem volt 20\% alatti eredmény, itt fordítva, nem volt 80\% fölötti. A felvételi pontszámok arányai romlottak, arányosan nagyobbak lettek az alsó osztályok. Ellenkezőleg, a 0. ZH eredményei javultak, nagyobbak a magasabb pontszámhoz tartozó osztályok arányai. 
 
-Ami a folyamokat illeti, többnyire hasonlóak a tendenciák, bár érdekes, hogy akiknek a legrosszabb lett a 0. zh, a kognitív teszt közepesen ment. Itt is mondható, hogy a jobban teljesítő hallgatók többnyire mindenből jól teljesítettek, illetve a gyengébbek között ritkábbak voltak a jobb eredmények. Ennek ellenére itt is szerteágazóak a folyamok, tehát összefüggés van, de nem nagyon erős.
+Ami a folyamokat illeti, többnyire hasonlóak a tendenciák, bár érdekes, hogy akiknek a legrosszabb lett a 0. ZH, a kognitív teszt közepesen ment. Itt is mondható, hogy a jobban teljesítő hallgatók többnyire mindenből jól teljesítettek, illetve a gyengébbek között ritkábbak voltak a jobb eredmények. Ennek ellenére itt is szerteágazóak a folyamok, tehát összefüggés van, de nem nagyon erős.
 
 
-%IDE BE KELL ILLESZTENI A 2019_felvi_teszt_atlag_kumatlag ábrát
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.6]{kepek/2019_felvi_teszt_atlag_kumatlag.png}
-\caption{2019. Felvételi - kognitív teszt pontszám - első féléves átlag - kumulált átlag}
+\caption{2019. Felvételi összpontszám - teljes teszteredmény - első féléves átlag - kumulált átlag}
 \label{fig:2019_felvi_teszt_atlag_kumatlag}
 \end{figure}
 
-Ezen az ábrán már közvetlenül láthatóak a felvételi és kognitív teszt eredményeinek viszonyai, azonban itt már az értékkészlet van felosztva ekvidisztánsan. Ez abban is megnyilvánul, hogy a teszt pontszámosztályainak mások az arányai. 
+A \ref{fig:2019_felvi_teszt_atlag_kumatlag}. ábrán már közvetlenül láthatóak a felvételi és kognitív teszt eredményeinek viszonyai, azonban itt már az értékkészlet van felosztva ekvidisztánsan. Ez abban is megnyilvánul, hogy a teszt pontszámosztályainak mások az arányai. 
 
-Két előnye volt az értékkészlet szerinti osztályozásnak: gyorsabb volt (egy függvényre volt csak szükség), illetve így az eredmények egymáshoz képest való relatív eloszlása jobban látszik. Míg a régebbi ábrán nagyon nagy a hármas osztály, mert a legtöbben 40-60\% körüli eredményeket értek el, itt az látszik, hogy a legjobb és legrosszabb dolgozatok pontszámai között, a terjedelem 20\%-ával lépkedve milyen a hallgatók eloszlása. Így az lesz valóban "középtájban", aki a többi hallgató pontszámához képest átlaghoz közeli pontszámot szerzett, nem pedig az a sok tanuló, aki 40-60\%-ot ért el.
+Két előnye volt az értékkészlet szerinti osztályozásnak: gyorsabb volt (egy függvényre volt csak szükség), illetve így az eredmények egymáshoz képest való relatív eloszlása jobban látszik. Míg a régebbi ábrákon nagyon nagy a hármas osztály, mert a legtöbben 40-60\% körüli eredményeket értek el, itt az látszik, hogy a legjobb és legrosszabb dolgozatok pontszámai között, a terjedelem 20\%-ával lépkedve milyen a hallgatók eloszlása. Így az lesz valóban "középtájban", aki a többi hallgató pontszámához képest átlaghoz közeli pontszámot szerzett, nem pedig az a sok tanuló, aki 40-60\%-ot ért el.
 
-Visszatérve az ábrára, a fentebb megfigyelt tendenciák lényegében ismétlődnek, jó eredményeket jók, rosszakat rosszak követik nagyrészt, de továbbra is változatosak a folyamok. Összefüggőség szempontjából jó jel, hogy a legjobb teszteredményt elérők négyesnél rosszabb átlagot nem értek el. Sőt nagyon sok hallgatónak volt négyes az átlaga az első félévben, ami nagyrészt kétfelé oszlott az idő elteltével, többen megtartották, de sokan rontottak hármasra, páran javítottak. A többi átlagértékkel hasonló a helyzet, inkább megmaradt, mint javult vagy romlott.
+Visszatérve a \ref{fig:2019_felvi_teszt_atlag_kumatlag}. ábrára, a fentebb megfigyelt tendenciák lényegében ismétlődnek, jó eredményeket jók, rosszakat rosszak követik nagyrészt, de továbbra is változatosak a folyamok. Összefüggőség szempontjából jó jel, hogy a legjobb teszteredményt elérők négyesnél rosszabb átlagot nem értek el. Sőt nagyon sok hallgatónak volt négyes az átlaga az első félévben, ami nagyrészt kétfelé oszlott az idő elteltével, többen megtartották, de sokan rontottak hármasra, páran javítottak. A többi átlagértékkel hasonló a helyzet, inkább megmaradt, mint javult vagy romlott.
 
 %IDE BE KELL ILLESZTENI A 2021_felvi_teszt_atlag ábrát
 
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.6]{kepek/2021_felvi_teszt_atlag.png}
-\caption{2021. Felvételi - kognitív teszt pontszám - első féléves átlag}
+\caption{2021. Felvételi összpontszám - teljes teszteredmény - első féléves átlag}
 \label{fig:2021_felvi_teszt_atlag}
 \end{figure}
 
-A kutatás során ez az évfolyam még az első évében volt, így csak első féléves átlagokról volt adatunk. Ettől eltekintve 2019-hez képest több hallgatónak volt relatíve gyengébb a felvételi pontszáma, de ennek megfelelően többen is "javítottak". Az átlagok eloszlása romlott, aránylag több hármas és kevesebb négyes, illetve ötös lett. 
+A kutatás idejében ez az évfolyam még az első évében volt, így csak első féléves átlagokról volt adatunk. Ettől eltekintve, a \ref{fig:2021_felvi_teszt_atlag}. ábrán látszik, hogy 2019-hez képest több hallgatónak volt relatíve gyengébb a felvételi pontszáma, de ennek megfelelően többen is "javítottak". Az átlagok eloszlása romlott, aránylag több hármas és kevesebb négyes, illetve ötös lett. 
 
 %IDE BE KELL ILLESZTENI A 2019_felvi_teszt_a1_kumatl ábrát
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.5]{kepek/2019_felvi_teszt_a1_kumatl.png}
-\caption{2019. Felvételi - kognitív teszt pontszám - \textit{A1} jegy - kumulált átlag}
+\caption{2019. Felvételi összpontszám - teljes teszteredmény- \textit{A1} jegy - kumulált átlag}
 \label{fig:2019_felvi_teszt_a1_kumatl}
 \end{figure}
 
-Az első két oszlop viszonyát már láttuk, az újdonság az \textit{A1} jegy az első féléves átlag helyett. Ettől függetlenül a tendenciák változatlanok, azok szereztek jobb, illetve rosszabb jegyet, akik rendszerint jobban, illetve rosszabban írták meg a tesztet. A trendet továbbra erősíti a jegyek és átlagok viszonya, bár értelemszerűen nem meglepő, hogy a két dolog összefügg.
+A \ref{fig:2019_felvi_teszt_a1_kumatl}. ábra első két oszlopának viszonyát már láttuk, az újdonság az \textit{A1} jegy az első féléves átlag helyett. Ettől függetlenül a tendenciák változatlanok, azok szereztek jobb, illetve rosszabb jegyet, akik rendszerint jobban, illetve rosszabban írták meg a tesztet. A trendet továbbra erősíti a jegyek és átlagok viszonya, bár értelemszerűen nem meglepő, hogy a két dolog összefügg.
 
-%IDE BE KELL ILLESZTENI A 2021_felvi_teszt_a1_atlag ábrát
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.5]{kepek/2021_felvi_teszt_a1_atlag.png}
-\caption{2021. Felvételi - kognitív teszt pontszám - \textit{A1} jegy - első féléves átlag}
+\caption{2021. Felvételi összpontszám - teljes teszteredmény - \textit{A1} jegy - első féléves átlag}
 \label{fig:2021_felvi_teszt_a1_atlag}
 \end{figure}
 
-Szembetűnő, hogy az \textit{A1} jegyek valamilyen okból kifolyólag erősen romlottak. Míg 2019-ben nem bukott egy hallgató sem, itt majdnem a csoport negyedének nem sikerült elvégezni a tárgyat, sőt olyanoknak is, akik a legjobbak között voltak a teszt alapján. Továbbá a csoportnak több, mint a fele nem tudott kettesnél jobb jegyet szerezni. Fentebb láttuk, hogy az átlagok is romlottak, de ezek szerint nem olyan mértékben, mint az \textit{A1} jegyek. Érdekes, hogy az egyest és kettest szerzett hallgatók mégis nagyrészt hármas, sőt nem kevesen négyes átlagot szereztek. Ettől függetlenül a szokásos trendek itt is megmutatkoznak.
+A \ref{fig:2021_felvi_teszt_a1_atlag}. ábrán szembetűnő, hogy az \textit{A1} jegyek valamilyen okból kifolyólag erősen romlottak. Míg 2019-ben nem bukott egy hallgató sem, itt majdnem a csoport negyedének nem sikerült elvégezni a tárgyat, sőt olyanoknak is, akik a legjobbak között voltak a teszt alapján. Továbbá a csoportnak több, mint a fele nem tudott kettesnél jobb jegyet szerezni. Fentebb láttuk, hogy az átlagok is romlottak, de ezek szerint nem olyan mértékben, mint az \textit{A1} jegyek. Érdekes, hogy az egyest és kettest szerzett hallgatók mégis nagyrészt hármas, sőt nem kevesen négyes átlagot szereztek. Ettől függetlenül a szokásos trendek itt is megmutatkoznak.
  
 %IDE BE KELL ILLESZTENI A 2019_hozott_erett_A1 ábrát
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.6]{kepek/2019_hozott_erett_A1.png}
-\caption{2019. Hozott és - érettségi pontszám - \textit{A1} jegy}
+\caption{2019. tanulmányi pont - érettségi pont - \textit{A1} jegy}
 \label{fig:2019_hozott_erett_A1}
 \end{figure}
-Ahogy később látni fogjuk, a modellek alapján a hozott és érettségi pontszámok erősen befolyásolták a jegyekre vett predikciókat, így utólag elkészült ez és a következő ábra.
+Ahogy később látni fogjuk, a modellek alapján a tanulmányi és érettségi pontszámok erősen befolyásolták a jegyekre vett predikciókat, így utólag elkészült a \ref{fig:2019_hozott_erett_A1}. és a \ref{fig:2021_hozott_erett_A1}. ábra.
 
-Jellegzetes, hogy a hallgatók nagy részének hasonló volt a hozott pontszáma, nagyon kevésnek volt kiemelkedő vagy relatíve kicsi. Aránylag kevés hallgatónak volt a legjobb pontszám 60\%-a alatt az érettségije. Még ezek mellett is megőrződött az a tendencia, hogy egy-egy hallgató nagyrészt hasonlóan teljesít a különböző mutatók alapján.
+Jellegzetes, hogy a hallgatók nagy részének hasonló volt a tanulmányi pontszáma, nagyon kevésnek volt kiemelkedő vagy relatíve kicsi. Aránylag kevés hallgatónak volt a legjobb pontszám 60\%-a alatt az érettségije. Még ezek mellett is megőrződött az a tendencia, hogy egy-egy hallgató nagyrészt hasonlóan teljesít a különböző mutatók alapján.
 
 Az ábráról leolvasható, hogy míg az utolsó oszlop felső felébe szinte csak kék és zöld folyamok érkeznek, mégis szerteágaznak, és például a legjobb érettségi pontszámokkal rendelkezők közül is többen kettest szereztek a tárgyból. 
 
@@ -416,13 +414,13 @@ Az ábráról leolvasható, hogy míg az utolsó oszlop felső felébe szinte cs
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.6]{kepek/2021_hozott_erett_A1.png}
-\caption{2021. Hozott és - érettségi pontszám - \textit{A1} jegy}
+\caption{2021. tanulmányi pont - érettségi pont - \textit{A1} jegy}
 \label{fig:2021_hozott_erett_A1}
 \end{figure}
 
-Az ábrán rögtön szembetűnik egy meglepő dolog, a hozott pontszámoknál van egy óriási ötös osztály. Az értékeket leellenőrízve, tényleg nagyon sok esetben 180 és 190 között mozgott a hozott pontszám.
+A \ref{fig:2021_hozott_erett_A1} ábrán rögtön szembetűnik egy meglepő dolog, a tanulmányi pontszámoknál van egy óriási ötös osztály. Az értékeket leellenőrízve, tényleg nagyon sok esetben 180 és 190 között mozgott a hozott pontszám.
 
-Ehhez, és a 2019-es ábrához képest az érettségi pontszám viszont egészen egyenletesen oszlott el. Az ábra bal felétől eltekintve, a teljesítmény megmaradására vonatkozó tendencia igaz gyengébben, de ismét jelen van.
+Ehhez (és a \ref{fig:2019_hozott_erett_A1}. ábrához) képest, az érettségi pontszám viszont egészen egyenletesen oszlott el. Az ábra bal felétől eltekintve, a teljesítmény megmaradására vonatkozó tendencia gyengébben, de ismét jelen van.
 
 
 \subsection{Klaszterezés}
