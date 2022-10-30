@@ -100,7 +100,15 @@
 \section{Bevezetés}
 Az elsőévesek képességének és készségeinek mérése nemcsak a felsőoktatásban bevett gyakorlat, hasonlóval találkozhatunk akkor is, amikor például a diákok a gimnáziumi tanulmányaikat kezdik meg, de bevett gyakorlat a szintfelmérő a nyelviskolákban is a nyelvi szintek megállapításánál. A felsőoktatásban leginkább arra használják a bemeneti méréseket, hogy feltérképezzék, a hallgató birtokában van-e az adott tárgy teljesítéséhez szükséges előismereteknek. Amennyiben nincs, felzárkóztató kurzusokat biztosítanak. Előfordulhat az is, hogy valamely egyetemi tárgy teljesítése szempontjából szükséges kritériumként fogalmazzák meg a bemeneti tesztek adott szint fölötti teljesítését. Előfordul, hogy ezekhez a tesztekhez mindenki által hozzáférhető gyakorló feladatokat is rendelkezésre bocsátanak vagy elérhetővé teszik a korábbi évek feladatsorait. Tekintettel arra, hogy a hazánkban tematikus és szintek szerinti bontásban az érettségizők rendelkezésére állnak a korábbi évek feladatsorai (\url{https://www.studiumgenerale.hu/matek-erettsegik/}), a tanulók rutinosak az ún. rátanulásban, amikor adott feladattípusok megoldásmenetét sajátítják el, nem egyszer mélyebb megértés nélkül. Több helyen bevett gyakorlat a mintadolgozat intézménye, ami esetleg azt is jelentheti, hogy a számonkérés alkalmával a diáknak egy a kiadotthoz teljesen hasonló feladatsorral kell megküzdenie. Ilyen mérések alkalmával azonban nem kapunk képet arról, miként fog teljesíteni a diák akkor, ha nemcsak begyakorolt rutinokból kell számot adnia a tudásáról. Éppen ezért ezek a mérések nem jelzik előre, hogy a hallgató meg tud-e birkózni a kalkulus tárgy nehézségeivel, sikeresen fogja-e venni azokat az akadályokat, amelyeket a matematikaigényes szaktárgyak jelentenek.
 
-A Budapesti Műszaki és Gazdaságtudományi Egyetemen több éve foglalkozunk azzal, hogy az ütemterv szerinti haladást minél inkább előre jelző feladatsort készítsünk és ezzel mérjük az elsőéveseket. Az elmúlt években a mérőtesztek struktúrája is változott: az első idők matematika tesztjei nyelvi feladatokkal is kiegészültek. A pandémia okán nem minden esetben került sor jelenléti tesztelésre. Mostanra kellően nagy adatbázis áll rendelkezésünkre, amelyen nemcsak azt vizsgálhatjuk, milyen mértékben állnak készen a hallgatók arra, hogy sikerrel teljesítsék a kalkulus tárgyakat, hanem azt is, mennyire megbízható az online tesztelés, illetve milyen hatással volt a COVID-19 járvány az elsőévesek felkészültségére. Nemzetközi téren a járványnak a hallgatók lelki állapotára és teljesítményére gyakorolt hatásának vizsgálatára több kutatás is készült az utóbbi években \cite{student_perf1, student_perf2, student_perf3}, ahol a mélyebb vizsgálatoknál többnyire regressziós modelleket alkalmaztak \cite{student_perf4, student_perf5}. Ugyanezen problémakört vizsgálva dolgozatunk célja az, hogy modern adattudományi eszközök felhasználásával megvizsgáljuk a COVID járvány előtt és után kezdett BME VBK hallgatók bemeneti adataiban fellelhető változásokat, és ezen különbségek hatását az első félév végi teljesítményükre.
+A Budapesti Műszaki és Gazdaságtudományi Egyetemen több éve foglalkozunk azzal, hogy az ütemterv szerinti haladást minél inkább előre jelző feladatsort készítsünk és ezzel mérjük az elsőéveseket. Az elmúlt években a mérőtesztek struktúrája is változott: az első idők matematika tesztjei nyelvi feladatokkal is kiegészültek. A pandémia okán nem minden esetben került sor jelenléti tesztelésre. Mostanra kellően nagy adatbázis áll rendelkezésünkre, amelyen nemcsak azt vizsgálhatjuk, milyen mértékben állnak készen a hallgatók arra, hogy sikerrel teljesítsék a kalkulus tárgyakat, hanem azt is, mennyire megbízható az online tesztelés, illetve milyen hatással volt a COVID-19 járvány az elsőévesek felkészültségére. Dolgozatunk célja, hogy modern adattudományi eszközök felhasználásával megvizsgáljuk a járvány kirobbanása előtt és után kezdett BME VBK hallgatóinak bemeneti adataiban fellelhető változásokat, és ezen különbségek hatását az első félév végi teljesítményükre.
+
+\newpage
+
+\section{Irodalomi áttekintés}
+
+Nemzetközi téren a járvány diákokra gyakorolt hatásáról számos kutatás készült az elmúlt években. Sok helyen kimutatható volt, hogy bár az átlagos tanulmányi teljesítmény nem romlott vagy éppen javult a lezárások idején (Cavanaugh et al., 2022), ez motivációhiánnyal és elidegenedéssel is párosult (Alawamleh et al., 2022), valamint drasztikusan megnőtt a diákokra és szüleikre nehezedő stressz illetve munka mértéke is (Chandra, 2020). A digitális oktatást hatékonyságát nehezítette a kiegyenlítetlen elektronikai infrastruktúra, az oktatók elmaradott digitális készségei, hálózati és szoftver elérhetőségi problémák és még sok más tényező is (Onyema et al., 2020). A járvány rávilágított a hagyományos oktatási rendszerek sebezhetőségére, ugyanakkor motivációt is adott azok átértékelésére, korszerűsítésére (Mukhtar et al., 2020) és új online oktatási módszerek kialakítására egyaránt (Heng \& Sol, 2021).
+
+A pandémia okozta feladatok és problémák megoldásában a gépi tanulási eljárások is fontos szerepet játszottak, legyen szó magáról a járvány terjedésének előrejelzéséről (Gupta et al., 2022; Alali et al., 2022) vagy az álhírek és tévinformációk beazonosításáról (Bangyal et al., 2021; Wani et al., 2021; Isaakidou et al., 2021). Természetesen a problémák közé tartozik továbbá a diákok/hallgatók teljesítményének pridktálása és a lemorzsolódás előrejelzése, amelynek modellezésére több megoldás is született a járvány kezdete óta. Jovial Niyogisubizo és munkatársai \cite{modeling1} egy komplex, kétrétegű, hagyományos és mély tanulásos elemeket kombináló osztályozó segítségével értek el 90\% fölötti pontosságot a lemorzsolódást vizsgálva. Ahajjam Tarik és munkatársai \cite{modeling3} hagyományos modelleket (mint döntési fák és lineáris regresszió) alkalmaztak marokkói hallgatók érettségi átlagának előrejelzéséhez. A predikcióra nézve az egyes változók fontosságát is mérve Marina Segura és munkatársai \cite{modeling2} szintén többnyire hagyományos gépi tanulási algoritmusok segítségével értek el 90\% fölötti eredményeket a spanyol 'Universidad Complutense de Madrid' egyetem hallgatóinak lemorzsolódásának előrejelzése során.
 
 \newpage
 
@@ -145,7 +153,10 @@ Többletpont & A felvételi pontszám többletpontokból származó része. \\
 \hlineB{5}
 Matematika A1a & A Matematika A1a tárgyból szerzett érdemjegy. \\
 \hline
-Kumulált átlag & Az első félév végén megállapított kumulált átlag. \\
+Első féléves átlag & Az első félév végén megállapított kumulált átlag. \\
+\hline
+Kumulált átlag & \makecell{A kutatás idejében aktuális félévig 
+megállapított \\ kumulált átlag} \\
 \hline
 
 
@@ -578,7 +589,7 @@ Valamennyi algoritmus hiperparamétereinek optimális megválasztására 5-ször
 \\
 A választott metrika mellett meghatároztuk a legjobb algoritmusokat, amelyeket a teszthalmazon visszamértünk, valamint kiértékeltük az ily módon választott modellek esetén az egyes változók fontosságát is.
 
-A \textit{kumulált átlag} predikciójánál a tisztított adathalmazt ugyanúgy 70-30 arányban osztottuk fel. Adattranszformálásra csak skálázást alkalmaztunk, PCA-t nem, majd valamennyi osztályozó hiperparamétereinek optimalizálása hasonlóan 5-szörös keresztvalidációval történt. Az illesztett legjobb modelleknél mindkét évben feljegyeztük a reziduális tagok szórásdriagramját, az egyes változók prediktív erejét, valamint az alábbi statisztikák értékét\cite{bolla_stat}
+Az \textit{első féléves kumulált átlag} predikciójánál a tisztított adathalmazt ugyanúgy 70-30 arányban osztottuk fel. Adattranszformálásra csak skálázást alkalmaztunk, PCA-t nem, majd valamennyi osztályozó hiperparamétereinek optimalizálása hasonlóan 5-szörös keresztvalidációval történt. Az illesztett legjobb modelleknél mindkét évben feljegyeztük a reziduális tagok szórásdriagramját, az egyes változók prediktív erejét, valamint az alábbi statisztikák értékét\cite{bolla_stat}
 \begin{itemize}
 \item[•] $R^2$: A modell hatásfokát mérő mutató, értéke [$-\infty,1$] közötti:
 \begin{align*}
@@ -971,14 +982,33 @@ Predicting student's dropout in university classes using two-layer ensemble mach
 
 \bibitem{student_perf1}J. Cavanaugh, S. Jacquemin, C. Junker. A look at student performance during the COVID-19 pandemic. \textit{Quality Assurance in Education}, Vol. ahead-of-print,  No. ahead-of-print, 2022. \url{https://doi.org/10.1108/QAE-01-2022-0008}
 
-\bibitem{student_perf2}E. Grewenig, P. Lergetporer, K. Werner, L. Woessmann, L. Zierow. COVID-19 and Educational Inequality: How School Closures Affect Low-and High-Achieving Students. \textit{EconStor}, 2020.
+%\bibitem{student_perf2}E. Grewenig, P. Lergetporer, K. Werner, L. Woessmann, L. Zierow. COVID-19 and Educational Inequality: How School Closures Affect Low-and High-Achieving Students. \textit{EconStor}, 2020.
 
 \bibitem{student_perf3}El-Sayed Atlam, Ashraf Ewis, M.M. Abd El-Raouf, Osama Ghoneim, Ibrahim Gad. A new approach in identifying the psychological impact of COVID-19 on university student’s academic performance. \textit{Alexandria Engineering Journal}, Volume 61, Issue 7, pages 5223-5233, 2022.
 
 \bibitem{student_perf4}Z. Malki, E.S. Atlam, A. Ewis, G. Dagnew, A.R. Alzighaibi, G. ELmarhomy, M.A. Elhosseini, A.E. Hassanien, I. Gad.
 ARIMA models for predicting the end of COVID-19 pandemic and the risk of second rebound. \textit{Neural Comput \& Applic}, Volume 33, pages 2929–2948, 2021.
 
-\bibitem{student_perf5}E.M. Onyema, N.C. Eucheria, F.A. Obafemi, S. Sen, F.G. Atonye, A. Sharma, A.O. Alsayed. Impact of coronavirus pandemic on education. \textit{Journal of Education and Practice}, 2020.
+\bibitem{student_perf5}E.M. Onyema, N.C. Eucheria, F.A. Obafemi, S. Sen, F.G. Atonye, A. Sharma, A.O. Alsayed. Impact of coronavirus pandemic on education. \textit{Journal of Education and Practice}, Volume 11, pages 108-121, 2020.
+
+\bibitem{student_perf6}Yamini Chandra. Online education during COVID-19: perception of academic stress and emotional intelligence coping strategies among college students. \textit{Asian Education and Development Studies}, Volume 10, No. 2, pages 229-238, 2020.
+
+\bibitem{student_perf7}Kimkong Heng, Koemhong Sol. Online learning during COVID-19: Keychallenges and suggestions to enhance effectiveness. \textit{Cambodian Journal of Educational Research}, Volume 1, No. 1, pages 3–16, 2021.
+
+\bibitem{student_perf8}Mohammad Alawamleh, Lana Mohannad Al-Twait, Gharam Raafat Al-Saht. The effect of online learning on communication between instructors and students during Covid-19 pandemic. \textit{Asian Education and Development Studies}, Volume 11, No. 2, pages 380-400, 2022.
+
+\bibitem{student_perf9}K. Mukhtar, K. Javed, M. Arooj, A. Sethi. Advantages, Limitations and Recommendations for online learning during COVID-19 pandemic era. \textit{Pakistan Journal of Medical Sciences}, S27–S31, 2021. 
+
+\bibitem{cov_solution3} Waqas Haider Bangyal, Rukhma Qasim, Najeeb ur Rehman, Zeeshan Ahmad, Hafsa Dar, Laiqa Rukhsar, Zahra Aman, Jamil Ahmad. Detection of Fake News Text Classification on COVID-19 Using Deep Learning Approaches. \textit{Computational and Mathematical Methods in Medicine}, Volume 2021, Article ID 5514220, 2021. \href{https://doi.org/10.1155/2021/5514220}{https://doi.org/10.1155/2021/5514220}
+
+\bibitem{cov_solution2} Apurva Wani, Isha Joshi, Snehal Khandve, Vedangi Wagh, Raviraj Joshi. Evaluating Deep Learning Approaches for Covid19 Fake News Detection. \textit{CoRR}, abs/2101.04012, 2021. \href{https://arxiv.org/abs/2101.04012}{https://arxiv.org/abs/2101.04012}
+
+\bibitem{cov_solution} Marianna Isaakidou, Emmanouil Zoulias, Marianna Diomidous. Machine Learning to Identify Fake News for COVID-19. \textit{Stud Health Technol Inform}, Volume 281, pages 108-112, 2021.
+
+\bibitem{mlr_1}Akash Gupta, Amir Gharehgozli. Developing a machine learning framework to determine the spread of COVID-19 in the USA using meteorological, social, and demographic factors. \textit{International Journal of Data Mining, Modelling and Management}, Volume 14, No. 2, pages 89-109, 2022.
+
+\bibitem{mlr_2}Y. Alali,F. Harrou, Y. Sun. A proficient approach to forecast COVID-19 spread via optimized dynamic machine learning models. \textit{Sci Rep}, 12, 2467, 2022.
+
 
 \end{thebibliography}
 
