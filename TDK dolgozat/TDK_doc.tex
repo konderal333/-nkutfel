@@ -7,6 +7,7 @@
 \usepackage{caption}       
 \usepackage{makecell}
 \usepackage{boldline} 
+\usepackage{cite}
  
 \usepackage{amsmath,amssymb}
 \usepackage{tikz, pgfplots}
@@ -118,9 +119,14 @@ Csépe et al. \cite{magyar3} kutatásában a COVID-19 járvány hatását vizsg�
 
 %Nemzetközi téren a járvány diákokra gyakorolt hatásáról számos kutatás készült az elmúlt években. Sok helyen kimutatható volt, hogy bár az átlagos tanulmányi teljesítmény nem romlott vagy éppen javult a lezárások idején \cite{student_perf1}, ez gyakran motivációhiánnyal és elidegenedéssel is párosult \cite{student_perf7}, valamint drasztikusan megnőtt a diákokra és szüleikre nehezedő stressz illetve munka mértéke is \cite{student_perf5}. Az új környezetben nyújtott egyetemi teljesítményt nagyban befolyásolta, hogy a hallgatók mennyire  A digitális oktatást hatékonyságát továbbá nehezítette a kiegyenlítetlen elektronikai infrastruktúra, az oktatók elmaradott digitális készségei, hálózati és szoftver elérhetőségi problémák és sok más egyéb tényező is \cite{student_perf4}. A járvány rávilágított a hagyományos oktatási rendszerek sebezhetőségére, ugyanakkor motivációt is adott azok átértékelésére, korszerűsítésére \cite{student_perf8} és új online oktatási módszerek kialakítására egyaránt \cite{student_perf6}.
 
-A pandémia okozta feladatok és problémák megoldásában a gépi tanulási eljárások is fontos szerepet játszottak, legyen szó magáról a járvány terjedésének előrejelzéséről (\cite{mlr_1}, \cite{mlr_2}, \cite{student_perf4}), vagy az álhírek és tévinformációk beazonosításáról (\cite{cov_solution}, \cite{cov_solution2}, \cite{cov_solution3}) . Természetesen a problémák közé tartozik a diákok/hallgatók teljesítményének és lelki állapotának előrejelzése is, amelynek modellezésére több megoldás is született a járvány kezdete óta. 
+A pandémia okozta feladatok és problémák megoldásában a gépi tanulási eljárások is fontos szerepet játszottak, legyen szó magáról a járvány terjedésének előrejelzéséről \cite{mlr_1, mlr_2, student_perf4}, vagy az álhírek és tévinformációk beazonosításáról \cite{cov_solution3, cov_solution2, cov_solution}. Természetesen a problémák közé tartozik a diákok/hallgatók teljesítményének és lelki állapotának előrejelzése is, amelynek modellezésére több megoldás is született a járvány kezdete óta. 
 
 Niyogisubizo et al. \cite{modeling1} egy komplex, kétrétegű, hagyományos és mély tanulásos elemeket kombináló osztályozó segítségével értek el 90\% fölötti pontosságot a Nyitrai Konstantin Filozófus Egyetem hallgatóinak lemorzsolódását vizsgálva. Ugyanakkor a modellezésben olyan adatokat is felhasználtak, amelyekről csak a félév közepén kapunk információt. Tarik et al. \cite{modeling3} kutatása során hagyományos modelleket (mint döntési fák és lineáris regresszió) alkalmaztak marokkói hallgatók érettségi átlagának előrejelzéséhez, amely változó hatásfokot mutatott. A predikcióra nézve az egyes változók fontosságát is mérve Segura et al. \cite{modeling2} szintén többnyire hagyományos gépi tanulási algoritmusok segítségével értek el 90\% fölötti eredményeket a spanyol 'Universidad Complutense de Madrid' egyetem hallgatóit vizsgálva lemorzsolódás terén, ahol a kutatás során 28-féle bemeneti változóval és különböző szakirányon tanuló hallgatók adataival dolgoztak. Dake et al. \cite{modeling4} Naive Bayes, véletlen erdő és döntési fa alapú algoritmusokat használtak a teljesítmény előrejelezésére. A kutatás során továbbá megállapították azt is, hogy a pontosság mint mérőszám nem feltétlen elegendő egy osztályozó jóságának eldöntésére. Atlam et al. \cite{student_perf3} vizsgálataik során arab országokban tanuló hallgatóktól gyűjtött, a járvány megélésével és online oktatással kapcsolatos adatokat elemeztek különféle gép tanulási algoritmusokkal és leíró statisztikai eszközökkel. A gépi tanulás során az egyes kérdésekre adott válaszokból a hallgatók mentális állapotának mint kategorikus változónak a prediktálása volt a cél, ahol a legjobb osztályozók 100\%-os teljesítményt is képesek voltak elérni.
+
+%TODO
+%18-as és 20-as cikket belerakni
+%esetleg még ezeket: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8744874/
+% https://iopscience.iop.org/article/10.1088/1742-6596/1911/1/012008 
 
 \newpage
 
@@ -953,7 +959,7 @@ A matematika érdemjegyek prediktálása során sikeresebben megjósolhatóak a 
 
 A kumulált átlag predikcióinál látható, hogy a két legjobban domináló tényező mindkét évben a tanulmányi és az érettségi pont, a többi attribútum pedig változó, de többnyire elhanyagolható szignifikanciával bír. Az is észrevehető, hogy egy "black box" modell, mint a Gradient Tree Boosting algoritmus, sokkal több információt tud kinyerni az érettségi és tanulmányi pontokból a kumulált átlagra nézve, mint a lineáris regresszió, így további modellezések során célszerű az előbbit használni, esetleg más ensemble módszereket alkalmazni. Ugyanakkor a lineáris regressziót érdemes lehet kibővíteni harmad- vagy negyedfokú polinomiális regresszióvá, vagy kombinálni az osztályozófüggvényt valamilyen trigonometrikus függvénnyel, hisz a lineáris regressziónál kapott két szóráskép hasonló görbét ír le, s így pontosabb eredményekhez juthatunk mindkét évben. Természetesen a teljesítmény több adatponttal és több változóval itt is potenciálisan tovább javítható lenne. 
 
-A legfontosabb kérdés az, hogy ezeket az eredményeket milyen módon és mennyire etikus formában lehet felhasználni. Korábban már készültek kutatások, amelyek a magyar felsőoktatási felvételi rendszerhez használt bemeneti adatok értelmezhetőségének javítására irányultak a későbbi egyetemi teljesítmény ismeretében.\cite{molontay1, molontay2}
+A legfontosabb kérdés az, hogy ezeket az eredményeket milyen módon és mennyire etikus formában lehet felhasználni. Molontay et al. \cite{molontay1, molontay2} Korábban már készültek kutatások, amelyek a magyar felsőoktatási felvételi rendszerhez használt bemeneti adatok értelmezhetőségének javítására irányultak a későbbi egyetemi teljesítmény ismeretében.
 
 
 
@@ -998,9 +1004,6 @@ Predicting student's dropout in university classes using two-layer ensemble mach
 
 \bibitem{student_perf3}El-Sayed Atlam, Ashraf Ewis, M.M. Abd El-Raouf, Osama Ghoneim, Ibrahim Gad. A new approach in identifying the psychological impact of COVID-19 on university student’s academic performance. \textit{Alexandria Engineering Journal}, Volume 61, Issue 7, pages 5223-5233, 2022.
 
-\bibitem{student_perf4}Z. Malki, E.S. Atlam, A. Ewis, G. Dagnew, A.R. Alzighaibi, G. ELmarhomy, M.A. Elhosseini, A.E. Hassanien, I. Gad.
-ARIMA models for predicting the end of COVID-19 pandemic and the risk of second rebound. \textit{Neural Comput \& Applic}, Volume 33, pages 2929–2948, 2021.
-
 \bibitem{student_perf5}E.M. Onyema, N.C. Eucheria, F.A. Obafemi, S. Sen, F.G. Atonye, A. Sharma, A.O. Alsayed. Impact of coronavirus pandemic on education. \textit{Journal of Education and Practice}, Volume 11, pages 108-121, 2020.
 
 \bibitem{student_perf6}Yamini Chandra. Online education during COVID-19: perception of academic stress and emotional intelligence coping strategies among college students. \textit{Asian Education and Development Studies}, Volume 10, No. 2, pages 229-238, 2020.
@@ -1020,6 +1023,9 @@ ARIMA models for predicting the end of COVID-19 pandemic and the risk of second 
 \bibitem{mlr_1}Akash Gupta, Amir Gharehgozli. Developing a machine learning framework to determine the spread of COVID-19 in the USA using meteorological, social, and demographic factors. \textit{International Journal of Data Mining, Modelling and Management}, Volume 14, No. 2, pages 89-109, 2022.
 
 \bibitem{mlr_2}Y. Alali,F. Harrou, Y. Sun. A proficient approach to forecast COVID-19 spread via optimized dynamic machine learning models. \textit{Sci Rep}, 12, 2467, 2022.
+
+\bibitem{student_perf4}Z. Malki, E.S. Atlam, A. Ewis, G. Dagnew, A.R. Alzighaibi, G. ELmarhomy, M.A. Elhosseini, A.E. Hassanien, I. Gad.
+ARIMA models for predicting the end of COVID-19 pandemic and the risk of second rebound. \textit{Neural Comput \& Applic}, Volume 33, pages 2929–2948, 2021.
 
 \bibitem{magyar1} Judit Monostori. The school year 2020-2021 in Hungary during the pandemic - Country report. \textit{Publications Office of the European Union}, Luxembourg, 2021.
 
