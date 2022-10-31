@@ -191,6 +191,13 @@ A kezdeti adattáblák közül a matematika és kognitív eredményeket tartalma
 
 A kumulált átlagokat, felvételi pontszámokat illetve 0. ZH eredményeket tartalmazó tábláknál egy-egy hiányos és/vagy anomáliás sor, illetve az irreleváns oszlopok eltávolításán kívül nem volt szükség adattisztításra, a matematika jegyeket tartalmazó tábla pedig minden hallgató minden Matematika A1a tárgyból tett vizsgaalkalmáról és az azon szerzett érdemjegyről tartalmazott adatrekordot, így ezekből meg kellett határozni azt a végső érdemjegyet, amellyel a hallgató a tárgyat elvégezte. A végső összeillesztés során 10-20 fős sorvesztéssel is kellett számolnunk mindkét évben, ugyanis voltak olyan hallgatók, akikről nem minden táblában volt adat (vagy azért, mert nem írtak kognitív tesztet, vagy azért, mert az első félév vége előtt elhagyták a szakot). Az így kapott adattáblák, amelyek a 2019-es és 2021-es évet reprezentálják, rendre 230 és 202 adatrekordot tartalmaztak, melyekben a vegyészmérnök, biomérnök és környezetmérnök hallgatók száma rendre 119, 81, 28 illetve 104, 71, 21 volt.
 
+Az adatokat a legtöbb esetben kétféle skálázásnak vetettük alá. Az egyik használt módszer a min-max skálázás volt, amely az adatokat a [0,1] intervallumra képezi le az alábbi módon:\\
+\begin{equation}
+x_{i}^{'} = \frac{x_{i}-min_{i \in \{1,\dots,n\}}(x_{i})}{max_{i \in \{1,\dots,n\}}(x_{i})-min_{i \in \{1,\dots,n\}}(x_{i})}
+\end{equation}
+ahol az $x_{i}^{'}$ az \emph{i}-edik rekord $x_i$ értékének a képe.
+
+
 \newpage
 
 \section{Felderítő adatelemzés a két évben}
@@ -449,7 +456,7 @@ A klaszterezés célja általában esetleges nem triviális összefüggések fel
 
 Egyes esetekben a klaszterezés eredménye rámutathat néhány változóra, amelyeknek erős a magyarázóereje, így a további vizsgálatokból el lehet hagyni a többi változót. Ennek ellenére gyakoriak azok az esetek, amikor nehéz vagy nem lehet megállapítani ezeket a változókat, mert minden változó fontos. Ilyenkor az adatok két-három dimenziós vetületeinek szórásdiagramjai többnyire homogének és nem csoportosíthatóak szemre.
 
-A \ref{ssec:altalanos} alfejezetben szereplő ábrákat áttekintve, első ránézésre nem rajzolódott ki olyan kétdimenziós vetület, amelyben láthatóan megjelennének csoportok. Ennek ellenére három gépi tanulási módszer lett kipróbálva:
+A \ref{ssec:altalanos}. alfejezetben szereplő ábrákat áttekintve, első ránézésre nem rajzolódott ki olyan kétdimenziós vetület, amelyben láthatóan megjelennének csoportok. Ennek ellenére három gépi tanulási módszer lett kipróbálva:
 \begin{enumerate}
 \item K-közép algoritmus
 \item DBSCAN algoritmus
@@ -482,12 +489,12 @@ Ezután a $\mu$ paramétert kell hozzáigazítani oly módon, hogy a kialakuló 
 
 Az általunk használt hierarchikus klaszterező algoritmus agglomeratív módon hozza létre a klasztereket. Azaz először minden pontot külön klaszternek tekint, majd ezeket egyesíti egy kiválasztott módszer alapján addig, amíg az összes pont egy klaszterbe nem kerül. Az iterációkat dendrogrammal lehet ábrázolni, és az alapján lehet dönteni, hány klasztert akarunk létrehozni. Gyakorlatban a dendrogramon meg kell keresni a legszélesebb vízszintes sávot, amelyben csak függőleges szakaszok vannak, és venni azok számát.
 
-Az alapvető egyesítő módszerek a single, average, complete linkage nevet hordozzák, de mi a Ward-féle módszert alkalmaztuk. Ez a módszer az összes klaszteren belüli szórásnégyzet minimalizálására törekszik, így valamelyest hasonlít a k-közép algoritmusra.
+Az alapvető egyesítő módszerek a single, average, complete linkage nevet hordozzák, de mi a Ward-féle módszert alkalmaztuk. Ez a módszer az összes klaszteren belüli szórásnégyzet minimalizálására törekszik, így valamelyest hasonlít a K-közép algoritmusra.
 
 \subsubsection{K-közép algoritmus eredménye}
 Ami a szórásdiagramokból sejthető volt, a könyökszabály alkalmazása során igazolódott be. Szinte minden próbálkozás esetén sima volt a görbe, és nem volt egyértelműen jó klaszterezés. Ezekben az esetekben a klaszterkép is elmosott volt.
 
-A k-közép algoritmus eredményei közül kettőt emelhetünk ki. Az egyikben a 2019-es adatokból négy változó szerepelt, min-max skálázva: teljes teszteredmény, első féléves átlag, kumulált átlag és a felvételi összpontszám. A másikban ugyanez a felállás 2021-re, kivéve a kumulált átlagot, mert az megegyezett az első félévessel. Az első változatnak a könyökszabály ábrája tekinthető meg alább:
+A K-közép algoritmus eredményei közül kettőt emelhetünk ki. Az egyikben a 2019-es adatokból négy változó szerepelt, min-max skálázva: teljes teszteredmény, első féléves átlag, kumulált átlag és a felvételi összpontszám. A másikban ugyanez a felállás 2021-re, kivéve a kumulált átlagot, mert az megegyezett az első félévessel. Az első változatnak a könyökszabály ábrája tekinthető meg alább:
 
 \begin{figure}[H]
 \centering
@@ -529,7 +536,7 @@ Ebben az esetben (\ref{fig:2021klacter}. ábra) még tisztább az elkülönülé
 
 \subsubsection{DBSCAN eredménye}
 
-A DBSCAN algoritmus akkor működik igazán jól, ha az adatok pontfelhője közel azonos sűrűségű részekből áll, amelyek között nagyobb távolság van. Az elkészített, és fentebb bemutatott ábrákon nem volt jellemző az előbb említett tulajdonság. Ennek következményeként az algoritmussal nem sikerült jó klaszterezést megvalósítani.
+A DBSCAN algoritmus akkor működik igazán jól, ha az adatok pontfelhője közel azonos sűrűségű részekből áll, amelyek között nagyobb távolság van. Az elkészített, és fentebb bemutatott ábrákon (\ref{ssec:altalanos}) nem volt jellemző az előbb említett tulajdonság. Ennek következményeként az algoritmussal nem sikerült jó klaszterezést megvalósítani.
 
 A futtatások során az eredmények két csoportba voltak kategorizálhatóak. Az egyikben létrejött egy nagy klaszter és elenyésző volt a többi, a másikban a pontok nagy része "outlier" volt és néhány nagyobb, de továbbra is kis méretű klaszter jelent meg. Egy ilyet tekinthetünk meg alább.
 
@@ -540,11 +547,11 @@ A futtatások során az eredmények két csoportba voltak kategorizálhatóak. A
 \label{fig:dbscan2}
 \end{figure}
 
-A klaszterezés 2019-es adatokon készült, Mahalanobis távolságot használva és kvantilisek mentén skálázva. Ismét ugyanaz a négy változó került be: egyesített teszteredmény, első féléves átlag, kumulált átlag és a felvételi összpontszám. Látszik, hogy piros pontokból van a legtöbb, amelyekhez a -1-edik klasztert rendelte az algoritmus, ezek az outlierek. A zöld és a kék klaszter még viszonylag nagy, de a többi csak pár pontot tartalmaz.
+A \ref{fig:dbscan2}. ábrán lévő klaszterezés 2019-es adatokon készült, Mahalanobis távolságot használva és kvantilisek mentén skálázva. Ismét ugyanaz a négy változó került be: teljes teszteredmény, első féléves átlag, kumulált átlag és a felvételi összpontszám. Látszik, hogy piros pontokból van a legtöbb, amelyekhez a -1-edik klasztert rendelte az algoritmus, ezek az outlierek. A zöld és a kék klaszter még viszonylag nagy, de a többi csak pár pontot tartalmaz.
 
 \subsubsection{Ward-féle algoritmus eredménye}
 
-Mint ahogy a másik két módszernél a könyökszabályokban, itt a dendrogramokban volt nehéz eldönteni az optimális paraméter értéket, jelen esetben a klaszterszámot. Ha egy szám optimális, akkor az a síkrész, amelyben annyi függőleges vonal megy, kiemelkedően széles. Ha nehezen klaszterezhető az adat, akkor kisebbek a sávok, és azok közül a legnagyobbak közel azonos méretűek. Ezt lehet látni az alábbi ábrán:
+Mint ahogy a másik két módszernél a könyökszabályokban, itt a dendrogramokban volt nehéz eldönteni az optimális paraméter értéket, jelen esetben a klaszterszámot. Ha egy szám optimális, akkor az a síkrész, amelyben annyi függőleges vonal megy, kiemelkedően széles. Ha nehezen klaszterezhető az adat, akkor kisebbek a sávok, és azok közül a legnagyobbak közel azonos méretűek. Ezt lehet látni az alábbi, \ref{fig:dendrogram}. ábrán:
 
 \begin{figure}[H]
 \centering
@@ -553,7 +560,7 @@ Mint ahogy a másik két módszernél a könyökszabályokban, itt a dendrogramo
 \label{fig:dendrogram}
 \end{figure}
 
-Itt a kettő és a három függőleges szálat tartalmazó sávok szélessége közel azonos. A választás három klaszterre esett. Kevesebb változó választásánál a klaszterek száma minden esetben legfeljebb kettő esetén lett volna optimális, így egészen sokat kellett használni: matematikai rész pontszáma, kognitív rész pontszáma, kumulált átlag, hozott pontszám, szerzett érettségi pontszám, többlet pontszám.
+Itt a kettő és a három függőleges szálat tartalmazó sávok szélessége közel azonos. A választás három klaszterre esett. Kevesebb változó választásánál a klaszterek száma minden esetben legfeljebb kettő esetén lett volna optimális, így egészen sokat kellett használni: \textit{matematika összpont, kognitív eredmény, kumulált átlag, tanulmányi pont, érettségi pont, többletpont}.
 
 \begin{figure}[H]
 \centering
@@ -562,12 +569,21 @@ Itt a kettő és a három függőleges szálat tartalmazó sávok szélessége k
 \label{fig:klacterward}
 \end{figure}
 
-A változók nagy száma miatt lett ilyen nagy a párosításos ábra. Mindez a 2019-es adatokból van, kvantilisek mentén skálázva. Minden erőfeszítés ellenére nem alakult ki tisztább klaszterkép. Itt is a k-középhez hasonlóan a három klaszter a "jók", "közepesek" és a "gyengébbek" osztályait jelenti, de nincs vetület, amin olyan sima lenne a klaszterhatár.
+A változók nagy száma miatt lett ilyen nagy a párosításos ábra (\ref{fig:klacterward}.). Mindez a 2019-es adatokból van, kvantilisek mentén skálázva. Minden erőfeszítés ellenére nem alakult ki tisztább klaszterkép. Itt is a K-középhez hasonlóan a három klaszter a "jók", "közepesek" és a "gyengébbek" osztályait jelenti, de nincs vetület, amin olyan sima lenne a klaszterhatár.
+
+\section{Konklúziók a feltáró adatelemzésből}
+
+A fejezetben ismertetett szórásdiagramok adtak egy szemléletes képet az adatok egyszerű viszonyairól. Többnyire látszott, hogy a változók között pozitív korreláció volt, de nem kimondottan erős. Ez motivációt adott az adatok további, mélyebb és komplexebb vizsgálatához annak érdekében, hogy felfedezhetőek legyenek nem triviális kapcsolatok. Továbbá az ábrák összehasonlítása kimutatott egy jelentős különbséget a két év eredményei között, ami szintén indokolja a további elemzést. Szem előtt kell tartani, hogy 2021-ben a diákok már részt vettek távolléti oktatásban, és ez feltehetőleg a változások kiváltó oka lehetett.
+
+A folyamatábrák vizsgálata fényt derített több érdekességre. Például a \ref{fig:teszt-a1-a2}. ábrából azt a következtetést vonhattuk le, hogy míg a bemeneti eredmények viszonylag erősen befolyásolták az első néhány megmérettetés eredményét, a további eredmények már nagyobb részben nem függtek tőlük. Ez az $A1$ és $A2$ tárgyak közötti átmenetek alapján látszik tisztán. Ez kívánt eredmény, ugyanis az egyetem szerepe nem lenne jelentős, ha csak a felvételi eredményeken múlna a további sikeresség.
+
+A Sankey-diagramok szintén fényt derítettek a két év eredményességeinek különbségére. Ennek a leglátványosabb példája a \ref{fig:2019_hozott_erett_A1}. és \ref{fig:2021_hozott_erett_A1}. ábra, ahol a tanulmányi pontok eloszlásai között óriási különbség van. A két évben az $A1$ jegyek eloszlási között is érdemi a különbség, de az elvárásokkal szemben 2021-ben romlottak. Ennek több oka lehet, többek közt a tárgykövetelmény szigorítása.
+
+Összességben a folyamatábrákból az a következmény vonható le, hogy a bemeneti eredményeknek van hatása a továbbhaladásra, de idővel gyengül. Továbbá a változók két szélén lévő hallgatók eredményei könnyebben követhetők, míg a közepes hallgatók esetében nagyobbak a fluktuációk.
+
+A szórásdiagramok eredményeinek elemzése alapján a klaszterezéstől nem vártunk nagy áttörést. A további kísérletek során bebizonyosodott, hogy a birtokunkban lévő adatok nehezen klaszterezhetőek. Ennek ellenére a K-közép algoritmussal sikerült elérni egészen tiszta klaszterhatárokat, és azt figyeltük meg, hogy ezek az első féléves átlag és a felvételi összpontszám esetében voltak a legtisztábbak. A DBSCAN algoritmushoz egyáltalán nem volt megfelelő az adat, a Ward-féle módszer szintén gyengébben teljesített a K-középnél.
 
 
-\section{Konklúziók az adatelemzésből}
-
-TODO
 
 
 \newpage
@@ -967,7 +983,8 @@ Egy fontos és nem triviális kérdés az, hogy ezeket az eredményeket milyen m
 \section{Összefoglalás}
 
 
-Dolgozatunkban modern adattudományi módszerekkel vizsgáltuk a 2019-ben és 2021-ben beiratkozott elsőéves BME VBK hallgatók első félév végi teljesítményében és bemeneti adataiban fellépő különbségeket. Először (IDE ÍRJ ARTÚR) ...
+Dolgozatunkban modern adattudományi módszerekkel vizsgáltuk a 2019-ben és 2021-ben beiratkozott elsőéves BME VBK hallgatók első félév végi teljesítményében és bemeneti adataiban fellépő különbségeket. Először készítettünk és áttekintettünk nagy mennyiségű szórás- és oszlopdiagramot. Az ábrák megerősítették a részletes elemzés szükségességét. Továbbá generáltunk többféle folyamatábrát, más-más változók között, amelyek több érdekességet hoztak felszínre. Végül a feltáró adatelemzést klaszterezési kísérlettel zártuk. Ezek a vizsgálatok a probléma komplexitására világítottak rá. 
+
 Ezt követően prediktív analitikai módszerekkel vizsgáltuk az egyes bemeneti adatok fontosságának változását első félév végi teljesítménymutatókra nézve. A modellezés során az egyes prediktáló algoritmusok mellett főkomponens analízist is alkalmaztunk. Legjobb tudásunk szerint ez az első olyan kutatás, amely ilyen elgondolással és metodológiával vizsgálja a hallgatók bemeneti adatainak megváltozását a pandémia előtti és utáni időszakban, így kutatásunk egyedülállónak mondható. Az eredményekből az szűrhető le, hogy a 2021-ben kezdett hallgatók eredményei ugyan romlottak a járvány kitörése előtti szinthez képest, ugyanakkor sok esetben pontosabban előrejelezhető a teljesítményük, valamint a felvételi pontszám jelentősebb prediktáló erővel bír az első féléves matematika jegyre és kumulált átlagra nézve, mint 2019-ben.
 
 \newpage
