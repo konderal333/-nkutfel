@@ -460,13 +460,11 @@ Számos optimalizációs kísérlet volt: hiperparaméterek beállítása, vált
 \subsubsection{K-közép algoritmus működése}
 Az algoritmus működési elve nagyon egyszerű. Az alapvető paraméter, amelyet meg kell adni, a létrehozandó osztályok kívánt száma, legyen ez \textit{k}. Első lépésben választ a térben véletlenszerűen \textit{k} pontot, ezek a klaszter középpontok, majd az összes pontot ahhoz a a középponthoz rendeli, amelyhez a legközelebb van. A második lépésben a kialakult osztályok középpontjait újraszámolja és azokkal a középpontokkal megismétli az első lépést. Ezt a két lépést iterálja addig, amíg két egymást követő osztályozás között már nem lesz jelentős változás.
 
-Így alapvetően a legfontosabb feladat a megfelelő klaszterszám meghatározása. Ehhez létezik egy könyökszabály, melynek a lényege a következő: lefuttatjuk a klaszterezési algoritmust 1-től $l$-ig megadva a klaszterszámokat, majd ábrázoljuk ezek esetében a pontoknak az átlagos négyzetes eltérését a saját klaszterközéppontjuktól. Természetesen ahogy több csoportra bontjuk a pontokat, úgy csökken ez az eltérés, így az a klaszterszám lesz optimális, ahol jelentős a javulás, de utána már nem. Ez megfelelő esetben vizuálisan egy behajlított karra emlékeztet, innen ered a neve. Nehezen klaszterezhető adatok esetén ez a görbe "simább", nehezen állapítható meg a "könyök".
+Így alapvetően a legfontosabb feladat a megfelelő klaszterszám meghatározása. Ehhez létezik egy könyökszabály, melynek a lényege a következő: lefuttatjuk a klaszterezési algoritmust 1-től $l$-ig ($l$ egy tetszőlegesen választott szám) megadva a klaszterszámokat, majd ábrázoljuk ezek esetében a pontoknak az átlagos négyzetes eltérését a saját klaszterközéppontjuktól. Természetesen ahogy több csoportra bontjuk a pontokat, úgy csökken ez az eltérés, így az a klaszterszám lesz optimális, ahol jelentős a javulás, de utána már nem. Ez megfelelő esetben vizuálisan egy behajlított karra emlékeztet, innen ered a neve. Nehezen klaszterezhető adatok esetén ez a görbe "simább", nehezen állapítható meg a "könyök".
 
 \subsubsection{DBSCAN algoritmus működése}
 
-A DBSCAN (Density-based spatial clustering of applications with noise) sűrűség alapú klaszterező algoritmus
- %\cite{bevadat}
-. Ebben az esetben a sűrűség egy bizonyos $\epsilon$ sugáron belüli pontok száma. Ez alapján az algoritmus három kategóriára osztja az adatpontokat:
+A DBSCAN (Density-based spatial clustering of applications with noise) sűrűség alapú klaszterező algoritmus \cite{bevadat}. Ebben az esetben a sűrűség egy bizonyos $\epsilon$ sugáron belüli pontok száma. Ez alapján az algoritmus három kategóriára osztja az adatpontokat:
 \begin{itemize}
 \item Magpont: olyan adatpont, melynek egy meghatározott számúnál ($\mu$) több pont van az $\epsilon$ sugarú környezetében.
 \item Határpont: olyan adatpont, amelynek $\mu$ -nél kevesebb pont van az $\epsilon$ sugarú környezetében, de ő maga egy magpont $\epsilon$ sugarú környezetébe esik.
@@ -477,18 +475,18 @@ Működése során először felosztja az adatpontokat a három leírt típus sz
 
 A felhasználó feladata meghatározni a $\mu$ és $\epsilon$ értékeket, illetve a megfelelő távolságfogalmat. Ehhez szintén létezik egy könyökszabály. Ennél az algoritmusnál növekvő sorrendben kell ábrázolni az egyes adatpontoknak a legközelebbi szomszédjuktól vett távolságot. Mivel sok adatpont van, a könyök simább, így az $\epsilon$-t csak becsülni tudjuk. 
 
-Ezután a $\mu$ paramétert kell hozzáigazítani oly módon, hogy a kialakuló klaszterszám megfelelő legyen. Ez úgy történik, hogy az adott paraméterárral lefuttatjuk az algoritmust és megnézzük a keletkezett klaszterek számát. Azt a párt választjuk, aminél megfelelő a klaszterszám.
+Ezután a $\mu$ paramétert kell hozzáigazítani oly módon, hogy a kialakuló klaszterszám megfelelő legyen. Ez úgy történik, hogy az adott paraméterpárral lefuttatjuk az algoritmust és megnézzük a keletkezett klaszterek számát. Azt a párt választjuk, aminél megfelelő a klaszterszám.
 
 \subsubsection{Ward-féle hierarchikus klaszterező algoritmus működése}
 
 Az általunk használt hierarchikus klaszterező algoritmus agglomeratív módon hozza létre a klasztereket. Azaz először minden pontot külön klaszternek tekint, majd ezeket egyesíti egy kiválasztott módszer alapján addig, amíg az összes pont egy klaszterbe nem kerül. Az iterációkat dendrogrammal lehet ábrázolni, és az alapján lehet dönteni, hány klasztert akarunk létrehozni. Gyakorlatban a dendrogramon meg kell keresni a legszélesebb vízszintes sávot, amelyben csak függőleges szakaszok vannak, és venni azok számát.
 
-Az alapvető egyesítő módszerek a single, average, complete linkage nevet hordozzák, de mi a Ward féle módszert alkalmaztuk. Ez a módszer az összes klaszteren belüli szórásnégyzet minimalizálására törekszik, így valamelyest hasonlít a k-közép algoritmusra.
+Az alapvető egyesítő módszerek a single, average, complete linkage nevet hordozzák, de mi a Ward-féle módszert alkalmaztuk. Ez a módszer az összes klaszteren belüli szórásnégyzet minimalizálására törekszik, így valamelyest hasonlít a k-közép algoritmusra.
 
 \subsubsection{K-közép algoritmus eredménye}
 Ami a szórásdiagramokból sejthető volt, a könyökszabály alkalmazása során igazolódott be. Szinte minden próbálkozás esetén sima volt a görbe, és nem volt egyértelműen jó klaszterezés. Ezekben az esetekben a klaszterkép is elmosott volt.
 
-A k-közép algoritmus eredményei közül kettőt emelhetünk ki. Az egyikben a 2019-es adatokból négy változó szerepelt, min-max skálázva: egyesített teszteredmény, első féléves átlag, kumulált átlag és a felvételi összpontszám. A másikban ugyanez a felállás 2021-re, kivéve a kumulált átlagot, mert az megyegyezett az első félévessel. Az első változatnak a könyökszabály ábrája tekinthető meg alább:
+A k-közép algoritmus eredményei közül kettőt emelhetünk ki. Az egyikben a 2019-es adatokból négy változó szerepelt, min-max skálázva: teljes teszteredmény, első féléves átlag, kumulált átlag és a felvételi összpontszám. A másikban ugyanez a felállás 2021-re, kivéve a kumulált átlagot, mert az megegyezett az első félévessel. Az első változatnak a könyökszabály ábrája tekinthető meg alább:
 
 \begin{figure}[H]
 \centering
@@ -497,7 +495,7 @@ A k-közép algoritmus eredményei közül kettőt emelhetünk ki. Az egyikben a
 \label{fig:2019_kmeans_best_konyok}
 \end{figure}
 
-Természetesen ezen az ábrán sincs teljesen egyértelmű törés, de 5 klaszter esetén mondható közel optimálisnak. Ezzel az alábbi klaszterképet generálta az algoritmus:
+Természetesen ezen az ábrán (\ref{fig:2019_kmeans_best_konyok}.) sincs teljesen egyértelmű törés, de 5 klaszter esetén mondható közel optimálisnak. Ezzel az alábbi klaszterképet generálta az algoritmus:
 
 \begin{figure}[H]
 \centering
@@ -506,7 +504,7 @@ Természetesen ezen az ábrán sincs teljesen egyértelmű törés, de 5 klaszte
 \label{fig:2019_kmeans_5}
 \end{figure}
 
-Az ábrák közül a legtisztábban a felvételi összpontszám és az első féléves átlag szórásdiagramján látszanak az osztályhatárok. Megfigyelhető az algoritmus jellegzetessége, a hasonló méretű, "gömbszerű" klaszterek kialakítása. A kékes zöld klaszter a legstabilabb, annak az adatpontjai mindig a jobb felső sarokban vannak, azaz minden változóban magas értékeik vannak. A lila hasonlóan viselkedik, csak mérsékeltebb, minden változóban átlag felettiek, de nem a legjobbak. Ellenben a zöld klaszter azokból a hallgatókból áll, akik átlagosan teljesítettek a felvételi és a teszt során, de más mutatókban lecsúsztak. A kék a legbizonytalanabb, ugyanis többnyire középütt van mindig, de mélyen belemetsz más klaszterokba. A sárga klaszter pontjai minden változó esetén a skála alsó felén vannak, kivéve a kumulált átlagot, ahol középtájt összpontosulnak.
+A \ref{fig:2019_kmeans_5} ábrán lévő részábrák közül a legtisztábban a felvételi összpontszám és az első féléves átlag szórásdiagramján látszanak az osztályhatárok. Megfigyelhető az algoritmus jellegzetessége, a hasonló méretű, "gömbszerű" klaszterek kialakítása. A kékes zöld klaszter a legstabilabb, annak az adatpontjai mindig a jobb felső sarokban vannak, azaz minden változóban magas értékeik vannak. A lila hasonlóan viselkedik, csak mérsékeltebb, minden változóban átlag felettiek, de nem a legjobbak. Ezzel szemben a zöld klaszter azokból a hallgatókból áll, akik átlagosan teljesítettek a felvételi és a teszt során, de más mutatókban lecsúsztak. A kék a legbizonytalanabb, ugyanis többnyire középütt van mindig, de mélyen belemetsz más klaszterokba. A sárga klaszter pontjai minden változó esetén a skála alsó felén vannak, kivéve a kumulált átlagot, ahol középtájt összpontosulnak.
 
 Most tekintsük a 2021-es eredményt:
 
@@ -517,7 +515,7 @@ Most tekintsük a 2021-es eredményt:
 \label{fig:2021_kmeans_konyok}
 \end{figure}
 
-Ez az ábra jobb az előzőnél, ugyanis 3-nál még érzékeny a törés, de utána szinte kisimul.
+Ezen az ábrán (\ref{fig:2021_kmeans_konyok}.) a könyök jobb a \ref{fig:2019_kmeans_best_konyok}. ábrán lévő könyöknél, ugyanis 3-nál még érzékeny a törés, de utána szinte kisimul.
 
 \begin{figure}[H]
 \centering
@@ -526,7 +524,7 @@ Ez az ábra jobb az előzőnél, ugyanis 3-nál még érzékeny a törés, de ut
 \label{fig:2021klacter}
 \end{figure}
 
-Ebben az esetben még tisztább az elkülönülés az első féléves átlag és a felvételi összpontszám esetén, tehát feltehetőleg ezek jobban befolyásolták a döntést. Itt is gömbszerű klaszterek lettek, ugyanis a pontfelhő egészen homogén.
+Ebben az esetben (\ref{fig:2021klacter}. ábra) még tisztább az elkülönülés az első féléves átlag és a felvételi összpontszám esetén, tehát feltehetőleg ezek jobban befolyásolták a döntést. Itt is gömbszerű klaszterek lettek, ugyanis a pontfelhő egészen homogén.
 
 \subsubsection{DBSCAN eredménye}
 
