@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.3.29)  30 OCT 2022 20:46
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.3.29)  31 OCT 2022 09:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1486,7 +1486,7 @@ Package pdftex.def Info: kepek/kumulalt2021_2.png  used on input line 948.
 1.png> <./kepek/kumulalt2021.png>] [40 <./kepek/residual2019_2.png> <./kepek/ku
 mulalt2019_2.png> <./kepek/residual2021_2.png> <./kepek/kumulalt2021_2.png>] [4
 1] [42]
-Underfull \hbox (badness 7522) in paragraph at lines 997--998
+Underfull \hbox (badness 7522) in paragraph at lines 998--999
 []\T1/lmr/m/n/12 Jonathon Sh-lens. A Tuto-ri-al on Prin-ci-pal Com-po-nent Anal
 y-sis. \T1/lmr/m/it/12 CoRR\T1/lmr/m/n/12 ,
  []
@@ -1526,7 +1526,7 @@ C:/Users/Donát/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb>
 ><C:/Users/Donát/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy5.pfb
 ><C:/Users/Donát/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt12.pf
 b>
-Output written on TDK_doc.pdf (46 pages, 3672028 bytes).
+Output written on TDK_doc.pdf (46 pages, 3672733 bytes).
 PDF statistics:
  675 PDF objects out of 1000 (max. 8388607)
  148 named destinations out of 1000 (max. 500000)
