@@ -1,0 +1,7 @@
+- feature táblázatban utolsó cellában a mondat végére kell pont
+- "a kezdeti adattáblák közül a matematika és NYELVI eredményeket.."
+- "Egy részben feltáró adatelemzés fontos szakasza" ez mi?
+- "A 1. táblázatban felsorolt"...
+- "kivéve a teszt kognitív részénél" inkább nyelvi
+- 10. oldal alján ez olyan megfogalmazás (a seaborn pairplot függvényes)
+- "Továbbá szembetűnő az érettségi pontszámok eloszlásának megváltozása" ez olyan furán hangzik
