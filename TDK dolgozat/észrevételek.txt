@@ -5,3 +5,13 @@
 - "kivéve a teszt kognitív részénél" inkább nyelvi   PIPA
 - 10. oldal alján ez olyan megfogalmazás (a seaborn pairplot függvényes)
 - "Továbbá szembetűnő az érettségi pontszámok eloszlásának megváltozása" ez olyan furán hangzik
+
+- kell egy olyan, hogy PCA rövidítést is használunk   PIPA
+- FONTOS: pandémia előtti és ALATTI                  PIPA
+- a dőlt betűs osztályozó helyett kéne valami      PIPA
+- érdemjegycsoport-ot írjuk egybe mindenhol     PIPA
+- minusz végtelennél nem [, hanem ( a zárójel    PIPA
+- a statisztikák előtt kettőspont a felsorolás miatt   PIPA
+- R^2-et jobban kifejteni                              PIPA
+- "Mivel az algoritmus implementálása" ezt kicsit átírni  PIPA
+

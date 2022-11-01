@@ -18,7 +18,7 @@
 \select@language {magyar} \contentsline {subsubsection}{\numberline {6.2.1}Lineáris regresszió}{32}{subsubsection.6.2.1}%
 \select@language {magyar} \contentsline {subsubsection}{\numberline {6.2.2}Naive Bayes}{33}{subsubsection.6.2.2}%
 \select@language {magyar} \contentsline {subsubsection}{\numberline {6.2.3}Gradient Tree Boosting}{33}{subsubsection.6.2.3}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {6.2.4}Logisztikus regresszió}{33}{subsubsection.6.2.4}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {6.2.4}Logisztikus regresszió}{34}{subsubsection.6.2.4}%
 \select@language {magyar} \contentsline {subsubsection}{\numberline {6.2.5}SVM}{34}{subsubsection.6.2.5}%
 \select@language {magyar} \contentsline {section}{\numberline {7}Modellek kiértékelése}{35}{section.7}%
 \select@language {magyar} \contentsline {section}{\numberline {8}Diszkusszió, következtetések a modellezésről}{41}{section.8}%
