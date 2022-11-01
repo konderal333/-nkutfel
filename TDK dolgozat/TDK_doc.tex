@@ -613,7 +613,7 @@ Valamennyi algoritmus hiperparamétereinek optimális megválasztására 5-ször
 \\
 A választott metrika mellett meghatároztuk a legjobb algoritmusokat, amelyeket a teszthalmazon visszamértünk, valamint kiértékeltük az ily módon választott modellek esetén az egyes változók fontosságát is.
 
-Az \textit{első féléves kumulált átlag} predikciójánál a tisztított adathalmazt ugyanúgy 70-30 arányban osztottuk fel. Adattranszformálásra csak kvantilis alapú skálázást alkalmaztunk, PCA-t nem, majd valamennyi regresszor hiperparamétereinek optimalizálása hasonlóan 5-szörös keresztvalidációval történt. Az illesztett legjobb modelleknél mindkét évben feljegyeztük a reziduális tagok\footnote{A reziduális tagok a célváltozó-értékek különbségei a prediktált értékektől.} szórásdiagramját, az egyes változók prediktív erejét, valamint az alábbi statisztikák értékét \cite{bolla_stat}:
+Az \textit{első féléves kumulált átlag} predikciójánál a tisztított adathalmazt ugyanúgy 70-30 arányban osztottuk fel. Adattranszformálásra csak kvantilis alapú skálázást alkalmaztunk, PCA-t nem, majd valamennyi regresszor hiperparamétereinek optimalizálása hasonlóan 5-szörös keresztvalidációval történt. Az illesztett legjobb modelleknél mindkét évben feljegyeztük a reziduális tagok\footnote{A reziduális tagok a célváltozó-értékeknek a prediktált értékektől vett különbségei.} szórásdiagramját, az egyes változók prediktív erejét, valamint az alábbi statisztikák értékét \cite{bolla_stat}:
 \begin{itemize}
 \item[•] $R^2$: A modell hatásfokát mérő mutató, értéke 0 és 1 közötti (nagyon gyengén teljesítő modell esetén negatív értéket is felvehet). Azt mutatja meg, hogy az adatok között fellépő variancia mekkora részét képes a regressziós modell megmagyarázni:
 \begin{align}
@@ -741,7 +741,7 @@ Az SVM (Support Vector Machine) algoritmus a logisztikus regresszióhoz hasonló
 
 \noindent A keresztvalidálás során optimalizált paraméterek: \\
 - Regularizációs paraméter (0.1 és 5 között változtatva 0.1-es lépésközzel)\\
-- Magfüggvény (lineáris, legfeljebb 3-ad fokú polinomiális, radiális bázisfüggvény)
+- Magfüggvény (lineáris; legfeljebb 3-ad fokú polinomiális; radiális bázisfüggvény)
 
 
 
@@ -874,7 +874,7 @@ A két év modelljeinek összesített változófontosságait a \ref{fig:variable
 
 \noindent A diagramokon szereplő értékek az egyes algoritmusoknál megállapított változófontosságok min-max skálázott értékei, amelyeket regressziós algoritmusoknál az attribútumokhoz rendelt súlyokból, a többi osztályozónál pedig az Sklearn \textit{'inspection'} csomagjának segítségével nyertünk ki. Az összesített ábrán az egyes évek legfontosabb attribútumai a megfelelő évek különböző modelljein is többnyire jelentős szignifikanciával bírnak, a többi változó fontossága viszont modellenként eltérő. A 0. ZH pontszám illetve az érettségi pont prediktív ereje mindkét évben kiemelkedő. A 2019-es évben az emelt matematika érettségi megléte és a matematika-nyelvi teszten elért eredmény is nem elhanyagolható szignifikanciával bírt, viszont 2021-ben ezen tényezők prediktáló ereje csökkent, ugyanakkor az elért tanulmányi- és többletpontok jelentősége a matematika jegyre nézve közel kétszeresére nőtt.
 
-A félreosztályozások jellegéről több információval bírnak a \emph{tévesztési mátrixok}, amelyek a prediktált és valódi címke vonatkozásábán ábrázolják az egyes adatrekordok számát. A \ref{fig:confusion}. ábrán az összesített modelleknél legjobban teljesítő algoritmusok tévesztési mátrixai láthatóak, ahol a 3 csoport modellnél a 3, 2, 1 címkék rendre az \{5,4\}, \{3,2\}, \{1\} osztályokat, míg a 2 csoport modellnél az 1 és 0 címkék pedig az \{5,4,3\} és \{2,1\} osztályokat reprezentálják. Egy optimális osztályozó esetén csak az átlóban vannak nem nulla elemek, hisz akkor egyezik meg a prediktált és a valódi címkéje az adatoknak. Az ábrán jól látható módon míg 2021-ben a félreosztályozás mértékében az egyes osztályok között nincsenek számottevő különbségek, addig 2019-ben a 3 csoport modellnél a 4-5-ös osztálybeli adatrekordok nagyobb része 2-3-as osztályba lett besorolva (14 darab hallgató a 24-ből), valamint a 2 csoport modell esetén magas a hamisan 0-nak, azaz lemorzsolódásban veszélyeztetettnek osztályzott rekordok aránya. Ez azt mutatja, hogy az illesztett modellek sok esetben alulbecsülik a 2019-es hallgatók teljesítményét, amelynek az egyik oka az lehet, hogy az osztályok között vékonyak a határok a bemeneti adatok tekintetében.
+A félreosztályozások jellegéről több információval bírnak a \emph{tévesztési mátrixok}, amelyek a prediktált és valódi címke vonatkozásábán ábrázolják az egyes adatrekordok számát. A \ref{fig:confusion}. ábrán az összesített modelleknél legjobban teljesítő algoritmusok tévesztési mátrixai láthatóak, ahol a 3 csoport modellnél a 3, 2, 1 címkék rendre az \{5,4\}, \{3,2\}, \{1\} osztályokat, míg a 2 csoport modellnél az 1 és 0 címkék pedig az \{5,4,3\} és \{2,1\} osztályokat reprezentálják. Egy optimális osztályozó esetén csak az átlóban vannak nem nulla elemek, hisz akkor egyezik meg a prediktált és a valódi címkéje az adatoknak. Az ábrán jól látható módon míg 2021-ben a félreosztályozás mértékében az egyes osztályok között nincsenek számottevő különbségek, addig 2019-ben a 3 csoport modellnél a \{5,4\}-ös osztálybeli adatrekordok nagyobb része \{3,2\}-as osztályba lett besorolva (14 darab hallgató a 24-ből), valamint a 2 csoport modell esetén magas a hamisan 0-nak, azaz lemorzsolódásban veszélyeztetettnek osztályzott rekordok aránya. Ez azt mutatja, hogy az illesztett modellek sok esetben alulbecsülik a 2019-es hallgatók teljesítményét, amelynek az egyik oka az lehet, hogy az osztályok között vékonyak a határok a bemeneti adatok tekintetében.
 
 \begin{figure}[H]
 \centering
@@ -885,7 +885,7 @@ A félreosztályozások jellegéről több információval bírnak a \emph{téve
 
 \newpage
 
-A \textbf{kumulált átlag} lineáris regresszióval való prediktálásának eredményei (statisztikák, reziduális szórásdiagramok és az egyes változók prediktív ereje egymáshoz viszonyítva) a \ref{fig:kumulalt}. ábrán láthatóak. 
+Az \textbf{első féléves kumulált átlag} lineáris regresszióval való prediktálásának eredményei (statisztikák, reziduális szórásdiagramok és az egyes változók prediktív ereje egymáshoz viszonyítva) a \ref{fig:kumulalt}. ábrán láthatóak. 
 
 \vspace{0.5cm}
 
@@ -921,7 +921,7 @@ A \textbf{kumulált átlag} lineáris regresszióval való prediktálásának er
    \label{fig:kumulalt}
 \end{figure}
 
-\noindent Statisztikák tekintetében mindkét évben hasonló eredményeket kaptunk, amely azt mutatja, hogy a két évben hasonló hatékonysággal lehet a kumulált átlag eloszlását modellezni lineáris modellekkel, ugyanakkor csak közepes hatékonysággal. Ami kiemelendő, az a reziduális tagok eloszlása, amely mindkét évben hasonló alakzatot vesz fel, bár 2019-ben kicsivel nagyobb szórással. A változók prediktív erejét tekintve itt is fennáll az az érdemjegycsoportok prediktálásánál megállapított jelenség, miszerint a matematika-nyelvi teszt matematika részén elért eredmény 2019-ben magas szignifikanciával bírt, azonban 2021-ben ez a szignifikancia drasztikusan csökkent. Az érettségi pont mindkét évben igen fontos determináló tényező, ugyanakkor 2019-ben a hozott tanulmányi pontok is nagy szerepet játszanak az első féléves kumulált átlag meghatározásában.
+\noindent Statisztikák tekintetében mindkét évben hasonló eredményeket kaptunk, amely azt mutatja, hogy a két évben hasonló hatékonysággal lehet a kumulált átlag eloszlását modellezni lineáris modellekkel, ugyanakkor csak közepes hatékonysággal. Ami kiemelendő, az a reziduális tagok eloszlása, amely mindkét évben hasonló alakzatot vesz fel, bár 2019-ben kicsivel nagyobb szórással. A változók prediktív erejét tekintve itt is fennáll az az érdemjegycsoportok prediktálásánál megállapított jelenség, miszerint a matematika-nyelvi teszten elért eredmény 2019-ben magas szignifikanciával bírt, azonban 2021-ben ez a szignifikancia drasztikusan csökkent. Az érettségi pont mindkét évben igen fontos determináló tényező, ugyanakkor 2019-ben a hozott tanulmányi pontok is nagy szerepet játszanak az első féléves kumulált átlag meghatározásában.
 
 A Gradeint Tree Boosting-gal való előrejelzés eredményei a lineáris regressziónál használt struktúra szerint a \ref{fig:kumulalt2}. ábrán láthatóak. 
 
@@ -972,7 +972,7 @@ Egy fontos és nem triviális kérdés az, hogy ezeket az eredményeket milyen m
 \section{Összefoglalás}
 
 
-Munkánkban modern adattudományi eszközökkel vizsgáltuk a 2019-ben és 2021-ben beiratkozott elsőéves BME VBK hallgatók első félév végi teljesítményében és bemeneti adataiban fellépő különbségeket. A dolgozat első felében először különféle szórás- és oszlopdiagramok segítségével vizsgáltuk a két év adataiban fellépő eltéréseket, majd többféle folyamatábrával és klaszterezési kísérlettel folytattuk az elemzést mélyebb kapcsolatokat keresve. Az ábrák ugyan rávilágítottak néhány fontosabb összefüggésre, viszont a részletesebb elemzések szükségességét is megerősítették.
+Munkánkban modern adattudományi eszközökkel vizsgáltuk a 2019-ben és 2021-ben beiratkozott elsőéves BME VBK hallgatók első félév végi teljesítményében és bemeneti adataiban fellépő különbségeket. A dolgozat első felében először különféle szórás- és oszlopdiagramok segítségével vizsgáltuk a két év adataiban előforduló eltéréseket, majd többféle folyamatábrával és klaszterezési kísérlettel folytattuk az elemzést mélyebb kapcsolatokat keresve. Az ábrák ugyan rávilágítottak néhány fontosabb összefüggésre, viszont a részletesebb elemzések szükségességét is megerősítették.
 
 A dolgozat második felében prediktív analitikai módszerekkel vizsgáltuk az egyes bemeneti adatok fontosságának változását első félév végi teljesítménymutatókra nézve, valamint annak a hatásfokát, hogy ezen mutatók értékei mennyire jól előrejelezhetők. A modellezés során az egyes prediktáló algoritmusok mellett főkomponens analízist is alkalmaztunk. Az eredményekből az szűrhető le, hogy a 2021-ben kezdett hallgatók eredményei ugyan romlottak a járvány kitörése előtti szinthez képest, ugyanakkor sok esetben pontosabban előrejelezhető a teljesítményük, valamint a felvételi pontszám jelentősebb prediktáló erővel bír az első féléves matematika jegyre és kumulált átlagra nézve, mint 2019-ben.
 
