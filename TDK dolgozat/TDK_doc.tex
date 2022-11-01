@@ -640,7 +640,7 @@ RMSE = \sqrt{\frac{1}{n}\sum_i^n (y_i - \hat{y}_i)^2}
 
 \subsubsection{Lineáris regresszió}
 
-A lineáris regresszió, jellegéből adódóan, alapvetően folytonos célváltozó prediktálására alkalmas, ugyanakkor kategorikus, ordinális címkéjű adatok osztályozására is fel lehet használni. Az algoritmus lényege, hogy a magyarázóváltozók mindegyikéhez egy-egy súlyt rendelünk, majd az adatpont attribútumértékeinek vesszük a súlyokkal való súlyozott összegét, és esetleg egy bias tagot hozzáadva az így kapott szumma lesz a prediktált érték. A cél a tanítás során a súlyok optimális megtalálása, miközben a tanítóhalmazon minimalizáljuk a célváltozóérték és a prediktált érték közötti négyzetes hibát.
+A lineáris regresszió, jellegéből adódóan, alapvetően folytonos célváltozó prediktálására alkalmas, ugyanakkor kategorikus, ordinális címkéjű adatok osztályozására is fel lehet használni. Az algoritmus lényege, hogy a magyarázóváltozók mindegyikéhez egy-egy súlyt rendelünk, majd az adatpont attribútumértékeinek vesszük a súlyokkal való súlyozott összegét, és esetleg egy bias tagot hozzáadva az így kapott szumma lesz a prediktált érték. A cél a tanítás során az optimális súlyok megtalálása, miközben a tanítóhalmazon minimalizáljuk a célváltozóérték és a prediktált érték közötti négyzetes hibát.
 
 Mivel az algoritmus az implementálása végett a legkisebb négyzetek elvét alkalmazza, amellyel az optimális megoldás analitikusan elérhető, ezért nem történt hiperparaméter-optimalizáció.
 
@@ -976,7 +976,7 @@ Munkánkban modern adattudományi eszközökkel vizsgáltuk a 2019-ben és 2021-
 
 A dolgozat második felében prediktív analitikai módszerekkel vizsgáltuk az egyes bemeneti adatok fontosságának változását első félév végi teljesítménymutatókra nézve, valamint annak a hatásfokát, hogy ezen mutatók értékei mennyire jól előrejelezhetők. A modellezés során az egyes prediktáló algoritmusok mellett főkomponens analízist is alkalmaztunk. Az eredményekből az szűrhető le, hogy a 2021-ben kezdett hallgatók eredményei ugyan romlottak a járvány kitörése előtti szinthez képest, ugyanakkor sok esetben pontosabban előrejelezhető a teljesítményük, valamint a felvételi pontszám jelentősebb prediktáló erővel bír az első féléves matematika jegyre és kumulált átlagra nézve, mint 2019-ben.
 
-Legjobb tudásunk szerint ez az első olyan kutatás, amely ilyen elgondolással és metodológiával vizsgálja a hallgatók bemeneti adatainak megváltozását a pandémia előtti és alatti időszakban, így kutatásunk egyedülállónak mondható. További céljaink közé tartozik a kutatás többféle bemeneti változóval való kibővítése, új modellezési struktúrák és algoritmusok kipróbálása valamint az eredmények egyetem- és hallgatóbarát hasznosítása is.
+Legjobb tudásunk szerint ez az első olyan kutatás, amely ilyen elgondolással és metodológiával vizsgálja a hallgatók bemeneti adatainak megváltozását a pandémia előtti és alatti időszakban, így kutatásunk egyedülállónak mondható. További céljaink közé tartozik a kutatás többféle bemeneti változóval való kibővítése, új modellezési struktúrák és algoritmusok kipróbálása valamint az eredmények egyetem- és hallgatóbarát hasznosítása.
 
 \newpage
 \begin{thebibliography}{9}
