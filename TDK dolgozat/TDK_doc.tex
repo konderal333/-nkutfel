@@ -483,25 +483,25 @@ Az alapvető egyesítő módszerek a single, average, complete linkage nevet hor
 \subsubsection{K-közép algoritmus eredménye}
 Ami a szórásdiagramokból sejthető volt, a könyökszabály alkalmazása során igazolódott be. Szinte minden próbálkozás esetén sima volt a görbe, és nem volt egyértelműen jó klaszterezés. Ezekben az esetekben a klaszterkép is elmosott volt.
 
-A K-közép algoritmus eredményei közül kettőt emelhetünk ki. Az egyikben a 2019-es adatokból négy változó szerepelt, min-max skálázva: teljes teszteredmény, első féléves átlag, kumulált átlag és a felvételi összpontszám. A másikban ugyanez a felállás 2021-re, kivéve a kumulált átlagot, mert az megegyezett az első félévessel. Az első változatnak a könyökszabály ábrája tekinthető meg alább:
+A K-közép algoritmus eredményei közül kettőt emelhetünk ki. Az egyikben a 2019-es adatokból négy változó szerepelt, min-max skálázva: teljes teszteredmény, első féléves átlag, kumulált átlag és a felvételi összpontszám. A másikban ugyanez a felállás 2021-re, kivéve a kumulált átlagot, mert az megegyezett az első félévessel. Az első változatnak a könyökszabály ábrája tekinthető meg a \ref{fig:2019_kmeans_best_konyok}. ábrán:
 
 \begin{figure}[H]
 \centering
-\includegraphics[scale = 0.6]{kepek/2019_kmeans_best_konyok.png}
+\includegraphics[scale = 0.48]{kepek/2019_kmeans_best_konyok.png}
 \caption{2019. K-közép, 4 változós könyökszabály}
 \label{fig:2019_kmeans_best_konyok}
 \end{figure}
 
-Természetesen ezen az ábrán (\ref{fig:2019_kmeans_best_konyok}.) sincs teljesen egyértelmű törés, de 5 klaszter esetén mondható közel optimálisnak. Ezzel az alábbi klaszterképet generálta az algoritmus:
+Természetesen ezen az ábrán  sincs teljesen egyértelmű törés, de 5 klaszter esetén mondható közel optimálisnak. Ezzel a \ref{fig:2019_kmeans_5}. ábrán lévő klaszterképet generálta az algoritmus:
 
 \begin{figure}[H]
 \centering
-\includegraphics[width = \textwidth]{kepek/2019_kmeans_5.png}
+\includegraphics[scale= 0.48]{kepek/2019_kmeans_5.png}
 \caption{2019. K-közép, 4 változós klaszterkép}
 \label{fig:2019_kmeans_5}
 \end{figure}
 
-A \ref{fig:2019_kmeans_5}. ábrán lévő részábrák közül a legtisztábban a felvételi összpontszám és az első féléves átlag szórásdiagramján látszanak az osztályhatárok. Megfigyelhető az algoritmus jellegzetessége, a hasonló méretű, "gömbszerű" klaszterek kialakítása. A kékeszöld klaszter a legstabilabb, annak az adatpontjai mindig a jobb felső sarokban vannak, azaz minden változóban magas értékeik vannak. A lila hasonlóan viselkedik, csak mérsékeltebb, minden változóban átlag felettiek, de nem a legjobbak. Ezzel szemben a zöld klaszter azokból a hallgatókból áll, akik átlagosan teljesítettek a felvételi és a teszt során, de más mutatókban lecsúsztak. A kék a legbizonytalanabb, ugyanis többnyire középütt van mindig, de mélyen belemetsz más klaszterokba. A sárga klaszter pontjai minden változó esetén a skála alsó felén vannak, kivéve a kumulált átlagot, ahol középtájt összpontosulnak.
+\noindent Az ábrán látható részábrák közül a legtisztábban a felvételi összpontszám és az első féléves átlag szórásdiagramján látszanak az osztályhatárok. Megfigyelhető az algoritmus jellegzetessége, a hasonló méretű, "gömbszerű" klaszterek kialakítása. A kékeszöld klaszter a legstabilabb, annak az adatpontjai mindig a jobb felső sarokban vannak, azaz minden változóban magas értékeik vannak. A lila hasonlóan viselkedik, csak mérsékeltebb, minden változóban átlag felettiek, de nem a legjobbak. Ezzel szemben a zöld klaszter azokból a hallgatókból áll, akik átlagosan teljesítettek a felvételi és a teszt során, de más mutatókban lecsúsztak. A kék a legbizonytalanabb, ugyanis többnyire középütt van mindig, de mélyen belemetsz más klaszterokba. A sárga klaszter pontjai minden változó esetén a skála alsó felén vannak, kivéve a kumulált átlagot, ahol középtájt összpontosulnak.
 
 \begin{figure}[H]
 \centering
@@ -553,7 +553,7 @@ Itt a kettő és a három függőleges szálat tartalmazó sávok szélessége k
 
 \begin{figure}[H]
 \centering
-\includegraphics[scale = 0.57]{kepek/klacterward.png}
+\includegraphics[scale = 0.55]{kepek/klacterward.png}
 \caption{Ward-féle algoritmus eredménye}
 \label{fig:klacterward}
 \end{figure}
@@ -874,7 +874,7 @@ A két év modelljeinek összesített változófontosságait a \ref{fig:variable
 
 \noindent A diagramokon szereplő értékek az egyes algoritmusoknál megállapított változófontosságok min-max skálázott értékei, amelyeket regressziós algoritmusoknál az attribútumokhoz rendelt súlyokból, a többi osztályozónál pedig az Sklearn \textit{'inspection'} csomagjának segítségével nyertünk ki. Az összesített ábrán az egyes évek legfontosabb attribútumai a megfelelő évek különböző modelljein is többnyire jelentős szignifikanciával bírnak, a többi változó fontossága viszont modellenként eltérő. A 0. ZH pontszám illetve az érettségi pont prediktív ereje mindkét évben kiemelkedő. A 2019-es évben az emelt matematika érettségi megléte és a matematika-nyelvi teszten elért eredmény is nem elhanyagolható szignifikanciával bírt, viszont 2021-ben ezen tényezők prediktáló ereje csökkent, ugyanakkor az elért tanulmányi- és többletpontok jelentősége a matematika jegyre nézve közel kétszeresére nőtt.
 
-A félreosztályozások jellegéről több információval bírnak a \emph{tévesztési mátrixok}, amelyek a prediktált és valódi címke vonatkozásábán ábrázolják az egyes adatrekordok számát. A \ref{fig:confusion}. ábrán az összesített modelleknél legjobban teljesítő algoritmusok tévesztési mátrixai láthatóak, ahol a 3 csoport modellnél a 3, 2, 1 címkék rendre az \{5,4\}, \{3,2\}, \{1\} osztályokat, míg a 2 csoport modellnél az 1 és 0 címkék pedig az \{5,4,3\} és \{2,1\} osztályokat reprezentálják. Egy optimális osztályozó esetén csak az átlóban vannak nem nulla elemek, hisz akkor egyezik meg a prediktált és a valódi címkéje az adatoknak. Az ábrán jól látható módon míg 2021-ben a félreosztályozás mértékében az egyes osztályok között nincsenek számottevő különbségek, addig 2019-ben a 3 csoport modellnél a \{5,4\}-ös osztálybeli adatrekordok nagyobb része \{3,2\}-as osztályba lett besorolva (14 darab hallgató a 24-ből), valamint a 2 csoport modell esetén magas a hamisan 0-nak, azaz lemorzsolódásban veszélyeztetettnek osztályzott rekordok aránya. Ez azt mutatja, hogy az illesztett modellek sok esetben alulbecsülik a 2019-es hallgatók teljesítményét, amelynek az egyik oka az lehet, hogy az osztályok között vékonyak a határok a bemeneti adatok tekintetében.
+A félreosztályozások jellegéről több információval bírnak a \emph{tévesztési mátrixok}, amelyek a prediktált és valódi címke vonatkozásábán ábrázolják az egyes adatrekordok számát. A \ref{fig:confusion}. ábrán az összesített modelleknél legjobban teljesítő algoritmusok tévesztési mátrixai láthatóak, ahol a 3 csoport modellnél a 3, 2, 1 címkék rendre az \{5,4\}, \{3,2\}, \{1\} osztályokat, míg a 2 csoport modellnél az 1 és 0 címkék pedig az \{5,4,3\} és \{2,1\} osztályokat reprezentálják. Egy optimális osztályozó esetén csak az átlóban vannak nem nulla elemek, hisz akkor egyezik meg a prediktált és a valódi címkéje az adatoknak. Az ábrán jól látható módon míg 2021-ben a félreosztályozás mértékében az egyes osztályok között nincsenek számottevő különbségek, addig 2019-ben a 3 csoport modellnél a \{5,4\}-es osztálybeli adatrekordok nagyobb része \{3,2\}-es osztályba lett besorolva (14 darab hallgató a 24-ből), valamint a 2 csoport modell esetén magas a hamisan 0-nak, azaz lemorzsolódásban veszélyeztetettnek osztályzott rekordok aránya. Ez azt mutatja, hogy az illesztett modellek sok esetben alulbecsülik a 2019-es hallgatók teljesítményét, amelynek az egyik oka az lehet, hogy az osztályok között vékonyak a határok a bemeneti adatok tekintetében.
 
 \begin{figure}[H]
 \centering
