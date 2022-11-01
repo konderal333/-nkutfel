@@ -615,7 +615,7 @@ A választott metrika mellett meghatároztuk a legjobb algoritmusokat, amelyeket
 
 Az \textit{első féléves kumulált átlag} predikciójánál a tisztított adathalmazt ugyanúgy 70-30 arányban osztottuk fel. Adattranszformálásra csak kvantilis alapú skálázást alkalmaztunk, PCA-t nem, majd valamennyi regresszor hiperparamétereinek optimalizálása hasonlóan 5-szörös keresztvalidációval történt. Az illesztett legjobb modelleknél mindkét évben feljegyeztük a reziduális tagok\footnote{A reziduális tagok a célváltozó-értékek különbségei a prediktált értékektől.} szórásdiagramját, az egyes változók prediktív erejét, valamint az alábbi statisztikák értékét \cite{bolla_stat}:
 \begin{itemize}
-\item[•] $R^2$: A modell hatásfokát mérő mutató, értéke 0 és 1 közötti (nagyon gyenge eredmény esetén negatív értéket is felvehet). Azt mutatja meg, hogy az adatok között fellépő variancia mekkora részét képes a regressziós modell megmagyarázni:
+\item[•] $R^2$: A modell hatásfokát mérő mutató, értéke 0 és 1 közötti (nagyon gyengén teljesítő modell esetén negatív értéket is felvehet). Azt mutatja meg, hogy az adatok között fellépő variancia mekkora részét képes a regressziós modell megmagyarázni:
 \begin{align}
 R^2 = 1 - \frac{\sum_i (y_i - \hat{y}_i)^2}{\sum_i (y_i - \overline{y})^2}
 \end{align} 
