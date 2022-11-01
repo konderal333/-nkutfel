@@ -290,14 +290,13 @@ A \ref{fig:2021minmax}. ábra esetében nem volt értelme a kumulált átlagot b
 
 \subsection{Folyamatábrák (Sankey-diagramok)}
 A Sankey-diagramok olyan folyamatábrák, amelyekben az ábrázolt folyamok szélessége arányos a megfelelő folyamértékekkel. Ezáltal könnyen ábrázolhatóak adott állapotok közötti folyamok, illetve ezek egymással vett aránya. Egy hátránya van, hogy egy ábrán csak két osztálycsoport között olvashatjuk le az áramlásokat. Ha egy harmadik osztálycsoportot is belehelyezünk, és csak a másodikkal kötjük össze, akkor az első és a harmadik közötti vándorlások nem jelennek meg rajta. Emiatt van némi redundancia a lentebb ismertetett ábrákban.\\
-Dolgozatunkban hat opciót vizsgáltunk a két évben az elérhető adatoknak megfelelően. Mindkét esetben az állapotok a hallgatók valamely eredményét jelentették, például felvételi pontszámot.
+Dolgozatunkban öt opciót vizsgáltunk a két évben az elérhető adatoknak megfelelően. Mindkét esetben az állapotok a hallgatók valamely eredményét jelentették, például felvételi összpontszámot.
 
 \begin{itemize}
 
 \item 2019:
 
 \begin{enumerate}
-\item matematikai teszt 1.,2. és 3. blokkjaiban helyesen megoldott feladatok száma.
 \item teljes teszteredmény - \textit{A1} jegy - \textit{A2} jegy.
 \end{enumerate}
 
@@ -312,9 +311,9 @@ Dolgozatunkban hat opciót vizsgáltunk a két évben az elérhető adatoknak me
 
 \end{itemize}
 
-Az első két esetben csak a 2019-es évfolyamról volt adat. Az utolsó esetben 2021-ben megegyezett a kutatás idejében az első féléves és a kumulált átlag, így ennél az utóbbi értelemszerűen nem lett még egyszer beletéve.
+Az első esetet csak folyamatábra erejéig vizsgáltuk, ugyanis csak a 2019-es évfolyamra volt meg az $A2$ jegy, hiszen a 2021-es évfolyam még nem vehette fel a tárgyat a kutatás idejében. Sőt, a 2021-es évfolyamnál megegyezett az első féléves és a kumulált átlag, így az utolsó esetben az utóbbi értelemszerűen nem lett még egyszer beletéve.
 
-A matematikai teszt részeinek eredményein és az \textit{A1}, \textit{A2} jegyeken kívül a többi változó folytonos volt, így szükség volt ezek diszkretizálására. Öt-öt osztály lett létrehozva minden esetben, de nem feltétlenül került mindegyikbe hallgató. Az átlagok kerekítve lettek, a felvételi összpontszám, teljes teszteredmény és a 0. ZH pontszámok ekvidisztáns módon lettek felosztva.
+Az \textit{A1}, \textit{A2} jegyeken kívül a többi változó folytonos volt, így szükség volt ezek diszkretizálására. Öt-öt osztály lett létrehozva minden esetben, de nem feltétlenül került mindegyikbe hallgató. Az átlagok kerekítve lettek, a felvételi összpontszám, teljes teszteredmény és a 0. ZH pontszámok ekvidisztáns módon lettek felosztva.
 
 A \textit{felvételi összpontszám - 0. ZH - teljes teszteredmény} változatban a 0. ZH és a teszt eredményei nullától az elérhető pontszámig lettek felosztva 20\%-os lépésközökkel. A felvételi összpontszám a legalacsonyabb értéktől 500 pontig. A többi változat a kutatás későbbi szakaszában készült, így a folytonos mutatók az értékkészletük terjedelme szerint lettek felosztva, nem az elérhető pontszámok alapján. Végül a kirajzolódott ábrákat kézileg még igazítani kellett, ugyanis az eredmények csoportjai nem feltétlenül álltak megfelelő sorrendben a függőleges tengelyen, illetve azokban az esetekben, amikor nem volt mind az öt osztályban hallgató, egy-egy csoport átcsúszott egy másik eredmény oszlopába. Ezek azonban nem okoztak gondot, ugyanis a csoport mozgatásával a hozzátartozó sávok is automatikusan együtt mozogtak.
 
@@ -340,25 +339,17 @@ Látható, hogy akik a teszten gyengébben teljesítettek, azok a későbbiekben
 
 Összességében az figyelhető meg, hogy míg az első két változó közötti átmenet viszonylag egységes, a két tárgy közötti átmenetek nagyon változatosak. Ez azt jelenti, hogy a bemeneti teljesítmény részben befolyásolja az első néhány eredményt, de a későbbiekbe már kevesebb beleszólása van.
 
-A 2021-es gólyák a kutatás idejében még nem vehették fel az \textit{A2} tárgyat, így értelemszerűen csak a 2019-es évfolyamra készült ilyen ábra.
 
-\begin{figure}[H]
-\centering
-\includegraphics[scale=0.573]{kepek/matekrészeksankey.png}
-\caption{2019. Matematikai teszt 1. blokk - 2. blokk - 3. blokk helyes válaszainak száma}
-\label{fig:matekrészeksankey}
-\end{figure}
+%A teszt matematikai részének a komplexitása a blokkonként nőtt, így érdekes volt megvizsgálni, hogyan teljesítettek a hallgatók, és hogyan viszonyul egymáshoz a helyes válaszaik száma a különböző blokkokban.
 
-A teszt matematikai részének a komplexitása a blokkonként nőtt, így érdekes volt megvizsgálni, hogyan teljesítettek a hallgatók, és hogyan viszonyul egymáshoz a helyes válaszaik száma a különböző blokkokban.
+%A \ref{fig:matekrészeksankey}. ábrán rögtön látszik, hogy az első blokkban a hibátlan (négyes) osztály a legnagyobb, és a rosszabb eredmények száma csökken. Ez várható, hiszen itt alapismeretek voltak felmérve. A második és harmadik blokknál teljesen más a kép, a közepes osztályok körülbelül azonosak, a szélsők pedig kicsik, jobban hasonlít a normális eloszlásra.
 
-A \ref{fig:matekrészeksankey}. ábrán rögtön látszik, hogy az első blokkban a hibátlan (négyes) osztály a legnagyobb, és a rosszabb eredmények száma csökken. Ez várható, hiszen itt alapismeretek voltak felmérve. A második és harmadik blokknál teljesen más a kép, a közepes osztályok körülbelül azonosak, a szélsők pedig kicsik, jobban hasonlít a normális eloszlásra.
-
-A folyamok egészen változatosak. Az ábra közepén erősen szétoszlanak, de a széleihez közelítve kisebb trendek megfigyelhetők. Például a második blokkban minden kérdésre helyesen válaszolt hallgatók az első blokkban is többnyire szinte csak helyesen válaszoltak.
+%A folyamok egészen változatosak. Az ábra közepén erősen szétoszlanak, de a széleihez közelítve kisebb trendek megfigyelhetők. Például a második blokkban minden kérdésre helyesen válaszolt hallgatók az első blokkban is többnyire szinte csak helyesen válaszoltak.
 
 %IDE BE KELL ILLESZTENI A 2019_old_felvi_0zh_teszt ábrát
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.573]{kepek/2019_old_felvi_0zh_teszt.png}
+\includegraphics[width = \textwidth]{kepek/2019_old_felvi_0zh_teszt.png}
 \caption{2019. Felvételi összpontszám - 0. ZH - teljes teszteredmény}
 \label{fig:2019_old_felvi_0zh_teszt}
 \end{figure}
@@ -369,7 +360,7 @@ Ami a felvételi és 0. ZH pontszámok kapcsolatait illeti, a folyamok egészen 
 
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.573]{kepek/2021_old_felvi_0zh_teszt.png}
+\includegraphics[width = \textwidth]{kepek/2021_old_felvi_0zh_teszt.png}
 \caption{2021. Felvételi összpontszám - 0. ZH - teljes teszteredmény}
 \label{fig:2021_old_felvi_0zh_teszt}
 \end{figure}
@@ -381,7 +372,7 @@ Ami a folyamokat illeti, többnyire hasonlóak a tendenciák, bár fontos észre
 
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.6]{kepek/2019_felvi_teszt_atlag_kumatlag.png}
+\includegraphics[width = \textwidth]{kepek/2019_felvi_teszt_atlag_kumatlag.png}
 \caption{2019. Felvételi összpontszám - teljes teszteredmény - első féléves átlag - kumulált átlag}
 \label{fig:2019_felvi_teszt_atlag_kumatlag}
 \end{figure}
@@ -396,7 +387,7 @@ Visszatérve a \ref{fig:2019_felvi_teszt_atlag_kumatlag}. ábrára, a fentebb me
 
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.6]{kepek/2021_felvi_teszt_atlag.png}
+\includegraphics[width = \textwidth]{kepek/2021_felvi_teszt_atlag.png}
 \caption{2021. Felvételi összpontszám - teljes teszteredmény - első féléves átlag}
 \label{fig:2021_felvi_teszt_atlag}
 \end{figure}
@@ -406,7 +397,7 @@ A kutatás idejében ez az évfolyam még az első évében volt, így csak els�
 %IDE BE KELL ILLESZTENI A 2019_felvi_teszt_a1_kumatl ábrát
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.5]{kepek/2019_felvi_teszt_a1_kumatl.png}
+\includegraphics[width = \textwidth]{kepek/2019_felvi_teszt_a1_kumatl.png}
 \caption{2019. Felvételi összpontszám - teljes teszteredmény- \textit{A1} jegy - kumulált átlag}
 \label{fig:2019_felvi_teszt_a1_kumatl}
 \end{figure}
@@ -415,7 +406,7 @@ A \ref{fig:2019_felvi_teszt_a1_kumatl}. ábra első két oszlopának viszonyát 
 
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.5]{kepek/2021_felvi_teszt_a1_atlag.png}
+\includegraphics[width = \textwidth]{kepek/2021_felvi_teszt_a1_atlag.png}
 \caption{2021. Felvételi összpontszám - teljes teszteredmény - \textit{A1} jegy - első féléves átlag}
 \label{fig:2021_felvi_teszt_a1_atlag}
 \end{figure}
@@ -425,7 +416,7 @@ A \ref{fig:2021_felvi_teszt_a1_atlag}. ábrán szembetűnő, hogy az \textit{A1}
 %IDE BE KELL ILLESZTENI A 2019_hozott_erett_A1 ábrát
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.6]{kepek/2019_hozott_erett_A1.png}
+\includegraphics[width = \textwidth]{kepek/2019_hozott_erett_A1.png}
 \caption{2019. tanulmányi pont - érettségi pont - \textit{A1} jegy}
 \label{fig:2019_hozott_erett_A1}
 \end{figure}
@@ -438,7 +429,7 @@ Az ábráról leolvasható, hogy míg az utolsó oszlop felső felébe szinte cs
 %IDE BE KELL ILLESZTENI A 2021_hozott_erett_A1 ábrát
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.6]{kepek/2021_hozott_erett_A1.png}
+\includegraphics[width = \textwidth]{kepek/2021_hozott_erett_A1.png}
 \caption{2021. tanulmányi pont - érettségi pont - \textit{A1} jegy}
 \label{fig:2021_hozott_erett_A1}
 \end{figure}
@@ -545,6 +536,8 @@ A futtatások során az eredmények két csoportba voltak kategorizálhatóak. A
 
 A \ref{fig:dbscan2}. ábrán lévő klaszterezés 2019-es adatokon készült, Mahalanobis távolságot használva és kvantilisek mentén skálázva. Ismét ugyanaz a négy változó került be: teljes teszteredmény, első féléves átlag, kumulált átlag és a felvételi összpontszám. Látszik, hogy piros pontokból van a legtöbb, amelyekhez a -1-edik klasztert rendelte az algoritmus, ezek az outlierek. A zöld és a kék klaszter még viszonylag nagy, de a többi csak pár pontot tartalmaz.
 
+Mivel az algoritmus eredménye egyik esetben sem volt megfelelő, nem tekintjük célszerűnek a 2021-es évfolyamról készült ábrák áttekintését.
+
 \subsubsection{Ward-féle algoritmus eredménye}
 
 Mint ahogy a másik két módszernél a könyökszabályokban, itt a dendrogramokban volt nehéz eldönteni az optimális paraméter értéket, jelen esetben a klaszterszámot. Ha egy szám optimális, akkor az a síkrész, amelyben annyi függőleges vonal megy, kiemelkedően széles. Ha nehezen klaszterezhető az adat, akkor kisebbek a sávok, és azok közül a legnagyobbak közel azonos méretűek. Ezt lehet látni az alábbi, \ref{fig:dendrogram}. ábrán:
@@ -565,7 +558,7 @@ Itt a kettő és a három függőleges szálat tartalmazó sávok szélessége k
 \label{fig:klacterward}
 \end{figure}
 
-A változók nagy száma miatt lett ilyen nagy a párosításos ábra (\ref{fig:klacterward}.). Mindez a 2019-es adatokból van, kvantilisek mentén skálázva. Minden erőfeszítés ellenére nem alakult ki tisztább klaszterkép. Itt is a K-középhez hasonlóan a három klaszter a "jók", "közepesek" és a "gyengébbek" osztályait jelenti, de nincs vetület, amin olyan sima lenne a klaszterhatár.
+A változók nagy száma miatt lett ilyen nagy a párosításos ábra (\ref{fig:klacterward}.). Mindez a 2019-es adatokból van, kvantilisek mentén skálázva. Minden erőfeszítés ellenére nem alakult ki tisztább klaszterkép. Itt is a K-középhez hasonlóan a három klaszter a "jók", "közepesek" és a "gyengébbek" osztályait jelenti, de nincs vetület, amin olyan sima lenne a klaszterhatár. Ez alapján ismét nem célszerű 2021-re készült ábrát szemléltetni a dolgozatban.
 
 \section{Konklúziók a feltáró adatelemzésből}
 
