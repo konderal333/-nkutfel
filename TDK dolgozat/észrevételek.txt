@@ -1,7 +1,7 @@
-- feature táblázatban utolsó cellában a mondat végére kell pont
-- "a kezdeti adattáblák közül a matematika és NYELVI eredményeket.."
+- feature táblázatban utolsó cellában a mondat végére kell pont         PIPA
+- "a kezdeti adattáblák közül a matematika és NYELVI eredményeket.."    PIPA
 - "Egy részben feltáró adatelemzés fontos szakasza" ez mi?
-- "A 1. táblázatban felsorolt"...
-- "kivéve a teszt kognitív részénél" inkább nyelvi
+- "A 1. táblázatban felsorolt"...     PIPA
+- "kivéve a teszt kognitív részénél" inkább nyelvi   PIPA
 - 10. oldal alján ez olyan megfogalmazás (a seaborn pairplot függvényes)
 - "Továbbá szembetűnő az érettségi pontszámok eloszlásának megváltozása" ez olyan furán hangzik
