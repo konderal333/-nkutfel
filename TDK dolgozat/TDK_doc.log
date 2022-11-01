@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.3.29)  1 NOV 2022 15:34
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.3.29)  1 NOV 2022 16:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1493,6 +1493,9 @@ y-sis. \T1/lmr/m/it/12 CoRR\T1/lmr/m/n/12 ,
  []
 
 [43] [44] [45] (TDK_doc.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package rerunfilecheck Info: File `TDK_doc.out' has not changed.
 (rerunfilecheck)             Checksum: A1C96127C8793FEAD6BD2A39900331D7;4666.
  ) 
@@ -1503,7 +1506,7 @@ Here is how much of TeX's memory you used:
  54839 multiletter control sequences out of 15000+600000
  532551 words of font info for 75 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 100i,17n,104p,2193b,609s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 100i,17n,104p,2189b,609s stack positions out of 10000i,1000n,20000p,200000b,80000s
 {C:/Users/Donát/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.e
 nc}{C:/Users/Donát/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.
 enc}{C:/Users/Donát/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc
@@ -1529,7 +1532,7 @@ C:/Users/Donát/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb>
 ><C:/Users/Donát/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy8.pfb
 ><C:/Users/Donát/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt12.pf
 b>
-Output written on TDK_doc.pdf (46 pages, 3544892 bytes).
+Output written on TDK_doc.pdf (46 pages, 3545003 bytes).
 PDF statistics:
  699 PDF objects out of 1000 (max. 8388607)
  152 named destinations out of 1000 (max. 500000)
