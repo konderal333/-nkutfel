@@ -15,3 +15,23 @@
 - R^2-et jobban kifejteni                              PIPA
 - "Mivel az algoritmus implementálása" ezt kicsit átírni  PIPA
 
+- Van egy és a bevezetőben, ami elé szerintem kell vessző PIPA
+- Bevezetés végén az és elé nem ell vessző        PIPA
+- amerikai (tanuló nem kell) hallgató             PIPA
+- Adatprep első oldal alja: miközben elé vessző   PIPA
+- Összességében elmondható, hogy A járvány        PIPA
+- matematikai-nyelvi teszt megnevezés rendszeresítése   PIPA
+- Pythonban és R-ben  PIPA
+- A kezdeti adattáblák közül a matematikaI és nyelvi  PIPA
+- vagy azért, mert nem írtak kognitív tesztet  (kognitív helyett matematikai-nyelvi)  PIPA
+- Általános ábráknál:  így célszerű volt több részábrás egység(ek)be gyűjteni a hasonló felépítésű grafikonokat  PIPA
+- kognitív eredmény nagy k az általános ábráknál   PIPA
+- duplán van a két évben az oszlopdiagramoknál     PIPA
+- 15. oldal: " Ehhez képest az tantárgyakon elért "  PIPA
+- 5. oldal: ellenőrizi helyett ellenőrzi             PIPA
+- " ... alsó osztályok. Ezzel ellentétben, a ..."      PIPA
+- " A 11. ábrán már közvetlenül láthatóak a felvételi és kognitív teszt" végén matematikai-nyelvi teszt  PIPA
+- hogy a legjobb és legrosszabb
+dolgozatok pontszámai között, a terjedelem 20%-ával lépkedve" kell e vessző vagy sem.
+
+
