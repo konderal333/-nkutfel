@@ -8,6 +8,7 @@
 \usepackage{makecell}
 \usepackage{boldline} 
 \usepackage{cite}
+\usepackage[onehalfspacing]{setspace}
  
 \usepackage{amsmath,amssymb}
 \usepackage{tikz, pgfplots}
@@ -22,6 +23,7 @@
 \usepackage[export]{adjustbox}
 \usepackage{wrapfig}
 \usepackage{float}
+\usepackage{setspace}
 \usepackage[a4paper, left=25mm, right=25mm, top=25mm, bottom=25mm]{geometry}
 
 \usepackage{mathtools}
@@ -44,7 +46,8 @@
 \date{\today}           
 \captionsetup[table]{position=bottom}            
  
-\linespread{1.2}
+%\linespread{1.5}
+\onehalfspacing
 
 \begin{document}
 
@@ -976,77 +979,79 @@ Munkánkban modern adattudományi eszközökkel vizsgáltuk a 2019-ben és 2021-
 
 A dolgozat második felében prediktív analitikai módszerekkel vizsgáltuk az egyes bemeneti adatok fontosságának változását első félév végi teljesítménymutatókra nézve, valamint annak a hatásfokát, hogy ezen mutatók értékei mennyire jól előrejelezhetők. A modellezés során az egyes prediktáló algoritmusok mellett főkomponens analízist is alkalmaztunk. Az eredményekből az szűrhető le, hogy a 2021-ben kezdett hallgatók eredményei ugyan romlottak a járvány kitörése előtti szinthez képest, ugyanakkor sok esetben pontosabban előrejelezhető a teljesítményük, valamint a felvételi pontszám jelentősebb prediktáló erővel bír az első féléves matematika jegyre és kumulált átlagra nézve, mint 2019-ben.
 
-Legjobb tudásunk szerint ez az első olyan kutatás, amely ilyen elgondolással és metodológiával vizsgálja a hallgatók bemeneti adatainak megváltozását a pandémia előtti és alatti időszakban, így kutatásunk egyedülállónak mondható. További céljaink közé tartozik a kutatás többféle bemeneti változóval való kibővítése, új modellezési struktúrák és algoritmusok kipróbálása valamint az eredmények egyetem- és hallgatóbarát hasznosítása.
+Legjobb tudásunk szerint ez az első olyan kutatás, amely ilyen elgondolással és metodológiával vizsgálja a hallgatók bemeneti adatainak megváltozását a pandémia előtti és alatti időszakban, így kutatásunk egyedülállónak mondható. További céljaink közé tartozik a kutatás többféle bemeneti változóval való kibővítése, új modellezési struktúrák és algoritmusok kipróbálása valamint az eredmények egyetem- és hallgatóbarát hasznosítása. 
 
 \newpage
 \begin{thebibliography}{9}
-\bibitem{friedman}Jerome H. Friedman. Greedy function approximation: A gradient boosting machine. 
-\textit{Annals of Statistics}, 29, 1189-1232.
+\bibitem{friedman}Friedman, Jerome Harold 2001. Greedy function approximation: A gradient boosting machine. 
+\textit{Annals of Statistics} 29: 1189--1232.
 
-\bibitem{modeling1}Jovial Niyogisubizo, Lyuchao Liao, Eric Nziyumva, Evariste Murwanashyaka, Pierre Claver Nshimyumukiza.
+\bibitem{modeling1}Niyogisubizo, Jovial -- Liao, Lyuchao -- Nziyumva, Eric -- Murwanashyaka, Evariste -- Nshimyumukiza, Pierre Claver 2022.
 Predicting student's dropout in university classes using two-layer ensemble machine learning approach: A novel stacked generalization.
-\textit{Computers and Education: Artificial Intelligence}, Volume 3, 100066, 2022.
+\textit{Computers and Education: Artificial Intelligence} 3: 100066.
 
-\bibitem{modeling2}Marina Segura, Jorge Mello, Adolfo Hernandez. (2022). Machine Learning Prediction of University Student Dropout: Does Preference Play a Key Role?. \textit{Mathematics}, Volume 10, 3359, 2022.
+\bibitem{modeling2}Segura, Marina -- Mello, Jorge -- Hernandez, Adolfo 2022. Machine Learning Prediction of University Student Dropout: Does Preference Play a Key Role? \textit{Mathematics} 10(18): 3359.
 
-\bibitem{modeling3}Ahajjam Tarik, Haidar Aissa, Farhaoui Yousef. Artificial Intelligence and Machine Learning to Predict Student Performance during the COVID-19. \textit{Procedia Computer Science}, 184:835-840, 2021.
+\bibitem{modeling3}Tarik, Ahajjam -- Aissa, Haidar -- Yousef, Farhaoui 2021. Artificial Intelligence and Machine Learning to Predict Student Performance during the COVID-19. \textit{Procedia Computer Science} 184: 835--840. 
 
-\bibitem{modeling4}D. K. Dake, D. D. Essel, J. E. Agbodaze. Using Machine Learning to Predict Students' Academic Performance During Covid-19. \textit{2021 International Conference on Computing, Computational Modelling and Applications}, pages 9-15, 2021.
+\bibitem{modeling4}Dake, Delali Kwasi -- Essel, Daniel Danso -- Agbodaze, Justice Edem 2021. Using Machine Learning to Predict Students' Academic Performance During Covid-19. \textit{2021 International Conference on Computing, Computational Modelling and Applications (ICCMA)} IEEE. 9--15.
 
-\bibitem{sklearn} F. Pedregosa, G. Varoquaux, A. Gramfort, V. Michel, B. Thirion, O. Grisel, M. Blondel, P. Prettenhofer, R. Weiss, V. Dubourg, J. Vanderplas, A. Passos, D. Cournapeau, M. Brucher, M. Perrot, E. Duchesnay. Scikit-learn: Machine Learning in Python. \textit{Journal of Machine Learning Research}, Volume 12, pages 2825-2830, 2011.
+\bibitem{sklearn} Pedregosa, Fabian -- Varoquaux, Gael -- Gramfort, Alexandre -- Michel, Vincent -- Thirion, Bertrand -- Grisel, Olivier -- Blondel, Mathieu -- Prettenhofer, Peter -- Weiss, Ron -- Dubourg, Vincent -- Vanderplas, Jake -- Passos, Alexandre -- Cournapeau, David - Brucher, Matthieu -- Perrot, M. -- Duchesnay, Edouard 2011. Scikit-learn: Machine Learning in Python. \textit{Journal of Machine Learning Research} 12: 2825--2830. 
 
-\bibitem{svm} C. Cortes, V. Vapnik. Support-vector network. \textit{Machine Learning}, Volume 20, pages 273–297, 1995.
+\bibitem{svm}Cortes, Corinna -- Vapnik, Vladimir 1995. Support-vector network. \textit{Machine Learning} 20: 273--297. 
 
-\bibitem{bevadat} Roland Molontay. \textit{Lecture notes in Intorduction to Data Science.} Budapest University of Technology and Economics, 2021.
+\bibitem{bevadat} Molontay Roland 2021. \textit{Lecture notes in Intorduction to Data Science}. Budapest University of Technology and Economics. Budapest.
 
-\bibitem{bolla_stat} Bolla Marianna, Krámli András.  \textit{Statisztikai következtetések elmélete.}  Elméleti matematika. Typotex Kft., 2012.
+% ezt azért még nézd meg
+\bibitem{bolla_stat} Bolla Marianna -- Krámli András 2012. \textit{Statisztikai következtetések elmélete}. Typotex Kiadó. Budapest. 
 
-\bibitem{PCA}Jonathon Shlens. A Tutorial on Principal Component Analysis. \textit{CoRR}, abs/1404.1100, 2014.
+\bibitem{PCA}Shlens, Jonathon 2014. A Tutorial on Principal Component Analysis. \textit{CoRR} abs/1404.1100. 
 
-\bibitem{molontay1}Máté Baranyi, Marcell Nagy, Roland Molontay. Interpretable Deep Learning for University Dropout Prediction. \textit{Proceedings of the 21st Annual Conference on Information Technology Education}, pages 13-19, 2020.
+\bibitem{molontay1}Baranyi Máté -- Nagy Marcell -- Molontay Roland 2020. Interpretable Deep Learning for University Dropout Prediction. \textit{Proceedings of the 21st Annual Conference on Information Technology Education} 13--19. 
 
-\bibitem{molontay2}Marcell Nagy, Roland Molontay. Comprehensive analysis of the predictive validity of the university entrance score in Hungary. \textit{Assessment \& Evaluation in Higher Education}, 46:8, 1235-1253, 2021.
+\bibitem{molontay2}Nagy Marcell -- Molontay Roland 2021. Comprehensive analysis of the predictive validity of the university entrance score in Hungary. \textit{Assessment \& Evaluation in Higher Education} 46(8): 1235--1253.
 
-\bibitem{student_perf1}J. Cavanaugh, S. Jacquemin, C. Junker. A look at student performance during the COVID-19 pandemic. \textit{Quality Assurance in Education}, Vol. ahead-of-print,  No. ahead-of-print, 2022. \url{https://doi.org/10.1108/QAE-01-2022-0008}
+% ezt még megnézni
+\bibitem{student_perf1}Cavanaugh, Joseph -- Jacquemin, Stephen -- Junker, Christine 2022. A look at student performance during the COVID-19 pandemic. \textit{Quality Assurance in Education} (nyomtatás előtt)
 
-%\bibitem{student_perf2}E. Grewenig, P. Lergetporer, K. Werner, L. Woessmann, L. Zierow. COVID-19 and Educational Inequality: How School Closures Affect Low-and High-Achieving Students. \textit{EconStor}, 2020.
+\bibitem{student_perf3}Atlam, El-Sayed -- Ewis, Ashraf -- Abd El-Raouf, Mahmoud M. --  Ghoneim, Osama -- Gad, Ibrahim 2022. A new approach in identifying the psychological impact of COVID-19 on university student’s academic performance. \textit{Alexandria Engineering Journal} 61(7): 5223--5233. 
 
-\bibitem{student_perf3}El-Sayed Atlam, Ashraf Ewis, M.M. Abd El-Raouf, Osama Ghoneim, Ibrahim Gad. A new approach in identifying the psychological impact of COVID-19 on university student’s academic performance. \textit{Alexandria Engineering Journal}, Volume 61, Issue 7, pages 5223-5233, 2022.
+\bibitem{student_perf5}Onyema, Edeh Michael -- Nwafor, Chika -- Obafemi, Faith -- Sen, Shuvro -- Atonye, Fyneface Grace -- Sharma, Aabha -- Alsayed, Alhuseen Omar 2020. Impact of coronavirus pandemic on education. \textit{Journal of Education and Practice} 11: 108--121. 
 
-\bibitem{student_perf5}E.M. Onyema, N.C. Eucheria, F.A. Obafemi, S. Sen, F.G. Atonye, A. Sharma, A.O. Alsayed. Impact of coronavirus pandemic on education. \textit{Journal of Education and Practice}, Volume 11, pages 108-121, 2020.
+\bibitem{student_perf6}Chandra, Yamini 2020. Online education during COVID-19: perception of academic stress and emotional intelligence coping strategies among college students. \textit{Asian Education and Development Studies} 10:2 229--238. 
 
-\bibitem{student_perf6}Yamini Chandra. Online education during COVID-19: perception of academic stress and emotional intelligence coping strategies among college students. \textit{Asian Education and Development Studies}, Volume 10, No. 2, pages 229-238, 2020.
+\bibitem{student_perf7}Kimkong, Heng -- Koemhong, Sol 2021. Online learning during COVID-19: Keychallenges and suggestions to enhance effectiveness. \textit{Cambodian Journal of Educational Research} 1(1): 3--16. 
 
-\bibitem{student_perf7}Kimkong Heng, Koemhong Sol. Online learning during COVID-19: Keychallenges and suggestions to enhance effectiveness. \textit{Cambodian Journal of Educational Research}, Volume 1, No. 1, pages 3–16, 2021.
+\bibitem{student_perf8}Alawamleh, Mohammad -- Al-Twait, Lana Mohannad -- Al-Saht, Gharam Raafat 2022. The effect of online learning on communication between instructors and students during Covid-19 pandemic. \textit{Asian Education and Development Studies} 11(2): 380--400.
 
-\bibitem{student_perf8}Mohammad Alawamleh, Lana Mohannad Al-Twait, Gharam Raafat Al-Saht. The effect of online learning on communication between instructors and students during Covid-19 pandemic. \textit{Asian Education and Development Studies}, Volume 11, No. 2, pages 380-400, 2022.
+\bibitem{student_perf9}Mukhtar, Khadijah -- Javed, Kainat -- Arooj, Mahwish -- Sethi, Ahsan 2020. Advantages, Limitations and Recommendations for online learning during COVID-19 pandemic era. \textit{Pakistan Journal of Medical Sciences} 36(COVID19-S4): S27--S31.  
 
-\bibitem{student_perf9}K. Mukhtar, K. Javed, M. Arooj, A. Sethi. Advantages, Limitations and Recommendations for online learning during COVID-19 pandemic era. \textit{Pakistan Journal of Medical Sciences}, S27–S31, 2021. 
+\bibitem{cov_solution3}Bangyal, Waqas Haider -- Qasim, Rukhma -- Rehman, Najeeb Ur -- Ahmad, Zeeshan -- Dar, Hafsa -- Rukhsar, Laiqa -- Aman, Zahra -- Ahmad, Jamil 2021. Detection of Fake News Text Classification on COVID-19 Using Deep Learning Approaches. \textit{Computational and Mathematical Methods in Medicine} 2021: 1--14.  %\href{https://doi.org/10.1155/2021/5514220}{https://doi.org/10.1155/2021/5514220}
 
-\bibitem{cov_solution3} Waqas Haider Bangyal, Rukhma Qasim, Najeeb ur Rehman, Zeeshan Ahmad, Hafsa Dar, Laiqa Rukhsar, Zahra Aman, Jamil Ahmad. Detection of Fake News Text Classification on COVID-19 Using Deep Learning Approaches. \textit{Computational and Mathematical Methods in Medicine}, Volume 2021, Article ID 5514220, 2021. \href{https://doi.org/10.1155/2021/5514220}{https://doi.org/10.1155/2021/5514220}
+\bibitem{cov_solution2}Wani, Apurva -- Joshi, Isha -- Khandve, Snehal -- Wagh, Vedangi --  Joshi, Raviraj 2021. Evaluating Deep Learning Approaches for Covid19 Fake News Detection. \textit{CoRR}, abs/2101.04012,  %\href{https://arxiv.org/abs/2101.04012}{https://arxiv.org/abs/2101.04012}
 
-\bibitem{cov_solution2} Apurva Wani, Isha Joshi, Snehal Khandve, Vedangi Wagh, Raviraj Joshi. Evaluating Deep Learning Approaches for Covid19 Fake News Detection. \textit{CoRR}, abs/2101.04012, 2021. \href{https://arxiv.org/abs/2101.04012}{https://arxiv.org/abs/2101.04012}
+\bibitem{cov_solution}Isaakidou, Marianna -- Zoulias, Emmanouil -- Diomidous, Marianna 2021. Machine Learning to Identify Fake News for COVID-19. \textit{Stud Health Technol Inform} 281: 108--112. 
 
-\bibitem{cov_solution} Marianna Isaakidou, Emmanouil Zoulias, Marianna Diomidous. Machine Learning to Identify Fake News for COVID-19. \textit{Stud Health Technol Inform}, Volume 281, pages 108-112, 2021.
+\bibitem{mlr_1}Gupta, Akash -- Gharehgozli, Amir 2022. Developing a machine learning framework to determine the spread of COVID-19 in the USA using meteorological, social, and demographic factors. \textit{International Journal of Data Mining, Modelling and Management} 14(2): 89--109. 
 
-\bibitem{mlr_1}Akash Gupta, Amir Gharehgozli. Developing a machine learning framework to determine the spread of COVID-19 in the USA using meteorological, social, and demographic factors. \textit{International Journal of Data Mining, Modelling and Management}, Volume 14, No. 2, pages 89-109, 2022.
+\bibitem{mlr_2}Alali, Yasminah -- Harrou, Fouzi -- Sun, Ying 2022. A proficient approach to forecast COVID-19 spread via optimized dynamic machine learning models. \textit{Sci Rep} 12(1): 2467. 
 
-\bibitem{mlr_2}Y. Alali,F. Harrou, Y. Sun. A proficient approach to forecast COVID-19 spread via optimized dynamic machine learning models. \textit{Sci Rep}, 12, 2467, 2022.
+\bibitem{student_perf4}Malki, Zohair -- Atlam, El-Sayed -- Ewis, Ashraf -- Dagnew, Guesh -- Alzighaibi, Ahmad Reda -- ELmarhomy, Ghada -- Elhosseini, Mostafa A. -- Hassanien, Aboul Ella -- Gad, Ibrahim 2021. ARIMA models for predicting the end of COVID-19 pandemic and the risk of second rebound. \textit{Neural Computing \& Applications} 33: 2929--2948.
 
-\bibitem{student_perf4}Z. Malki, E.S. Atlam, A. Ewis, G. Dagnew, A.R. Alzighaibi, G. ELmarhomy, M.A. Elhosseini, A.E. Hassanien, I. Gad.
-ARIMA models for predicting the end of COVID-19 pandemic and the risk of second rebound. \textit{Neural Comput \& Applic}, Volume 33, pages 2929–2948, 2021.
+\bibitem{magyar1}Monostori Judit 2021. \textit{The school year 2020-2021 in Hungary during the pandemic - Country report}. Publications Office of the European Union. Luxembourg. 
 
-\bibitem{magyar1} Judit Monostori. The school year 2020-2021 in Hungary during the pandemic - Country report. \textit{Publications Office of the European Union}, Luxembourg, 2021.
+\bibitem{magyar2}Proháczik Ágnes 2020. A tantermi és az on-line oktatás (tanítás és tanulás) összehasonlító elemzése. \textit{Opus et Educatio}, 7(3): 208--219.  \url{http://opuseteducatio.hu/index.php/opusHU/article/view/390/672}
 
-\bibitem{magyar2} Ágnes Proháczik. A tantermi és az on-line oktatás (tanítás és tanulás) összehasonlító elemzése. \textit{Opus et Educatio}, Volume7. No.3, 2020. \url{http://opuseteducatio.hu/index.php/opusHU/article/view/390/672}
+\bibitem{magyar3}Csépe Péter -- Dinya Elek -- Balázs Péter -- Hosseini, Shahrokh Mirza -- Küzdy Gábor -- Rosivall László 2021. Impact of the first wave of COVID-19 pandemic on the Hungarian university students' social and health behaviour. \textit{Z Gesundh Wiss} 28: 1--7. 
 
-\bibitem{magyar3}P. Csépe, E. Dinya, P. Balázs, S. M. Hosseini, G. Küzdy, L. Rosivall. Impact of the first wave of COVID-19 pandemic on the Hungarian university students' social and health behaviour. \textit{Z Gesundh Wiss},  28:1-7, 2021.
+% ezt még megnézni
+\bibitem{shap}Lundberg, Scott -- Lee, Su-In 2017. A Unified Approach to Interpreting Model Predictions. In: Guyon, Isabelle - von Luxburg, Ulrike -- Bengio, Samy -- Wallach, Hanna M. -- Fergus, Rob -- Vishwanathan, S. V. N. -- Garnett, Roman (szerkesztők) \textit{Advances in Neural Information Processing Systems 30: Annual Conference on Neural Information Processing Systems}. Curran Associates Inc. 4766--4775.
 
-\bibitem{shap}Scott Lundberg, Su-In Lee. A Unified Approach to Interpreting Model Predictions \textit{Advances in Neural Information Processing Systems 30}, Curran Associates Inc., pages 4765-4774, 2017.
+%ezt is
+\bibitem{lime}Ribeiro, Marco Tulio -- Singh, Sameer -- Guestrin, Carlos 2016. "Why Should \{I\} Trust You?": Explaining the Predictions of Any Classifier. In: Krishnapuram, Balaji -- Shah, Mohak -- Smola, Alexander J. -- Aggarwal, Charu -- Shen, Dou -- Rastogi, Rajeev (szerkesztők) \textit{Proceedings of the 22nd International Conference on Knowledge Discovery and Data Mining} Association for Computing Machinery. New York. 1135--1144. 
 
-\bibitem{lime}Marco Tulio Ribeiro, Sameer Singh, Carlos Guestrin. "Why Should \{I\} Trust You?": Explaining the Predictions of Any Classifier. \textit{Proceedings of the 22nd International Conference on Knowledge Discovery and Data Mining}, pages 1135-1144, 2016.
-
-\bibitem{dbscan}M. Ester, H. P. Kriegel, J. Sander, X. Xu. A Density-Based Algorithm for Discovering Clusters in Large Spatial Databases with Noise. \textit{In Proceedings of the 2nd International Conference on Knowledge Discovery and Data Mining}, AAAI Press, pages 226–231, 1996.
+%meg ezt is
+\bibitem{dbscan}Ester, Martin -- Kriegel, Hans-Peter -- Sander, Jörg -- Xu, Xiaowei  1996. A Density-Based Algorithm for Discovering Clusters in Large Spatial Databases with Noise.  \textit{In Proceedings of the 2nd International Conference on Knowledge Discovery and Data Mining}, AAAI Press, 226--231, 
 
 \end{thebibliography}
 
