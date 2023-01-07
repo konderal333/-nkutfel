@@ -4,17 +4,9 @@
 \usepackage[utf8]{inputenc}  
 \usepackage[magyar]{babel}   
 \usepackage{lmodern}
-\usepackage{caption}       
-\usepackage{makecell}
-\usepackage{boldline} 
+\usepackage{caption}        
  
-\usepackage{amsmath,amssymb}
-\usepackage{tikz, pgfplots}
-\usetikzlibrary{positioning}
-\usepackage{arydshln}
-\usepackage{booktabs}
-\usepackage{multirow}
-\usepackage{booktabs} 
+\usepackage{amsmath,amssymb} 
 \usepackage{amsthm}          
 \usepackage{graphicx}  
 \usepackage{hyperref}  
@@ -23,39 +15,26 @@
 \usepackage{float}
 \usepackage[a4paper, left=25mm, right=25mm, top=25mm, bottom=25mm]{geometry}
 
-\usepackage{mathtools}
+\linespread{1.3}
 
-\usetikzlibrary{positioning,arrows,fit}
-
-\renewcommand\vec[1]{\boldsymbol{#1}}
-
-
-\DeclareMathOperator*{\argmax}{arg\,max}
-\DeclareMathOperator*{\argmin}{arg\,min}   
-
-\newtheorem{definition}{Definíció}[section]
-
-\newcommand{\ra}[1]{\renewcommand{\arraystretch}{#1}}
-
-
-\title{Covid-19-cel kapcsolatos tévinformációk azonosítása gépi tanulással}
-\author{Köller Donát, BME TTK BSc. Szakdolgozat}
-\date{\today}           
-\captionsetup[table]{position=bottom}            
- 
-\linespread{1.2}
 
 \begin{document}
 
 %ide kéne a fancy fejléc
-
-\center{\textbf{Elsőéves hallgatók pandémia előtti és alatti bemeneti
+\begin{center}
+\textbf{Elsőéves hallgatók pandémia előtti és alatti bemeneti
 adatainak elemzése modern adattudományi
-eszközökkel}}
+eszközökkel}
+\end{center}
 
-Az oktatás fejlesztése és korszerűsítése minden időkben magas prioritású feladat volt. A néhány éve kitört koronavírus járvány miatt az oktatás a világ nagy részében távolléti formára állt át. Ebben az környezetben a diákok és hallgatók teljesítménye változást mutatott. Ennek fényében tekintettük célszerűnek az elsőéves BME VBK hallgatók eredményeinek vizsgálatát.
 
-Kutatásunk célja adott bemeneti mutatók és a hallgatók további sikeressége közötti viszonyok feltárása és egy modell felépítése az utóbbi prediktálására. Egy ilyen modell birtokában a hallgató későbbi teljesítménye a tanulmányai kezdetén lenne megjósolható, így az eredménynek megfelelően vagy felzárkóztató, vagy tehetséggondozó, alaptanterven felüli foglalkozást biztosíthatnánk neki.
+Az oktatás fejlesztése és korszerűsítése mindig magas prioritású feladat volt. A néhány éve kitört koronavírus járvány miatt az oktatás a világ nagy részében távolléti formára állt át. Ebben az környezetben a diákok és hallgatók teljesítménye változást mutatott. Ennek fényében tekintettük célszerűnek az elsőéves Budapesti Műszaki és Gazdaságtudományi Egyetem Vegyész Biomérnöki Kar hallgatói eredményeinek vizsgálatát.
+
+Kutatásunk célja adott bemeneti mutatók és a hallgatók további sikeressége közötti viszonyok feltárása és az utóbbi prediktálása adattudományi módszerekkel. Egy jól előrejelző modell birtokában a hallgató későbbi teljesítménye a tanulmányai kezdetén megjósolható lenne. Így a lemorzsolódásban veszélyeztetett hallgatók számára időben lehetne megfelelő segítséget nyújtani.
+
+Adattudományi módszerek széles spektrumát használtuk a kutatás valamennyi szakaszában. Az adatvizualizációban kiemelhetők a Sankey-féle folyamatábrák, melyeken látványosak az évek közti különbségek. Az adatok klaszterezésénél háromféle módszer lett kipróbálva és összevetve. A legjobb predikciós pontosság érdekében szintén több modellt építettünk fel és hasonlítottunk össze.
+
+Már az adatvizualizáció során sikerült az adatok között némi összefüggéseket és az évek között különbségeket feltárni. Ennek ellenére az adatok nem voltak jól klaszterezhetők. Sikeres lett a prediktív modellezés, a korlátozott adatmennyiség ellenére magas pontossággal jelezték előre modelljeink az osztályokat.
 
 
 
