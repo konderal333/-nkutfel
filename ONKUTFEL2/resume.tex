@@ -13,13 +13,75 @@
 \usepackage[export]{adjustbox}
 \usepackage{wrapfig}
 \usepackage{float}
-\usepackage[a4paper, left=25mm, right=25mm, top=25mm, bottom=25mm]{geometry}
+\usepackage[a4paper, left=20mm, right=20mm, top=15mm, bottom=25mm]{geometry}
+
+\usepackage{gillius}
+
+% Set spacing
+\usepackage{setspace}
+
+
+
+% Add clickable links
+
+
+\onehalfspacing
+
 
 \linespread{1.3}
 
+\author{Hallgató Hanga}
+\degree{programtervező informatikus MSc}
+\period{2. évfolyam}
+\coauthor{Hallgató Harold}
+\codegree{programtervező informatikus BSc}
+\coperiod{3. évfolyam}
 
 \begin{document}
 
+\maketitle
+
+\hrule
+\vspace{3mm}
+
+\noindent % <===========================================================
+\begin{minipage}[c]{\textwidth} % <==================================
+\begin{flushleft}
+\textbf{Köller Donát Ákos} \\
+email cím plox \\
+Matematikus \\
+MSc, 1. félév \\*
+Budapesti Műszaki és Gazdaságtudományi Egyetem \\
+Természettudományi Kar
+
+\end{flushleft}
+
+\begin{flushright}
+\textbf{Köller Donát Ákos} \\
+email cím plox \\
+Matematikus \\
+MSc, 1. félév \\*
+Budapesti Műszaki és Gazdaságtudományi Egyetem \\
+Természettudományi Kar
+
+\end{flushright}
+\end{minipage} % <======================================================
+\hfill
+\begin{minipage}[c]{0.35\textwidth}% <==================================
+% Contacts Section
+\begin{flushright}
+\begin{tabular}{ l } 
+ AnthonyJohnson \\
+ ajohnson@mit.com \\
+ (123) - 456 - 7890 \\
+\end{tabular}
+\end{flushright}
+\end{minipage}% <=======================================================
+
+
+\begin{center}
+\line(1,0){320}
+\end{center}
 %ide kéne a fancy fejléc
 \begin{center}
 \textbf{Elsőéves hallgatók pandémia előtti és alatti bemeneti
